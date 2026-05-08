@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { STATES, getStateBySlug } from '@/lib/states';
+import { getStateNarrative } from '@/lib/stateNarratives';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
+import { ReviewedBy } from '@/components/ReviewedBy';
 
 interface PageProps { params: { state: string }; }
 
@@ -27,6 +29,8 @@ export default function Page({ params }: PageProps) {
   const s = getStateBySlug(params.state);
   if (!s) return notFound();
 
+  const narrative = getStateNarrative(s.abbr);
+
   const taxLine =
     s.category === 'no-income-tax'
       ? `${s.name} has no state income tax. Your paycheck only has federal tax (income tax + FICA) and any local taxes that apply.`
@@ -34,7 +38,6 @@ export default function Page({ params }: PageProps) {
       ? `${s.name} uses a flat state income tax. Everyone pays the same percentage on taxable wages, regardless of income.`
       : `${s.name} uses progressive tax brackets. Higher portions of pay are taxed at higher rates.`;
 
-  // Hypothetical example numbers
   const exampleSalary = 65000;
   const biweekly = exampleSalary / 26;
   const ssTax = biweekly * 0.062;
@@ -44,10 +47,9 @@ export default function Page({ params }: PageProps) {
   if (s.category === 'flat' && s.taxRate) stateTax = biweekly * s.taxRate;
   else if (s.category === 'progressive') stateTax = biweekly * 0.045;
   const net = biweekly - ssTax - medTax - fedTax - stateTax;
-
   const fmt = (n: number) => `$${n.toFixed(2)}`;
 
-  const faqs = [
+  const stateFaqs = [
     {
       q: `Does ${s.name} have state income tax?`,
       a: s.category === 'no-income-tax'
@@ -84,6 +86,9 @@ export default function Page({ params }: PageProps) {
     },
   ];
 
+  // Combine state-template FAQs with hand-written narrative FAQs (if any).
+  const allFaqs = narrative ? [...stateFaqs, ...narrative.faq] : stateFaqs;
+
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <ArticleSchema
@@ -108,9 +113,18 @@ export default function Page({ params }: PageProps) {
       <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900">{s.name} Paycheck Guide</h1>
       <p className="mt-4 text-lg leading-relaxed text-slate-700">{taxLine}</p>
 
+      <ReviewedBy />
+
       <div className="mt-6">
         <MasterDisclaimer variant="long" />
       </div>
+
+      {narrative && (
+        <section className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-bold text-slate-900">{s.name}: the local picture</h2>
+          <p className="mt-3 text-slate-700 leading-relaxed">{narrative.intro}</p>
+        </section>
+      )}
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Link href={`/us/${s.slug}/paycheck-calculator`} className="rounded-lg border border-slate-200 bg-white p-5 hover:border-blue-300">
@@ -146,6 +160,24 @@ export default function Page({ params }: PageProps) {
         {s.hasPFL ? <p><strong>Paid Family Leave:</strong> {s.name} has a Paid Family Leave program with employee-paid premiums.</p> : null}
         {s.dailyOvertime ? <p><strong>Daily overtime:</strong> {s.name} requires daily-overtime payment for hours above a daily threshold, on top of the federal weekly FLSA rule. See the overtime page.</p> : null}
 
+        {narrative && narrative.whatChanged.length > 0 && (
+          <>
+            <h2>What changed recently in {s.name}</h2>
+            <ul>
+              {narrative.whatChanged.map((c, i) => <li key={i}>{c}</li>)}
+            </ul>
+          </>
+        )}
+
+        {narrative && narrative.payrollQuirks.length > 0 && (
+          <>
+            <h2>{s.name} payroll quirks workers should know</h2>
+            <ul>
+              {narrative.payrollQuirks.map((q, i) => <li key={i}>{q}</li>)}
+            </ul>
+          </>
+        )}
+
         <h2>Example breakdown</h2>
         <p>A hypothetical {s.name} worker on a $65,000 annual salary, paid bi-weekly, single filer, no extra adjustments. Educational only, your real paycheck differs.</p>
         <table>
@@ -168,7 +200,7 @@ export default function Page({ params }: PageProps) {
         </ul>
       </article>
 
-      <FAQSchema items={faqs} />
+      <FAQSchema items={allFaqs} />
     </main>
   );
 }
