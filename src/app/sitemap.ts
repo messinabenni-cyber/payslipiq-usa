@@ -4,51 +4,14 @@ import { STATES } from '@/lib/states';
 const SITE = 'https://payslipiq.com';
 const NOW = new Date();
 
-const STATIC_PATHS = [
-  '/',
-  '/trust',
-  '/security',
-  '/ai-transparency',
-  '/methodology',
-  '/how-it-works',
-  '/privacy',
-  '/terms',
-  '/disclaimer',
-  '/about',
-  '/contact',
-  '/press',
-  '/us/pay-stub-checker',
-  '/us/paycheck-calculator',
-  '/us/salary-after-tax',
-  '/us/hourly-paycheck-calculator',
-  '/us/overtime-paycheck',
-  '/us/fica-explained',
-  '/us/federal-tax-withholding',
-  '/us/social-security-tax',
-  '/us/medicare-tax',
-  '/us/additional-medicare-tax',
-  '/us/w4-guide',
-  '/us/w2-explained',
-  '/us/401k-deductions',
-  '/us/health-insurance-deductions',
-  '/us/bonus-tax-paycheck',
-  '/us/pre-tax-vs-post-tax-deductions',
-  '/us/gross-vs-net-pay',
-  '/us/pay-stub-anatomy',
-  '/us/pay-stub-glossary',
-  '/us/pay-stub-mistakes',
-  '/us/why-is-my-paycheck-lower',
-  '/us/paycheck-comparison',
-  '/us/ask-payroll-generator',
-  '/us/learn',
-];
+const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '/disclaimer', '/how-it-works', '/methodology', '/press', '/privacy', '/security', '/terms', '/trust', '/us/401k-contribution-limits', '/us/401k-deductions', '/us/additional-medicare-tax', '/us/ask-payroll-generator', '/us/biweekly-vs-semimonthly-pay', '/us/bonus-tax-paycheck', '/us/contractor-vs-employee-paycheck-guide', '/us/deductions', '/us/federal-employee-paycheck-guide', '/us/federal-tax-withholding', '/us/fica-explained', '/us/final-paycheck-rules', '/us/gig-worker-paycheck-guide', '/us/gross-vs-net-pay', '/us/health-insurance-deductions', '/us/hourly-paycheck-calculator', '/us/hourly-worker-paycheck-calculator', '/us/hsa-fsa-explained', '/us/hsa-vs-fsa', '/us/learn', '/us/medicare-tax', '/us/military-paycheck-guide', '/us/multi-state-payroll-guide', '/us/new-job-first-paycheck-guide', '/us/nurse-paycheck-guide', '/us/overtime-paycheck', '/us/pay-stub-anatomy', '/us/pay-stub-checker', '/us/pay-stub-glossary', '/us/pay-stub-mistakes', '/us/paycheck-calculator', '/us/paycheck-comparison', '/us/pre-tax-vs-post-tax-deductions', '/us/pre-tax-vs-roth-401k', '/us/problems', '/us/remote-worker-state-tax-guide', '/us/roles', '/us/salaried-worker-paycheck-calculator', '/us/salary-after-tax', '/us/seasonal-worker-paycheck-guide', '/us/single-vs-married-filing-jointly-paycheck', '/us/social-security-tax', '/us/student-job-paycheck-guide', '/us/supplemental-wage-withholding', '/us/teacher-paycheck-guide', '/us/tipped-worker-paycheck-guide', '/us/w2-explained', '/us/w4-guide', '/us/wage-garnishment-explained', '/us/what-does-medicare-mean-on-paycheck', '/us/what-does-social-security-mean-on-paycheck', '/us/why-am-i-paying-state-tax-i-don-t-live-there', '/us/why-did-my-net-pay-change', '/us/why-is-my-paycheck-lower', '/us/why-was-my-overtime-taxed-so-much', '/us/why-was-so-much-tax-taken'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = STATIC_PATHS.map((p) => ({
-    url: `${SITE}${p}`,
+    url: `${SITE}${p === '/' ? '' : p}`,
     lastModified: NOW,
-    changeFrequency: 'weekly',
-    priority: p === '/' ? 1.0 : 0.7,
+    changeFrequency: 'weekly' as const,
+    priority: p === '/' ? 1.0 : (p.startsWith('/us/') ? 0.7 : 0.6),
   }));
 
   for (const s of STATES) {

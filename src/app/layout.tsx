@@ -18,11 +18,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'PayslipIQ — Understand Your Paycheck | Plain-English Pay Stub Help (US)',
+    default: 'PayslipIQ, Understand Your Paycheck | Plain-English Pay Stub Help (US)',
     template: '%s · PayslipIQ',
   },
   description:
-    'PayslipIQ helps American workers understand pay stubs, federal and state withholding, FICA, deductions, overtime, 401(k), and take-home pay in plain English. Educational only — not tax, legal, or financial advice.',
+    'PayslipIQ explains pay stubs, federal and state withholding, FICA, deductions, overtime, 401(k), and take-home pay. Educational only, not tax, legal, or financial advice.',
   applicationName: 'PayslipIQ',
   category: 'finance',
   alternates: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: "PayslipIQ — Understand Your Paycheck With Confidence",
+    title: "PayslipIQ, Understand Your Paycheck With Confidence",
     description:
       'Plain-English help for American workers: pay stubs, federal & state withholding, FICA, deductions, overtime, 401(k), take-home pay. Educational only.',
     url: SITE_URL,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Understand Your Paycheck With Confidence — PayslipIQ",
+    title: "Understand Your Paycheck With Confidence, PayslipIQ",
     description: "Plain-English paycheck help for American workers.",
   },
   robots: {

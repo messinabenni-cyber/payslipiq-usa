@@ -14,8 +14,8 @@ export default function Page() {
       <h1 className="text-4xl font-bold tracking-tight text-slate-900">Medicare Tax on Your Paycheck</h1>
       <div className="mt-4"><MasterDisclaimer variant="long" /></div>
       <article className="mt-8 prose prose-slate max-w-none">
-        <p>Medicare tax funds Medicare — the federal health insurance program for people 65+ and certain disabled workers.</p>
-        <ul><li><strong>Base rate:</strong> 1.45% (employee side, all wages, no cap)</li><li><strong>Additional Medicare Tax:</strong> 0.9% on wages above $200,000 (single) or $250,000 (married filing jointly). Employee-only — no employer match.</li><li><strong>Employer match:</strong> 1.45% on the base rate</li></ul>
+        <p>Medicare tax funds Medicare, the federal health insurance program for people 65+ and certain disabled workers.</p>
+        <ul><li><strong>Base rate:</strong> 1.45% (employee side, all wages, no cap)</li><li><strong>Additional Medicare Tax:</strong> 0.9% on wages above $200,000 (single) or $250,000 (married filing jointly). Employee-only, no employer match.</li><li><strong>Employer match:</strong> 1.45% on the base rate</li></ul>
       </article>
       <div className="mt-12 rounded-lg border border-slate-200 bg-slate-50 p-6">
         <p className="text-sm font-semibold text-slate-900">Related tools</p>

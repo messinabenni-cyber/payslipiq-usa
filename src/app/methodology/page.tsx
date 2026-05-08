@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "Methodology — How PayslipIQ Builds Its Answers",
+  title: "Methodology, How PayslipIQ Builds Its Answers",
   description: "Sources, refresh schedule, and editorial standards behind every PayslipIQ output. Educational only.",
   alternates: { canonical: '/methodology' },
 };
@@ -16,7 +16,7 @@ export default function Page() {
         <h2>Where our numbers come from</h2>
         <p>Federal income tax withholding: IRS Publication 15-T. FICA: IRS + SSA annual notices. State income tax: each state department of revenue. Overtime / FLSA: US Department of Labor.</p>
         <h2>How calculators work</h2>
-        <p>Calculators are <strong>rule-based code</strong>, not AI predictions. Each calculator function is unit-tested against published examples.</p>
+        <p>Calculators are <strong>rule-based code</strong>not AI predictions. Each calculator function is unit-tested against published examples.</p>
         <h2>How explanations work</h2>
         <p>The plain-English summary alongside numeric results is AI-generated under the constraints in <Link href="/ai-transparency">AI Transparency</Link>. Numbers are never rewritten by AI.</p>
         <h2>How state pages are written</h2>

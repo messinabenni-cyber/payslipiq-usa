@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — PayslipIQ (US)",
+  title: "Privacy Policy, PayslipIQ (US)",
   description: "PayslipIQ US privacy policy: what we collect, what we don't, your CCPA/state-law rights, sub-processors, AI processing.",
   alternates: { canonical: '/privacy' },
 };

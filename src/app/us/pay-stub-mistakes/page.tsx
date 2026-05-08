@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "Common Pay Stub Mistakes — How to Spot Payroll Errors",
-  description: "Twelve common US payroll errors and how to spot them. Educational only — PayslipIQ does not adjudicate any specific employer.",
+  title: "Common Pay Stub Mistakes, How to Spot Payroll Errors",
+  description: "Twelve common US payroll errors and how to spot them. Educational only, PayslipIQ does not adjudicate any specific employer.",
   alternates: { canonical: '/us/pay-stub-mistakes' },
 };
 

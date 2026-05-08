@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "FICA on Your Paycheck — Social Security + Medicare Explained",
+  title: "FICA on Your Paycheck, Social Security + Medicare Explained",
   description: "What is FICA on your paycheck? Plain-English explanation of Social Security tax (6.2%), Medicare tax (1.45%), Additional Medicare Tax. Educational only.",
   alternates: { canonical: '/us/fica-explained' },
 };

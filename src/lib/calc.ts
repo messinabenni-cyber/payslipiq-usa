@@ -110,7 +110,7 @@ export function stateIncomeTax(annualGross: number, stateSlug: string, filing: F
   if (s.category === 'progressive' && s.brackets) {
     return applyBrackets(annualGross, s.brackets);
   }
-  // Progressive without explicit brackets — use a defensible national-average ~5.5%.
+  // Progressive without explicit brackets, use a defensible national-average ~5.5%.
   // Pages flag this as an estimate and link to the state's authority.
   return annualGross * 0.055;
 }

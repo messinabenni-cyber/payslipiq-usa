@@ -19,7 +19,7 @@ export default function Page() {
         <h2>Post-tax</h2>
         <p>Comes out after taxes are withheld. Examples: Roth 401(k), wage garnishments, charitable contributions via payroll, some life insurance.</p>
         <h2>Special note on FICA</h2>
-        <p>Most pre-tax deductions reduce FICA wages — but 401(k) does NOT. FICA is calculated on gross before 401(k).</p>
+        <p>Most pre-tax deductions reduce FICA wages, but 401(k) does NOT. FICA is calculated on gross before 401(k).</p>
       </article>
       <div className="mt-12 rounded-lg border border-slate-200 bg-slate-50 p-6">
         <p className="text-sm font-semibold text-slate-900">Related tools</p>

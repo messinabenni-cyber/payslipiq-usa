@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const s = getStateBySlug(params.state);
   if (!s) return { title: 'State not found' };
   return {
-    title: `${s.name} Pay Stub Laws — What Employers Must Provide`,
+    title: `${s.name} Pay Stub Laws, What Employers Must Provide`,
     description: `${s.name} pay stub access laws and employer requirements. Educational only.`,
     alternates: { canonical: `/us/${s.slug}/pay-stub-laws` },
   };

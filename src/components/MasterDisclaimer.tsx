@@ -14,10 +14,10 @@ const COPY: Record<DisclaimerVariant, string> = {
     'differ based on factors specific to your employer, location, benefits ' +
     'elections, and personal tax situation.',
   short:
-    'Educational only — not tax, legal, financial, or payroll advice. Verify with ' +
+    'Educational only, not tax, legal, financial, or payroll advice. Verify with ' +
     'your payroll team, a CPA, the IRS, or your state tax authority.',
   ai:
-    'Estimate only — not advice. AI may misread unusual pay stubs or lag recent ' +
+    'Estimate only, not advice. AI may misread unusual pay stubs or lag recent ' +
     'rule changes. Always verify with your payroll department, a qualified CPA, ' +
     'the IRS, or your state tax authority.',
   footer:

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "Disclaimers — PayslipIQ",
-  description: "Master disclaimer + per-tool disclaimers for PayslipIQ. Educational only — not advice.",
+  title: "Disclaimers, PayslipIQ",
+  description: "Master disclaimer + per-tool disclaimers for PayslipIQ. Educational only, not advice.",
   alternates: { canonical: '/disclaimer' },
 };
 

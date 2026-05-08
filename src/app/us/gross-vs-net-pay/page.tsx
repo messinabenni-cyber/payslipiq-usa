@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "Gross Pay vs Net Pay — What Is the Difference?",
+  title: "Gross Pay vs Net Pay, What Is the Difference?",
   description: "Gross pay vs net pay (take-home) explained. What goes in, what comes out, why net is much smaller. Educational only.",
   alternates: { canonical: '/us/gross-vs-net-pay' },
 };

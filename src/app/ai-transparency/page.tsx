@@ -21,7 +21,7 @@ export default function Page() {
         <h2>AI limits we openly acknowledge</h2>
         <ul><li>AI may misread non-standard pay stub formats.</li><li>AI may lag the most recent state-specific tax rule changes.</li><li>AI cannot replace a CPA, tax attorney, or HR/payroll team.</li></ul>
         <h2>Disclosure on every AI output</h2>
-        <p>Every AI output ends with: <em>Estimate only — not advice. AI may misread unusual pay stubs or lag recent rule changes. Always verify with your payroll department, a qualified CPA, the IRS, or your state tax authority.</em></p>
+        <p>Every AI output ends with: <em>Estimate only, not advice. AI may misread unusual pay stubs or lag recent rule changes. Always verify with your payroll department, a qualified CPA, the IRS, or your state tax authority.</em></p>
       </article>
       <div className="mt-12">
         <MasterDisclaimer variant="footer" />

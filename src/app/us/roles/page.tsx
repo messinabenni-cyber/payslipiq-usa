@@ -14,7 +14,7 @@ export default function Page() {
       <h1 className="text-4xl font-bold tracking-tight text-slate-900">Paycheck Guides by Worker Type</h1>
       <div className="mt-4"><MasterDisclaimer variant="long" /></div>
       <article className="mt-8 prose prose-slate max-w-none">
-        <p>Coming soon: dedicated pages for hourly, salaried, tipped, remote, multi-state, contractor, gig, teacher, nurse, military, federal, seasonal, and student workers. Until then, the <a href="/us/paycheck-calculator">paycheck calculator</a> handles all worker types — pick the pay frequency that matches yours.</p>
+        <p>Coming soon: dedicated pages for hourly, salaried, tipped, remote, multi-state, contractor, gig, teacher, nurse, military, federal, seasonal, and student workers. Until then, the <a href="/us/paycheck-calculator">paycheck calculator</a> handles all worker types, pick the pay frequency that matches yours.</p>
       </article>
       <div className="mt-12 rounded-lg border border-slate-200 bg-slate-50 p-6">
         <p className="text-sm font-semibold text-slate-900">Related tools</p>

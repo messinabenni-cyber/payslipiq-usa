@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "401(k) Deductions on Your Paycheck — Pre-tax vs Roth",
-  description: "How 401(k) deductions work: pre-tax vs Roth, employer match, contribution limits, vesting. Educational only — not investment advice.",
+  title: "401(k) Deductions on Your Paycheck, Pre-tax vs Roth",
+  description: "How 401(k) deductions work: pre-tax vs Roth, employer match, contribution limits, vesting. Educational only, not investment advice.",
   alternates: { canonical: '/us/401k-deductions' },
 };
 

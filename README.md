@@ -6,7 +6,7 @@ The plain-English paycheck intelligence platform for American workers.
 - Federal cluster: FICA, federal withholding, Social Security, Medicare, W-4, W-2, 401(k), benefits, bonus tax, pre/post-tax, gross/net.
 - Trust Center: trust, security, AI transparency, methodology, how it works, privacy (US), terms, disclaimer.
 - Real paycheck calculator (rule-based, unit-testable) at `src/lib/calc.ts`.
-- Educational only — not tax, legal, financial, or payroll advice.
+- Educational only, not tax, legal, financial, or payroll advice.
 
 ## Stack
 - Next.js 14 (App Router)

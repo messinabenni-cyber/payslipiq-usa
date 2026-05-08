@@ -37,7 +37,7 @@ export default function Page({ params }: PageProps) {
         <h2>The tax myth</h2>
         <p>Overtime is paid at a higher rate but taxed at the same rate as regular wages. A single big paycheck may be over-withheld because payroll annualizes it; that comes back at filing time.</p>
         <h2>Authoritative source</h2>
-        <p><a href="https://www.dol.gov/agencies/whd" target="_blank" rel="noopener noreferrer">US Department of Labor — Wage and Hour Division</a></p>
+        <p><a href="https://www.dol.gov/agencies/whd" target="_blank" rel="noopener noreferrer">US Department of Labor, Wage and Hour Division</a></p>
       </article>
       <div className="mt-10"><MasterDisclaimer variant="long" /></div>
     </main>

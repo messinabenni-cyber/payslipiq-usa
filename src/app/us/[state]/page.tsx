@@ -31,7 +31,7 @@ export default function Page({ params }: PageProps) {
       ? `${s.name} has no state income tax. Your paycheck only has federal tax (income tax + FICA) and any local taxes that apply.`
       : s.category === 'flat'
       ? `${s.name} uses a flat state income tax. Everyone pays the same percentage on taxable wages, regardless of income level.`
-      : `${s.name} uses progressive tax brackets — your withholding rate depends on your taxable wages, with higher portions of pay taxed at higher rates.`;
+      : `${s.name} uses progressive tax brackets, your withholding rate depends on your taxable wages, with higher portions of pay taxed at higher rates.`;
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
@@ -60,9 +60,9 @@ export default function Page({ params }: PageProps) {
 
       <section className="mt-12 prose prose-slate max-w-none">
         <h2>Why {s.name} paychecks look the way they do</h2>
-        <p>Every {s.name} worker pays federal income tax (withheld per IRS Publication 15-T using your W-4) and FICA — Social Security at 6.2% up to the annual wage base, plus Medicare at 1.45%, plus the Additional Medicare Tax of 0.9% on wages above $200,000 single / $250,000 married filing jointly.</p>
+        <p>Every {s.name} worker pays federal income tax (withheld per IRS Publication 15-T using your W-4) and FICA, Social Security at 6.2% up to the annual wage base, plus Medicare at 1.45%, plus the Additional Medicare Tax of 0.9% on wages above $200,000 single / $250,000 married filing jointly.</p>
         {s.category === 'no-income-tax' ? (
-          <p>{s.name} levies no state income tax — making the math simpler than progressive-bracket states.</p>
+          <p>{s.name} levies no state income tax, making the math simpler than progressive-bracket states.</p>
         ) : s.category === 'flat' ? (
           <p>{s.name}&apos;s state income tax is a single flat rate. Verify the current rate with the {s.taxAuthority}.</p>
         ) : (
@@ -76,8 +76,8 @@ export default function Page({ params }: PageProps) {
         <h2>Authoritative sources</h2>
         <ul>
           <li><a href={s.taxAuthorityUrl} target="_blank" rel="noopener noreferrer">{s.taxAuthority} ({s.taxAuthorityUrl})</a></li>
-          <li><a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS — federal income tax</a></li>
-          <li><a href="https://www.dol.gov/agencies/whd" target="_blank" rel="noopener noreferrer">US Department of Labor — Wage and Hour Division</a></li>
+          <li><a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS, federal income tax</a></li>
+          <li><a href="https://www.dol.gov/agencies/whd" target="_blank" rel="noopener noreferrer">US Department of Labor, Wage and Hour Division</a></li>
         </ul>
       </section>
 

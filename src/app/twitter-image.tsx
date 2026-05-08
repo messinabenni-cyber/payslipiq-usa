@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'PayslipIQ — paycheck intelligence for American workers';
+export const alt = 'PayslipIQ, paycheck intelligence for American workers';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -27,7 +27,7 @@ export default function OG() {
           Understand your paycheck with confidence.
         </div>
         <div style={{ fontSize: 28, opacity: 0.9, marginTop: 28, maxWidth: 900 }}>
-          Plain-English help for American workers — pay stubs, FICA, federal &amp; state withholding,
+          Plain-English help for American workers, pay stubs, FICA, federal &amp; state withholding,
           deductions, overtime, 401(k), take-home pay.
         </div>
       </div>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: "Paycheck Problems — Common Issues Explained (US)",
+  title: "Paycheck Problems, Common Issues Explained (US)",
   description: "Common US paycheck problems: lower than expected, overtime not paid, missing 401(k) match, wrong state tax. Educational only.",
   alternates: { canonical: '/us/problems' },
 };
