@@ -1,0 +1,69 @@
+# PayslipIQ USA
+
+> Free US pay stub calculator and payroll deductions explained for all 50 states. Generate accurate paycheck breakdowns including federal income tax, state tax, Social Security, Medicare, 401(k), and other deductions for hourly, salaried, contractor, gig worker, and federal employees.
+
+PayslipIQ is a free, instant US pay stub calculator and payroll education tool. We help workers understand exactly how their gross pay becomes net pay - showing every federal, state, FICA, and voluntary deduction line by line. No signup. No paywall. No data stored. Used by hourly workers, salaried employees, gig workers, contractors, federal employees, and HR professionals.
+
+## Core calculators
+
+- [Hourly Paycheck Calculator](https://payslipiq.com/us/hourly-paycheck-calculator): Calculate net pay for hourly workers including overtime
+- [Salary Paycheck Calculator](https://payslipiq.com/us/salary-paycheck-calculator): Convert gross salary to take-home pay
+- [Bonus Tax Paycheck Calculator](https://payslipiq.com/us/bonus-tax-paycheck): Calculate withholding on bonus payments (supplemental wage rate)
+- [Final Paycheck Rules](https://payslipiq.com/us/final-paycheck-rules): State-by-state final paycheck timing requirements
+
+## Tax & deductions explained
+
+- [Federal Tax Withholding](https://payslipiq.com/us/federal-tax-withholding): How federal income tax withholding works (W-4)
+- [FICA Explained](https://payslipiq.com/us/fica-explained): Social Security (6.2%) and Medicare (1.45%) breakdown
+- [Additional Medicare Tax](https://payslipiq.com/us/additional-medicare-tax): 0.9% surcharge over $200,000 single / $250,000 joint
+- [Deductions](https://payslipiq.com/us/deductions): Pre-tax vs post-tax deductions guide
+- [Health Insurance Deductions](https://payslipiq.com/us/health-insurance-deductions): How employer health premiums affect take-home pay
+- [HSA vs FSA](https://payslipiq.com/us/hsa-vs-fsa): Health savings vs flexible spending accounts
+- [HSA FSA Explained](https://payslipiq.com/us/hsa-fsa-explained): Tax advantages of pre-tax health accounts
+- [401(k) Deductions](https://payslipiq.com/us/401k-deductions): How 401(k) contributions reduce taxable income
+- [401(k) Contribution Limits](https://payslipiq.com/us/401k-contribution-limits): Annual contribution caps and catch-up rules
+
+## Worker types
+
+- [Contractor vs Employee Paycheck Guide](https://payslipiq.com/us/contractor-vs-employee-paycheck-guide): 1099 vs W-2 differences
+- [Gig Worker Paycheck Guide](https://payslipiq.com/us/gig-worker-paycheck-guide): Self-employment tax for Uber, DoorDash, Lyft drivers
+- [Hourly Worker Paycheck Calculator](https://payslipiq.com/us/hourly-worker-paycheck-calculator): For shift workers, retail, hospitality
+- [Federal Employee Paycheck Guide](https://payslipiq.com/us/federal-employee-paycheck-guide): GS scale, FERS, TSP for federal workers
+
+## Pay frequency
+
+- [Biweekly vs Semimonthly Pay](https://payslipiq.com/us/biweekly-vs-semimonthly-pay): 26 vs 24 pay periods explained
+- [Gross vs Net Pay](https://payslipiq.com/us/gross-vs-net-pay): The difference and why it matters
+
+## State-specific
+
+- [California Daily Overtime](https://payslipiq.com/us/california-daily-overtime): California 8-hour daily OT rule
+- [California SDI](https://payslipiq.com/us/california-sdi): State Disability Insurance contribution
+- [Local Taxes](https://payslipiq.com/us/local-taxes): City and county income taxes overview
+- [Detroit Tax](https://payslipiq.com/us/detroit-tax): Detroit city income tax
+
+## Tools & utilities
+
+- [Ask Payroll Generator](https://payslipiq.com/us/ask-payroll-generator): AI-powered Q&A on US payroll questions
+- [Learn](https://payslipiq.com/us/learn): Educational hub for payroll concepts
+
+## About
+
+- [About PayslipIQ](https://payslipiq.com/about): Mission and methodology
+- [How It Works](https://payslipiq.com/how-it-works): Calculator engine explained
+- [Methodology](https://payslipiq.com/methodology): Our calculation sources and formulas
+- [AI Transparency](https://payslipiq.com/ai-transparency): How AI is used in our tools
+- [Press](https://payslipiq.com/press): Press kit and media inquiries
+- [Contact](https://payslipiq.com/contact): Get in touch
+
+## Legal
+
+- [Privacy Policy](https://payslipiq.com/privacy): What data we don't collect
+- [Terms of Service](https://payslipiq.com/terms): Usage terms
+- [Disclaimer](https://payslipiq.com/disclaimer): Calculator accuracy and limitations
+- [Trust](https://payslipiq.com/trust): Our trust principles
+- [Security](https://payslipiq.com/security): Security practices
+
+## Optional
+
+- [Sister Site UK](https://payslipiq.co.uk): UK payslip calculator with HMRC tax codes, NI, pension auto-enrolment
