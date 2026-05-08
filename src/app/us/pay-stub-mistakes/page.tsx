@@ -1,29 +1,50 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { MasterDisclaimer } from '@/components/MasterDisclaimer';
+import { RichArticle } from '@/components/RichArticle';
 
 export const metadata: Metadata = {
-  title: "Common Pay Stub Mistakes, How to Spot Payroll Errors",
-  description: "Twelve common US payroll errors and how to spot them. Educational only, PayslipIQ does not adjudicate any specific employer.",
-  alternates: { canonical: '/us/pay-stub-mistakes' },
+  title: "Common Pay Stub Mistakes (US)",
+  description: "Twelve common payroll errors and how to spot them on a US pay stub. Educational only.",
+  alternates: { canonical: "/us/pay-stub-mistakes" },
 };
+
+const FAQS = [{"q": "Is my employer required to give me a pay stub?", "a": "Depends on the state. See your state's pay stub laws page. Federal FLSA requires recordkeeping but does not require you receive a stub."}, {"q": "Can I sue my employer over a pay stub mistake?", "a": "Maybe, depending on the violation and state law. Consult an employment attorney."}, {"q": "Will PayslipIQ contact my employer for me?", "a": "No. We help you understand the stub and draft polite messages. You contact your employer."}];
+const RELATED = [{"label": "Ask Payroll generator", "href": "/us/ask-payroll-generator"}, {"label": "Pay stub anatomy", "href": "/us/pay-stub-anatomy"}, {"label": "Wage garnishment", "href": "/us/wage-garnishment-explained"}];
+const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/learn"}, {"name": "Pay Stub Mistakes", "url": "/us/pay-stub-mistakes"}];
 
 export default function Page() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-4xl font-bold tracking-tight text-slate-900">Common Pay Stub Mistakes</h1>
-      <div className="mt-4"><MasterDisclaimer variant="long" /></div>
-      <article className="mt-8 prose prose-slate max-w-none">
-        <ol><li>Missing overtime on a non-exempt worker who exceeded 40 hours.</li><li>Wrong filing status applied (W-4 says single but withholding looks MFJ).</li><li>YTD mismatch with prior pay stub.</li><li>Pre-tax deduction not reducing taxable wages.</li><li>Doubled deduction in one period.</li><li>Missing 401(k) employer match per plan rules.</li><li>State tax withheld for a state you do not work in.</li><li>No FICA on a bonus.</li><li>Pay rate mismatch with offer letter.</li><li>PTO accrual disappearing without payout.</li><li>Wage garnishment without prior notice.</li><li>Final paycheck delayed past state deadline.</li></ol>
-      </article>
-      <div className="mt-12 rounded-lg border border-slate-200 bg-slate-50 p-6">
-        <p className="text-sm font-semibold text-slate-900">Related tools</p>
-        <ul className="mt-2 space-y-1 text-sm text-blue-700">
-          <li><Link href="/us/paycheck-calculator">Paycheck calculator →</Link></li>
-          <li><Link href="/us/pay-stub-checker">AI pay stub explainer →</Link></li>
-          <li><Link href="/us/learn">All paycheck topics →</Link></li>
-        </ul>
-      </div>
-    </main>
+    <RichArticle
+      title="Common Pay Stub Mistakes (US)"
+      url="/us/pay-stub-mistakes"
+      description="Twelve common payroll errors and how to spot them on a US pay stub. Educational only."
+      intro={<>Most payroll errors are software glitches or data-entry mistakes, not malice. Spot them early and most resolve quickly. Twelve patterns cover the majority of cases.</>}
+      body={<><h2>The twelve most common errors</h2>
+<ol>
+<li><strong>Missing overtime</strong> on a non-exempt worker who exceeded 40 hours.</li>
+<li><strong>Wrong filing status applied.</strong> W-4 says single but withholding looks MFJ, or vice versa.</li>
+<li><strong>YTD mismatch.</strong> YTD on this stub does not equal prior YTD plus current period.</li>
+<li><strong>Pre-tax deduction not reducing taxable wages.</strong> You contribute to traditional 401(k) but federal taxable wages match gross.</li>
+<li><strong>Doubled deduction.</strong> Health premium deducted twice in one period.</li>
+<li><strong>Missing 401(k) employer match</strong> per plan rules.</li>
+<li><strong>State tax for a state you do not work in.</strong> Common after a remote-work address change.</li>
+<li><strong>No FICA on bonus.</strong> Bonuses are FICA-taxable. Missing FICA on a supplemental check is a flag.</li>
+<li><strong>Pay rate mismatch.</strong> Hourly rate or salary does not match offer letter.</li>
+<li><strong>PTO accrual disappearing</strong> without a corresponding payout.</li>
+<li><strong>Wage garnishment without notice.</strong> Most states require notice before garnishment starts.</li>
+<li><strong>Final paycheck delayed.</strong> Many states require fast turnaround on terminations.</li>
+</ol>
+<h2>What to do if you spot one</h2>
+<ol>
+<li>Do not accuse. Most payroll errors are software or data-entry, not malice.</li>
+<li>Document. Save the pay stub PDF. Note the specific line and the discrepancy.</li>
+<li>Use the <a href="/us/ask-payroll-generator">Ask Payroll generator</a> to draft a polite, factual message.</li>
+<li>If unresolved within a reasonable time and wages are at stake, the US Department of Labor Wage and Hour Division accepts complaints. State labor departments also handle wage claims.</li>
+</ol>
+<h2>What PayslipIQ does and does not do</h2>
+<p>We help you spot patterns and frame the question. We do not adjudicate any specific employer's records. We do not contact your employer. We do not represent you in any dispute.</p></>}
+      faqs={FAQS}
+      related={RELATED}
+      breadcrumbs={BREADCRUMBS}
+    />
   );
 }
