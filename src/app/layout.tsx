@@ -12,7 +12,7 @@ export const viewport: Viewport = {
   themeColor: '#0f172a',
   width: 'device-width',
   initialScale: 1,
-  colorScheme: 'light',
+  // colorScheme removed so OS dark mode preference can take effect via globals.css.
 };
 
 export const metadata: Metadata = {
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     canonical: "/",
     languages: {
       'en-US': '/',
+      'es-US': '/es/',
       'x-default': '/',
     },
   },
@@ -40,11 +41,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: 'PayslipIQ',
     locale: 'en_US',
+    images: [{ url: '/api/og', width: 1200, height: 630, alt: 'PayslipIQ' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Understand Your Paycheck With Confidence, PayslipIQ",
     description: "Plain-English paycheck help for American workers.",
+    images: ['/api/og'],
   },
   robots: {
     index: true,
@@ -57,6 +60,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-US" className={inter.variable}>
+      <head>
+        <link rel="preconnect" href="https://va.vercel-scripts.com" />
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
+      </head>
       <body className="font-sans antialiased text-slate-900 bg-white">
         <a
           href="#main"
