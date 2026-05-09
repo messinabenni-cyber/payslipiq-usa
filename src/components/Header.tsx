@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 export function Header() {
   return (
@@ -15,13 +16,16 @@ export function Header() {
           <Link href="/us/learn" className="hover:text-slate-900">Learn</Link>
           <Link href="/trust" className="hover:text-slate-900">Trust</Link>
         </nav>
-        <Link
-          href="/us/pay-stub-checker"
-          className="hidden rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 md:inline-block"
-          data-cta="header_primary"
-        >
-          Check My Pay Stub →
-        </Link>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <Link
+            href="/us/pay-stub-checker"
+            className="hidden rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 md:inline-block"
+            data-cta="header_primary"
+          >
+            Check My Pay Stub
+          </Link>
+        </div>
       </div>
     </header>
   );
