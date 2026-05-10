@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Why Is My Bonus Taxed at 22 Percent?",
   description: "Bonus tax explained. The 22 percent is withholding, not the actual tax rate. Percentage method vs aggregate method. Educational only.",

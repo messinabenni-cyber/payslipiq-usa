@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Overtime Pay and Taxes (US)",
   description: "Overtime pay rules under federal FLSA, plus state daily-overtime overlays. The tax myth busted. Educational only.",

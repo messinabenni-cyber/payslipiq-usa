@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "401(k) Deductions on Your Paycheck",
   description: "How 401(k) deductions work: pre-tax, Roth, employer match, vesting, loans. FICA still applies. Educational only.",

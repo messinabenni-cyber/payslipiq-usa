@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Why Is My Paycheck Lower Than Expected?",
   description: "Common reasons US workers see less take-home: W-4 changes, mid-year benefits, FICA cap, supplemental withholding, garnishments. Educational only.",

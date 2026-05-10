@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Health Insurance Deductions on Your Paycheck",
   description: "Pre-tax health, dental, vision premiums under Section 125. HSA, FSA. How they show on a US pay stub. Educational only.",

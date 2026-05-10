@@ -6,7 +6,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 
 export const metadata: Metadata = {
-  title: 'Pay Stub Glossary (100+ terms) | PayslipIQ',
+  title: 'Pay Stub Glossary (100+ terms)',
   description: 'Every code, abbreviation, and acronym you might see on a US pay stub. 100+ terms, A to Z, plain English.',
   alternates: { canonical: 'https://payslipiq.com/us/glossary/' }
 };

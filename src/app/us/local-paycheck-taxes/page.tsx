@@ -7,6 +7,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 
+import { SoftwareApplicationLd, HowToLd } from '@/components/ToolSchemas';
 const PAGE_URL = 'https://payslipiq.com/us/local-paycheck-taxes/';
 
 export const metadata: Metadata = {
@@ -143,6 +144,8 @@ export default function Page() {
       </nav>
 
       <div className="mt-12">
+      <SoftwareApplicationLd url="https://payslipiq.com/us/local-paycheck-taxes/" name="PayslipIQ Local Tax Calculator" description="Free local-tax estimator covering NYC, Yonkers, Philadelphia, Detroit, Ohio RITA and CCA cities, Indiana and Maryland counties. Educational only." category="FinanceApplication" />
+      <HowToLd name="How to use the PayslipIQ Local Tax Calculator" description="Step-by-step guide to using the PayslipIQ Local Tax Calculator." steps={[ { name: "Enter your gross pay", text: "Type your per-period gross pay so the calculator can apply local rates." }, { name: "Select your locality", text: "Pick from NYC, Yonkers, Philadelphia, Detroit, Ohio RITA / CCA, Indiana and Maryland counties." }, { name: "Review the breakdown", text: "The calculator returns the local tax line in plain English with a one-line explanation." } ]} />
         <MasterDisclaimer variant="long" />
       </div>
     </main>

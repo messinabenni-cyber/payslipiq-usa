@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
-  title: 'Free Pay Stub Anatomy Guide | PayslipIQ',
+  title: 'Free Pay Stub Anatomy Guide',
   description: 'Free 12-page printable PDF that walks through every line on a US pay stub. Educational only.',
   alternates: { canonical: 'https://payslipiq.com/us/free-guide/' }
 };

@@ -7,6 +7,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { YearToDateChecker } from '@/components/YearToDateChecker';
 
+import { SoftwareApplicationLd, HowToLd } from '@/components/ToolSchemas';
 const PAGE_URL = 'https://payslipiq.com/us/year-to-date-paycheck-checker/';
 
 export const metadata: Metadata = {
@@ -118,6 +119,8 @@ export default function Page() {
       </nav>
 
       <div className="mt-12">
+      <SoftwareApplicationLd url="https://payslipiq.com/us/year-to-date-paycheck-checker/" name="PayslipIQ Year-to-Date Paycheck Checker" description="Check year-to-date wages, Social Security wage base progress, Additional Medicare trigger, 401(k) and HSA contribution caps. Educational only." category="FinanceApplication" />
+      <HowToLd name="How to use the PayslipIQ Year-to-Date Paycheck Checker" description="Step-by-step guide to using the PayslipIQ Year-to-Date Paycheck Checker." steps={[ { name: "Enter your YTD wages", text: "Pull the YTD gross figure off your most recent pay stub." }, { name: "Enter your YTD federal and FICA withholding", text: "These four lines are on every US pay stub." }, { name: "Pick your filing status", text: "Single, married filing jointly, married filing separately, or head of household." }, { name: "Review the analysis", text: "The checker flags Social Security wage base proximity, Additional Medicare trigger, and 401(k) cap progress." } ]} />
         <MasterDisclaimer variant="long" />
       </div>
     </main>

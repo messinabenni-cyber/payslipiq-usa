@@ -10,7 +10,7 @@ import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/gross-to-net-paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Gross to Net Paycheck Calculator (USA, 2026) | PayslipIQ',
+  title: 'Gross to Net Paycheck Calculator (USA, 2026)',
   description:
     'Convert any gross paycheck into estimated take-home pay. Federal income tax, Social Security, Medicare, and state tax for all 50 states + DC. Educational only, not advice.',
   alternates: {

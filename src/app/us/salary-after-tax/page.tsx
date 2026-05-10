@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Salary After Tax (US)",
   description: "Estimate take-home pay from an annual US salary. Federal, FICA, state, all 50 states. Educational only.",
