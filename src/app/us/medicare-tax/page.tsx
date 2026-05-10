@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Medicare Tax Explained",
   description: "Medicare tax: 1.45 percent on all wages, no cap. Plus 0.9 percent Additional Medicare for high earners. Funds Medicare Part A. Educational only.",

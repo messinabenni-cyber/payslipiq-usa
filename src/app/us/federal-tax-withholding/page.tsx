@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Federal Income Tax Withholding",
   description: "How federal income tax withholding works on a US paycheck. IRS Publication 15-T method, W-4 inputs, supplemental wages. Educational only.",

@@ -7,6 +7,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { HourlySalaryConverter } from '@/components/HourlySalaryConverter';
 
+import { SoftwareApplicationLd, HowToLd } from '@/components/ToolSchemas';
 const PAGE_URL = 'https://payslipiq.com/us/hourly-to-salary/';
 
 export const metadata: Metadata = {
@@ -132,6 +133,8 @@ export default function Page() {
       </nav>
 
       <div className="mt-12">
+      <SoftwareApplicationLd url="https://payslipiq.com/us/hourly-to-salary/" name="PayslipIQ Hourly to Salary Converter" description="Convert an hourly rate into an annual salary equivalent. All 50 states + DC. Educational only." category="FinanceApplication" />
+      <HowToLd name="How to use the PayslipIQ Hourly to Salary Converter" description="Step-by-step guide to using the PayslipIQ Hourly to Salary Converter." steps={[ { name: "Enter your hourly rate", text: "Type your hourly pay rate before any deductions." }, { name: "Enter your hours per week", text: "Standard is 40, overtime hours go in the overtime field." }, { name: "Pick your state", text: "State income tax varies. Nine states have none." }, { name: "Read the annual equivalent", text: "The calculator shows the projected gross annual salary and estimated take-home." } ]} />
         <MasterDisclaimer variant="long" />
       </div>
     </main>

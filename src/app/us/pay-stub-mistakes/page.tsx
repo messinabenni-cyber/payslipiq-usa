@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Common Pay Stub Mistakes (US)",
   description: "Twelve common payroll errors and how to spot them on a US pay stub. Educational only.",

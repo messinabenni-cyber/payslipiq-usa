@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 
 export const metadata: Metadata = {
-  title: 'Why PayslipIQ? | PayslipIQ',
+  title: 'Why PayslipIQ?',
   description: 'How PayslipIQ compares to SmartAsset, NerdWallet, ADP, and a CPA. Worker-first, plain-English, educational only.',
   alternates: { canonical: 'https://payslipiq.com/us/why-payslipiq/' }
 };

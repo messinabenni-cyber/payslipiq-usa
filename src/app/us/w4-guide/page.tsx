@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "W-4 Guide (How to Fill Out a W-4)",
   description: "Step-by-step W-4 guide. Filing status, multiple jobs, dependents, deductions, extra withholding. Educational only.",

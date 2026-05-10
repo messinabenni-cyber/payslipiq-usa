@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Social Security Tax (OASDI) Explained",
   description: "Social Security tax: 6.2 percent of wages up to the annual wage base. Funds OASDI. Stops once you cross the cap. Educational only.",
