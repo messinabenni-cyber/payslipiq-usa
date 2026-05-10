@@ -5,6 +5,7 @@ import { ArticleSchema } from './ArticleSchema';
 import { BreadcrumbSchema } from './BreadcrumbSchema';
 import { FAQSchema, type FAQItem } from './FAQSchema';
 
+import { ReviewedBy } from './ReviewedBy';
 export interface RelatedLink { label: string; href: string; }
 
 interface Props {
@@ -34,6 +35,7 @@ export function RichArticle({
 }: Props) {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
+      <ReviewedBy />
       <ArticleSchema headline={title} description={description} url={`https://payslipiq.com${url}`} />
       {breadcrumbs && breadcrumbs.length > 0 ? <BreadcrumbSchema items={breadcrumbs} /> : null}
 
