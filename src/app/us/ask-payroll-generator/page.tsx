@@ -1,13 +1,45 @@
-'use client';
-
-import { useMemo, useState } from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
+import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
+import { AskPayrollClient } from '@/components/AskPayrollClient';
 
 const PAGE_URL = 'https://payslipiq.com/us/ask-payroll-generator/';
+
+export const metadata: Metadata = {
+  title: 'Ask Payroll, Message Generator (US) · Free, Client-Side',
+  description:
+    'A free, client-side generator that drafts a polite, factual message to your HR or payroll team about a paycheck question. PayslipIQ does not send the message. Educational only.',
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'es-US': 'https://payslipiq.com/es/',
+      'x-default': PAGE_URL
+    }
+  },
+  openGraph: {
+    title: 'Ask Payroll, Message Generator (US)',
+    description: 'Draft a polite, factual paycheck question for HR or payroll. Client-side only. Educational.',
+    url: PAGE_URL,
+    type: 'website',
+    images: [
+      {
+        url: 'https://payslipiq.com/api/og?title=Ask%20Payroll%20Generator&eyebrow=USA%20%C2%B7%20Free%20%C2%B7%20Client-side',
+        width: 1200,
+        height: 630
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ask Payroll, Message Generator (US)',
+    description: 'Draft a polite paycheck question for HR or payroll. Client-side only.'
+  }
+};
 
 const FAQS = [
   {
@@ -38,26 +70,6 @@ const BREADCRUMBS = [
   { name: 'Ask Payroll Generator', url: PAGE_URL }
 ];
 
-function ArticleLd() {
-  const json = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Ask Payroll, Message Generator (US)',
-    description: 'A free client-side generator that drafts a polite, factual message to HR or payroll about a paycheck question.',
-    datePublished: '2026-05-10',
-    dateModified: '2026-05-10',
-    mainEntityOfPage: PAGE_URL,
-    author: { '@type': 'Organization', name: 'PayslipIQ' }
-  };
-  return (
-    <script
-      type="application/ld+json"
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
-    />
-  );
-}
-
 function SoftwareApplicationLd() {
   const json = {
     '@context': 'https://schema.org',
@@ -80,45 +92,12 @@ function SoftwareApplicationLd() {
 }
 
 export default function AskPayrollGeneratorPage() {
-  const [name, setName] = useState('');
-  const [empId, setEmpId] = useState('');
-  const [period, setPeriod] = useState('');
-  const [topic, setTopic] = useState('Federal withholding');
-  const [detail, setDetail] = useState('');
-  const [copied, setCopied] = useState(false);
-
-  const draft = useMemo(() => {
-    const greeting = 'Hi Payroll team,';
-    const opener =
-      name && empId
-        ? `My name is ${name} (Employee ID ${empId}).`
-        : name
-          ? `My name is ${name}.`
-          : 'Hello.';
-    const periodLine = period ? `I am writing about my paycheck for the period ${period}.` : 'I am writing about a recent paycheck.';
-    const body = `On that pay stub I noticed that the ${topic.toLowerCase()} line ${detail ? 'shows ' + detail : 'looks different from what I expected'}.`;
-    const ask = 'Could you confirm whether this is correct, and let me know what is driving the figure?';
-    const closing = "I appreciate your help. I'm not raising a formal dispute — just trying to understand the calculation. Happy to share the stub if useful.";
-    const sign = 'Thank you,\n' + (name || '[Your name]');
-    return [greeting, opener, periodLine, body, ask, closing, sign].join('\n\n');
-  }, [name, empId, period, topic, detail]);
-
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(draft);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
-    } catch {
-      // ignore — user can select+copy manually
-    }
-  };
-
   return (
     <>
-      <ArticleLd />
-      <SoftwareApplicationLd />
+      <ArticleSchema headline="Ask Payroll, Message Generator (US)" description="A free client-side generator that drafts a polite, factual message to HR or payroll about a paycheck question." url={PAGE_URL} />
       <BreadcrumbSchema items={BREADCRUMBS} />
       <FAQSchema items={FAQS} />
+      <SoftwareApplicationLd />
 
       <main id="main" className="mx-auto max-w-4xl px-4 py-10">
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
@@ -141,99 +120,7 @@ export default function AskPayrollGeneratorPage() {
 
         <ReviewedBy />
 
-        <section className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="rounded-lg border border-slate-200 dark:border-slate-700 p-5">
-            <h2 className="font-medium mb-4">Your details</h2>
-            <div className="space-y-3 text-sm">
-              <label className="block">
-                <span className="block text-slate-600 dark:text-slate-300">Your name</span>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="mt-1 w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2"
-                  placeholder="e.g. Jordan Lee"
-                />
-              </label>
-              <label className="block">
-                <span className="block text-slate-600 dark:text-slate-300">Employee ID (optional)</span>
-                <input
-                  type="text"
-                  value={empId}
-                  onChange={(e) => setEmpId(e.target.value)}
-                  className="mt-1 w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2"
-                  placeholder="e.g. 12345"
-                />
-              </label>
-              <label className="block">
-                <span className="block text-slate-600 dark:text-slate-300">Pay period</span>
-                <input
-                  type="text"
-                  value={period}
-                  onChange={(e) => setPeriod(e.target.value)}
-                  className="mt-1 w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2"
-                  placeholder="e.g. April 16–30"
-                />
-              </label>
-              <label className="block">
-                <span className="block text-slate-600 dark:text-slate-300">Topic</span>
-                <select
-                  value={topic}
-                  onChange={(e) => setTopic(e.target.value)}
-                  className="mt-1 w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2"
-                >
-                  <option>Federal withholding</option>
-                  <option>State withholding</option>
-                  <option>Local tax</option>
-                  <option>Social Security</option>
-                  <option>Medicare</option>
-                  <option>Pre-tax 401(k)</option>
-                  <option>Roth 401(k)</option>
-                  <option>HSA / FSA</option>
-                  <option>Health insurance premium</option>
-                  <option>Overtime</option>
-                  <option>Bonus / supplemental wages</option>
-                  <option>Garnishment</option>
-                  <option>Reimbursement / expense</option>
-                  <option>YTD totals</option>
-                  <option>Net pay</option>
-                </select>
-              </label>
-              <label className="block">
-                <span className="block text-slate-600 dark:text-slate-300">What did you notice? (optional)</span>
-                <textarea
-                  rows={3}
-                  value={detail}
-                  onChange={(e) => setDetail(e.target.value)}
-                  className="mt-1 w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2"
-                  placeholder="e.g. an amount about $40 higher than last period"
-                />
-              </label>
-              <p className="text-xs text-slate-500">
-                Do not include your SSN, bank account number, or full address. Use your employee ID instead.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-lg border border-slate-200 dark:border-slate-700 p-5">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="font-medium">Draft message</h2>
-              <button
-                type="button"
-                onClick={copy}
-                className="text-sm rounded-md border border-slate-300 dark:border-slate-600 px-3 py-1 hover:bg-slate-50 dark:hover:bg-slate-800"
-              >
-                {copied ? 'Copied' : 'Copy to clipboard'}
-              </button>
-            </div>
-            <pre className="whitespace-pre-wrap text-sm bg-slate-50 dark:bg-slate-900 rounded-md p-4 border border-slate-200 dark:border-slate-700">
-{draft}
-            </pre>
-            <p className="mt-3 text-xs text-slate-500">
-              Review the message yourself before sending. PayslipIQ does not contact your employer.
-            </p>
-          </div>
-        </section>
+        <AskPayrollClient />
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">When to use this</h2>
@@ -254,40 +141,6 @@ export default function AskPayrollGeneratorPage() {
             employment attorney for labor matters, your state Department of Labor for wage claims.
             This generator is a writing aid only.
           </p>
-        </section>
-
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold tracking-tight mb-6">Frequently asked</h2>
-          <dl className="space-y-6">
-            {FAQS.map((f) => (
-              <div key={f.q}>
-                <dt className="font-medium">{f.q}</dt>
-                <dd className="mt-1 text-slate-700 dark:text-slate-300">{f.a}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
-              <div className="font-medium">Paycheck Calculator</div>
-              <div className="text-sm text-slate-500">Estimate the figure you would expect, then verify with payroll.</div>
-            </Link>
-            <Link href="/us/pay-stub-checker/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
-              <div className="font-medium">Pay Stub Checker</div>
-              <div className="text-sm text-slate-500">Plain-English walkthrough of every line on a pay stub.</div>
-            </Link>
-            <Link href="/us/why-is-my-paycheck-lower/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
-              <div className="font-medium">Why is my paycheck lower?</div>
-              <div className="text-sm text-slate-500">Common reasons take-home pay drops.</div>
-            </Link>
-            <Link href="/us/pay-stub-mistakes/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
-              <div className="font-medium">Pay Stub Mistakes</div>
-              <div className="text-sm text-slate-500">Twelve common payroll errors and how to spot them.</div>
-            </Link>
-          </div>
         </section>
 
         <section className="mt-12">
