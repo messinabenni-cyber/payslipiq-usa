@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { STATES, getStateBySlug } from '@/lib/states';
 import { getStateNarrative } from '@/lib/stateNarratives';
+import { computePaycheck, formatUSD } from '@/lib/calc';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
@@ -38,16 +39,26 @@ export default function Page({ params }: PageProps) {
       ? `${s.name} uses a flat state income tax. Everyone pays the same percentage on taxable wages, regardless of income.`
       : `${s.name} uses progressive tax brackets. Higher portions of pay are taxed at higher rates.`;
 
+  // 2026-05-16: example table now generated from the same engine the live calculator
+  // uses (computePaycheck in src/lib/calc.ts), not hand-keyed. Previous version
+  // used `biweekly * 0.10` for federal which produced a ~$250 figure for $65k single
+  // (effectively 10% effective tax — wrong; real Pub 15-T result is ~$280). Also
+  // used `$${n.toFixed(2)}` which dropped thousands separators ($2500.00 instead
+  // of $2,500.00). Both bugs fixed by routing through computePaycheck + formatUSD.
   const exampleSalary = 65000;
-  const biweekly = exampleSalary / 26;
-  const ssTax = biweekly * 0.062;
-  const medTax = biweekly * 0.0145;
-  const fedTax = biweekly * 0.10;
-  let stateTax = 0;
-  if (s.category === 'flat' && s.taxRate) stateTax = biweekly * s.taxRate;
-  else if (s.category === 'progressive') stateTax = biweekly * 0.045;
-  const net = biweekly - ssTax - medTax - fedTax - stateTax;
-  const fmt = (n: number) => `$${n.toFixed(2)}`;
+  const example = computePaycheck({
+    grossPerPeriod: exampleSalary / 26,
+    freq: 'biweekly',
+    stateSlug: s.slug,
+    filing: 'single',
+  });
+  const biweekly = example.grossPerPeriod;
+  const fedTax = example.federalTaxPerPeriod;
+  const ssTax = example.fica.socialSecurity / 26;
+  const medTax = example.fica.medicare / 26;
+  const stateTax = example.stateTaxPerPeriod;
+  const net = example.netPerPeriod;
+  const fmt = (n: number) => formatUSD(n);
 
   const stateFaqs = [
     {

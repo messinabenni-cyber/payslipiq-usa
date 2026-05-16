@@ -5,7 +5,7 @@ import { STATE_BY_SLUG, type StateData } from './states';
 
 export const FED_RATES = {
   socialSecurity: 0.062,
-  socialSecurityWageBase: 168600, // verify annually with SSA
+  socialSecurityWageBase: 184500, // SSA 2026 Contribution and Benefit Base (verified 2026-05-16; up from $176,100 in 2025)
   medicare: 0.0145,
   additionalMedicare: 0.009,
   additionalMedicareThresholdSingle: 200000,
