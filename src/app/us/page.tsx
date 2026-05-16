@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 
-const PAGE_URL = 'https://payslipiq.com/us/';
+const PAGE_URL = 'https://payslipiq.com/us';
 
 export const metadata: Metadata = {
   title: 'PayslipIQ USA · Pay Stub Help, Paycheck Calculators, State Guides',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/',
+      'es-US': 'https://payslipiq.com/es',
       'x-default': PAGE_URL
     }
   },
