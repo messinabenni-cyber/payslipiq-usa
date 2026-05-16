@@ -4,6 +4,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
+import { FinancialProductSchema } from '@/components/FinancialProductSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
@@ -142,6 +143,13 @@ export default function PaycheckCalculatorPage() {
       <FAQSchema items={FAQS} />
       <SoftwareApplicationLd />
       <HowToLd />
+      {/* 2026-05-16: FinancialProduct schema signals this is a financial tool, not just an article. Improves AI-search / rich-result eligibility. */}
+      <FinancialProductSchema
+        name="PayslipIQ US Paycheck Calculator"
+        description="Free 2026 US paycheck calculator. Federal income tax (IRS Pub 15-T 2026), FICA, state tax for all 50 states + DC, plus state worker contributions (SDI, PFL, PFML, FAMLI, TDI)."
+        url={PAGE_URL}
+        category="Paycheck estimator"
+      />
 
       <main id="main" className="mx-auto max-w-4xl px-4 py-10">
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
