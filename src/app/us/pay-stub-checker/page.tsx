@@ -5,6 +5,7 @@ import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
+import { EmailCapture } from '@/components/EmailCapture';
 
 const PAGE_URL = 'https://payslipiq.com/us/pay-stub-checker';
 
@@ -195,19 +196,25 @@ export default function PayStubCheckerPage() {
             fallback below — same line-by-line breakdown, same methodology.
           </p>
 
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="mt-4">
             <Link
               href="/us/paycheck-calculator/"
               className="inline-flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-slate-700"
             >
-              Use the Paycheck Calculator
+              Use the Paycheck Calculator (free, works today)
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:border-slate-600"
-            >
-              Request beta access
-            </Link>
+          </div>
+
+          {/* 2026-05-16: inline waitlist replaces the "Request beta access → /contact" dead-end CTA. */}
+          <div className="mt-4">
+            <EmailCapture
+              source="ai-pay-stub-checker"
+              variant="waitlist"
+              waitlistId="ai-pay-stub-checker"
+              headline="Get notified when the AI Pay Stub Checker opens"
+              subheadline="The uploader is in private beta. Drop your email (and optionally your state) and we will notify you the day it opens. No spam, unsubscribe any time."
+              cta="Notify me"
+            />
           </div>
         </section>
 

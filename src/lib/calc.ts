@@ -12,6 +12,71 @@ export const FED_RATES = {
   additionalMedicareThresholdMFJ: 250000,
 };
 
+// 2026-05-16: state worker contributions (SDI / PFL / PFML / FAMLI / TDI).
+// Audit found state /paycheck-calculator pages omitted these lines despite
+// state hub copy promising they appear on every paycheck (e.g. CA SDI).
+// Primary-sourced; verified 2026-05-16 against state DOL releases.
+export interface StateWorkerContribLine {
+  label: string;       // e.g. "CA SDI", "NY PFL"
+  rate?: number;       // % of wages (decimal) if rate-based
+  annual?: number;     // flat annual $ if flat (e.g. NY SDI $31.20/yr)
+  annualCap?: number;  // max annual $ withheld if rate-based with cap
+  note?: string;       // source / explanation
+}
+
+const STATE_WORKER_CONTRIBUTIONS_2026: Record<string, StateWorkerContribLine[]> = {
+  california: [
+    { label: 'CA SDI', rate: 0.013, note: 'CA EDD 2026 (SB 951 removed wage cap effective 2024-01-01)' },
+  ],
+  'new-york': [
+    { label: 'NY SDI', annual: 31.20, note: 'NY DBL statutory 0.5% capped at $0.60/wk = $31.20/yr' },
+    { label: 'NY PFL', rate: 0.00432, annualCap: 411.91, note: 'NY PFL 2026 (paidfamilyleave.ny.gov/2026)' },
+  ],
+  'new-jersey': [
+    { label: 'NJ SDI', rate: 0.0023, annualCap: 393.53, note: 'NJ DOL 2026' },
+    { label: 'NJ FLI', rate: 0.0019, annualCap: 325.09, note: 'NJ DOL 2026' },
+  ],
+  massachusetts: [
+    { label: 'MA PFML', rate: 0.0046, annualCap: 184500 * 0.0046, note: 'MA DFML 2026, employers 25+; 0.28% medical + 0.18% family' },
+  ],
+  oregon: [
+    { label: 'OR Paid Leave', rate: 0.006, annualCap: 184500 * 0.006, note: 'Paid Leave Oregon 2026, employee share 60% of 1.0%' },
+  ],
+  washington: [
+    { label: 'WA PFML', rate: 0.00807, annualCap: 184500 * 0.00807, note: 'WA Paid Leave 2026, employee ~71.43% of 1.13% premium' },
+    { label: 'WA Cares', rate: 0.0058, note: 'WA Cares Fund 2026 (no wage cap)' },
+  ],
+  'rhode-island': [
+    { label: 'RI TDI', rate: 0.011, annualCap: 1100, note: 'RI DLT 2026' },
+  ],
+  colorado: [
+    { label: 'CO FAMLI', rate: 0.0044, annualCap: 184500 * 0.0044, note: 'CO FAMLI 2026, employee 50% of 0.88%' },
+  ],
+  hawaii: [
+    { label: 'HI TDI', rate: 0.005, annualCap: 7.50 * 52, note: 'HI DLIR 2026; capped at $7.50/wk' },
+  ],
+};
+
+/**
+ * Compute the state worker contribution line items for a given state + annual gross.
+ * Returns one entry per applicable contribution (CA has 1, NJ has 2, NY has 2 etc).
+ * Returns [] for states with no employee-paid worker contribution.
+ */
+export function stateWorkerContributions(annualGross: number, stateSlug: string): Array<{ label: string; annual: number; note?: string }> {
+  const defs = STATE_WORKER_CONTRIBUTIONS_2026[stateSlug];
+  if (!defs) return [];
+  return defs.map((d) => {
+    let annual = 0;
+    if (typeof d.annual === 'number') {
+      annual = d.annual;
+    } else if (typeof d.rate === 'number') {
+      annual = annualGross * d.rate;
+      if (typeof d.annualCap === 'number') annual = Math.min(annual, d.annualCap);
+    }
+    return { label: d.label, annual: round2(annual), note: d.note };
+  });
+}
+
 export type FilingStatus = 'single' | 'mfj' | 'mfs' | 'hoh';
 export type PayFrequency = 'weekly' | 'biweekly' | 'semimonthly' | 'monthly' | 'annual';
 
@@ -127,6 +192,10 @@ export interface PaycheckResult {
   ficaPerPeriod: number;
   stateTaxAnnual: number;
   stateTaxPerPeriod: number;
+  /** State worker contributions (SDI / PFL / FAMLI / PFML / TDI) per-period. Empty array if state has none. */
+  stateWorkerContribsPerPeriod: Array<{ label: string; amount: number; note?: string }>;
+  /** Sum of all state worker contributions per-period. */
+  stateWorkerContribsTotalPerPeriod: number;
   preTaxDeductionsPerPeriod: number;
   postTaxDeductionsPerPeriod: number;
   netPerPeriod: number;
@@ -160,7 +229,20 @@ export function computePaycheck(input: {
   const stateTaxPerPeriod = stateTaxAnnual / periods;
   const ficaPerPeriod = ficaCalc.total / periods;
 
-  const netPerPeriod = grossPerPeriod - preTaxPP - postTaxPP - federalTaxPerPeriod - stateTaxPerPeriod - ficaPerPeriod;
+  // 2026-05-16: state worker contributions (CA SDI, NY SDI+PFL, NJ SDI+FLI,
+  // MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI).
+  // Subtract from net so the take-home figure matches what the worker actually receives.
+  const workerContribsAnnual = stateWorkerContributions(grossAnnual, stateSlug);
+  const stateWorkerContribsPerPeriod = workerContribsAnnual.map((w) => ({
+    label: w.label,
+    amount: round2(w.annual / periods),
+    note: w.note,
+  }));
+  const stateWorkerContribsTotalPerPeriod = round2(
+    stateWorkerContribsPerPeriod.reduce((s, w) => s + w.amount, 0)
+  );
+
+  const netPerPeriod = grossPerPeriod - preTaxPP - postTaxPP - federalTaxPerPeriod - stateTaxPerPeriod - ficaPerPeriod - stateWorkerContribsTotalPerPeriod;
 
   return {
     grossAnnual: round2(grossAnnual),
@@ -174,6 +256,8 @@ export function computePaycheck(input: {
     ficaPerPeriod: round2(ficaPerPeriod),
     stateTaxAnnual: round2(stateTaxAnnual),
     stateTaxPerPeriod: round2(stateTaxPerPeriod),
+    stateWorkerContribsPerPeriod,
+    stateWorkerContribsTotalPerPeriod,
     preTaxDeductionsPerPeriod: round2(preTaxPP),
     postTaxDeductionsPerPeriod: round2(postTaxPP),
     netPerPeriod: round2(netPerPeriod),
