@@ -5,7 +5,9 @@ import { useMemo, useState } from 'react';
 // Educational only. Not advice. Verified 2026-05-06.
 // Sources:
 //   NYC: NY Department of Taxation and Finance (resident income tax)
-//   Yonkers: NYS DTF (1.95975% resident surcharge of NYS tax)
+//   Yonkers: NYS DTF (16.75% surcharge of NYS personal income tax liability — see NYS Pub NYS-50-T-Y).
+//           Approximated as ~1% flat-of-wages for this estimator (mid-income worker), since the true
+//           surcharge is "16.75% × NYS tax", not "% of wages". Use the dedicated Yonkers calc for exact form.
 //   PA EIT: PA DCED, Local Earned Income Tax (Act 32) - varies by municipality
 //   Ohio: Ohio Department of Taxation, RITA / CCA local tax registers
 //   Maryland: Comptroller of MD, county income tax piggyback rates
@@ -41,7 +43,7 @@ interface Locality {
 const LOCALITIES: Locality[] = [
   { id: 'none',       label: 'No local tax',                   rate: 0,        inputRate: false, notes: '' },
   { id: 'nyc',        label: 'New York City resident',          rate: 0.03876,  inputRate: false, notes: 'NYC resident income tax (top marginal). Nonresidents who work in NYC do not pay this.' },
-  { id: 'yonkers',    label: 'Yonkers (NY) resident',           rate: 0.0196,   inputRate: false, notes: '1.96% surcharge on NYS personal income tax. This calculator approximates as a flat percentage of taxable wages.' },
+  { id: 'yonkers',    label: 'Yonkers (NY) resident',           rate: 0.01,     inputRate: true,  notes: 'The true Yonkers resident surcharge is 16.75% of your NYS personal income tax liability (NYS Pub NYS-50-T-Y). For a mid-income worker that works out to roughly 1% of taxable wages, which is what we use here. Override the rate above with your exact figure if your NYS effective rate is materially different.' },
   { id: 'paeit',      label: 'PA EIT municipality',             rate: 0.01,     inputRate: true,  notes: 'PA Earned Income Tax under Act 32. Rate varies by municipality and school district (commonly 1-3.5%). Enter your actual EIT rate.' },
   { id: 'oh-rita',    label: 'Ohio RITA / CCA city',            rate: 0.025,    inputRate: true,  notes: 'Ohio municipal income tax via RITA or CCA. Rates commonly 1-3%. Enter your city rate.' },
   { id: 'md-county',  label: 'Maryland county piggyback',       rate: 0.0275,   inputRate: true,  notes: 'MD county income tax piggyback (2.25-3.2% range). Defaults to mid-range; enter actual.' },

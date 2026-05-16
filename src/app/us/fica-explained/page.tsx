@@ -23,7 +23,7 @@ export default function Page() {
 <p>Federal Insurance Contributions Act. The 1935 law that created the federal payroll tax funding two big retirement and health programs. The acronym shows up on most pay stubs either as a single FICA line or as two separate lines: Social Security and Medicare.</p>
 <h2>The two halves</h2>
 <h3>Social Security (OASDI)</h3>
-<p>6.2 percent of wages, capped each calendar year at the Social Security wage base. The 2024 wage base was $168,600. The base is set annually by the SSA and indexed to inflation. Once your year-to-date wages cross the base, Social Security tax stops for the rest of the year. It resets January 1.</p>
+<p>6.2 percent of wages, capped each calendar year at the Social Security wage base. The 2026 wage base is $184,500 (up from $176,100 in 2025 and $168,600 in 2024). The base is set annually by the SSA and indexed to inflation. Once your year-to-date wages cross the base, Social Security tax stops for the rest of the year. It resets January 1.</p>
 <p>Funds: retirement benefits, disability benefits, survivor benefits. Old Age, Survivors, and Disability Insurance (OASDI).</p>
 <h3>Medicare (HI)</h3>
 <p>1.45 percent on all wages, no cap. Plus an Additional Medicare Tax of 0.9 percent on wages above $200,000 single or $250,000 married filing jointly. The 0.9 percent is employee-only, no employer match.</p>

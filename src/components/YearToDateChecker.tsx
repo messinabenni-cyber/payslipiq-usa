@@ -1,6 +1,14 @@
 'use client';
 import { useMemo, useState } from 'react';
 
+// 2026-05-16: render whole-dollar projections with thousands separators.
+// Audit found "$94545", "$13000", "$5862" etc on this page. fmt0() wraps
+// Intl.NumberFormat so every dollar value renders as "$94,545" / "$13,000".
+const fmt0 = (n: number): string =>
+  Number.isFinite(n)
+    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
+    : '—';
+
 // PayslipIQ USA - Year-to-Date Paycheck Checker
 // Educational only. Not advice. Tax year 2026.
 // Projects year-end gross/net, flags Social Security wage base, Additional Medicare 0.9%,
@@ -172,19 +180,19 @@ export function YearToDateChecker() {
         <div className="bg-white border border-line rounded-md p-5">
           <h3 className="font-semibold mb-4 text-[15px]">Year-end projection</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
-            <Stat label="Projected annual gross" value={`$${result.projectedAnnualGross.toFixed(0)}`} />
-            <Stat label="Projected take-home" value={`$${result.projectedNet.toFixed(0)}`} />
+            <Stat label="Projected annual gross" value={fmt0(result.projectedAnnualGross)} />
+            <Stat label="Projected take-home" value={fmt0(result.projectedNet)} />
             <Stat label="Effective tax rate" value={`${(result.effectiveTax * 100).toFixed(1)}%`} />
           </div>
           <table className="w-full text-sm mt-5">
             <tbody>
-              <tr><td className="py-1 text-ink/70">Projected federal income tax</td><td className="text-right tabular-nums">${result.projectedFed.toFixed(0)}</td></tr>
-              <tr><td className="py-1 text-ink/70">Projected Social Security</td><td className="text-right tabular-nums">${result.projectedSS.toFixed(0)}</td></tr>
-              <tr><td className="py-1 text-ink/70">Projected Medicare {result.projectedAddMedicare > 0 ? '+ Additional Medicare' : ''}</td><td className="text-right tabular-nums">${result.projectedMedicare.toFixed(0)}</td></tr>
-              <tr><td className="py-1 text-ink/70">Projected state tax</td><td className="text-right tabular-nums">${result.projectedState.toFixed(0)}</td></tr>
-              <tr><td className="py-1 text-ink/70">Projected 401(k) traditional</td><td className="text-right tabular-nums">${result.projected401k.toFixed(0)}</td></tr>
-              <tr><td className="py-1 text-ink/70">Projected HSA</td><td className="text-right tabular-nums">${result.projectedHsa.toFixed(0)}</td></tr>
-              <tr className="font-semibold border-t border-line"><td className="py-2">Expected W-2 Box 1</td><td className="text-right tabular-nums">${result.projectedW2Box1.toFixed(0)}</td></tr>
+              <tr><td className="py-1 text-ink/70">Projected federal income tax</td><td className="text-right tabular-nums">{fmt0(result.projectedFed)}</td></tr>
+              <tr><td className="py-1 text-ink/70">Projected Social Security</td><td className="text-right tabular-nums">{fmt0(result.projectedSS)}</td></tr>
+              <tr><td className="py-1 text-ink/70">Projected Medicare {result.projectedAddMedicare > 0 ? '+ Additional Medicare' : ''}</td><td className="text-right tabular-nums">{fmt0(result.projectedMedicare)}</td></tr>
+              <tr><td className="py-1 text-ink/70">Projected state tax</td><td className="text-right tabular-nums">{fmt0(result.projectedState)}</td></tr>
+              <tr><td className="py-1 text-ink/70">Projected 401(k) traditional</td><td className="text-right tabular-nums">{fmt0(result.projected401k)}</td></tr>
+              <tr><td className="py-1 text-ink/70">Projected HSA</td><td className="text-right tabular-nums">{fmt0(result.projectedHsa)}</td></tr>
+              <tr className="font-semibold border-t border-line"><td className="py-2">Expected W-2 Box 1</td><td className="text-right tabular-nums">{fmt0(result.projectedW2Box1)}</td></tr>
             </tbody>
           </table>
         </div>
@@ -194,23 +202,23 @@ export function YearToDateChecker() {
           <FlagRow
             ok={!result.ssWillCap}
             okLabel="You will not hit the Social Security wage base ($184,500 in 2026)."
-            warnLabel={`You are projected to hit the SS wage base. After ~$${result.ssRemainingCap.toFixed(0)} more in wages (about ${result.periodsUntilSsCap ?? 'n/a'} more periods), the 6.2% Social Security line will stop.`}
+            warnLabel={`You are projected to hit the SS wage base. After ~${fmt0(result.ssRemainingCap)} more in wages (about ${result.periodsUntilSsCap ?? 'n/a'} more periods), the 6.2% Social Security line will stop.`}
           />
           <FlagRow
             ok={!result.addMedWillTrigger}
             okLabel="You will not trigger the Additional 0.9% Medicare tax."
-            warnLabel={`You are projected to exceed $${result.addMedThreshold.toLocaleString()}. Additional 0.9% Medicare will apply on the excess (~$${result.projectedAddMedicare.toFixed(0)} extra). Your employer is required to start withholding the extra 0.9% on wages above $200,000 regardless of filing status.`}
+            warnLabel={`You are projected to exceed $${result.addMedThreshold.toLocaleString()}. Additional 0.9% Medicare will apply on the excess (~${fmt0(result.projectedAddMedicare)} extra). Your employer is required to start withholding the extra 0.9% on wages above $200,000 regardless of filing status.`}
           />
           <FlagRow
             ok={!result.k401WillCap}
             okLabel={`You are within the 401(k) elective deferral limit ($${result.limit401k.toLocaleString()}).`}
-            warnLabel={`You are projected to hit the 401(k) elective deferral limit ($${result.limit401k.toLocaleString()}). Consider reducing your contribution rate to about $${result.k401MaxPerPeriod.toFixed(0)} per remaining check, or your employer match could be reduced.`}
+            warnLabel={`You are projected to hit the 401(k) elective deferral limit ($${result.limit401k.toLocaleString()}). Consider reducing your contribution rate to about ${fmt0(result.k401MaxPerPeriod)} per remaining check, or your employer match could be reduced.`}
           />
           {hsaCoverage !== 'none' && (
             <FlagRow
               ok={!result.hsaWillCap}
               okLabel={`You are within the HSA limit ($${result.hsaLimit.toLocaleString()}).`}
-              warnLabel={`You are projected to exceed the HSA limit ($${result.hsaLimit.toLocaleString()}). Excess HSA contributions can trigger a 6% excise tax. Consider reducing to about $${result.hsaMaxPerPeriod.toFixed(0)} per remaining check.`}
+              warnLabel={`You are projected to exceed the HSA limit ($${result.hsaLimit.toLocaleString()}). Excess HSA contributions can trigger a 6% excise tax. Consider reducing to about ${fmt0(result.hsaMaxPerPeriod)} per remaining check.`}
             />
           )}
         </div>
