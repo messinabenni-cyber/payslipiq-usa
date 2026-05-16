@@ -7,7 +7,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'US Paycheck Calculator (2026) · Estimate Take-Home Pay',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque/',
+      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',
       'x-default': PAGE_URL
     }
   },
