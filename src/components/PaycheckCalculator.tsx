@@ -89,6 +89,10 @@ export function PaycheckCalculator({ defaultStateSlug = 'california' }: Props) {
           ) : (
             <Row label={`${result.state?.name ?? 'State'} state tax`} value="$0.00 (no state income tax)" />
           )}
+          {/* 2026-05-16: state worker contributions (CA SDI, NY SDI+PFL, NJ SDI+FLI, MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI) */}
+          {result.stateWorkerContribsPerPeriod.map((w) => (
+            <Row key={w.label} label={w.label} value={`-${formatUSD(w.amount)}`} />
+          ))}
           <Row label="Post-tax deductions" value={`-${formatUSD(result.postTaxDeductionsPerPeriod)}`} />
           <hr className="my-2 border-slate-200" />
           <Row label="Net (take-home)" value={formatUSD(result.netPerPeriod)} bold />
