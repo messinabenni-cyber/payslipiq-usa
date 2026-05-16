@@ -25,7 +25,14 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   '/us/cities/louisville/paycheck-calculator',
   '/us/cities/newark/paycheck-calculator',
   '/us/cities/minneapolis/paycheck-calculator',
-  '/us/maryland-counties'];
+  '/us/maryland-counties',
+  // v8 additions
+  '/us/cities/boston/paycheck-calculator',
+  '/us/cities/seattle/paycheck-calculator',
+  '/us/cities/denver/paycheck-calculator',
+  '/us/cities/atlanta/paycheck-calculator',
+  '/us/cities/phoenix/paycheck-calculator',
+  '/us/state-worker-contributions'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = STATIC_PATHS.map((p) => ({
