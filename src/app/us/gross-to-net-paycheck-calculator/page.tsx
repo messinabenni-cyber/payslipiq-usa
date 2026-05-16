@@ -4,6 +4,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
+import { FinancialProductSchema } from '@/components/FinancialProductSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
@@ -117,6 +118,13 @@ export default function Page() {
         url={PAGE_URL}
       />
       <FAQSchema items={FAQS} />
+      {/* 2026-05-16: FinancialProduct schema for AI-search / rich-result eligibility. */}
+      <FinancialProductSchema
+        name="PayslipIQ Gross to Net Paycheck Calculator"
+        description="Convert any gross paycheck into estimated take-home after federal, FICA, state, and state worker contributions. 2026 tables, all 50 states + DC."
+        url={PAGE_URL}
+        category="Paycheck estimator"
+      />
 
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Calculator</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">

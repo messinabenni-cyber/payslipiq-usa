@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { DefinedTermSetSchema } from '@/components/DefinedTermSetSchema';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 
@@ -85,6 +86,13 @@ export default function Page() {
         headline="Pay Stub Glossary"
         description="Every code, abbreviation, and acronym you might see on a US pay stub."
         url="https://payslipiq.com/us/glossary/"
+      />
+      {/* 2026-05-16: DefinedTermSet JSON-LD so AI search engines (AI Overviews, Perplexity, ChatGPT) can quote individual term definitions with attribution. */}
+      <DefinedTermSetSchema
+        name="PayslipIQ US Pay Stub Glossary"
+        description="Every code, abbreviation, and acronym you might see on a US pay stub. 100+ terms, A to Z, plain English."
+        url="https://payslipiq.com/us/glossary/"
+        terms={TERMS.map((t) => ({ term: t.term, definition: t.body }))}
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Glossary</div>
