@@ -55,6 +55,13 @@ const STATE_WORKER_CONTRIBUTIONS_2026: Record<string, StateWorkerContribLine[]> 
   hawaii: [
     { label: 'HI TDI', rate: 0.005, annualCap: 7.50 * 52, note: 'HI DLIR 2026; capped at $7.50/wk' },
   ],
+  // 2026-05-16 v7: added CT PFML + DC PFL to round out the East Coast worker-contribution map.
+  connecticut: [
+    { label: 'CT PFML', rate: 0.005, annualCap: 184500 * 0.005, note: 'CT Paid Leave Authority 2026; 0.5% employee contribution capped at SS wage base' },
+  ],
+  'district-of-columbia': [
+    { label: 'DC PFL', rate: 0.0026, note: 'DC PFL 2026 (verify with DOES); 0.26% employer-paid in DC but listed for transparency on DC paychecks where the employer chooses to pass through' },
+  ],
 };
 
 /**
