@@ -42,7 +42,6 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   '/us/cities/san-diego/paycheck-calculator',
   '/us/cities/charlotte/paycheck-calculator',
   '/us/cities/nashville/paycheck-calculator',
-  '/us/methodology',
   '/us/accessibility',
   '/us/vs-paycheckcity',
   '/us/vs-smartasset'];
