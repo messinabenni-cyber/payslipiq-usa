@@ -32,7 +32,20 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   '/us/cities/denver/paycheck-calculator',
   '/us/cities/atlanta/paycheck-calculator',
   '/us/cities/phoenix/paycheck-calculator',
-  '/us/state-worker-contributions'];
+  '/us/state-worker-contributions',
+  // v9 additions: 8 top-metro city pages + methodology + accessibility + 2 comparison pages
+  '/us/cities/las-vegas/paycheck-calculator',
+  '/us/cities/dallas/paycheck-calculator',
+  '/us/cities/houston/paycheck-calculator',
+  '/us/cities/austin/paycheck-calculator',
+  '/us/cities/miami/paycheck-calculator',
+  '/us/cities/san-diego/paycheck-calculator',
+  '/us/cities/charlotte/paycheck-calculator',
+  '/us/cities/nashville/paycheck-calculator',
+  '/us/methodology',
+  '/us/accessibility',
+  '/us/vs-paycheckcity',
+  '/us/vs-smartasset'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = STATIC_PATHS.map((p) => ({

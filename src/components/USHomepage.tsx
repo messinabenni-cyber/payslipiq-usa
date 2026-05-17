@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { MasterDisclaimer } from './MasterDisclaimer';
+import { MobileStickyCTA } from './MobileStickyCTA';
 import { USAHomepageSchema } from './USAHomepageSchema';
 
 const TOOLS = [
@@ -217,6 +218,13 @@ export default function USHomepage() {
           </div>
         </div>
       </section>
+
+      <MobileStickyCTA
+        href="/us/pay-stub-checker"
+        label="Check My Pay Stub"
+        secondaryHref="/us/paycheck-calculator"
+        secondaryLabel="Calculate"
+      />
     </main>
   );
 }
