@@ -21,7 +21,7 @@ const RELATED = [
   { label: "401(k) deductions", href: "/us/401k-deductions" },
   { label: "Pre-tax vs Roth 401(k)", href: "/us/pre-tax-vs-roth-401k" },
   { label: "HSA vs FSA", href: "/us/hsa-vs-fsa" },
-  { label: "Methodology", href: "/us/methodology" },
+  { label: "Methodology", href: "/methodology" },
 ];
 
 const BREADCRUMBS = [
