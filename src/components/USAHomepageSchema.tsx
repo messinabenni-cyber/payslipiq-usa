@@ -14,6 +14,13 @@ const ORGANIZATION = {
     'state income tax', 'W-2', 'W-4', '401(k)', 'pay stub', 'paycheck', 'overtime pay', 'FLSA',
     'pre-tax deductions', 'post-tax deductions',
   ],
+  sameAs: [
+    'https://payslipiq.net',
+    'https://payslipiq.shop',
+    'https://payslipiq.info',
+    'https://payslipiq.store',
+    'https://payslipiq.xyz',
+  ],
 };
 
 const WEBSITE = {
@@ -43,11 +50,16 @@ const SOFTWARE_APP = {
 const FAQ = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'h2', '.faq-answer'],
+    xpath: ['/html/head/title'],
+  },
   mainEntity: [
     { '@type': 'Question', name: 'What does PayslipIQ do?', acceptedAnswer: { '@type': 'Answer', text: 'PayslipIQ explains American pay stubs and paychecks. We help you understand gross pay, federal and state withholding, FICA, deductions, overtime, 401(k), and take-home pay. Educational information only, not tax, legal, financial, or payroll advice.' } },
     { '@type': 'Question', name: 'Is PayslipIQ free?', acceptedAnswer: { '@type': 'Answer', text: 'The core PayslipIQ tools are free. Premium monitoring features are offered separately.' } },
     { '@type': 'Question', name: 'Does PayslipIQ give tax advice?', acceptedAnswer: { '@type': 'Answer', text: "No. PayslipIQ provides educational explanations and estimated calculations only. Always verify with your payroll team, a CPA, the IRS, your state tax authority, or another appropriately qualified professional." } },
-    { '@type': 'Question', name: 'Does PayslipIQ cover all 50 states?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. PayslipIQ has dedicated pages for all 50 states plus DC.' } },
+    { '@type': 'Question', name: 'Does PayslipIQ cover all 50 states?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. PayslipIQ has dedicated pages for all 50 states plus DC, plus 30 city-specific paycheck calculators (NYC, Yonkers, Philadelphia, Detroit, Cleveland, Pittsburgh, Cincinnati, Baltimore, Indianapolis, Louisville, Newark, Minneapolis, Boston, Seattle, Denver, Atlanta, Phoenix, San Francisco, Wilmington, Kansas City, St Louis, Portland-Multnomah, Las Vegas, Dallas, Houston, Austin, Miami, San Diego, Charlotte, Nashville).' } },
   ],
 };
 
