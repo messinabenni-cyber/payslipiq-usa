@@ -5,6 +5,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
+import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { EmailCapture } from '@/components/EmailCapture';
 
 const PAGE_URL = 'https://payslipiq.com/us/paycheck-health-score/';
@@ -126,6 +127,12 @@ export default function PaycheckHealthScorePage() {
           <MasterDisclaimer variant="long" />
         </section>
       </main>
+      <MobileStickyCTA
+        href="/us/paycheck-calculator"
+        label="Calculate Take-Home"
+        secondaryHref="/us/pay-stub-checker"
+        secondaryLabel="Check Stub"
+      />
     </>
   );
 }

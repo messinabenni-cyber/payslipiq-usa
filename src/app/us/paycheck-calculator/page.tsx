@@ -6,6 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { FinancialProductSchema } from '@/components/FinancialProductSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
+import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
 const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator';
@@ -244,6 +245,12 @@ export default function PaycheckCalculatorPage() {
           <MasterDisclaimer variant="long" />
         </section>
       </main>
+      <MobileStickyCTA
+        href="/us/pay-stub-checker"
+        label="Check My Pay Stub"
+        secondaryHref="/us/paycheck-health-score"
+        secondaryLabel="Health Score"
+      />
     </>
   );
 }

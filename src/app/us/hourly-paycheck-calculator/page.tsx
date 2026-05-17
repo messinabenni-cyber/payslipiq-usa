@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 
 export const metadata: Metadata = {
   title: "Hourly Paycheck Calculator (US)",
@@ -13,6 +14,7 @@ const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/le
 
 export default function Page() {
   return (
+    <>
     <RichArticle
       title="Hourly Paycheck Calculator (US)"
       url="/us/hourly-paycheck-calculator"
@@ -42,5 +44,12 @@ export default function Page() {
       related={RELATED}
       breadcrumbs={BREADCRUMBS}
     />
+    <MobileStickyCTA
+      href="/us/paycheck-calculator"
+      label="Run Paycheck Calculator"
+      secondaryHref="/us/overtime-paycheck"
+      secondaryLabel="Overtime"
+    />
+    </>
   );
 }
