@@ -27,7 +27,7 @@ const FAQS = [
   { q: 'What does SmartAsset do better?', a: 'SmartAsset has a much broader product set — retirement, tax, mortgage, investment calculators. They publish frequent state-level rankings and indexes that get media pickup. If you want a one-stop personal-finance hub, SmartAsset is broader.' },
   { q: 'Is SmartAsset\'s paycheck calculator accurate?', a: 'Generally yes. Both PayslipIQ and SmartAsset use IRS Publication 15-T tables and state DOR rates. Differences are usually edge cases (multi-state nexus, supplemental wages, ESPP, state worker contributions) where PayslipIQ tends to be more explicit.' },
   { q: 'Is PayslipIQ free?', a: 'Yes. All core tools (Paycheck Calculator, Pay Stub Checker, Gross-to-Net, FICA, W-4, state pages, city pages) are free with no account required. We do not sell user data or run an advisor referral business.' },
-  { q: 'Where can I see PayslipIQ\'s methodology?', a: 'Publicly documented at /us/methodology with citations to IRS Notice 2025-67, IRS Publication 15-T (2026), SSA wage base, and each state DOR.' },
+  { q: 'Where can I see PayslipIQ\'s methodology?', a: 'Publicly documented at /methodology with citations to IRS Notice 2025-67, IRS Publication 15-T (2026), SSA wage base, and each state DOR.' },
 ];
 
 const BREADCRUMBS = [
@@ -88,7 +88,7 @@ export default function VsSmartAssetPage() {
                 <tr><td className="px-3 py-2">AI pay-stub upload explainer</td><td className="px-3 py-2">Yes (waitlist)</td><td className="px-3 py-2">No</td></tr>
                 <tr><td className="px-3 py-2">State worker contributions (SDI/PFL/PFML/TDI/FAMLI)</td><td className="px-3 py-2">11 jurisdictions explicit</td><td className="px-3 py-2">Partial</td></tr>
                 <tr><td className="px-3 py-2">City-specific pages</td><td className="px-3 py-2">22 metros</td><td className="px-3 py-2">Limited</td></tr>
-                <tr><td className="px-3 py-2">Open methodology with citations</td><td className="px-3 py-2"><Link className="text-blue-600 underline" href="/us/methodology">/us/methodology</Link></td><td className="px-3 py-2">Less visible</td></tr>
+                <tr><td className="px-3 py-2">Open methodology with citations</td><td className="px-3 py-2"><Link className="text-blue-600 underline" href="/methodology">/methodology</Link></td><td className="px-3 py-2">Less visible</td></tr>
                 <tr><td className="px-3 py-2">Broader personal-finance calculators (mortgage, retirement)</td><td className="px-3 py-2">No — paycheck only</td><td className="px-3 py-2">Yes — very broad</td></tr>
                 <tr><td className="px-3 py-2">Spanish (beta)</td><td className="px-3 py-2">Yes — /es/</td><td className="px-3 py-2">Limited</td></tr>
               </tbody>
