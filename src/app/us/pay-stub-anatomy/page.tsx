@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
-export const metadata: Metadata = {
-  title: "How to Read a US Pay Stub",
-  description: "Decode every line on a US pay stub: gross, withholdings, FICA, state, local, deductions, YTD, employer contributions, net. Educational only.",
-  alternates: { canonical: "/us/pay-stub-anatomy" },
-};
+export const metadata: Metadata = {  title: 'US Pay Stub Explained 2026 | Read Every Line on Your Stub',  description: 'Read every line on your US pay stub. Plain-English guide to gross pay, federal tax, FICA, state tax, deductions and net pay for 2026. Free pay stub decoder.',  alternates: { canonical: 'https://payslipiq.com/us/pay-stub-anatomy', languages: { 'en-US': 'https://payslipiq.com/us/pay-stub-anatomy', 'x-default': 'https://payslipiq.com/us/pay-stub-anatomy' } },  openGraph: { title: 'US Pay Stub Explained 2026 | Read Every Line on Your Stub', description: 'Plain-English US pay stub decoder for 2026. Gross, federal tax, FICA, state, deductions, net pay.', url: 'https://payslipiq.com/us/pay-stub-anatomy', type: 'article', siteName: 'PayslipIQ', locale: 'en_US', images: [{ url: 'https://payslipiq.com/api/og?title=US%20Pay%20Stub%20Explained&eyebrow=USA%202026', width: 1200, height: 630, alt: 'US Pay Stub Explained 2026 — PayslipIQ' }] },  twitter: { card: 'summary_large_image', title: 'US Pay Stub Explained 2026 | Read Every Line on Your Stub', description: 'Plain-English US pay stub decoder for 2026.' },  other: { 'geo.region': 'US', 'geo.placename': 'United States' },};
 
 const FAQS = [{"q": "What does YTD mean?", "a": "Year to Date. Cumulative total from January 1 to the pay period end date. Compare YTD across pay stubs to spot errors."}, {"q": "What are employer contributions on my pay stub?", "a": "Money your employer pays on your behalf (401(k) match, employer health premium, employer FICA match). Listed for transparency. Does not reduce your pay."}, {"q": "Why do my taxable wages not match my gross?", "a": "Pre-tax deductions (401(k), HSA, Section 125 health insurance) reduce taxable wages. The Federal Taxable Wages line on your stub is gross minus those deductions."}, {"q": "What does FED mean on my pay stub?", "a": "Federal income tax withholding. Sometimes labeled FIT or Federal Tax."}];
 const RELATED = [{"label": "Pay stub glossary", "href": "/us/pay-stub-glossary"}, {"label": "Pay stub mistakes", "href": "/us/pay-stub-mistakes"}, {"label": "W-2 explained", "href": "/us/w2-explained"}];
