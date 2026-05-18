@@ -11,37 +11,7 @@ import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
 const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator';
 
-export const metadata: Metadata = {
-  title: 'US Paycheck Calculator (2026) · Estimate Take-Home Pay',
-  description:
-    'Estimate take-home pay from gross. Federal income tax (IRS Pub 15-T 2026), FICA, state tax for all 50 states + DC. Plain-English line-by-line breakdown. Educational only.',
-  alternates: {
-    canonical: PAGE_URL,
-    languages: {
-      'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',
-      'x-default': PAGE_URL
-    }
-  },
-  openGraph: {
-    title: 'US Paycheck Calculator (2026)',
-    description: 'Estimate take-home pay from gross. All 50 states + DC. Educational only.',
-    url: PAGE_URL,
-    type: 'website',
-    images: [
-      {
-        url: 'https://payslipiq.com/api/og?title=Paycheck%20Calculator&eyebrow=USA%202026',
-        width: 1200,
-        height: 630
-      }
-    ]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'US Paycheck Calculator (2026)',
-    description: 'Estimate take-home pay. Federal, FICA, all 50 states.'
-  }
-};
+export const metadata: Metadata = {  title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',  description:    'Free 2026 US paycheck calculator. Calculate your paycheck after federal tax, FICA and state withholding for all 50 states. Hourly and salary modes.',  alternates: {    canonical: PAGE_URL,    languages: {      'en-US': PAGE_URL,      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',      'x-default': PAGE_URL,    },  },  openGraph: {    title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',    description:      'Free 2026 US paycheck calculator. Federal tax, FICA, all 50 states + DC. See exactly what your paycheck is after taxes.',    url: PAGE_URL,    type: 'website',    siteName: 'PayslipIQ',    locale: 'en_US',    images: [      {        url: 'https://payslipiq.com/api/og?title=Paycheck%20Calculator&eyebrow=USA%202026',        width: 1200,        height: 630,        alt: 'PayslipIQ Paycheck Calculator 2026',      },    ],  },  twitter: {    card: 'summary_large_image',    title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',    description: 'Calculate your paycheck after federal tax, FICA and state withholding. All 50 states.',  },  other: {    'geo.region': 'US',    'geo.placename': 'United States',  },};
 
 const FAQS = [
   {
