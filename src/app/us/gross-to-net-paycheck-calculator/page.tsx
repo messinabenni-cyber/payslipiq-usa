@@ -11,37 +11,7 @@ import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
 const PAGE_URL = 'https://payslipiq.com/us/gross-to-net-paycheck-calculator/';
 
-export const metadata: Metadata = {
-  title: 'Gross to Net Paycheck Calculator (USA, 2026)',
-  description:
-    'Convert any gross paycheck into estimated take-home pay. Federal income tax, Social Security, Medicare, and state tax for all 50 states + DC. Educational only, not advice.',
-  alternates: {
-    canonical: PAGE_URL,
-    languages: {
-      'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque/',
-      'x-default': PAGE_URL
-    }
-  },
-  openGraph: {
-    title: 'Gross to Net Paycheck Calculator (USA, 2026)',
-    description: 'Type any gross amount, see what it becomes after federal, FICA, and state tax.',
-    url: PAGE_URL,
-    type: 'website',
-    images: [
-      {
-        url: 'https://payslipiq.com/api/og?title=Gross%20to%20Net%20Paycheck%20Calculator&eyebrow=USA%202026',
-        width: 1200,
-        height: 630
-      }
-    ]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Gross to Net Paycheck Calculator (USA, 2026)',
-    description: 'Type any gross amount, see what it becomes after federal, FICA, and state tax.'
-  }
-};
+export const metadata: Metadata = {  title: 'How Much Is Paycheck After Taxes? Gross-to-Net 2026',  description:    'How much is your paycheck after taxes? Free 2026 gross-to-net calculator: federal, FICA and state withholding for all 50 states. See your real take-home.',  alternates: {    canonical: PAGE_URL,    languages: { 'en-US': PAGE_URL, 'x-default': PAGE_URL },  },  openGraph: {    title: 'How Much Is Paycheck After Taxes? Gross-to-Net 2026',    description: 'Free 2026 gross-to-net paycheck calculator. Federal, FICA, all 50 states + DC. See your take-home in seconds.',    url: PAGE_URL,    type: 'website',    siteName: 'PayslipIQ',    locale: 'en_US',    images: [{ url: 'https://payslipiq.com/api/og?title=Gross%20to%20Net%20Calculator&eyebrow=USA%202026', width: 1200, height: 630, alt: 'PayslipIQ Gross-to-Net Paycheck Calculator' }],  },  twitter: {    card: 'summary_large_image',    title: 'How Much Is Paycheck After Taxes? Gross-to-Net 2026',    description: 'Free 2026 gross-to-net calculator. Federal, FICA, all 50 states.',  },  other: { 'geo.region': 'US', 'geo.placename': 'United States' },};
 
 const FAQS = [
   {
