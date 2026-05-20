@@ -13,6 +13,8 @@ interface Props {
   url: string;
   description: string;
   intro?: React.ReactNode;
+  /** Optional 40-80 word plain-English answer, rendered in a styled box near the top for AI Overviews / Perplexity / ChatGPT extraction. */
+  directAnswer?: React.ReactNode;
   body: React.ReactNode;
   faqs?: FAQItem[];
   related?: RelatedLink[];
@@ -28,6 +30,7 @@ export function RichArticle({
   url,
   description,
   intro,
+  directAnswer,
   body,
   faqs,
   related,
@@ -56,6 +59,13 @@ export function RichArticle({
 
       <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900">{title}</h1>
       {intro ? <p className="mt-4 text-lg leading-relaxed text-slate-700">{intro}</p> : null}
+
+      {directAnswer ? (
+        <section className="mt-6 rounded-md border border-slate-200 bg-slate-50 p-5">
+          <h2 className="text-base font-semibold text-slate-900">In short</h2>
+          <p className="mt-2 text-[15px] leading-relaxed text-slate-700">{directAnswer}</p>
+        </section>
+      ) : null}
 
       <div className="mt-6">
         <MasterDisclaimer variant="long" />

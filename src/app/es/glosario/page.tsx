@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const TERMS = [
-  ['401(k)', 'Plan de jubilacion patrocinado por el empleador. Las contribuciones tradicionales reducen tu salario imponible federal. Limite 2025: $23,500, $31,000 si tienes 50+.'],
+  ['401(k)', 'Plan de jubilacion patrocinado por el empleador. Las contribuciones tradicionales reducen tu salario imponible federal. Limite 2026: $24,500, $32,500 si tienes 50+.'],
   ['Adicional Medicare', '0.9% adicional sobre salarios anuales que superen $200,000 (soltero) o $250,000 (casado).'],
   ['Antes de impuestos', 'Una deduccion que se toma del salario bruto antes de calcular el impuesto federal. Reduce tu salario imponible.'],
   ['Bono', 'Pago de salarios suplementarios. Generalmente retenido al 22% federal fijo (37% si supera $1M anual).'],
@@ -24,8 +24,8 @@ const TERMS = [
   ['Despues de impuestos', 'Una deduccion tomada del pago neto despues de calcular los impuestos. Ej: Roth 401(k), embargos.'],
   ['Embargo', 'Deduccion ordenada por una corte. Ej: manutencion de hijos, deudas del IRS, prestamos estudiantiles en mora.'],
   ['FICA', 'Impuesto federal combinado: 6.2% Seguro Social (hasta limite anual) + 1.45% Medicare (sobre cada dolar).'],
-  ['FSA', 'Cuenta de Gastos Flexibles. Antes de impuestos para gastos medicos o de cuidado de dependientes. Limite 2025: $3,300 medico, $5,000 cuidado de dependientes.'],
-  ['HSA', 'Cuenta de Ahorros para la Salud. Antes de impuestos. Requiere plan de salud de deducible alto. Limite 2025: $4,300 individual, $8,550 familiar.'],
+  ['FSA', 'Cuenta de Gastos Flexibles. Antes de impuestos para gastos medicos o de cuidado de dependientes. Limite 2026: $3,400 medico, $5,000 cuidado de dependientes.'],
+  ['HSA', 'Cuenta de Ahorros para la Salud. Antes de impuestos. Requiere plan de salud de deducible alto. Limite 2026: $4,400 individual, $8,750 familiar.'],
   ['Horas extras', 'Federal: 1.5x del salario por horas que superen 40 a la semana (FLSA). Algunos estados (CA, NV, AK, CO) requieren 1.5x despues de 8 horas/dia, 2x despues de 12.'],
   ['IRS', 'Servicio de Impuestos Internos. Agencia federal que cobra impuestos federales.'],
   ['Medicare', 'Seguro de salud federal para mayores de 65. Contribucion FICA del empleado: 1.45% sobre cada dolar.'],
@@ -40,7 +40,7 @@ const TERMS = [
   ['Seguro Social', 'Programa federal de jubilacion. Contribucion FICA del empleado: 6.2% hasta el limite anual de salarios.'],
   ['SS', 'Numero de Seguro Social. NUNCA lo subas a una herramienta sin cubrirlo primero.'],
   ['SSA', 'Administracion del Seguro Social. Agencia federal que administra el Seguro Social y Medicare.'],
-  ['Tope salarial (Seguro Social)', 'Limite anual de salarios sujetos a Seguro Social. $168,600 en 2024. Por encima, no pagas mas Seguro Social (Medicare continua).'],
+  ['Tope salarial (Seguro Social)', 'Limite anual de salarios sujetos a Seguro Social. $184,500 en 2026. Por encima, no pagas mas Seguro Social (Medicare continua).'],
   ['W-2', 'Formulario fiscal anual que resume los salarios del ano y los impuestos retenidos. El empleador lo emite antes del 31 de enero.'],
   ['W-4', 'Formulario que entregas al empleador para configurar la retencion federal. La version actual usa cantidades en dolares, no exenciones.'],
   ['YTD (Year-To-Date)', 'Totales acumulados del ano calendario. Deben coincidir con la suma de tus cheques y reconciliarse con tu W-2.']

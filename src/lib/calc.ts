@@ -95,32 +95,33 @@ const PAY_PERIODS: Record<PayFrequency, number> = {
   annual: 1,
 };
 
-// 2026 standard deductions (verify with IRS Pub 15-T annually)
+// 2026 standard deductions — IRS Rev. Proc. 2025-32 / IR-2025-103 (verified 2026-05-20).
 const STANDARD_DEDUCTION = {
-  single: 15000,
-  mfj: 30000,
-  mfs: 15000,
-  hoh: 22500,
+  single: 16100,
+  mfj: 32200,
+  mfs: 16100,
+  hoh: 24150,
 };
 
-// Simplified 2026 federal income tax brackets (single & MFJ shown; verify yearly).
+// 2026 federal income tax brackets — IRS Rev. Proc. 2025-32 (verified 2026-05-20).
+// Format: [upperBoundOfTaxableIncome, marginalRate].
 const FEDERAL_BRACKETS_SINGLE: [number, number][] = [
-  [11925, 0.10],
-  [48475, 0.12],
-  [103350, 0.22],
-  [197300, 0.24],
-  [250525, 0.32],
-  [626350, 0.35],
+  [12400, 0.10],
+  [50400, 0.12],
+  [105700, 0.22],
+  [201775, 0.24],
+  [256225, 0.32],
+  [640600, 0.35],
   [Number.POSITIVE_INFINITY, 0.37],
 ];
 
 const FEDERAL_BRACKETS_MFJ: [number, number][] = [
-  [23850, 0.10],
-  [96950, 0.12],
-  [206700, 0.22],
-  [394600, 0.24],
-  [501050, 0.32],
-  [751600, 0.35],
+  [24800, 0.10],
+  [100800, 0.12],
+  [211400, 0.22],
+  [403550, 0.24],
+  [512450, 0.32],
+  [768700, 0.35],
   [Number.POSITIVE_INFINITY, 0.37],
 ];
 

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
-import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "FICA on Your Paycheck (Social Security + Medicare)",
   description: "FICA is a federal payroll tax: 6.2 percent Social Security up to the wage base, 1.45 percent Medicare on all wages, plus 0.9 percent Additional Medicare for high earners. Educational only.",
@@ -19,6 +18,7 @@ export default function Page() {
       url="/us/fica-explained"
       description="FICA is a federal payroll tax: 6.2 percent Social Security up to the wage base, 1.45 percent Medicare on all wages, plus 0.9 percent Additional Medicare for high earners. Educational only."
       intro={<>Two letters that make up the largest deduction line on most American pay stubs. FICA funds Social Security and Medicare. Here is exactly what each piece does and why your stub looks the way it does.</>}
+      directAnswer={<>FICA is the federal payroll tax that funds Social Security and Medicare. It is 6.2% for Social Security on wages up to the 2026 wage base of $184,500, plus 1.45% for Medicare on all wages, plus an extra 0.9% Additional Medicare Tax on wages above $200,000 (single) or $250,000 (married filing jointly). Your employer matches the 6.2% and 1.45%, but not the 0.9%.</>}
       body={<><h2>What FICA stands for</h2>
 <p>Federal Insurance Contributions Act. The 1935 law that created the federal payroll tax funding two big retirement and health programs. The acronym shows up on most pay stubs either as a single FICA line or as two separate lines: Social Security and Medicare.</p>
 <h2>The two halves</h2>

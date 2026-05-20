@@ -143,12 +143,12 @@ export default function Page() {
         <h2 className="text-xl font-semibold tracking-tight mb-2">Worked example, $100,000 salary in California</h2>
         <p className="text-[15px] text-ink/85 leading-relaxed">$100,000 annual salary, single filer, biweekly pay, no 401(k), no HSA, California.</p>
         <p className="text-[15px] text-ink/85 leading-relaxed mt-2">
-          Per-paycheck gross: <strong>$3,846.15</strong>. Federal withholding (IRS Pub. 15-T 2026 percentage method, Single, Step 2 unchecked, annualised method): ~$616.
+          Per-paycheck gross: <strong>$3,846.15</strong>. Federal withholding (IRS Pub. 15-T 2026 percentage method, Single, Step 2 unchecked, annualised method): ~$507.
           Social Security 6.2%: $238.46. Medicare 1.45%: $55.77. California state tax (est., flat 6.6% effective at this income): ~$253.85.
-          Pre-tax deductions: $0. Total deductions: ~$1,164. Estimated net: <strong>~$2,682 per paycheck</strong>.
+          Pre-tax deductions: $0. Total deductions: ~$1,055. Estimated net: <strong>~$2,792 per paycheck</strong>.
         </p>
         <p className="text-[14px] text-ink/70 mt-3">
-          Annualised: ~$69,728 take-home, a take-home rate of ~70%. The same gross in Texas (no state income tax) would land at ~$2,936 per paycheck and ~$76,330 a year. The same gross in New York City would be lower again because of NYC resident income tax, which this calculator does not yet model.
+          Annualised: ~$72,580 take-home, a take-home rate of ~73%. The same gross in Texas (no state income tax) would land at ~$3,045 per paycheck and ~$79,180 a year. The same gross in New York City would be lower again because of NYC resident income tax, which this calculator does not yet model.
         </p>
         <p className="text-xs text-ink/55 mt-3">
           Worked example uses the IRS Pub. 15-T 2026 annualised percentage method (the same method the calculator above runs).

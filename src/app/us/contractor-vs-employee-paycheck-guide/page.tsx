@@ -22,7 +22,7 @@ export default function Page() {
 <p>W-2 employees see federal tax, FICA, state tax and benefits taken out of every paycheck. The employer pays the employer-side FICA (6.2 percent SS plus 1.45 percent Medicare) on top, and usually subsidizes health insurance, 401(k) match, paid time off, unemployment insurance and workers' comp.</p>
 <p>1099 contractors are self-employed. Nothing is withheld from gross receipts. You owe income tax plus self-employment tax (12.4 percent SS plus 2.9 percent Medicare equals 15.3 percent combined) on net earnings. You pay quarterly via Form 1040-ES estimated taxes. No employer benefits.</p>
 <h2>Self-employment tax in detail</h2>
-<p>You pay both halves of FICA, capped on the Social Security half by the same wage base ($168,600 for 2024, verify current). Plus 0.9 percent Additional Medicare above $200k single. You can deduct half of SE tax above the line on your federal return.</p>
+<p>You pay both halves of FICA, capped on the Social Security half by the same wage base ($184,500 for 2026, verify current). Plus 0.9 percent Additional Medicare above $200k single. You can deduct half of SE tax above the line on your federal return.</p>
 <h2>Retirement and benefits as a contractor</h2>
 <p>SEP-IRA, Solo 401(k) and SIMPLE IRA give you higher contribution limits than employee 401(k). You can deduct self-employed health insurance premiums above the line. Track every business expense you can substantiate.</p>
 <h2>Misclassification</h2>

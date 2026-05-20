@@ -180,6 +180,18 @@ export default function PayStubCheckerPage() {
 
         <ReviewedBy />
 
+        {/* Direct-answer block, optimized for AI Overviews / Perplexity / ChatGPT */}
+        <section className="mt-8 rounded-lg border border-slate-200 bg-slate-50 dark:bg-slate-800/40 dark:border-slate-700 p-5">
+          <h2 className="text-lg font-semibold">In plain English</h2>
+          <p className="mt-2 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+            A pay stub checker walks through every line on a US pay stub in plain English: gross pay,
+            federal income tax withholding, Social Security and Medicare (FICA), state and local tax,
+            pre-tax deductions like a 401(k) or HSA, post-tax deductions, and net pay. PayslipIQ
+            explains what each line is and what to verify, so you can read your stub and ask payroll
+            the right question. It is educational only and cannot confirm your paycheck is correct.
+          </p>
+        </section>
+
         <section className="mt-8 rounded-lg border border-amber-300 bg-amber-50 dark:bg-amber-900/20 dark:border-amber-700 p-5">
           <h2 className="font-medium">Before you upload</h2>
           <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
