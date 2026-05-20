@@ -20,6 +20,7 @@ export default function Page() {
       url="/us/hourly-paycheck-calculator"
       description="Hourly paycheck calculator for US workers. Hours times rate, overtime, federal, FICA, state. Educational only."
       intro={<>Hourly paycheck math: regular hours times rate, plus overtime hours times 1.5x rate, minus federal income tax, FICA, state and local tax, and any voluntary deductions. PayslipIQ runs all of it.</>}
+      directAnswer={<>An hourly paycheck is your regular hours times your hourly rate, plus overtime — usually 1.5× the rate for hours over 40 in a workweek under the federal FLSA — minus federal income tax, FICA (7.65%), and any state or local tax. Pre-tax benefits like a 401(k) or health insurance reduce it further. These are estimates; your actual check depends on your W-4 and employer settings.</>}
       body={<><h2>The math</h2>
 <p><strong>Regular pay</strong> = regular hours × hourly rate</p>
 <p><strong>Overtime pay</strong> = overtime hours × 1.5 × hourly rate</p>
@@ -30,7 +31,7 @@ export default function Page() {
 <h2>State daily-overtime overlays</h2>
 <p>California, Alaska, Nevada, Colorado have stricter daily-OT rules. See the <a href="/us/overtime-paycheck">overtime page</a>.</p>
 <h2>Run the calculator</h2>
-<p>Use the <a href="/us/paycheck-calculator">paycheck calculator</a>set frequency to Weekly or Bi-weekly, enter (hours × rate) as your gross. The tool handles the rest.</p>
+<p>Use the <a href="/us/paycheck-calculator">paycheck calculator</a>, set frequency to Weekly or Bi-weekly, and enter (hours × rate) as your gross. The tool handles the rest.</p>
 <h2>Tipped workers</h2>
 <p>Federal tipped minimum wage is $2.13/hour. Employer must top up so tips bring you to at least the regular minimum across the workweek. Several states do not allow this tip credit. See the <a href="/us/tipped-worker-paycheck-guide">tipped worker guide</a>.</p>
 <h2>Common hourly-paycheck issues</h2>

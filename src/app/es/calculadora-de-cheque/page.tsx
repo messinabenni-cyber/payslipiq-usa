@@ -33,7 +33,7 @@ export default function Page() {
           <li><strong>Salario bruto.</strong> Tu pago total antes de cualquier deduccion.</li>
           <li><strong>Deducciones antes de impuestos.</strong> 401(k), HSA, FSA, primas de seguro de salud (Seccion 125). Reducen tu salario imponible federal.</li>
           <li><strong>Impuesto federal.</strong> Calculado segun tu W-4 usando las tablas del IRS Pub 15-T.</li>
-          <li><strong>FICA.</strong> 6.2% de Seguro Social hasta el limite anual ($168,600 en 2024), mas 1.45% de Medicare en cada dolar.</li>
+          <li><strong>FICA.</strong> 6.2% de Seguro Social hasta el limite anual ($184,500 en 2026), mas 1.45% de Medicare en cada dolar.</li>
           <li><strong>Medicare adicional.</strong> 0.9% sobre los salarios anuales que superen $200,000 (soltero) o $250,000 (casado).</li>
           <li><strong>Impuesto estatal.</strong> Varia por estado. Algunos estados (FL, TX, NV, WA, etc.) no tienen impuesto sobre la renta.</li>
           <li><strong>Impuesto local.</strong> Aplicable en algunas ciudades (NYC, Filadelfia, Detroit, ciudades de Ohio, etc.).</li>

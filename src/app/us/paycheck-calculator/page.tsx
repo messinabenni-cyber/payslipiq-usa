@@ -142,6 +142,19 @@ export default function PaycheckCalculatorPage() {
 
         <ReviewedBy />
 
+        {/* Direct-answer block, optimized for AI Overviews / Perplexity / ChatGPT */}
+        <section className="mt-8 rounded-lg border border-slate-200 bg-slate-50 dark:bg-slate-800/40 dark:border-slate-700 p-5">
+          <h2 className="text-lg font-semibold">In plain English</h2>
+          <p className="mt-2 text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+            A paycheck calculator estimates your take-home pay by subtracting federal income tax,
+            Social Security (6.2%), Medicare (1.45%), and state income tax from your gross pay. Enter
+            your gross, pay frequency, state, and filing status, and PayslipIQ returns each deduction
+            with a plain-English explanation. It uses the IRS Publication 15-T 2026 method and the
+            2026 Social Security wage base of $184,500. Results are estimates only — your real
+            paycheck depends on your W-4 and employer settings.
+          </p>
+        </section>
+
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Calculator</h2>
           <p className="text-sm text-slate-500 mb-4">

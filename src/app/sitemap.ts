@@ -44,7 +44,9 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   '/us/cities/nashville/paycheck-calculator',
   '/us/accessibility',
   '/us/vs-paycheckcity',
-  '/us/vs-smartasset'];
+  '/us/vs-smartasset',
+  // v11: 2026 tax-changes evergreen
+  '/us/2026-tax-changes-summary'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = STATIC_PATHS.map((p) => ({

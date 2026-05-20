@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
-import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Federal Income Tax Withholding",
   description: "How federal income tax withholding works on a US paycheck. IRS Publication 15-T method, W-4 inputs, supplemental wages. Educational only.",
@@ -19,6 +18,7 @@ export default function Page() {
       url="/us/federal-tax-withholding"
       description="How federal income tax withholding works on a US paycheck. IRS Publication 15-T method, W-4 inputs, supplemental wages. Educational only."
       intro={<>The federal income tax line on your pay stub is a prepayment to the IRS for the tax year. Your employer calculates it from your W-4 using IRS Publication 15-T tables. It is not your final tax bill, that gets settled when you file.</>}
+      directAnswer={<>Federal income tax withholding is the amount your employer sends to the IRS from each paycheck as a prepayment toward your annual tax bill. It is calculated from your W-4 and the IRS Publication 15-T tables — not a fixed percentage. It is not your final tax: any over- or under-payment is reconciled when you file your return.</>}
       body={<><h2>The mechanics</h2>
 <p>Your employer takes a portion of your gross pay each period and sends it to the IRS as your prepayment. At year-end, you reconcile via your tax return: if you over-withheld, you get a refund. If you under-withheld, you owe.</p>
 <h2>What drives the amount</h2>
@@ -32,16 +32,17 @@ export default function Page() {
 <li>Step 4(c) extra flat-dollar withholding per period</li>
 </ul>
 <h2>The 2026 federal brackets (single, simplified)</h2>
+<p>Marginal rates apply to taxable income — gross pay minus the standard deduction ($16,100 for a single filer in 2026) or itemized deductions:</p>
 <ul>
-<li>10 percent on income up to $11,925</li>
-<li>12 percent up to $48,475</li>
-<li>22 percent up to $103,350</li>
-<li>24 percent up to $197,300</li>
-<li>32 percent up to $250,525</li>
-<li>35 percent up to $626,350</li>
+<li>10 percent on taxable income up to $12,400</li>
+<li>12 percent up to $50,400</li>
+<li>22 percent up to $105,700</li>
+<li>24 percent up to $201,775</li>
+<li>32 percent up to $256,225</li>
+<li>35 percent up to $640,600</li>
 <li>37 percent above</li>
 </ul>
-<p>MFJ brackets are roughly double at the lower end. Verify current numbers at irs.gov.</p>
+<p>Married-filing-jointly brackets are exactly double the single figures through the 35 percent rate. Source: IRS Rev. Proc. 2025-32. Verify current numbers at irs.gov.</p>
 <h2>Withholding versus tax owed</h2>
 <p>Withholding is a calculation. Tax owed is determined when you file your return using all your income, deductions, credits and dependents. The two often differ. The annual reconciliation closes the gap.</p>
 <h2>Supplemental wages</h2>

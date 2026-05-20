@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
-import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "W-4 Guide (How to Fill Out a W-4)",
   description: "Step-by-step W-4 guide. Filing status, multiple jobs, dependents, deductions, extra withholding. Educational only.",
@@ -19,6 +18,7 @@ export default function Page() {
       url="/us/w4-guide"
       description="Step-by-step W-4 guide. Filing status, multiple jobs, dependents, deductions, extra withholding. Educational only."
       intro={<>The W-4 tells your employer how much federal tax to withhold from each paycheck. The 2020 version replaced the old allowance system. Most workers fill it out once and forget it. Smart workers revisit it annually.</>}
+      directAnswer={<>A W-4 is the IRS form that tells your employer how much federal income tax to withhold from each paycheck. You complete it in five steps: filing status, multiple jobs, dependents, other adjustments, and signature. It does not change the tax you owe — only how much is prepaid each period. Submit a new W-4 to your employer any time your situation changes.</>}
       body={<><h2>What the W-4 does</h2>
 <p>It tells your employer how much federal tax to take out of every paycheck on your behalf. It does not change your tax liability. Withholding is a prepayment, settled at filing time.</p>
 <h2>Step 1: Personal information</h2>

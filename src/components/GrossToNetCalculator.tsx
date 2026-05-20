@@ -72,37 +72,40 @@ const STATES: { code: string; name: string; rate: number; flat: boolean }[] = [
 ];
 
 // ----- IRS Pub 15-T 2026 percentage method (Standard Withholding) -----------
-// Annualised brackets, single filer (Step 2 unchecked). Other filings approximate.
-// Source: IRS Pub 15-T 2026 (https://www.irs.gov/publications/p15t)
+// Self-contained annual tables: feed RAW annual taxable wages directly.
+// Derived from the IRS Pub 15-T 2026 STANDARD withholding rate schedules by
+// folding in the Worksheet 1A fixed reduction ($8,600 Single/HoH, $12,900 MFJ),
+// so each table's 0% band equals the 2026 standard deduction.
+// Source: IRS Pub 15-T 2026 (https://www.irs.gov/pub/irs-pdf/p15t.pdf), verified 2026-05-20.
 const FED_BRACKETS_SINGLE = [
-  { up: 6800, base: 0, rate: 0 },
-  { up: 17150, base: 0, rate: 0.10 },
-  { up: 49500, base: 1035, rate: 0.12 },
-  { up: 102500, base: 4917, rate: 0.22 },
-  { up: 191400, base: 16577, rate: 0.24 },
-  { up: 245350, base: 37913, rate: 0.32 },
-  { up: 605700, base: 55177, rate: 0.35 },
-  { up: Infinity, base: 181299, rate: 0.37 }
+  { up: 16100, base: 0, rate: 0 },
+  { up: 28500, base: 0, rate: 0.10 },
+  { up: 66500, base: 1240, rate: 0.12 },
+  { up: 121800, base: 5800, rate: 0.22 },
+  { up: 217875, base: 17966, rate: 0.24 },
+  { up: 272325, base: 41024, rate: 0.32 },
+  { up: 656700, base: 58448, rate: 0.35 },
+  { up: Infinity, base: 192979.25, rate: 0.37 }
 ];
 const FED_BRACKETS_MFJ = [
-  { up: 17100, base: 0, rate: 0 },
-  { up: 40500, base: 0, rate: 0.10 },
-  { up: 105550, base: 2340, rate: 0.12 },
-  { up: 210750, base: 10146, rate: 0.22 },
-  { up: 388550, base: 33290, rate: 0.24 },
-  { up: 496450, base: 75962, rate: 0.32 },
-  { up: 743650, base: 110490, rate: 0.35 },
-  { up: Infinity, base: 197010, rate: 0.37 }
+  { up: 32200, base: 0, rate: 0 },
+  { up: 57000, base: 0, rate: 0.10 },
+  { up: 133000, base: 2480, rate: 0.12 },
+  { up: 243600, base: 11600, rate: 0.22 },
+  { up: 435750, base: 35932, rate: 0.24 },
+  { up: 544650, base: 82048, rate: 0.32 },
+  { up: 800900, base: 116896, rate: 0.35 },
+  { up: Infinity, base: 206583.50, rate: 0.37 }
 ];
 const FED_BRACKETS_HOH = [
-  { up: 13900, base: 0, rate: 0 },
-  { up: 30700, base: 0, rate: 0.10 },
-  { up: 79050, base: 1680, rate: 0.12 },
-  { up: 117150, base: 7482, rate: 0.22 },
-  { up: 206050, base: 15864, rate: 0.24 },
-  { up: 260000, base: 37200, rate: 0.32 },
-  { up: 620350, base: 54464, rate: 0.35 },
-  { up: Infinity, base: 180586, rate: 0.37 }
+  { up: 24150, base: 0, rate: 0 },
+  { up: 41850, base: 0, rate: 0.10 },
+  { up: 91600, base: 1770, rate: 0.12 },
+  { up: 129850, base: 7740, rate: 0.22 },
+  { up: 225900, base: 16155, rate: 0.24 },
+  { up: 280350, base: 39207, rate: 0.32 },
+  { up: 664750, base: 56631, rate: 0.35 },
+  { up: Infinity, base: 191171.00, rate: 0.37 }
 ];
 
 function annualFederal(annualWages: number, filing: Filing): number {
