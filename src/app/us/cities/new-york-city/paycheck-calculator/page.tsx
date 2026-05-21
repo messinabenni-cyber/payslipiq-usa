@@ -12,12 +12,12 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/new-york-city/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'NYC Paycheck Calculator (2026) — Federal + NY State + NYC Resident Tax',
+  title: 'NYC Paycheck Calculator (2026) — NY State + NYC Tax',
   description:
-    'NYC resident paycheck calculator. Federal, FICA, NY state tax, NY SDI + PFL, plus NYC resident income tax (3.078% to 3.876%). 2026 tables. Educational only, not advice.',
+    'NYC resident paycheck calculator. Federal, FICA, NY state tax, NY SDI + PFL, plus NYC resident income tax (3.078% to 3.876%). 2026 tables.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'NYC Paycheck Calculator (2026) — federal + NY + NYC resident tax',
+    title: 'NYC Paycheck Calculator (2026) — NY State + NYC Tax',
     description: 'Federal + FICA + NY state + NY SDI + NY PFL + NYC resident income tax stacked, with verified 2026 rates.',
     url: PAGE_URL,
     type: 'website',

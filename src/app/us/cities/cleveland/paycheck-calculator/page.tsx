@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/cleveland/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Cleveland Paycheck Calculator (2026) — OH + Cleveland RITA 2.5%',
+  title: 'Cleveland Paycheck Calculator (2026) — OH + RITA 2.5%',
   description:
-    'Cleveland paycheck calculator. Federal, FICA, Ohio flat 2.75% (verify), plus Cleveland 2.5% municipal income tax administered by RITA. 2026 rates. Educational only.',
+    'Cleveland paycheck calculator. Federal, FICA, Ohio state, plus Cleveland 2.5% municipal income tax administered by RITA. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Cleveland Paycheck Calculator (2026)',

@@ -11,7 +11,7 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/nashville/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Nashville Paycheck Calculator (2026) — No State Income Tax (TN)',
+  title: 'Nashville Paycheck Calculator (2026) — No TN State Tax',
   description:
     'Nashville paycheck calculator. Federal + FICA only — Tennessee has no state income tax (Hall Tax repealed 2021) and no Nashville city tax. Educational only.',
   alternates: { canonical: PAGE_URL },

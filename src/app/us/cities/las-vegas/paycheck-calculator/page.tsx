@@ -11,9 +11,9 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/las-vegas/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Las Vegas Paycheck Calculator (2026) — No State Income Tax (NV)',
+  title: 'Las Vegas Paycheck Calculator (2026) — No NV State Tax',
   description:
-    'Las Vegas paycheck calculator. Federal + FICA only — Nevada has no state income tax and no Las Vegas city tax. Tip credit awareness for hospitality workers. Educational only.',
+    'Las Vegas paycheck calculator. Federal + FICA only — Nevada has no state income tax and no Las Vegas city tax. Tip credit context for hospitality workers.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Las Vegas Paycheck Calculator (2026)',

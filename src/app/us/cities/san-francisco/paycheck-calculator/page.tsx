@@ -11,9 +11,9 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/san-francisco/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'San Francisco Paycheck Calculator (2026) — No SF Employee Withholding',
+  title: 'San Francisco Paycheck Calculator (2026) — CA Tax + SDI',
   description:
-    'San Francisco paycheck calculator. Federal, FICA, California progressive + CA SDI 1.3%. SF Payroll Expense Tax is employer-paid, no employee withholding. 2026. Educational only.',
+    'San Francisco paycheck calculator. Federal, FICA, California progressive + CA SDI 1.3%. SF Payroll Expense Tax is employer-paid only. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'San Francisco Paycheck Calculator (2026)',

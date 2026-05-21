@@ -3,7 +3,7 @@ import { RichArticle } from '@/components/RichArticle';
 
 export const metadata: Metadata = {
   title: "Methodology — How PayslipIQ Calculates US Paychecks",
-  description: "Open methodology with specific IRS / SSA / state DOR sources. IRS Notice 2025-67 (2026 limits), Pub 15-T 2026, SS wage base $184,500, 11 jurisdictions of state worker contributions.",
+  description: "Open methodology with specific IRS, SSA and state DOR sources. IRS Notice 2025-67, Pub 15-T 2026, SS wage base $184,500, 11 contribution jurisdictions.",
   alternates: { canonical: "/methodology" },
 };
 

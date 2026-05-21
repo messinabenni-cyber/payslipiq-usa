@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/yonkers/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Yonkers Paycheck Calculator (2026) — 16.75% Resident Surcharge of NYS Tax',
+  title: 'Yonkers Paycheck Calculator (2026) — 16.75% Surcharge',
   description:
-    'Yonkers resident paycheck calculator. Federal, FICA, NY state tax, NY SDI + PFL, plus the Yonkers 16.75% resident surcharge of NYS tax (NYS Pub NYS-50-T-Y). 2026 rates. Educational only.',
+    'Yonkers resident paycheck calculator. Federal, FICA, NY state tax, NY SDI + PFL, plus the Yonkers 16.75% resident surcharge of NYS tax. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Yonkers Paycheck Calculator (2026)',

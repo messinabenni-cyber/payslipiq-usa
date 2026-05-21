@@ -11,7 +11,7 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/minneapolis/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Minneapolis Paycheck Calculator (2026) — MN + No Minneapolis City Income Tax',
+  title: 'Minneapolis Paycheck Calculator (2026) — MN, No City Tax',
   description:
     'Minneapolis paycheck calculator. Federal, FICA, Minnesota progressive (top 9.85%). No Minneapolis city income tax. 2026 rates. Educational only.',
   alternates: { canonical: PAGE_URL },

@@ -11,7 +11,7 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/atlanta/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Atlanta Paycheck Calculator (2026) — GA Flat 5.39% + No City Tax',
+  title: 'Atlanta Paycheck Calculator (2026) — GA Flat 5.39% Tax',
   description:
     'Atlanta paycheck calculator. Federal, FICA, Georgia flat 5.39%. No Atlanta city income tax, no GA SDI/PFL. 2026 rates. Educational only.',
   alternates: { canonical: PAGE_URL },

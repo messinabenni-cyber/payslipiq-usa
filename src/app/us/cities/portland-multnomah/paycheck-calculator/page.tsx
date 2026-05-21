@@ -11,9 +11,9 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/portland-multnomah/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Portland / Multnomah Paycheck Calculator (2026) — OR + PFA + Metro SHS',
+  title: 'Portland / Multnomah Paycheck Calculator (2026) — OR',
   description:
-    'Portland & Multnomah County paycheck calculator. Federal, FICA, OR progressive, OR Paid Leave 0.6%, plus Multnomah PFA (1.5% / 3.0% tiers) and Portland Metro SHS (1%). Above-threshold income only. 2026.',
+    'Portland & Multnomah County paycheck calculator. Federal, FICA, OR progressive, OR Paid Leave 0.6%, plus Multnomah PFA and Portland Metro SHS. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Portland / Multnomah Paycheck Calculator (2026)',

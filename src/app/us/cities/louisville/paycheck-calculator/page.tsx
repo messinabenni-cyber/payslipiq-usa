@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/louisville/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Louisville Paycheck Calculator (2026) — KY + Louisville Metro 2.2% Occupational',
+  title: 'Louisville Paycheck Calculator (2026) — KY + Metro 2.2%',
   description:
-    'Louisville paycheck calculator. Federal, FICA, Kentucky flat 4.0%, plus Louisville Metro Occupational License Tax 2.2% on wages earned in Jefferson County. 2026 rates.',
+    'Louisville paycheck calculator. Federal, FICA, Kentucky flat 4.0%, plus Louisville Metro Occupational License Tax 2.2% on Jefferson County wages. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Louisville Paycheck Calculator (2026)',

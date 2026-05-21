@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/indianapolis/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Indianapolis Paycheck Calculator (2026) — IN + Marion County 2.02%',
+  title: 'Indianapolis Paycheck Calculator (2026) — IN + Marion Co.',
   description:
-    'Indianapolis paycheck calculator. Federal, FICA, Indiana flat 3.05%, plus Marion County local income tax 2.02%. Residence-based on Jan 1. 2026 rates. Educational only.',
+    'Indianapolis paycheck calculator. Federal, FICA, Indiana flat 3.05%, plus Marion County local income tax 2.02%. Residence-based. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Indianapolis Paycheck Calculator (2026)',

@@ -11,7 +11,7 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/boston/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Boston Paycheck Calculator (2026) — MA + MA PFML 0.46% + No City Tax',
+  title: 'Boston Paycheck Calculator (2026) — MA + PFML 0.46%',
   description:
     'Boston paycheck calculator. Federal, FICA, Massachusetts flat 5% (9% on income > $1M) + MA PFML 0.46% employee share. No Boston city income tax. 2026 rates.',
   alternates: { canonical: PAGE_URL },

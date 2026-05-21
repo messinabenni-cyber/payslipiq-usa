@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/cincinnati/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Cincinnati Paycheck Calculator (2026) — OH + Cincinnati 1.8% Earnings Tax',
+  title: 'Cincinnati Paycheck Calculator (2026) — OH + 1.8% Tax',
   description:
-    'Cincinnati paycheck calculator. Federal, FICA, Ohio state, plus Cincinnati 1.8% Earnings Tax on residents and on Cincinnati wages of non-residents. 2026 rates. Educational only.',
+    'Cincinnati paycheck calculator. Federal, FICA, Ohio state, plus Cincinnati 1.8% Earnings Tax on residents and on Cincinnati wages. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Cincinnati Paycheck Calculator (2026)',
