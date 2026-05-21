@@ -11,7 +11,7 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/denver/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Denver Paycheck Calculator (2026) — CO + Denver OPT $5.75/mo + CO FAMLI 0.44%',
+  title: 'Denver Paycheck Calculator (2026) — CO + Denver OPT',
   description:
     'Denver paycheck calculator. Federal, FICA, Colorado flat 4.40%, plus Denver Occupational Privilege Tax $5.75/mo + CO FAMLI 0.44% employee share. 2026 rates.',
   alternates: { canonical: PAGE_URL },

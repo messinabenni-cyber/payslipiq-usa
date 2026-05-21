@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/pittsburgh/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Pittsburgh Paycheck Calculator (2026) — PA + Pittsburgh EIT 3% + LST',
+  title: 'Pittsburgh Paycheck Calculator (2026) — PA + EIT 3%',
   description:
-    'Pittsburgh paycheck calculator. Federal, FICA, PA flat 3.07%, plus Pittsburgh Earned Income Tax 3% (resident) under PA Act 32, plus $52 Local Services Tax. 2026 rates.',
+    'Pittsburgh paycheck calculator. Federal, FICA, PA flat 3.07%, plus Pittsburgh Earned Income Tax 3% (resident) and $52 Local Services Tax. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Pittsburgh Paycheck Calculator (2026)',

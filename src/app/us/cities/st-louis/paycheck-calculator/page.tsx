@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/st-louis/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'St. Louis Paycheck Calculator (2026) — MO + STL 1% Earnings Tax',
+  title: 'St. Louis Paycheck Calculator (2026) — STL 1% Tax',
   description:
-    'St. Louis Missouri paycheck calculator. Federal, FICA, MO progressive, plus St. Louis 1% Earnings Tax on residents and on wages earned in STL by non-residents. 2026 rates.',
+    'St. Louis Missouri paycheck calculator. Federal, FICA, MO progressive, plus St. Louis 1% Earnings Tax on residents and on wages earned in STL. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'St. Louis Paycheck Calculator (2026)',

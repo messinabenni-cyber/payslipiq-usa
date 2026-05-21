@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/wilmington/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Wilmington DE Paycheck Calculator (2026) — DE + Wilmington City Wage Tax',
+  title: 'Wilmington DE Paycheck Calculator (2026) — City Wage Tax',
   description:
-    'Wilmington Delaware paycheck calculator. Federal, FICA, DE progressive, plus Wilmington City Wage Tax 1.25% on wages earned in Wilmington. 2026. Educational only, not advice.',
+    'Wilmington Delaware paycheck calculator. Federal, FICA, DE progressive, plus Wilmington City Wage Tax 1.25% on wages earned in Wilmington. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Wilmington DE Paycheck Calculator (2026)',

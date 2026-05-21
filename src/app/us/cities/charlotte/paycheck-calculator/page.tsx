@@ -11,9 +11,9 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/charlotte/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Charlotte Paycheck Calculator (2026) — NC Flat 3.99% + No City Tax',
+  title: 'Charlotte Paycheck Calculator (2026) — NC Flat 3.99%',
   description:
-    'Charlotte paycheck calculator. Federal, FICA, North Carolina flat 3.99% (NC step-down schedule per N.C. Gen. Stat. § 105-153.7). No Charlotte city tax. Educational only.',
+    'Charlotte paycheck calculator. Federal, FICA, North Carolina flat 3.99% (2026 step-down rate). No Charlotte city tax. Educational only.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Charlotte Paycheck Calculator (2026)',

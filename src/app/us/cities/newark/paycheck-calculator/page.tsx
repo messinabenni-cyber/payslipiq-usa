@@ -11,9 +11,9 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/newark/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Newark NJ Paycheck Calculator (2026) — NJ + No Employee Newark Payroll Tax',
+  title: 'Newark NJ Paycheck Calculator (2026) — NJ Tax + SDI',
   description:
-    'Newark NJ paycheck calculator. Federal, FICA, NJ progressive + NJ SDI 0.23% + NJ FLI 0.19%. Newark Payroll Tax is employer-paid only — no employee withholding line. 2026 rates.',
+    'Newark NJ paycheck calculator. Federal, FICA, NJ progressive + NJ SDI 0.23% + NJ FLI 0.19%. Newark Payroll Tax is employer-paid only. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Newark NJ Paycheck Calculator (2026)',

@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/detroit/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Detroit Paycheck Calculator (2026) — MI + Detroit City Income Tax',
+  title: 'Detroit Paycheck Calculator (2026) — MI + City Tax',
   description:
-    'Detroit paycheck calculator. Federal, FICA, Michigan flat 4.25%, plus Detroit city income tax (2.4% resident, 1.2% non-resident). 2026. Educational only, not advice.',
+    'Detroit paycheck calculator. Federal, FICA, Michigan flat 4.25%, plus Detroit city income tax (2.4% resident, 1.2% non-resident). 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Detroit Paycheck Calculator (2026)',

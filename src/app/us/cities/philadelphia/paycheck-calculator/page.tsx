@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/philadelphia/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Philadelphia Paycheck Calculator (2026) — PA + Philadelphia EIT',
+  title: 'Philadelphia Paycheck Calculator (2026) — PA + City EIT',
   description:
-    'Philadelphia paycheck calculator. Federal, FICA, PA state flat 3.07%, plus Philadelphia Earned Income Tax (resident 3.74%, non-resident 3.43%). Verified 2026 rates. Educational only.',
+    'Philadelphia paycheck calculator. Federal, FICA, PA state flat 3.07%, plus Philadelphia Earned Income Tax (resident 3.74%, non-resident 3.43%). 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Philadelphia Paycheck Calculator (2026)',

@@ -11,7 +11,7 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/houston/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Houston Paycheck Calculator (2026) — No State Income Tax (TX)',
+  title: 'Houston Paycheck Calculator (2026) — No TX State Tax',
   description:
     'Houston paycheck calculator. Federal + FICA only — Texas has no state income tax and no Houston city tax. Energy-sector pay context. Educational only.',
   alternates: { canonical: PAGE_URL },

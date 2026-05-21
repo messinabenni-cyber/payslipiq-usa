@@ -46,7 +46,9 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   '/us/vs-paycheckcity',
   '/us/vs-smartasset',
   // v11: 2026 tax-changes evergreen
-  '/us/2026-tax-changes-summary'];
+  '/us/2026-tax-changes-summary',
+  // v12: commercial comparison pages
+  '/us/vs-adp', '/us/vs-gusto'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = STATIC_PATHS.map((p) => ({

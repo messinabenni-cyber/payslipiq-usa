@@ -11,9 +11,9 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/seattle/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Seattle Paycheck Calculator (2026) — No WA Income Tax + WA PFML + WA Cares',
+  title: 'Seattle Paycheck Calculator (2026) — WA PFML + WA Cares',
   description:
-    'Seattle paycheck calculator. Federal, FICA, no Washington state income tax, plus WA PFML ~0.81% + WA Cares 0.58%. Seattle JumpStart Tax is employer-paid. 2026 rates.',
+    'Seattle paycheck calculator. Federal, FICA, no Washington state income tax, plus WA PFML ~0.81% + WA Cares 0.58%. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Seattle Paycheck Calculator (2026)',

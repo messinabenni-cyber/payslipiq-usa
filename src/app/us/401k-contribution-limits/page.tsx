@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
 export const metadata: Metadata = {
-  title: "401(k) Contribution Limits 2026 — $24,500 + $8,000 / $11,250 Catch-Up",
-  description: "IRS 2026 401(k) elective deferral limit is $24,500. Age 50+ catch-up is $8,000. SECURE 2.0 super catch-up (ages 60–63) is $11,250. New: high-earner Roth-mandatory catch-up. Educational only.",
+  title: "401(k) Contribution Limits 2026 — $24,500 + Catch-Up",
+  description: "IRS 2026 401(k) elective deferral limit is $24,500. Age 50+ catch-up is $8,000. SECURE 2.0 super catch-up (ages 60–63) is $11,250. Educational only.",
   alternates: { canonical: "/us/401k-contribution-limits" },
 };
 

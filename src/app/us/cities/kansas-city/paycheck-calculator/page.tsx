@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/kansas-city/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Kansas City MO Paycheck Calculator (2026) — MO + KC 1% Earnings Tax',
+  title: 'Kansas City MO Paycheck Calculator (2026) — KC 1% Tax',
   description:
-    'Kansas City Missouri paycheck calculator. Federal, FICA, MO progressive, plus KCMO 1% Earnings Tax on residents and on wages earned in KC by non-residents. 2026 rates.',
+    'Kansas City Missouri paycheck calculator. Federal, FICA, MO progressive, plus KCMO 1% Earnings Tax on residents and on wages earned in KC. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Kansas City Paycheck Calculator (2026)',

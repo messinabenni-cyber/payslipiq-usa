@@ -12,9 +12,9 @@ import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/baltimore/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Baltimore Paycheck Calculator (2026) — MD + Baltimore City 3.2%',
+  title: 'Baltimore Paycheck Calculator (2026) — MD + City 3.2%',
   description:
-    'Baltimore paycheck calculator. Federal, FICA, Maryland progressive, plus Baltimore City local income tax 3.2%. The MD county / city piggyback rate is on top of state tax. 2026 rates.',
+    'Baltimore paycheck calculator. Federal, FICA, Maryland progressive, plus Baltimore City local income tax 3.2% piggyback on top of state tax. 2026 rates.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Baltimore Paycheck Calculator (2026)',

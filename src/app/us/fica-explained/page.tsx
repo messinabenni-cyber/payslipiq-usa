@@ -3,7 +3,7 @@ import { RichArticle } from '@/components/RichArticle';
 
 export const metadata: Metadata = {
   title: "FICA on Your Paycheck (Social Security + Medicare)",
-  description: "FICA is a federal payroll tax: 6.2 percent Social Security up to the wage base, 1.45 percent Medicare on all wages, plus 0.9 percent Additional Medicare for high earners. Educational only.",
+  description: "FICA is a federal payroll tax: 6.2% Social Security up to the wage base, 1.45% Medicare on all wages, plus 0.9% Additional Medicare for high earners.",
   alternates: { canonical: "/us/fica-explained" },
 };
 

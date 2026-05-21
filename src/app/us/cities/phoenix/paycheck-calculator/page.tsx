@@ -11,7 +11,7 @@ import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 const PAGE_URL = 'https://payslipiq.com/us/cities/phoenix/paycheck-calculator/';
 
 export const metadata: Metadata = {
-  title: 'Phoenix Paycheck Calculator (2026) — AZ Flat 2.5% + No City Tax',
+  title: 'Phoenix Paycheck Calculator (2026) — AZ Flat 2.5% Tax',
   description:
     'Phoenix paycheck calculator. Federal, FICA, Arizona flat 2.5% — one of the lowest state rates in the US. No Phoenix city income tax, no AZ SDI/PFL. 2026 rates.',
   alternates: { canonical: PAGE_URL },
