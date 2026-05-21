@@ -72,6 +72,9 @@ const nextConfig = {
       { source: '/us/:state/payroll-deductions', destination: '/us/deductions', permanent: true },
       { source: '/us/:state/minimum-wage-paycheck', destination: '/us/:state', permanent: true },
       { source: '/us/:state/cities/:path*', destination: '/us/cities', permanent: true },
+      // audit-v15: consolidate duplicate company pages — /press was a thin stub, /us/security duplicated /security
+      { source: '/press', destination: '/us/press', permanent: true },
+      { source: '/us/security', destination: '/security', permanent: true },
     ];
   },
 };
