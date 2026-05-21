@@ -9,7 +9,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/new-york-city/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/new-york-city/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'NYC Paycheck Calculator (2026) — NY State + NYC Tax',
@@ -34,8 +34,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'New York City', url: PAGE_URL },
 ];
 
@@ -56,9 +56,9 @@ export default function NYCPaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/new-york/" className="hover:underline">New York</Link>
+          <Link href="/us/new-york" className="hover:underline">New York</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">New York City</span>
         </nav>
@@ -118,19 +118,19 @@ export default function NYCPaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/new-york/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/new-york" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">New York Paycheck Guide</div>
               <div className="text-sm text-slate-500">How a NY paycheck is built end-to-end.</div>
             </Link>
-            <Link href="/us/new-york/paycheck-calculator/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/new-york/paycheck-calculator" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">NY State Paycheck Calculator</div>
               <div className="text-sm text-slate-500">Federal + NY state + NY SDI + PFL (no NYC line).</div>
             </Link>
-            <Link href="/us/cities/yonkers/paycheck-calculator/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/cities/yonkers/paycheck-calculator" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Yonkers Paycheck Calculator</div>
               <div className="text-sm text-slate-500">Federal + NY state + Yonkers 16.75% surcharge.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">All US Local Paycheck Taxes</div>
               <div className="text-sm text-slate-500">NYC, Yonkers, Philadelphia, Detroit, RITA cities, and more.</div>
             </Link>

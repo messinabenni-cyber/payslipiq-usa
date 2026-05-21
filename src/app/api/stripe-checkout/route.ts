@@ -68,8 +68,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'price_not_configured', envVar: productConfig.envVar }, { status: 503 });
   }
 
-  const successUrl = process.env.STRIPE_SUCCESS_URL ?? 'https://payslipiq.com/us/thanks/';
-  const cancelUrl = process.env.STRIPE_CANCEL_URL ?? 'https://payslipiq.com/us/checkout-cancelled/';
+  const successUrl = process.env.STRIPE_SUCCESS_URL ?? 'https://payslipiq.com/us/thanks';
+  const cancelUrl = process.env.STRIPE_CANCEL_URL ?? 'https://payslipiq.com/us/checkout-cancelled';
 
   // Direct Stripe REST API call (no SDK dependency to keep bundle lean).
   const params = new URLSearchParams();

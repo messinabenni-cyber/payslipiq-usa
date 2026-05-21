@@ -226,7 +226,7 @@ export function HourlySalaryConverter({ direction = 'h2s' as Direction, defaultS
           </table>
           <p className="text-xs text-ink/60 mt-3">
             Single filer assumption. State tax uses each state&apos;s flat or top-marginal rate verified 2026-05-06. Pre-tax 401(k), HSA, FSA, health premiums, and W-4 dependents are not modelled here. For precise per-paycheck numbers use the
-            <a className="text-accent underline mx-1" href="/us/gross-to-net-paycheck-calculator/">Gross to Net Paycheck Calculator</a>.
+            <a className="text-accent underline mx-1" href="/us/gross-to-net-paycheck-calculator">Gross to Net Paycheck Calculator</a>.
           </p>
         </div>
       </div>

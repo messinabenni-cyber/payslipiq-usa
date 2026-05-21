@@ -8,7 +8,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/minneapolis/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/minneapolis/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'Minneapolis Paycheck Calculator (2026) — MN, No City Tax',
@@ -33,8 +33,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'Minneapolis', url: PAGE_URL },
 ];
 
@@ -55,9 +55,9 @@ export default function MinneapolisPaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/minnesota/" className="hover:underline">Minnesota</Link>
+          <Link href="/us/minnesota" className="hover:underline">Minnesota</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Minneapolis</span>
         </nav>
@@ -108,11 +108,11 @@ export default function MinneapolisPaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/minnesota/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/minnesota" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Minnesota Paycheck Guide</div>
               <div className="text-sm text-slate-500">MN progressive + new PFML 2026 program.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">All US Local Paycheck Taxes</div>
               <div className="text-sm text-slate-500">All US cities + counties with local payroll tax.</div>
             </Link>

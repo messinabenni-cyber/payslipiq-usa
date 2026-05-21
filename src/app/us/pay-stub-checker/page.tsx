@@ -11,9 +11,9 @@ import { EmailCapture } from '@/components/EmailCapture';
 const PAGE_URL = 'https://payslipiq.com/us/pay-stub-checker';
 
 export const metadata: Metadata = {
-  title: 'Pay Stub Checker (USA, 2026) · Plain-English Pay Stub Explainer',
+  title: 'Pay Stub Checker 2026 · Read Any US Pay Stub',
   description:
-    'Walk through every line on a US pay stub: gross pay, federal withholding, FICA, state tax, local tax, deductions, and net pay. Educational only, not tax, legal, or financial advice.',
+    'Walk through every line on a US pay stub: gross pay, federal withholding, FICA, state and local tax, deductions and net pay. Educational only.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -100,7 +100,7 @@ const HOW_TO_STEPS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Pay Stub Checker', url: PAGE_URL }
 ];
 
@@ -164,7 +164,7 @@ export default function PayStubCheckerPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Pay Stub Checker</span>
         </nav>
@@ -211,7 +211,7 @@ export default function PayStubCheckerPage() {
 
           <div className="mt-4">
             <Link
-              href="/us/paycheck-calculator/"
+              href="/us/paycheck-calculator"
               className="inline-flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-slate-700"
             >
               Use the Paycheck Calculator (free, works today)
@@ -277,19 +277,19 @@ export default function PayStubCheckerPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Paycheck Calculator</div>
               <div className="text-sm text-slate-500">Enter gross, state, filing status. Get take-home.</div>
             </Link>
-            <Link href="/us/gross-to-net-paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/gross-to-net-paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Gross to Net Calculator</div>
               <div className="text-sm text-slate-500">Any gross → estimated take-home, 2026 tables.</div>
             </Link>
-            <Link href="/us/year-to-date-paycheck-checker/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/year-to-date-paycheck-checker" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Year-to-Date Checker</div>
               <div className="text-sm text-slate-500">YTD wages, FICA caps, 401(k) progress.</div>
             </Link>
-            <Link href="/us/ask-payroll-generator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/ask-payroll-generator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Ask Payroll Generator</div>
               <div className="text-sm text-slate-500">Draft a polite, factual message to HR.</div>
             </Link>

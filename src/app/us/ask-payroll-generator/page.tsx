@@ -7,7 +7,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { AskPayrollClient } from '@/components/AskPayrollClient';
 
-const PAGE_URL = 'https://payslipiq.com/us/ask-payroll-generator/';
+const PAGE_URL = 'https://payslipiq.com/us/ask-payroll-generator';
 
 export const metadata: Metadata = {
   title: 'Ask Payroll, Message Generator (US) · Free, Client-Side',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/',
+      'es-US': 'https://payslipiq.com/es',
       'x-default': PAGE_URL
     }
   },
@@ -66,7 +66,7 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Ask Payroll Generator', url: PAGE_URL }
 ];
 
@@ -103,7 +103,7 @@ export default function AskPayrollGeneratorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Ask Payroll Generator</span>
         </nav>

@@ -8,7 +8,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/san-diego/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/san-diego/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'San Diego Paycheck Calculator (2026) — CA Tax + SDI',
@@ -33,8 +33,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'San Diego', url: PAGE_URL },
 ];
 
@@ -55,9 +55,9 @@ export default function SanDiegoPaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/california/" className="hover:underline">California</Link>
+          <Link href="/us/california" className="hover:underline">California</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">San Diego</span>
         </nav>
@@ -114,11 +114,11 @@ export default function SanDiegoPaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/california/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/california" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">California Paycheck Guide</div>
               <div className="text-sm text-slate-500">CA brackets + SDI explained.</div>
             </Link>
-            <Link href="/us/california-sdi/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/california-sdi" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">California SDI</div>
               <div className="text-sm text-slate-500">What SDI funds and why it has no cap.</div>
             </Link>

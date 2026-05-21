@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Press kit | PayslipIQ',
   description: 'PayslipIQ press kit: brand assets, fact sheet, founder bio, media inquiries.',
-  alternates: { canonical: 'https://payslipiq.com/us/press/' }
+  alternates: { canonical: 'https://payslipiq.com/us/press' }
 };
 
 const FACTS = [
@@ -32,13 +32,13 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Press', url: 'https://payslipiq.com/us/press/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Press', url: 'https://payslipiq.com/us/press' }
       ]} />
       <ArticleSchema
         headline="PayslipIQ Press Kit"
         description="Brand assets, fact sheet, and media inquiry contact for PayslipIQ."
-        url="https://payslipiq.com/us/press/"
+        url="https://payslipiq.com/us/press"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Press</div>
@@ -96,7 +96,7 @@ export default function Page() {
 
       <p className="mt-12 text-[14px] text-slate-600">
         Looking for editorial review on a pay-stub explainer or a state-specific story? See{' '}
-        <Link href="/us/about-the-team/" className="text-blue-600 hover:underline">/us/about-the-team</Link>.
+        <Link href="/us/about-the-team" className="text-blue-600 hover:underline">/us/about-the-team</Link>.
       </p>
     </main>
   );

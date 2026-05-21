@@ -41,7 +41,7 @@ export default function Page() {
         <h2>10. DMCA / copyright</h2>
         <p>If you believe content on PayslipIQ infringes your copyright, send a notice to <a href="mailto:legal@payslipiq.com">legal@payslipiq.com</a> with: (a) your signature (physical or electronic); (b) identification of the copyrighted work claimed to be infringed; (c) identification of the material claimed to be infringing and where it appears on the site; (d) your contact information; (e) a statement that you have a good-faith belief that the use is not authorised by the copyright owner, its agent, or the law; and (f) a statement, under penalty of perjury, that the information in the notice is accurate and that you are authorised to act on behalf of the owner of the right that is allegedly infringed.</p>
         <h2>11. Severability and entire agreement</h2>
-        <p>If any provision of these Terms is held invalid, the remaining provisions remain in effect. These Terms, the <Link href="/privacy">privacy notice</Link>, the <Link href="/us/methodology/">methodology page</Link>, and any other notices linked from the site together constitute the entire agreement between you and PayslipIQ.</p>
+        <p>If any provision of these Terms is held invalid, the remaining provisions remain in effect. These Terms, the <Link href="/privacy">privacy notice</Link>, the <Link href="/methodology">methodology page</Link>, and any other notices linked from the site together constitute the entire agreement between you and PayslipIQ.</p>
         <h2>12. Contact</h2>
         <p><a href="mailto:legal@payslipiq.com">legal@payslipiq.com</a></p>
       </article>

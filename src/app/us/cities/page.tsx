@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/';
+const PAGE_URL = 'https://payslipiq.com/us/cities';
 
 export const metadata: Metadata = {
   title: 'US City Paycheck Calculators — Local Tax by City (2026)',
@@ -88,7 +88,7 @@ const CITIES = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Cities', url: PAGE_URL },
 ];
 
@@ -102,7 +102,7 @@ export default function CitiesIndexPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Cities</span>
         </nav>
@@ -124,7 +124,7 @@ export default function CitiesIndexPage() {
           {CITIES.map((c) => (
             <Link
               key={c.slug}
-              href={`/us/cities/${c.slug}/paycheck-calculator/`}
+              href={`/us/cities/${c.slug}/paycheck-calculator`}
               className="block rounded-lg border border-slate-200 bg-white p-5 hover:border-blue-300"
             >
               <div className="flex justify-between items-start gap-2">
@@ -143,7 +143,7 @@ export default function CitiesIndexPage() {
             For Ohio RITA / CCA cities, Maryland counties, Indiana counties, PA Act 32 municipalities
             outside Philadelphia, Pittsburgh, and any other US locality with an employee-paid local
             income tax, use the general{' '}
-            <Link href="/us/local-paycheck-taxes/" className="text-blue-600 underline">
+            <Link href="/us/local-paycheck-taxes" className="text-blue-600 underline">
               Local Paycheck Taxes estimator
             </Link>{' '}
             and enter your specific rate.
@@ -153,19 +153,19 @@ export default function CitiesIndexPage() {
         <section className="mt-10">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/paycheck-calculator/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/paycheck-calculator" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">US Paycheck Calculator</div>
               <div className="text-sm text-slate-500">Federal + FICA + state for all 50 states + DC.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">All US Local Paycheck Taxes</div>
               <div className="text-sm text-slate-500">Cross-jurisdiction estimator with manual rate entry.</div>
             </Link>
-            <Link href="/us/paycheck-health-score/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/paycheck-health-score" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Paycheck Health Score</div>
               <div className="text-sm text-slate-500">Free 8-point checklist PDF for your next paycheck.</div>
             </Link>
-            <Link href="/us/state-tax/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/state-tax" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">State Tax Index</div>
               <div className="text-sm text-slate-500">All 50 state paycheck guides.</div>
             </Link>

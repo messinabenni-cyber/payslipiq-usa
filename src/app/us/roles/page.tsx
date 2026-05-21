@@ -53,7 +53,7 @@ export default function Page() {
       <BreadcrumbSchema
         items={[
           { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-          { name: 'USA', url: 'https://payslipiq.com/us/' },
+          { name: 'USA', url: 'https://payslipiq.com/us' },
           { name: 'Paycheck Guides by Worker Type', url: 'https://payslipiq.com/us/roles' },
         ]}
       />

@@ -11,7 +11,7 @@ import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
 const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator';
 
-export const metadata: Metadata = {  title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',  description:    'Free 2026 US paycheck calculator. Calculate your paycheck after federal tax, FICA and state withholding for all 50 states. Hourly and salary modes.',  alternates: {    canonical: PAGE_URL,    languages: {      'en-US': PAGE_URL,      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',      'x-default': PAGE_URL,    },  },  openGraph: {    title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',    description:      'Free 2026 US paycheck calculator. Federal tax, FICA, all 50 states + DC. See exactly what your paycheck is after taxes.',    url: PAGE_URL,    type: 'website',    siteName: 'PayslipIQ',    locale: 'en_US',    images: [      {        url: 'https://payslipiq.com/api/og?title=Paycheck%20Calculator&eyebrow=USA%202026',        width: 1200,        height: 630,        alt: 'PayslipIQ Paycheck Calculator 2026',      },    ],  },  twitter: {    card: 'summary_large_image',    title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',    description: 'Calculate your paycheck after federal tax, FICA and state withholding. All 50 states.',  },  other: {    'geo.region': 'US',    'geo.placename': 'United States',  },};
+export const metadata: Metadata = {  title: 'Paycheck Calculator 2026 — Pay After Tax',  description:    'Free 2026 US paycheck calculator. Calculate your paycheck after federal tax, FICA and state withholding for all 50 states. Hourly and salary modes.',  alternates: {    canonical: PAGE_URL,    languages: {      'en-US': PAGE_URL,      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',      'x-default': PAGE_URL,    },  },  openGraph: {    title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',    description:      'Free 2026 US paycheck calculator. Federal tax, FICA, all 50 states + DC. See exactly what your paycheck is after taxes.',    url: PAGE_URL,    type: 'website',    siteName: 'PayslipIQ',    locale: 'en_US',    images: [      {        url: 'https://payslipiq.com/api/og?title=Paycheck%20Calculator&eyebrow=USA%202026',        width: 1200,        height: 630,        alt: 'PayslipIQ Paycheck Calculator 2026',      },    ],  },  twitter: {    card: 'summary_large_image',    title: 'Paycheck Calculator 2026 | Calculate My Paycheck After Tax',    description: 'Calculate your paycheck after federal tax, FICA and state withholding. All 50 states.',  },  other: {    'geo.region': 'US',    'geo.placename': 'United States',  },};
 
 const FAQS = [
   {
@@ -59,7 +59,7 @@ const HOW_TO_STEPS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Paycheck Calculator', url: PAGE_URL }
 ];
 
@@ -126,7 +126,7 @@ export default function PaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Paycheck Calculator</span>
         </nav>
@@ -205,19 +205,19 @@ export default function PaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/pay-stub-checker/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/pay-stub-checker" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Pay Stub Checker</div>
               <div className="text-sm text-slate-500">Upload a pay stub. Plain-English line-by-line walkthrough.</div>
             </Link>
-            <Link href="/us/gross-to-net-paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/gross-to-net-paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Gross to Net Calculator</div>
               <div className="text-sm text-slate-500">Any gross → estimated take-home, 2026 tables.</div>
             </Link>
-            <Link href="/us/salary-after-tax/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/salary-after-tax" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Salary After Tax</div>
               <div className="text-sm text-slate-500">Annual salary → bi-weekly or monthly take-home.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Local Tax Calculator</div>
               <div className="text-sm text-slate-500">NYC, Philly, Detroit, Ohio cities, and more.</div>
             </Link>

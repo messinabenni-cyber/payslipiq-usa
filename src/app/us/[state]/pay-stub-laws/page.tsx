@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const s = getStateBySlug(params.state);
-  if (!s) return { title: 'State not found' };
+  if (!s) return { title: 'State not found', robots: { index: false, follow: false } };
   return {
     title: `${s.name} Pay Stub Laws, What Employers Must Provide`,
     description: `${s.name} pay stub access laws and employer requirements. Educational only.`,

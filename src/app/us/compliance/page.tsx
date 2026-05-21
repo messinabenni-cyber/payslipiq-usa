@@ -7,7 +7,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: 'Compliance | PayslipIQ',
   description: 'PayslipIQ compliance posture: SOC 2 readiness, FCRA boundary, CCPA, GDPR, HIPAA-equivalent privacy posture for sensitive payroll data.',
-  alternates: { canonical: 'https://payslipiq.com/us/compliance/' }
+  alternates: { canonical: 'https://payslipiq.com/us/compliance' }
 };
 
 const POSTURE = [
@@ -56,13 +56,13 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Compliance', url: 'https://payslipiq.com/us/compliance/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Compliance', url: 'https://payslipiq.com/us/compliance' }
       ]} />
       <ArticleSchema
         headline="PayslipIQ Compliance"
         description="SOC 2 readiness, FCRA boundary, CCPA, GDPR, sub-processor list."
-        url="https://payslipiq.com/us/compliance/"
+        url="https://payslipiq.com/us/compliance"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Compliance</div>

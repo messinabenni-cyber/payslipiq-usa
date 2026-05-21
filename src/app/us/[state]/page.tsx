@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const s = getStateBySlug(params.state);
-  if (!s) return { title: 'State not found' };
+  if (!s) return { title: 'State not found', robots: { index: false, follow: false } };
   return {
     title: `${s.name} Paycheck Guide (2026)`,
     description: `Federal tax, FICA, ${s.name} state tax, deductions, overtime. Plain-English. Educational only.`,

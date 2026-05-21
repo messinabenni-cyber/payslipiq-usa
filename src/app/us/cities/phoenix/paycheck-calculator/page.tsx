@@ -8,7 +8,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/phoenix/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/phoenix/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'Phoenix Paycheck Calculator (2026) — AZ Flat 2.5% Tax',
@@ -33,8 +33,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'Phoenix', url: PAGE_URL },
 ];
 
@@ -55,9 +55,9 @@ export default function PhoenixPaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/arizona/" className="hover:underline">Arizona</Link>
+          <Link href="/us/arizona" className="hover:underline">Arizona</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Phoenix</span>
         </nav>
@@ -104,11 +104,11 @@ export default function PhoenixPaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/arizona/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/arizona" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Arizona Paycheck Guide</div>
               <div className="text-sm text-slate-500">AZ flat 2.5% + no city tax overview.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">All US Local Paycheck Taxes</div>
               <div className="text-sm text-slate-500">Where local payroll tax does apply.</div>
             </Link>

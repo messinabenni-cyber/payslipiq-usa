@@ -30,7 +30,7 @@ export function ReviewedBy({ reviewerSlug = 'lead-reviewer', reviewedOn = LAST_R
           </Link>
         </div>
         <div className="text-[12px] text-slate-500">
-          Last reviewed {reviewedOn} · <Link href="/us/about-the-team/" className="hover:underline">Editorial standards</Link>
+          Last reviewed {reviewedOn} · <Link href="/us/about-the-team" className="hover:underline">Editorial standards</Link>
         </div>
       </div>
     </div>

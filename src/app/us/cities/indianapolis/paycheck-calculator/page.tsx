@@ -9,7 +9,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/indianapolis/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/indianapolis/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'Indianapolis Paycheck Calculator (2026) — IN + Marion Co.',
@@ -34,8 +34,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'Indianapolis', url: PAGE_URL },
 ];
 
@@ -56,9 +56,9 @@ export default function IndianapolisPaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/indiana/" className="hover:underline">Indiana</Link>
+          <Link href="/us/indiana" className="hover:underline">Indiana</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Indianapolis</span>
         </nav>
@@ -114,11 +114,11 @@ export default function IndianapolisPaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/indiana/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/indiana" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Indiana Paycheck Guide</div>
               <div className="text-sm text-slate-500">IN flat 3.05% + all 92 county rates.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">All US Local Paycheck Taxes</div>
               <div className="text-sm text-slate-500">NYC, Yonkers, Indianapolis, Cleveland, and more.</div>
             </Link>

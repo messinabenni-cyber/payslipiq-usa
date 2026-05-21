@@ -8,7 +8,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 export const metadata: Metadata = {
   title: 'Premium Pay Stub Report | PayslipIQ',
   description: 'Detailed pay stub analysis with deduction breakdown, withholding optimization checklist, and a personalized payroll question pack. Educational only, not advice.',
-  alternates: { canonical: 'https://payslipiq.com/us/premium-pay-stub-report/' }
+  alternates: { canonical: 'https://payslipiq.com/us/premium-pay-stub-report' }
 };
 
 const FAQS = [
@@ -24,13 +24,13 @@ export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Premium Pay Stub Report', url: 'https://payslipiq.com/us/premium-pay-stub-report/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Premium Pay Stub Report', url: 'https://payslipiq.com/us/premium-pay-stub-report' }
       ]} />
       <ArticleSchema
         headline="Premium Pay Stub Report"
         description="Detailed paid analysis of one US pay stub, with comparisons to federal IRS Pub 15-T tables and state-by-state expectations."
-        url="https://payslipiq.com/us/premium-pay-stub-report/"
+        url="https://payslipiq.com/us/premium-pay-stub-report"
       />
       <FAQSchema items={FAQS} />
 
@@ -53,11 +53,11 @@ export default function Page() {
           <li>10-question pack to take to payroll</li>
           <li>7-day refund if the report did not match the upload</li>
         </ul>
-        <Link href="/us/premium-pay-stub-report/checkout/" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
-          Buy Premium Report
+        <Link href="/contact" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
+          Request the Premium Report
         </Link>
         <p className="text-[12px] text-ink/55 mt-3">
-          Payment processed securely. PayslipIQ does not store payment card details.
+          Contact us to request the Premium Pay Stub Report. We will confirm availability and next steps by email.
         </p>
       </div>
 

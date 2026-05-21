@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Editorial Standards & Review Process',
   description:
     'How PayslipIQ researches, sources, reviews, and corrects every paycheck explainer. Our editorial process, sourcing standard, corrections policy, and independence. Educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/about-the-team/' },
+  alternates: { canonical: 'https://payslipiq.com/us/about-the-team' },
 };
 
 const PROCESS = [
@@ -27,14 +27,14 @@ export default function Page() {
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema
         items={[
-          { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-          { name: 'Editorial Standards', url: 'https://payslipiq.com/us/about-the-team/' },
+          { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+          { name: 'Editorial Standards', url: 'https://payslipiq.com/us/about-the-team' },
         ]}
       />
       <ArticleSchema
         headline="PayslipIQ Editorial Standards & Review Process"
         description="How PayslipIQ researches, sources, reviews, and corrects every paycheck explainer."
-        url="https://payslipiq.com/us/about-the-team/"
+        url="https://payslipiq.com/us/about-the-team"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Editorial</div>

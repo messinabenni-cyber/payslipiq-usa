@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: 'Preguntas frecuentes sobre tu cheque de pago | PayslipIQ (Beta)',
   description: 'Respuestas a las preguntas mas comunes de los trabajadores en EE.UU. sobre su cheque de pago, impuestos, y deducciones. Solo educativo.',
   alternates: {
-    canonical: 'https://payslipiq.com/es/preguntas-frecuentes/',
+    canonical: 'https://payslipiq.com/es/preguntas-frecuentes',
     languages: {
-      'en-US': 'https://payslipiq.com/us/why-is-my-paycheck-lower/',
-      'es-US': 'https://payslipiq.com/es/preguntas-frecuentes/',
-      'x-default': 'https://payslipiq.com/us/why-is-my-paycheck-lower/'
+      'en-US': 'https://payslipiq.com/us/why-is-my-paycheck-lower',
+      'es-US': 'https://payslipiq.com/es/preguntas-frecuentes',
+      'x-default': 'https://payslipiq.com/us/why-is-my-paycheck-lower'
     }
   }
 };
@@ -27,7 +27,7 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <div className="rounded-md border border-amber-200 bg-amber-50 p-3 text-[13px] text-amber-900 mb-6">
-        <strong>Beta.</strong> Cobertura limitada en espanol. Para guias detalladas, ve la <Link href="/us/" className="font-semibold underline">version en ingles</Link>.
+        <strong>Beta.</strong> Cobertura limitada en espanol. Para guias detalladas, ve la <Link href="/us" className="font-semibold underline">version en ingles</Link>.
       </div>
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Preguntas Frecuentes</div>

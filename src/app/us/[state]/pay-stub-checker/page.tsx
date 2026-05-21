@@ -29,7 +29,7 @@ function stateTaxSentence(s: StateData): string {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const s = getStateBySlug(params.state);
-  if (!s) return { title: 'State not found' };
+  if (!s) return { title: 'State not found', robots: { index: false, follow: false } };
   const url = `https://payslipiq.com/us/${s.slug}/pay-stub-checker`;
   return {
     title: `${s.name} Pay Stub Checker (Free, 2026)`,
