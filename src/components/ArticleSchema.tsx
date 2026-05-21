@@ -8,7 +8,7 @@ interface Props {
   dateModified?: string;
 }
 
-export function ArticleSchema({ headline, description, url, datePublished = '2026-05-08', dateModified = '2026-05-08' }: Props) {
+export function ArticleSchema({ headline, description, url, datePublished = '2026-05-08', dateModified = '2026-05-21' }: Props) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -17,10 +17,15 @@ export function ArticleSchema({ headline, description, url, datePublished = '202
     datePublished,
     dateModified,
     inLanguage: 'en-US',
-    author: { '@type': 'Organization', name: 'PayslipIQ' },
+    author: {
+      '@type': 'Organization',
+      name: 'PayslipIQ',
+      url: 'https://payslipiq.com/',
+    },
     publisher: {
       '@type': 'Organization',
-      name: "PayslipIQ",
+      name: 'PayslipIQ',
+      url: 'https://payslipiq.com/',
       logo: { '@type': 'ImageObject', url: 'https://payslipiq.com/icon-512.png' },
     },
     mainEntityOfPage: url,
