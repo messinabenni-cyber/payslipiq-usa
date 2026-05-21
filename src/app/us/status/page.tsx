@@ -96,7 +96,7 @@ export default function StatusPage() {
       </p>
 
       <p className="mt-4 text-[14px] text-slate-600">
-        See also: <Link href="/us/security" className="text-blue-600 hover:underline">Security</Link>,{' '}
+        See also: <Link href="/security" className="text-blue-600 hover:underline">Security</Link>,{' '}
         <Link href="/trust" className="text-blue-600 hover:underline">Trust Center</Link>,{' '}
         <Link href="/.well-known/security.txt" className="text-blue-600 hover:underline">security.txt</Link>.
       </p>
