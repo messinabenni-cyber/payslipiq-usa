@@ -72,7 +72,7 @@ export default function Page() {
 </table>
 <p>Each rate is taken from the agency-published 2026 schedule. Verify with the linked agency before relying on it.</p>
 <h2>Local taxes (city / county)</h2>
-<p>Encoded for: NYC (4 progressive brackets), Yonkers (16.75% surcharge on NY state liability), Philadelphia (3.75% resident / 3.44% non-resident), Detroit (2.4% / 1.2%), Ohio RITA and CCA cities, Indiana counties, Maryland counties. See <a href="/us/local-paycheck-taxes/">Local Paycheck Taxes</a>.</p>
+<p>Encoded for: NYC (4 progressive brackets), Yonkers (16.75% surcharge on NY state liability), Philadelphia (3.75% resident / 3.44% non-resident), Detroit (2.4% / 1.2%), Ohio RITA and CCA cities, Indiana counties, Maryland counties. See <a href="/us/local-paycheck-taxes">Local Paycheck Taxes</a>.</p>
 <h2>Pre-tax vs post-tax</h2>
 <p>Pre-tax 401(k), HSA, FSA, and Section 125 cafeteria-plan deductions reduce federal-taxable wages and most states&apos; state-taxable wages, but do <em>not</em> reduce FICA wages. Pre-tax dollars lower federal/state withholding but leave Social Security and Medicare untouched. Roth 401(k), Roth IRA, after-tax 401(k), garnishments, and post-tax benefit premiums come off net pay only.</p>
 <h2>What we deliberately don&apos;t model</h2>
@@ -109,7 +109,7 @@ export default function Page() {
 <li>Every AI output has a verification reminder.</li>
 </ul>
 <h2>Reporting an error</h2>
-<p>Email content@payslipiq.com with the URL, the input, the value we returned, and the source you believe is correct. We correct errors publicly with a dated changelog entry at <a href="/us/status/">/us/status</a>.</p></>}
+<p>Email content@payslipiq.com with the URL, the input, the value we returned, and the source you believe is correct. We correct errors publicly with a dated changelog entry at <a href="/us/status">/us/status</a>.</p></>}
       faqs={FAQS}
       related={RELATED}
       breadcrumbs={BREADCRUMBS}

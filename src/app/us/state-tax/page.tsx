@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 
-const PAGE_URL = 'https://payslipiq.com/us/state-tax/';
+const PAGE_URL = 'https://payslipiq.com/us/state-tax';
 
 export const metadata: Metadata = {
   title: 'State Income Tax on Your Paycheck (USA, 2026)',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/',
+      'es-US': 'https://payslipiq.com/es',
       'x-default': PAGE_URL
     }
   },
@@ -103,7 +103,7 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'State Income Tax', url: PAGE_URL }
 ];
 
@@ -118,7 +118,7 @@ export default function StateTaxHub() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">State Income Tax</span>
         </nav>
@@ -152,7 +152,7 @@ export default function StateTaxHub() {
             {NO_TAX.map((s) => (
               <Link
                 key={s.slug}
-                href={`/us/${s.slug}/state-tax/`}
+                href={`/us/${s.slug}/state-tax`}
                 className="block rounded-md border border-slate-200 dark:border-slate-700 px-3 py-2 text-sm hover:border-slate-400"
               >
                 {s.name}
@@ -167,7 +167,7 @@ export default function StateTaxHub() {
             {FLAT.map((s) => (
               <Link
                 key={s.slug}
-                href={`/us/${s.slug}/state-tax/`}
+                href={`/us/${s.slug}/state-tax`}
                 className="flex items-center justify-between rounded-md border border-slate-200 dark:border-slate-700 px-3 py-2 text-sm hover:border-slate-400"
               >
                 <span>{s.name}</span>
@@ -183,7 +183,7 @@ export default function StateTaxHub() {
             {PROGRESSIVE.map((slug) => (
               <Link
                 key={slug}
-                href={`/us/${slug}/state-tax/`}
+                href={`/us/${slug}/state-tax`}
                 className="block rounded-md border border-slate-200 dark:border-slate-700 px-3 py-2 text-sm hover:border-slate-400"
               >
                 {slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
@@ -199,7 +199,7 @@ export default function StateTaxHub() {
             New York City and Yonkers, Philadelphia, Detroit, the Ohio RITA and CCA networks,
             several Indiana and Maryland counties, Wilmington, Kansas City, and St. Louis.
           </p>
-          <Link href="/us/local-paycheck-taxes/" className="underline hover:no-underline">
+          <Link href="/us/local-paycheck-taxes" className="underline hover:no-underline">
             Local Paycheck Tax Calculator →
           </Link>
         </section>
@@ -219,11 +219,11 @@ export default function StateTaxHub() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Paycheck Calculator</div>
               <div className="text-sm text-slate-500">All 50 states + DC. Federal, FICA, state.</div>
             </Link>
-            <Link href="/us/gross-to-net-paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/gross-to-net-paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Gross to Net Calculator</div>
               <div className="text-sm text-slate-500">Any gross paycheck → estimated take-home.</div>
             </Link>

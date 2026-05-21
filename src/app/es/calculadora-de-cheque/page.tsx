@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: 'Calculadora de cheque de pago | PayslipIQ (Beta)',
   description: 'Calcula tu pago neto a partir del salario bruto. Impuesto federal, FICA, e impuesto estatal. Solo educativo, no es asesoramiento.',
   alternates: {
-    canonical: 'https://payslipiq.com/es/calculadora-de-cheque/',
+    canonical: 'https://payslipiq.com/es/calculadora-de-cheque',
     languages: {
-      'en-US': 'https://payslipiq.com/us/paycheck-calculator/',
-      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque/',
-      'x-default': 'https://payslipiq.com/us/paycheck-calculator/'
+      'en-US': 'https://payslipiq.com/us/paycheck-calculator',
+      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',
+      'x-default': 'https://payslipiq.com/us/paycheck-calculator'
     }
   }
 };
@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <div className="rounded-md border border-amber-200 bg-amber-50 p-3 text-[13px] text-amber-900 mb-6">
-        <strong>Beta.</strong> La version en espanol esta en desarrollo. Para usar la calculadora interactiva completa, usa la <Link href="/us/paycheck-calculator/" className="font-semibold underline">version en ingles</Link>.
+        <strong>Beta.</strong> La version en espanol esta en desarrollo. Para usar la calculadora interactiva completa, usa la <Link href="/us/paycheck-calculator" className="font-semibold underline">version en ingles</Link>.
       </div>
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Calculadora</div>

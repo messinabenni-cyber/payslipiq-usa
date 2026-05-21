@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: 'Encontrar un CPA o preparador de impuestos | PayslipIQ (Beta)',
   description: 'Como encontrar un CPA bilingue o un preparador de impuestos calificado en EE.UU. Solo educativo.',
   alternates: {
-    canonical: 'https://payslipiq.com/es/encontrar-un-cpa/',
+    canonical: 'https://payslipiq.com/es/encontrar-un-cpa',
     languages: {
-      'en-US': 'https://payslipiq.com/us/find-a-cpa/',
-      'es-US': 'https://payslipiq.com/es/encontrar-un-cpa/',
-      'x-default': 'https://payslipiq.com/us/find-a-cpa/'
+      'en-US': 'https://payslipiq.com/us/find-a-cpa',
+      'es-US': 'https://payslipiq.com/es/encontrar-un-cpa',
+      'x-default': 'https://payslipiq.com/us/find-a-cpa'
     }
   }
 };
@@ -25,7 +25,7 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <div className="rounded-md border border-amber-200 bg-amber-50 p-3 text-[13px] text-amber-900 mb-6">
-        <strong>Beta.</strong> Esta version es introductoria. La <Link href="/us/find-a-cpa/" className="font-semibold underline">version completa en ingles</Link> tiene mas detalles y preguntas para tu CPA.
+        <strong>Beta.</strong> Esta version es introductoria. La <Link href="/us/find-a-cpa" className="font-semibold underline">version completa en ingles</Link> tiene mas detalles y preguntas para tu CPA.
       </div>
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Directorio</div>

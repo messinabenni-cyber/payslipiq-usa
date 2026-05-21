@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const s = getStateBySlug(params.state);
-  if (!s) return { title: 'State not found' };
+  if (!s) return { title: 'State not found', robots: { index: false, follow: false } };
   return {
     title: `${s.name} State Income Tax (2026)`,
     description: `${s.name} state income tax explained: rates, brackets, structure. Sourced from ${s.taxAuthority}. Educational only.`,

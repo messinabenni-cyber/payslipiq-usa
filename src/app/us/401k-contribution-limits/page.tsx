@@ -51,7 +51,7 @@ export default function Page() {
 <h2>Multiple employers in one year</h2>
 <p>The §402(g) elective deferral limit is <em>per individual, per year</em>, aggregated across every 401(k), 403(b), and 457(b) plan you participate in. If you change jobs and contribute to two employer plans in 2026, the combined cannot exceed $24,500 (or the applicable catch-up ceiling). Excess deferrals are subject to a 6% excise tax unless distributed by April 15, 2027.</p>
 <h2>How this affects your paycheck</h2>
-<p>Pre-tax 401(k) deductions reduce federal-taxable wages and most states&apos; state-taxable wages on each paycheck. They do not reduce FICA wages — you still pay Social Security (6.2% to $184,500) and Medicare (1.45%) on every dollar deferred. Use the <a href="/us/paycheck-calculator/">Paycheck Calculator</a> to see how raising your 401(k) deferral changes take-home pay.</p>
+<p>Pre-tax 401(k) deductions reduce federal-taxable wages and most states&apos; state-taxable wages on each paycheck. They do not reduce FICA wages — you still pay Social Security (6.2% to $184,500) and Medicare (1.45%) on every dollar deferred. Use the <a href="/us/paycheck-calculator">Paycheck Calculator</a> to see how raising your 401(k) deferral changes take-home pay.</p>
 <h2>Sources</h2>
 <p>IRS Notice 2025-67 (2026 amounts relating to retirement plans and IRAs). IRS News Release: &ldquo;401(k) limit increases to $24,500 for 2026.&rdquo; SECURE 2.0 Act of 2022, §109 (super catch-up) and §603 (Roth catch-up for high earners). Verify the current figures at <a href="https://www.irs.gov/" target="_blank" rel="noopener noreferrer">irs.gov</a> before relying on them.</p></>}
       faqs={FAQS}

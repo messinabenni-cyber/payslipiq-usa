@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
-const PAGE_URL = 'https://payslipiq.com/us/accessibility/';
+const PAGE_URL = 'https://payslipiq.com/us/accessibility';
 
 export const metadata: Metadata = {
   title: 'Accessibility Statement — PayslipIQ',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Accessibility', url: PAGE_URL },
 ];
 
@@ -32,7 +32,7 @@ export default function AccessibilityPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Accessibility</span>
         </nav>

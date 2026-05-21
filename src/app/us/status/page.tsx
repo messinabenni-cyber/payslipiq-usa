@@ -10,10 +10,10 @@ interface HealthCheck {
 }
 
 const ENDPOINTS: Omit<HealthCheck, 'status'>[] = [
-  { name: 'Homepage', url: '/us/' },
-  { name: 'Pay Stub Checker', url: '/us/pay-stub-checker/' },
-  { name: 'Paycheck Calculator', url: '/us/paycheck-calculator/' },
-  { name: 'State tax index', url: '/us/state-tax/' },
+  { name: 'Homepage', url: '/us' },
+  { name: 'Pay Stub Checker', url: '/us/pay-stub-checker' },
+  { name: 'Paycheck Calculator', url: '/us/paycheck-calculator' },
+  { name: 'State tax index', url: '/us/state-tax' },
   { name: 'API: lead capture', url: '/api/lead' },
   { name: 'API: pay stub analyzer', url: '/api/analyze-paystub' }
 ];
@@ -96,8 +96,8 @@ export default function StatusPage() {
       </p>
 
       <p className="mt-4 text-[14px] text-slate-600">
-        See also: <Link href="/us/security/" className="text-blue-600 hover:underline">Security</Link>,{' '}
-        <Link href="/us/trust/" className="text-blue-600 hover:underline">Trust Center</Link>,{' '}
+        See also: <Link href="/us/security" className="text-blue-600 hover:underline">Security</Link>,{' '}
+        <Link href="/trust" className="text-blue-600 hover:underline">Trust Center</Link>,{' '}
         <Link href="/.well-known/security.txt" className="text-blue-600 hover:underline">security.txt</Link>.
       </p>
     </main>

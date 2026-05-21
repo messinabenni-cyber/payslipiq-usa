@@ -7,20 +7,20 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Security | PayslipIQ',
   description: 'How PayslipIQ secures user data, pay-stub uploads, and the platform. Encryption, retention, vendor list, disclosure policy.',
-  alternates: { canonical: 'https://payslipiq.com/us/security/' }
+  alternates: { canonical: 'https://payslipiq.com/us/security' }
 };
 
 export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Security', url: 'https://payslipiq.com/us/security/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Security', url: 'https://payslipiq.com/us/security' }
       ]} />
       <ArticleSchema
         headline="PayslipIQ Security"
         description="Security and data-handling practices for PayslipIQ pay-stub uploads, calculator inputs, and account information."
-        url="https://payslipiq.com/us/security/"
+        url="https://payslipiq.com/us/security"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Security</div>

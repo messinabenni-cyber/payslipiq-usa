@@ -9,7 +9,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: 'Pay Stub Glossary (100+ terms)',
   description: 'Every code, abbreviation, and acronym you might see on a US pay stub. 100+ terms, A to Z, plain English.',
-  alternates: { canonical: 'https://payslipiq.com/us/glossary/' }
+  alternates: { canonical: 'https://payslipiq.com/us/glossary' }
 };
 
 interface Term {
@@ -79,19 +79,19 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Glossary', url: 'https://payslipiq.com/us/glossary/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Glossary', url: 'https://payslipiq.com/us/glossary' }
       ]} />
       <ArticleSchema
         headline="Pay Stub Glossary"
         description="Every code, abbreviation, and acronym you might see on a US pay stub."
-        url="https://payslipiq.com/us/glossary/"
+        url="https://payslipiq.com/us/glossary"
       />
       {/* 2026-05-16: DefinedTermSet JSON-LD so AI search engines (AI Overviews, Perplexity, ChatGPT) can quote individual term definitions with attribution. */}
       <DefinedTermSetSchema
         name="PayslipIQ US Pay Stub Glossary"
         description="Every code, abbreviation, and acronym you might see on a US pay stub. 100+ terms, A to Z, plain English."
-        url="https://payslipiq.com/us/glossary/"
+        url="https://payslipiq.com/us/glossary"
         terms={TERMS.map((t) => ({ term: t.term, definition: t.body }))}
       />
 

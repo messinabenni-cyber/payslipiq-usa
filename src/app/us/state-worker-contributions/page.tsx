@@ -6,7 +6,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 
-const PAGE_URL = 'https://payslipiq.com/us/state-worker-contributions/';
+const PAGE_URL = 'https://payslipiq.com/us/state-worker-contributions';
 
 export const metadata: Metadata = {
   title: 'State Worker Contributions 2026 — SDI, PFL, PFML, FAMLI, TDI (All 11 States)',
@@ -116,7 +116,7 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'State Worker Contributions', url: PAGE_URL },
 ];
 
@@ -131,7 +131,7 @@ export default function StateWorkerContributionsPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">State Worker Contributions</span>
         </nav>
@@ -194,19 +194,19 @@ export default function StateWorkerContributionsPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/paycheck-calculator/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/paycheck-calculator" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">US Paycheck Calculator</div>
               <div className="text-sm text-slate-500">Federal + FICA + state + state worker contribs.</div>
             </Link>
-            <Link href="/us/gross-to-net-paycheck-calculator/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/gross-to-net-paycheck-calculator" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Gross to Net Paycheck Calculator</div>
               <div className="text-sm text-slate-500">Convert any gross to take-home, all 50 states.</div>
             </Link>
-            <Link href="/us/cities/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/cities" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">US City Paycheck Calculators</div>
               <div className="text-sm text-slate-500">22+ cities with local-tax breakdown.</div>
             </Link>
-            <Link href="/us/maryland-counties/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/maryland-counties" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Maryland County Rates</div>
               <div className="text-sm text-slate-500">All 24 MD counties + Baltimore City piggyback.</div>
             </Link>

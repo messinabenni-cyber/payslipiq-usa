@@ -8,7 +8,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { HourlySalaryConverter } from '@/components/HourlySalaryConverter';
 
 import { SoftwareApplicationLd, HowToLd } from '@/components/ToolSchemas';
-const PAGE_URL = 'https://payslipiq.com/us/salary-to-hourly/';
+const PAGE_URL = 'https://payslipiq.com/us/salary-to-hourly';
 
 export const metadata: Metadata = {
   title: 'Salary to Hourly Calculator (USA, 2026) | PayslipIQ',
@@ -35,7 +35,7 @@ const FAQS = [
 export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
-      <BreadcrumbSchema items={[{ name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' }, { name: 'Salary to Hourly', url: PAGE_URL }]} />
+      <BreadcrumbSchema items={[{ name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' }, { name: 'Salary to Hourly', url: PAGE_URL }]} />
       <ArticleSchema headline="Salary to Hourly Calculator (USA, 2026)" description="Convert any US annual salary into an hourly equivalent. Includes overtime-aware and after-tax estimates." url={PAGE_URL} />
       <FAQSchema items={FAQS} />
 
@@ -109,23 +109,23 @@ export default function Page() {
       <section className="mt-10">
         <h2 className="text-2xl font-semibold tracking-tight">Related tools</h2>
         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 text-[15px]">
-          <Link href="/us/hourly-to-salary/" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Hourly to Salary</div><div className="text-ink/70 mt-1">Reverse direction: convert hourly into annual.</div></Link>
-          <Link href="/us/gross-to-net-paycheck-calculator/" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Gross to Net Paycheck</div><div className="text-ink/70 mt-1">Per-paycheck precision.</div></Link>
-          <Link href="/us/salary-after-tax/" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Salary After Tax</div><div className="text-ink/70 mt-1">Period-by-period view.</div></Link>
-          <Link href="/us/overtime-paycheck/" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Overtime Calculator</div><div className="text-ink/70 mt-1">FLSA + state daily overtime.</div></Link>
+          <Link href="/us/hourly-to-salary" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Hourly to Salary</div><div className="text-ink/70 mt-1">Reverse direction: convert hourly into annual.</div></Link>
+          <Link href="/us/gross-to-net-paycheck-calculator" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Gross to Net Paycheck</div><div className="text-ink/70 mt-1">Per-paycheck precision.</div></Link>
+          <Link href="/us/salary-after-tax" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Salary After Tax</div><div className="text-ink/70 mt-1">Period-by-period view.</div></Link>
+          <Link href="/us/overtime-paycheck" className="block border border-line bg-white rounded-md p-4 hover:border-accent"><div className="font-semibold">Overtime Calculator</div><div className="text-ink/70 mt-1">FLSA + state daily overtime.</div></Link>
         </div>
       </section>
 
       <nav className="mt-10 grid grid-cols-2 sm:grid-cols-5 gap-2 text-sm" aria-label="Core PayslipIQ pages">
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker/">Pay Stub Checker</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/paycheck-calculator/">Paycheck Calculator</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained/">FICA explained</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide/">W-4 Guide</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax/">State index</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker">Pay Stub Checker</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/paycheck-calculator">Paycheck Calculator</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained">FICA explained</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide">W-4 Guide</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax">State index</Link>
       </nav>
 
       <div className="mt-12">
-      <SoftwareApplicationLd url="https://payslipiq.com/us/salary-to-hourly/" name="PayslipIQ Salary to Hourly Converter" description="Convert an annual salary into an effective hourly rate. All 50 states + DC. Educational only." category="FinanceApplication" />
+      <SoftwareApplicationLd url="https://payslipiq.com/us/salary-to-hourly" name="PayslipIQ Salary to Hourly Converter" description="Convert an annual salary into an effective hourly rate. All 50 states + DC. Educational only." category="FinanceApplication" />
       <HowToLd name="How to use the PayslipIQ Salary to Hourly Converter" description="Step-by-step guide to using the PayslipIQ Salary to Hourly Converter." steps={[ { name: "Enter your annual salary", text: "Type your gross annual salary." }, { name: "Enter your hours per week", text: "The calculator defaults to 40 but you can change it." }, { name: "Pick your state", text: "State income tax varies. Nine states have none." }, { name: "Read the effective hourly rate", text: "The calculator returns your effective hourly rate plus an estimated take-home figure." } ]} />
         <MasterDisclaimer variant="long" />
       </div>

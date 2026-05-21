@@ -8,7 +8,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 
 import { SoftwareApplicationLd, HowToLd } from '@/components/ToolSchemas';
-const PAGE_URL = 'https://payslipiq.com/us/local-paycheck-taxes/';
+const PAGE_URL = 'https://payslipiq.com/us/local-paycheck-taxes';
 
 export const metadata: Metadata = {
   title: 'Local Paycheck Taxes (USA, 2026) | PayslipIQ',
@@ -51,7 +51,7 @@ const CITIES = [
 export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
-      <BreadcrumbSchema items={[{ name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' }, { name: 'Local Paycheck Taxes', url: PAGE_URL }]} />
+      <BreadcrumbSchema items={[{ name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' }, { name: 'Local Paycheck Taxes', url: PAGE_URL }]} />
       <ArticleSchema headline="Local Paycheck Taxes (USA, 2026)" description="NYC, Yonkers, PA EIT, Ohio RITA, MD county, Wilmington, KC/STL, Indiana county, Detroit. Plain-English guide and estimator." url={PAGE_URL} />
       <FAQSchema items={FAQS} />
 
@@ -130,21 +130,21 @@ export default function Page() {
         <div className="font-semibold text-sm mb-1">Pair this with the gross-to-net calculator</div>
         <p className="text-sm text-ink/80">
           The estimator above is local tax in isolation. For a complete pre-tax to take-home view, use the
-          {' '}<Link href="/us/gross-to-net-paycheck-calculator/" className="text-accent underline">Gross to Net Paycheck Calculator</Link>
+          {' '}<Link href="/us/gross-to-net-paycheck-calculator" className="text-accent underline">Gross to Net Paycheck Calculator</Link>
           {' '}and add the local figure to its state tax line.
         </p>
       </section>
 
       <nav className="mt-10 grid grid-cols-2 sm:grid-cols-5 gap-2 text-sm" aria-label="Core PayslipIQ pages">
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker/">Pay Stub Checker</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/gross-to-net-paycheck-calculator/">Gross to Net</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained/">FICA explained</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide/">W-4 Guide</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax/">State index</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker">Pay Stub Checker</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/gross-to-net-paycheck-calculator">Gross to Net</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained">FICA explained</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide">W-4 Guide</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax">State index</Link>
       </nav>
 
       <div className="mt-12">
-      <SoftwareApplicationLd url="https://payslipiq.com/us/local-paycheck-taxes/" name="PayslipIQ Local Tax Calculator" description="Free local-tax estimator covering NYC, Yonkers, Philadelphia, Detroit, Ohio RITA and CCA cities, Indiana and Maryland counties. Educational only." category="FinanceApplication" />
+      <SoftwareApplicationLd url="https://payslipiq.com/us/local-paycheck-taxes" name="PayslipIQ Local Tax Calculator" description="Free local-tax estimator covering NYC, Yonkers, Philadelphia, Detroit, Ohio RITA and CCA cities, Indiana and Maryland counties. Educational only." category="FinanceApplication" />
       <HowToLd name="How to use the PayslipIQ Local Tax Calculator" description="Step-by-step guide to using the PayslipIQ Local Tax Calculator." steps={[ { name: "Enter your gross pay", text: "Type your per-period gross pay so the calculator can apply local rates." }, { name: "Select your locality", text: "Pick from NYC, Yonkers, Philadelphia, Detroit, Ohio RITA / CCA, Indiana and Maryland counties." }, { name: "Review the breakdown", text: "The calculator returns the local tax line in plain English with a one-line explanation." } ]} />
         <MasterDisclaimer variant="long" />
       </div>

@@ -9,7 +9,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/louisville/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/louisville/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'Louisville Paycheck Calculator (2026) — KY + Metro 2.2%',
@@ -34,8 +34,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'Louisville', url: PAGE_URL },
 ];
 
@@ -56,9 +56,9 @@ export default function LouisvillePaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/kentucky/" className="hover:underline">Kentucky</Link>
+          <Link href="/us/kentucky" className="hover:underline">Kentucky</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Louisville</span>
         </nav>
@@ -114,11 +114,11 @@ export default function LouisvillePaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/kentucky/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/kentucky" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Kentucky Paycheck Guide</div>
               <div className="text-sm text-slate-500">KY flat 4.0% + occupational tax overview.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">All US Local Paycheck Taxes</div>
               <div className="text-sm text-slate-500">All US cities + counties with local payroll tax.</div>
             </Link>

@@ -120,7 +120,7 @@ export function LocalTaxCalculator({ defaultGross = '3000', defaultLocality = 'n
         Estimate only. Local income tax rules vary by residency, work location, school district, and special assessments.
         Some localities (NYC, Yonkers) tax residents but not commuters; others (KC, STL, Wilmington) tax both. Verify with the city revenue agency or your payroll team before relying on a number.
         This calculator does not include state income tax, federal income tax, Social Security, or Medicare. Pair it with the
-        <a className="text-accent underline mx-1" href="/us/gross-to-net-paycheck-calculator/">Gross to Net Paycheck Calculator</a>
+        <a className="text-accent underline mx-1" href="/us/gross-to-net-paycheck-calculator">Gross to Net Paycheck Calculator</a>
         for a complete picture.
       </p>
     </div>

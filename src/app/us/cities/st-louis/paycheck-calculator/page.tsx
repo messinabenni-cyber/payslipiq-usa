@@ -9,7 +9,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 import { LocalTaxCalculator } from '@/components/LocalTaxCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/st-louis/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/st-louis/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'St. Louis Paycheck Calculator (2026) — STL 1% Tax',
@@ -34,8 +34,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'St. Louis', url: PAGE_URL },
 ];
 
@@ -56,9 +56,9 @@ export default function StLouisPaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/missouri/" className="hover:underline">Missouri</Link>
+          <Link href="/us/missouri" className="hover:underline">Missouri</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">St. Louis</span>
         </nav>
@@ -114,11 +114,11 @@ export default function StLouisPaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/missouri/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/missouri" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Missouri Paycheck Guide</div>
               <div className="text-sm text-slate-500">MO progressive brackets + KCMO / STL earnings tax.</div>
             </Link>
-            <Link href="/us/cities/kansas-city/paycheck-calculator/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/cities/kansas-city/paycheck-calculator" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Kansas City Paycheck Calculator</div>
               <div className="text-sm text-slate-500">KCMO has the same 1% earnings tax structure.</div>
             </Link>

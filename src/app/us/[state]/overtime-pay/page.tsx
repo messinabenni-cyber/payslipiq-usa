@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const s = getStateBySlug(params.state);
-  if (!s) return { title: 'State not found' };
+  if (!s) return { title: 'State not found', robots: { index: false, follow: false } };
   return {
     title: `${s.name} Overtime Pay Rules (2026)`,
     description: `${s.name} overtime: ${s.dailyOvertime ? 'has stricter daily-overtime rules than federal FLSA' : 'follows federal FLSA (1.5× over 40/week)'}. Educational only.`,

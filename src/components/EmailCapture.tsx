@@ -136,7 +136,7 @@ export function EmailCapture({
       {status === 'error' && (
         <p className="mt-2 text-[12px] text-red-600">{errMsg}</p>
       )}
-      <p className="mt-3 text-[11px] text-slate-500">No spam. Unsubscribe one-click. Read the <a href="/us/privacy/" className="underline">privacy policy</a>.</p>
+      <p className="mt-3 text-[11px] text-slate-500">No spam. Unsubscribe one-click. Read the <a href="/privacy" className="underline">privacy policy</a>.</p>
     </form>
   );
 }

@@ -8,7 +8,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { YearToDateChecker } from '@/components/YearToDateChecker';
 
 import { SoftwareApplicationLd, HowToLd } from '@/components/ToolSchemas';
-const PAGE_URL = 'https://payslipiq.com/us/year-to-date-paycheck-checker/';
+const PAGE_URL = 'https://payslipiq.com/us/year-to-date-paycheck-checker';
 
 export const metadata: Metadata = {
   title: 'Year-to-Date Paycheck Checker (USA, 2026) | PayslipIQ',
@@ -36,7 +36,7 @@ const FAQS = [
 export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
-      <BreadcrumbSchema items={[{ name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' }, { name: 'Year-to-Date Paycheck Checker', url: PAGE_URL }]} />
+      <BreadcrumbSchema items={[{ name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' }, { name: 'Year-to-Date Paycheck Checker', url: PAGE_URL }]} />
       <ArticleSchema headline="Year-to-Date Paycheck Checker (USA, 2026)" description="Project year-end gross, take-home, and W-2 box 1 from your YTD pay stub. Flags SS wage base, Additional Medicare, 401(k), HSA limits." url={PAGE_URL} />
       <FAQSchema items={FAQS} />
 
@@ -105,21 +105,21 @@ export default function Page() {
         <div className="font-semibold text-sm mb-1">If a flag fires, talk to payroll, not just to PayslipIQ</div>
         <p className="text-sm text-ink/80">
           Threshold flags here are projections. Contribution-rate changes, bonus timing, and benefit elections all need to go through payroll. Use the
-          <Link href="/us/ask-payroll-generator/" className="text-accent underline mx-1">Ask Payroll Generator</Link>
+          <Link href="/us/ask-payroll-generator" className="text-accent underline mx-1">Ask Payroll Generator</Link>
           to draft a message in 30 seconds.
         </p>
       </section>
 
       <nav className="mt-10 grid grid-cols-2 sm:grid-cols-5 gap-2 text-sm" aria-label="Core PayslipIQ pages">
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker/">Pay Stub Checker</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/gross-to-net-paycheck-calculator/">Gross to Net</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained/">FICA explained</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide/">W-4 Guide</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax/">State index</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker">Pay Stub Checker</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/gross-to-net-paycheck-calculator">Gross to Net</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained">FICA explained</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide">W-4 Guide</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax">State index</Link>
       </nav>
 
       <div className="mt-12">
-      <SoftwareApplicationLd url="https://payslipiq.com/us/year-to-date-paycheck-checker/" name="PayslipIQ Year-to-Date Paycheck Checker" description="Check year-to-date wages, Social Security wage base progress, Additional Medicare trigger, 401(k) and HSA contribution caps. Educational only." category="FinanceApplication" />
+      <SoftwareApplicationLd url="https://payslipiq.com/us/year-to-date-paycheck-checker" name="PayslipIQ Year-to-Date Paycheck Checker" description="Check year-to-date wages, Social Security wage base progress, Additional Medicare trigger, 401(k) and HSA contribution caps. Educational only." category="FinanceApplication" />
       <HowToLd name="How to use the PayslipIQ Year-to-Date Paycheck Checker" description="Step-by-step guide to using the PayslipIQ Year-to-Date Paycheck Checker." steps={[ { name: "Enter your YTD wages", text: "Pull the YTD gross figure off your most recent pay stub." }, { name: "Enter your YTD federal and FICA withholding", text: "These four lines are on every US pay stub." }, { name: "Pick your filing status", text: "Single, married filing jointly, married filing separately, or head of household." }, { name: "Review the analysis", text: "The checker flags Social Security wage base proximity, Additional Medicare trigger, and 401(k) cap progress." } ]} />
         <MasterDisclaimer variant="long" />
       </div>

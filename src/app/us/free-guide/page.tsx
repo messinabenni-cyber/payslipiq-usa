@@ -8,7 +8,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: 'Free Pay Stub Anatomy Guide',
   description: 'Free 12-page printable PDF that walks through every line on a US pay stub. Educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/free-guide/' }
+  alternates: { canonical: 'https://payslipiq.com/us/free-guide' }
 };
 
 const CHAPTERS = [
@@ -30,13 +30,13 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Free Guide', url: 'https://payslipiq.com/us/free-guide/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Free Guide', url: 'https://payslipiq.com/us/free-guide' }
       ]} />
       <ArticleSchema
         headline="Free Pay Stub Anatomy Guide"
         description="12-chapter walkthrough of every line on a US pay stub."
-        url="https://payslipiq.com/us/free-guide/"
+        url="https://payslipiq.com/us/free-guide"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Free download</div>
@@ -75,7 +75,7 @@ export default function Page() {
         <h2 className="text-xl font-semibold text-slate-900">Want it deeper?</h2>
         <p className="mt-2 text-[15px] text-slate-700 leading-relaxed">
           The free guide covers the anatomy. The{' '}
-          <Link href="/us/premium-pay-stub-report/" className="text-blue-600 font-semibold hover:underline">$29 Premium Pay Stub Report</Link>{' '}
+          <Link href="/us/premium-pay-stub-report" className="text-blue-600 font-semibold hover:underline">$29 Premium Pay Stub Report</Link>{' '}
           covers your specific pay stub. Upload one and get a 12-page personalized PDF: line-by-line review, comparison to standard rates, and a payroll question pack.
         </p>
       </section>

@@ -18,18 +18,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'PayslipIQ, Understand Your Paycheck | Plain-English Pay Stub Help (US)',
+    default: 'PayslipIQ — Understand Your Paycheck & Pay Stub (US)',
     template: '%s · PayslipIQ',
   },
   description:
-    'PayslipIQ explains pay stubs, federal and state withholding, FICA, deductions, overtime, 401(k), and take-home pay. Educational only, not tax, legal, or financial advice.',
+    'PayslipIQ explains pay stubs, withholding, FICA, deductions, overtime, 401(k) and take-home pay in plain English. Educational only, not financial advice.',
   applicationName: 'PayslipIQ',
   category: 'finance',
   alternates: {
     canonical: "/",
     languages: {
       'en-US': '/',
-      'es-US': '/es/',
+      'es-US': '/es',
       'x-default': '/',
     },
   },

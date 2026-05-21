@@ -59,6 +59,19 @@ const nextConfig = {
       { source: '/countries/:path*', destination: '/', permanent: true },
       { source: '/global',       destination: '/', permanent: true },
       { source: '/global/:path*', destination: '/', permanent: true }, { source: '/us/after-tax/:amount', destination: '/us/paycheck-calculator', permanent: true }, { source: '/us/utah/after-tax/:amount', destination: '/us/utah', permanent: true }, { source: '/us/delaware/after-tax/:amount', destination: '/us/delaware', permanent: true }, { source: '/us/methodology', destination: '/methodology', permanent: true }, { source: '/us/florida/cities/:path*', destination: '/us/local-paycheck-taxes', permanent: true }, { source: '/us/problems/why-is-my-bonus-taxed-so-much', destination: '/us/bonus-tax-paycheck', permanent: true }, { source: '/us/new-jersey/after-tax/:amount', destination: '/us/new-jersey', permanent: true }, { source: '/us/:state/after-tax/:amount', destination: '/us/:state', permanent: true },
+      // audit-v14: retire legacy / pre-restructure URL patterns that 404 (GSC "Not found")
+      { source: '/us/about', destination: '/about', permanent: true },
+      { source: '/us/terms', destination: '/terms', permanent: true },
+      { source: '/us/privacy', destination: '/privacy', permanent: true },
+      { source: '/us/contact', destination: '/contact', permanent: true },
+      { source: '/us/disclaimer', destination: '/disclaimer', permanent: true },
+      { source: '/us/deductions-explained', destination: '/us/deductions', permanent: true },
+      { source: '/us/w4-paycheck-guide', destination: '/us/w4-guide', permanent: true },
+      { source: '/us/pay-stub-glossary', destination: '/us/glossary', permanent: true },
+      { source: '/us/:state/salary-after-tax', destination: '/us/salary-after-tax', permanent: true },
+      { source: '/us/:state/payroll-deductions', destination: '/us/deductions', permanent: true },
+      { source: '/us/:state/minimum-wage-paycheck', destination: '/us/:state', permanent: true },
+      { source: '/us/:state/cities/:path*', destination: '/us/cities', permanent: true },
     ];
   },
 };

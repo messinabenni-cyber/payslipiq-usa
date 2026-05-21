@@ -9,9 +9,9 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 const PAGE_URL = 'https://payslipiq.com/us';
 
 export const metadata: Metadata = {
-  title: 'PayslipIQ USA · Pay Stub Help, Paycheck Calculators, State Guides',
+  title: 'US Paycheck Help, Calculators & State Guides',
   description:
-    'Plain-English help for American workers. Pay stub checker, paycheck calculator, FICA, federal and state tax explainers, 50-state guides, and a free pay stub anatomy guide. Educational only, not tax, legal, or financial advice.',
+    'Plain-English paycheck help for US workers: pay stub checker, paycheck calculator, FICA, state tax explainers and 50-state guides. Educational only.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -69,29 +69,29 @@ const FAQS = [
 ];
 
 const TOOLS = [
-  { href: '/us/pay-stub-checker/', title: 'Pay Stub Checker', blurb: 'Upload a pay stub or paste numbers. Plain-English line-by-line walkthrough.' },
-  { href: '/us/paycheck-calculator/', title: 'Paycheck Calculator', blurb: 'Estimate take-home pay. Federal, FICA, state. All 50 states + DC.' },
-  { href: '/us/gross-to-net-paycheck-calculator/', title: 'Gross to Net Calculator', blurb: 'Any gross paycheck → estimated take-home. 2026 tables.' },
-  { href: '/us/salary-after-tax/', title: 'Salary After Tax', blurb: 'Annual salary to bi-weekly or monthly take-home.' },
-  { href: '/us/hourly-to-salary/', title: 'Hourly to Salary', blurb: 'Hourly rate → annual equivalent. State aware.' },
-  { href: '/us/year-to-date-paycheck-checker/', title: 'Year-to-Date Checker', blurb: 'YTD wages, FICA caps, Add\'l Medicare, 401(k) progress.' },
-  { href: '/us/local-paycheck-taxes/', title: 'Local Tax Calculator', blurb: 'NYC, Yonkers, Philly, Detroit, Ohio cities and more.' },
-  { href: '/us/ask-payroll-generator/', title: 'Ask Payroll Generator', blurb: 'Draft a polite, factual message to HR or payroll.' }
+  { href: '/us/pay-stub-checker', title: 'Pay Stub Checker', blurb: 'Upload a pay stub or paste numbers. Plain-English line-by-line walkthrough.' },
+  { href: '/us/paycheck-calculator', title: 'Paycheck Calculator', blurb: 'Estimate take-home pay. Federal, FICA, state. All 50 states + DC.' },
+  { href: '/us/gross-to-net-paycheck-calculator', title: 'Gross to Net Calculator', blurb: 'Any gross paycheck → estimated take-home. 2026 tables.' },
+  { href: '/us/salary-after-tax', title: 'Salary After Tax', blurb: 'Annual salary to bi-weekly or monthly take-home.' },
+  { href: '/us/hourly-to-salary', title: 'Hourly to Salary', blurb: 'Hourly rate → annual equivalent. State aware.' },
+  { href: '/us/year-to-date-paycheck-checker', title: 'Year-to-Date Checker', blurb: 'YTD wages, FICA caps, Add\'l Medicare, 401(k) progress.' },
+  { href: '/us/local-paycheck-taxes', title: 'Local Tax Calculator', blurb: 'NYC, Yonkers, Philly, Detroit, Ohio cities and more.' },
+  { href: '/us/ask-payroll-generator', title: 'Ask Payroll Generator', blurb: 'Draft a polite, factual message to HR or payroll.' }
 ];
 
 const EXPLAINERS = [
-  { href: '/us/fica-explained/', title: 'FICA Explained' },
-  { href: '/us/federal-tax-withholding/', title: 'Federal Tax Withholding' },
-  { href: '/us/social-security-tax/', title: 'Social Security Tax' },
-  { href: '/us/medicare-tax/', title: 'Medicare Tax' },
-  { href: '/us/w4-guide/', title: 'W-4 Guide' },
-  { href: '/us/401k-deductions/', title: '401(k) Deductions' },
-  { href: '/us/health-insurance-deductions/', title: 'Health Insurance Deductions' },
-  { href: '/us/state-tax/', title: 'State Income Tax' },
-  { href: '/us/overtime-paycheck/', title: 'Overtime Pay' },
-  { href: '/us/bonus-tax-paycheck/', title: 'Bonus Tax' },
-  { href: '/us/why-is-my-paycheck-lower/', title: 'Why Is My Paycheck Lower?' },
-  { href: '/us/pay-stub-mistakes/', title: 'Pay Stub Mistakes' }
+  { href: '/us/fica-explained', title: 'FICA Explained' },
+  { href: '/us/federal-tax-withholding', title: 'Federal Tax Withholding' },
+  { href: '/us/social-security-tax', title: 'Social Security Tax' },
+  { href: '/us/medicare-tax', title: 'Medicare Tax' },
+  { href: '/us/w4-guide', title: 'W-4 Guide' },
+  { href: '/us/401k-deductions', title: '401(k) Deductions' },
+  { href: '/us/health-insurance-deductions', title: 'Health Insurance Deductions' },
+  { href: '/us/state-tax', title: 'State Income Tax' },
+  { href: '/us/overtime-paycheck', title: 'Overtime Pay' },
+  { href: '/us/bonus-tax-paycheck', title: 'Bonus Tax' },
+  { href: '/us/why-is-my-paycheck-lower', title: 'Why Is My Paycheck Lower?' },
+  { href: '/us/pay-stub-mistakes', title: 'Pay Stub Mistakes' }
 ];
 
 const PRIORITY_STATES = [
@@ -130,13 +130,13 @@ export default function UsHub() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="/us/pay-stub-checker/"
+              href="/us/pay-stub-checker"
               className="inline-flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-slate-700"
             >
               Check My Pay Stub
             </Link>
             <Link
-              href="/us/paycheck-calculator/"
+              href="/us/paycheck-calculator"
               className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:border-slate-600"
             >
               Calculate Take-Home Pay
@@ -192,7 +192,7 @@ export default function UsHub() {
             {PRIORITY_STATES.map((slug) => (
               <Link
                 key={slug}
-                href={`/us/${slug}/`}
+                href={`/us/${slug}`}
                 className="block rounded-md border border-slate-200 dark:border-slate-700 px-3 py-2 text-sm hover:border-slate-400"
               >
                 {slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
@@ -200,7 +200,7 @@ export default function UsHub() {
             ))}
           </div>
           <p className="mt-4 text-sm">
-            <Link href="/us/state-tax/" className="underline hover:no-underline">
+            <Link href="/us/state-tax" className="underline hover:no-underline">
               All 50 states + DC →
             </Link>
           </p>

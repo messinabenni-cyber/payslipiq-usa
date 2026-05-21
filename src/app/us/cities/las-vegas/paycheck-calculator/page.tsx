@@ -8,7 +8,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { PaycheckCalculator } from '@/components/PaycheckCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/cities/las-vegas/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/cities/las-vegas/paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'Las Vegas Paycheck Calculator (2026) — No NV State Tax',
@@ -33,8 +33,8 @@ const FAQS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
-  { name: 'Cities', url: 'https://payslipiq.com/us/cities/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
+  { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'Las Vegas', url: PAGE_URL },
 ];
 
@@ -55,9 +55,9 @@ export default function LasVegasPaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/nevada/" className="hover:underline">Nevada</Link>
+          <Link href="/us/nevada" className="hover:underline">Nevada</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Las Vegas</span>
         </nav>
@@ -104,11 +104,11 @@ export default function LasVegasPaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/nevada/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/nevada" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Nevada Paycheck Guide</div>
               <div className="text-sm text-slate-500">No state tax + tipped-worker context.</div>
             </Link>
-            <Link href="/us/tipped-worker-paycheck-guide/" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
+            <Link href="/us/tipped-worker-paycheck-guide" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
               <div className="font-medium">Tipped Worker Guide</div>
               <div className="text-sm text-slate-500">How tips show up on a paycheck.</div>
             </Link>

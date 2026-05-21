@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: 'Glosario del cheque de pago | PayslipIQ (Beta)',
   description: 'Cada codigo, abreviatura y acronimo en un cheque de pago de EE.UU., explicado en espanol. Solo educativo.',
   alternates: {
-    canonical: 'https://payslipiq.com/es/glosario/',
+    canonical: 'https://payslipiq.com/es/glosario',
     languages: {
-      'en-US': 'https://payslipiq.com/us/glossary/',
-      'es-US': 'https://payslipiq.com/es/glosario/',
-      'x-default': 'https://payslipiq.com/us/glossary/'
+      'en-US': 'https://payslipiq.com/us/glossary',
+      'es-US': 'https://payslipiq.com/es/glosario',
+      'x-default': 'https://payslipiq.com/us/glossary'
     }
   }
 };
@@ -50,7 +50,7 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <div className="rounded-md border border-amber-200 bg-amber-50 p-3 text-[13px] text-amber-900 mb-6">
-        <strong>Beta.</strong> Glosario introductorio. La <Link href="/us/glossary/" className="font-semibold underline">version completa en ingles</Link> tiene 50+ terminos.
+        <strong>Beta.</strong> Glosario introductorio. La <Link href="/us/glossary" className="font-semibold underline">version completa en ingles</Link> tiene 50+ terminos.
       </div>
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Glosario</div>
