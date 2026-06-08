@@ -79,7 +79,7 @@ const nextConfig = {
       // Every destination is a confirmed live 200 route. Patterns chosen to cover all
       // crawled variants without colliding with real routes.
       { source: '/us/learn/w4-deep-dive', destination: '/us/w4-guide', permanent: true },
-      { source: '/us/deductions/:path*', destination: '/us/deductions', permanent: true },
+      { source: '/us/deductions/:path+', destination: '/us/deductions', permanent: true },
       { source: '/us/:state/paycheck-lower-than-expected', destination: '/us/why-is-my-paycheck-lower', permanent: true },
       { source: '/us/:state/local-taxes', destination: '/us/local-taxes', permanent: true },
       { source: '/us/problems/why-is-my-paycheck-lower', destination: '/us/why-is-my-paycheck-lower', permanent: true },
@@ -87,8 +87,8 @@ const nextConfig = {
       { source: '/us/problems/why-did-my-federal-tax-go-up', destination: '/us/federal-tax-withholding', permanent: true },
       { source: '/us/problems/wrong-pay-rate-on-pay-stub', destination: '/us/pay-stub-mistakes', permanent: true },
       { source: '/us/problems/wrong-hours-on-pay-stub', destination: '/us/pay-stub-mistakes', permanent: true },
-      { source: '/us/roles/:path*', destination: '/us/roles', permanent: true },
-      { source: '/us/monthly-paycheck-monitor/:path*', destination: '/us/monthly-paycheck-monitor', permanent: true },
+      { source: '/us/roles/:path+', destination: '/us/roles', permanent: true },
+      { source: '/us/monthly-paycheck-monitor/:path+', destination: '/us/monthly-paycheck-monitor', permanent: true },
       { source: '/us/trust', destination: '/trust', permanent: true },
       { source: '/business', destination: '/us', permanent: true },
     ];
