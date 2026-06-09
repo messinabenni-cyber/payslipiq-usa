@@ -51,7 +51,16 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   '/us/vs-adp', '/us/vs-gusto',
   // audit-v14: indexable pages previously missing from the sitemap + new affiliate-disclosure; pay-stub-glossary consolidated into /us/glossary
   '/us/glossary', '/us/about-the-team', '/us/compliance', '/us/find-a-cpa', '/us/free-guide',
-  '/us/monthly-paycheck-monitor', '/us/premium-pay-stub-report', '/us/why-payslipiq', '/us/affiliate-disclosure'];
+  '/us/monthly-paycheck-monitor', '/us/premium-pay-stub-report', '/us/why-payslipiq', '/us/affiliate-disclosure',
+  // Wave 1 (2026-06-09): take-home-pay by salary + state hub
+  '/us/take-home-pay'];
+
+// Wave 1: salary ladder for programmatic take-home-pay pages (keep in sync with
+// src/app/us/take-home-pay/[state]/[salary]/page.tsx SALARY_LADDER).
+const TAKE_HOME_SALARIES = [
+  30000, 40000, 50000, 60000, 70000, 75000, 80000, 90000,
+  100000, 110000, 120000, 125000, 150000, 175000, 200000, 250000,
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = STATIC_PATHS.map((p) => ({
@@ -70,6 +79,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     out.push({ url: `${SITE}/us/${s.slug}/pay-stub-laws`, lastModified: NOW, changeFrequency: 'weekly', priority: 0.5 });
     // PR #11 addition: programmatic gross-to-net per state (50 states + DC)
     out.push({ url: `${SITE}/us/gross-to-net-paycheck/${s.slug}`, lastModified: NOW, changeFrequency: 'weekly', priority: 0.7 });
+    // Wave 1: take-home-pay state index + per-salary pages
+    out.push({ url: `${SITE}/us/take-home-pay/${s.slug}`, lastModified: NOW, changeFrequency: 'weekly', priority: 0.6 });
+    for (const sal of TAKE_HOME_SALARIES) {
+      out.push({ url: `${SITE}/us/take-home-pay/${s.slug}/${sal}`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.55 });
+    }
   }
 
   return out;
