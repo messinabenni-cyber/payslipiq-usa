@@ -29,7 +29,7 @@ export default function Page() {
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">USA · 2026</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">Take-home pay by salary and state.</h1>
       <p className="mt-5 text-[17px] text-ink/85 leading-relaxed">
-        Choose your state to see estimated 2026 take-home pay across common salaries — each page breaks down federal income tax, Social Security, Medicare, state income tax and any state worker contributions, shows your pay per paycheck, and explains the difference between your marginal and average tax rate. Educational estimates, not advice.
+        Choose your state to see estimated 2026 take-home pay across common salaries. Each page breaks down federal income tax, Social Security, Medicare, state income tax and any state worker contributions, shows your pay per paycheck, and explains the difference between your marginal and average tax rate. Educational estimates, not advice.
       </p>
       <ReviewedBy />
 
