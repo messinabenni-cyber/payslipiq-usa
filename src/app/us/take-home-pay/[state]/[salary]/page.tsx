@@ -102,7 +102,7 @@ export function generateMetadata({ params }: { params: { state: string; salary: 
   const url = `https://payslipiq.com/us/take-home-pay/${cfg.slug}/${salary}/`;
   const pic = buildPicture(salary, cfg.slug);
   return {
-    title: `${fmt0(salary)} After Tax in ${cfg.name} (2026) — Take-Home Pay | PayslipIQ`,
+    title: `${fmt0(salary)} After Tax in ${cfg.name} (2026): Take-Home Pay | PayslipIQ`,
     description: `A ${fmt0(salary)} salary in ${cfg.name} takes home about ${fmt0(pic.net)} a year (${fmt0(pic.net / 26)} per biweekly paycheck) after federal tax, FICA${cfg.noIncomeTax ? '' : ', and ' + cfg.name + ' state tax'}. 2026 estimate. Educational only.`,
     alternates: { canonical: url, languages: { 'en-US': url, 'x-default': url } },
     openGraph: {
@@ -128,6 +128,11 @@ export default function Page({ params }: { params: { state: string; salary: stri
   const url = `https://payslipiq.com/us/take-home-pay/${cfg!.slug}/${salary}/`;
   const pic = buildPicture(salary, cfg!.slug);
   const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
+  // Deterministic 0/1/2 phrasing selector (stable per salary + state).
+  const variant = (Math.round(salary / 1000) + cfg!.slug.length) % 3;
+  // Effective state rate derived from the ACTUAL computed figure, so the rate
+  // we quote always matches the dollar amount in the table (no drift).
+  const stateEff = salary > 0 ? pic.stateTax / salary : 0;
 
   // Adjacent salaries for internal linking
   const idx = SALARY_LADDER.indexOf(salary);
@@ -140,11 +145,11 @@ export default function Page({ params }: { params: { state: string; salary: stri
     },
     {
       q: `How much tax do you pay on ${fmt0(salary)} in ${cfg!.name}?`,
-      a: `About ${fmt0(pic.totalTax)} in total — ${fmt0(pic.federal)} federal income tax, ${fmt0(pic.ficaTotal)} FICA (Social Security + Medicare)${cfg!.noIncomeTax ? '' : `, and ${fmt0(pic.stateTax)} ${cfg!.name} state income tax`}${pic.workerContribsTotal > 0 ? `, plus ${fmt0(pic.workerContribsTotal)} in ${cfg!.name} worker contributions` : ''}. That is an average tax rate of ${pct(pic.avgRate)}.`,
+      a: `About ${fmt0(pic.totalTax)} in total: ${fmt0(pic.federal)} federal income tax, ${fmt0(pic.ficaTotal)} FICA (Social Security and Medicare)${cfg!.noIncomeTax ? '' : `, and ${fmt0(pic.stateTax)} ${cfg!.name} state income tax`}${pic.workerContribsTotal > 0 ? `, plus ${fmt0(pic.workerContribsTotal)} in ${cfg!.name} worker contributions` : ''}. That is an average tax rate of ${pct(pic.avgRate)}.`,
     },
     {
       q: `What is the difference between marginal and average tax rate at ${fmt0(salary)}?`,
-      a: `Your average rate (${pct(pic.avgRate)}) is total tax divided by gross pay — the share of your whole salary that goes to tax. Your marginal rate (about ${pct(pic.marginalRate)}) is what you keep on the next dollar you earn. The marginal rate is higher because income tax is banded: only the top slice of your pay is taxed at the highest band.`,
+      a: `Your average rate (${pct(pic.avgRate)}) is total tax divided by gross pay, the share of your whole salary that goes to tax. Your marginal rate (about ${pct(pic.marginalRate)}) is the tax on your next dollar earned. The marginal rate is higher because income tax is banded: only the top slice of your pay is taxed at the highest band.`,
     },
     {
       q: cfg!.noIncomeTax
@@ -152,11 +157,11 @@ export default function Page({ params }: { params: { state: string; salary: stri
         : `What is the ${cfg!.name} state income tax on ${fmt0(salary)}?`,
       a: cfg!.noIncomeTax
         ? `${cfg!.name} does not levy a state income tax on wages, so the state tax line reads $0. You still pay federal income tax and FICA. ${cfg!.notes}`
-        : `Approximately ${fmt0(pic.stateTax)}, using ${cfg!.hasFlatTax ? `${cfg!.name}'s flat ${(cfg!.rate * 100).toFixed(2)}% rate` : `a verified ${(cfg!.rate * 100).toFixed(2)}% effective rate for this income`}. Verify with the ${cfg!.revenueAgency.name}.`,
+        : `Approximately ${fmt0(pic.stateTax)}, ${cfg!.hasFlatTax ? `using ${cfg!.name}'s flat ${pct(stateEff)} rate` : `an estimated ${pct(stateEff)} effective rate for this income (PayslipIQ models ${cfg!.name}'s brackets with a representative rate)`}. Verify with the ${cfg!.revenueAgency.name}.`,
     },
     {
       q: `Does this prove my paycheck is correct?`,
-      a: `No. This is an educational 2026 estimate for a single filer with no extra deductions. It does not prove your paycheck is right or wrong. If your real take-home is very different, that is usually explained by your W-4, pre-tax benefits (401(k), health insurance, HSA/FSA), or year-to-date wages — not necessarily an error. Check the figures with your payroll team.`,
+      a: `No. This is an educational 2026 estimate for a single filer with no extra deductions. It does not prove your paycheck is right or wrong. If your real take-home is very different, that is usually explained by your W-4, pre-tax benefits (401(k), health insurance, HSA/FSA), or year-to-date wages, not an error. Check the figures with your payroll team.`,
     },
   ];
 
@@ -176,14 +181,33 @@ export default function Page({ params }: { params: { state: string; salary: stri
         {fmt0(salary)} after tax in {cfg!.name}.
       </h1>
 
-      {/* AEO direct-answer block — first 60-80 words, quotable */}
+      {/* AEO direct-answer block: first ~60 words, quotable. Three deterministic
+          phrasings keyed off salary + state so pages don't share identical copy. */}
       <p className="mt-5 text-[17px] text-ink/85 leading-relaxed">
-        A <strong>{fmt0(salary)}</strong> salary in {cfg!.name} takes home an estimated{' '}
-        <strong>{fmt0(pic.net)} a year</strong> for 2026 — about{' '}
-        <strong>{fmt0(pic.net / 26)}</strong> per biweekly paycheck or{' '}
-        <strong>{fmt0(pic.net / 12)}</strong> a month — after federal income tax,
-        Social Security, Medicare{cfg!.noIncomeTax ? ' (no state income tax applies)' : `, and ${cfg!.name} state income tax`}.
-        The total estimated tax is {fmt0(pic.totalTax)}, an average rate of {pct(pic.avgRate)}.
+        {variant === 0 && (
+          <>A <strong>{fmt0(salary)}</strong> salary in {cfg!.name} takes home an estimated{' '}
+          <strong>{fmt0(pic.net)} a year</strong> for 2026. That works out to about{' '}
+          <strong>{fmt0(pic.net / 26)}</strong> per biweekly paycheck, or{' '}
+          <strong>{fmt0(pic.net / 12)}</strong> a month, after federal income tax,
+          Social Security, Medicare{cfg!.noIncomeTax ? ' (no state income tax applies)' : `, and ${cfg!.name} state income tax`}.
+          The total estimated tax is {fmt0(pic.totalTax)}, an average rate of {pct(pic.avgRate)}.</>
+        )}
+        {variant === 1 && (
+          <>If you earn <strong>{fmt0(salary)}</strong> in {cfg!.name}, your estimated 2026 take-home pay is{' '}
+          <strong>{fmt0(pic.net)} a year</strong>. Per paycheck that is roughly{' '}
+          <strong>{fmt0(pic.net / 26)}</strong> every two weeks, or{' '}
+          <strong>{fmt0(pic.net / 12)}</strong> each month. The figure is what remains after{' '}
+          {fmt0(pic.totalTax)} in federal income tax, Social Security, Medicare{cfg!.noIncomeTax ? '' : `, and ${cfg!.name} state income tax`},
+          an average rate of {pct(pic.avgRate)}.</>
+        )}
+        {variant === 2 && (
+          <>On a <strong>{fmt0(salary)}</strong> salary, a single filer in {cfg!.name} keeps an estimated{' '}
+          <strong>{fmt0(pic.net)}</strong> of it in 2026. Spread across the year that is about{' '}
+          <strong>{fmt0(pic.net / 26)}</strong> a biweekly paycheck, or{' '}
+          <strong>{fmt0(pic.net / 12)}</strong> a month. The rest, {fmt0(pic.totalTax)}, covers federal income tax,
+          Social Security, Medicare{cfg!.noIncomeTax ? ' (there is no state income tax)' : `, and ${cfg!.name} state income tax`},
+          for an average rate of {pct(pic.avgRate)}.</>
+        )}
       </p>
 
       <ReviewedBy />
@@ -226,7 +250,7 @@ export default function Page({ params }: { params: { state: string; salary: stri
             <tr className="border-t-2 border-ink/20"><td className="py-2 font-semibold text-emerald-800">Estimated take-home</td><td className="py-2 text-right font-semibold text-emerald-800">{fmt0(pic.net)}</td></tr>
           </tbody>
         </table>
-        <p className="mt-3 text-[12.5px] text-ink/55">Federal: IRS Pub. 15-T 2026 percentage method, standard deduction, single filer. FICA: SSA 2026 wage base {formatUSD(FED_RATES.socialSecurityWageBase)}. State: {cfg!.noIncomeTax ? 'no wage income tax' : `verified ${(cfg!.rate * 100).toFixed(2)}% ${cfg!.name} rate`}.</p>
+        <p className="mt-3 text-[12.5px] text-ink/55">Federal: IRS Pub. 15-T 2026 percentage method, standard deduction, single filer. FICA: SSA 2026 wage base {formatUSD(FED_RATES.socialSecurityWageBase)}. State: {cfg!.noIncomeTax ? 'no wage income tax' : `${cfg!.name} ${pct(stateEff)} effective on this income`}.</p>
       </section>
 
       {/* Per-paycheck */}
@@ -247,7 +271,7 @@ export default function Page({ params }: { params: { state: string; salary: stri
       <section className="mt-8 rounded-md border border-line bg-stone-50 p-5">
         <h2 className="text-xl font-semibold mb-2">The full cost of your {fmt0(salary)} job</h2>
         <p className="text-[15px] text-ink/85 leading-relaxed">
-          Your employer also pays tax on your wages that never appears on your stub: a matching 6.2% Social Security, 1.45% Medicare, and federal unemployment tax. For a {fmt0(salary)} salary that is roughly <strong>{fmt0(pic.employerCost - pic.gross)}</strong> on top, so it costs about <strong>{fmt0(pic.employerCost)}</strong> to employ you. This is context, not a deduction from your pay — it is shown so you can see the whole tax picture.
+          Your employer also pays tax on your wages that never appears on your stub: a matching 6.2% Social Security, 1.45% Medicare, and federal unemployment tax. For a {fmt0(salary)} salary that is roughly <strong>{fmt0(pic.employerCost - pic.gross)}</strong> on top, so it costs about <strong>{fmt0(pic.employerCost)}</strong> to employ you. This is context, not a deduction from your pay. It is shown so you can see the whole tax picture.
         </p>
       </section>
 

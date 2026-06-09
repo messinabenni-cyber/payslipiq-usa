@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { state: string } }): Met
   const url = `https://payslipiq.com/us/take-home-pay/${cfg.slug}/`;
   return {
     title: `${cfg.name} Take-Home Pay by Salary (2026) | PayslipIQ`,
-    description: `See estimated take-home pay for common salaries in ${cfg.name} for 2026 — from ${fmt0(SALARY_LADDER[0])} to ${fmt0(SALARY_LADDER[SALARY_LADDER.length - 1])} after federal tax, FICA${cfg.noIncomeTax ? '' : ' and state tax'}. Educational only.`,
+    description: `See estimated take-home pay for common salaries in ${cfg.name} for 2026, from ${fmt0(SALARY_LADDER[0])} to ${fmt0(SALARY_LADDER[SALARY_LADDER.length - 1])} after federal tax, FICA${cfg.noIncomeTax ? '' : ' and state tax'}. Educational only.`,
     alternates: { canonical: url, languages: { 'en-US': url, 'x-default': url } },
   };
 }
@@ -43,7 +43,7 @@ export default function Page({ params }: { params: { state: string } }) {
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">{cfg!.name} · USA 2026</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">{cfg!.name} take-home pay by salary.</h1>
       <p className="mt-5 text-[17px] text-ink/85 leading-relaxed">
-        Pick a salary to see the estimated {cfg!.name} take-home pay for 2026 — the full breakdown of federal income tax, Social Security, Medicare{cfg!.noIncomeTax ? ' (no state income tax in ' + cfg!.name + ')' : ', and ' + cfg!.name + ' state income tax'}, with per-paycheck figures and the marginal vs average rate.
+        Pick a salary to see the estimated {cfg!.name} take-home pay for 2026. Each page gives the full breakdown of federal income tax, Social Security, Medicare{cfg!.noIncomeTax ? ' (no state income tax in ' + cfg!.name + ')' : ', and ' + cfg!.name + ' state income tax'}, with per-paycheck figures and the marginal vs average rate.
       </p>
       <ReviewedBy />
 
