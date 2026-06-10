@@ -7,13 +7,14 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { EmailCapture } from '@/components/EmailCapture';
+import { PayNumbers2026 } from '@/components/PayNumbers2026';
 
 const PAGE_URL = 'https://payslipiq.com/us/pay-stub-checker';
 
 export const metadata: Metadata = {
-  title: 'Pay Stub Checker 2026 · Read Any US Pay Stub',
+  title: 'Pay Stub Checker: Read & Verify Your Real Pay Stub (2026)',
   description:
-    'Walk through every line on a US pay stub: gross pay, federal withholding, FICA, state and local tax, deductions and net pay. Educational only.',
+    'PayslipIQ does not make pay stubs. It helps you read and check a real US pay stub line by line: gross pay, federal tax, FICA, state and local tax, deductions, net pay. Educational only.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: 'Pay Stub Checker (USA, 2026)',
-    description: 'Plain-English line-by-line explanation of any US pay stub. Educational only.',
+    title: 'Pay Stub Checker: Read & Verify Your Real Pay Stub (2026)',
+    description: 'We do not make pay stubs. We help you read and check a real one, line by line. Educational only.',
     url: PAGE_URL,
     type: 'website',
     images: [
@@ -74,6 +75,22 @@ const FAQS = [
   {
     q: 'How is this different from a paycheck calculator?',
     a: 'A paycheck calculator estimates take-home pay from gross. The Pay Stub Checker reads an actual pay stub and explains each line that already exists on it. They complement each other: estimate forward with the calculator, then verify what is on the stub with the checker.'
+  },
+  {
+    q: 'Is there a way to verify a pay stub?',
+    a: 'You can sanity-check a pay stub yourself: confirm gross pay matches your rate and hours, check that Social Security is 6.2% up to the 2026 wage base of $184,500, Medicare is 1.45%, and that gross pay minus every listed deduction equals the net pay shown. PayslipIQ walks through each of these. A checker cannot legally certify a stub; only your employer, payroll provider, or a CPA can confirm the underlying figures.'
+  },
+  {
+    q: 'How do I look up my pay stub?',
+    a: 'Most US employers post pay stubs in a payroll portal such as ADP, Gusto, Paychex, Workday, or Rippling. Log in to the portal your employer uses, or ask your HR or payroll team how to access past stubs. PayslipIQ does not store or retrieve employer pay stubs; it only explains a stub you already have.'
+  },
+  {
+    q: 'Can a landlord or lender detect a fake pay stub?',
+    a: 'Often yes. Landlords and lenders cross-check stubs against bank deposits, tax transcripts, and direct employer verification, and inconsistent math or formatting is a common giveaway. Submitting a fabricated pay stub is fraud and can carry serious legal consequences. PayslipIQ does not create stubs; it helps you understand and check a genuine one.'
+  },
+  {
+    q: 'How can I get my pay stubs online for free?',
+    a: 'Through your employer payroll portal, which is free to employees. If you have left a job, you can often still log in for a period or request copies from the former employer. Be cautious of paid sites that offer to generate stubs: a generated stub is not a record of real pay. PayslipIQ is free and explains a real stub rather than producing one.'
   }
 ];
 
@@ -173,8 +190,10 @@ export default function PayStubCheckerPage() {
           <p className="text-xs uppercase tracking-wide text-slate-500 mb-2">USA · 2026 · Educational only</p>
           <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">Pay Stub Checker</h1>
           <p className="mt-4 text-lg text-slate-700 dark:text-slate-300">
-            Upload a US pay stub or paste paycheck numbers. PayslipIQ walks through every line in
-            plain English so you can read the stub and ask the right question. Educational only.
+            Have a real pay stub you do not fully understand? PayslipIQ reads it with you, line by
+            line, in plain English, so you can see what each deduction is and check it against the
+            2026 tax numbers. PayslipIQ does not create or generate pay stubs. It helps you make
+            sense of a genuine one. Educational only.
           </p>
         </header>
 
@@ -192,6 +211,29 @@ export default function PayStubCheckerPage() {
           </p>
         </section>
 
+        {/* Anti-generator positioning: the "pay stub checker" search space is dominated by
+            fake-stub makers. This block makes the difference unmistakable. */}
+        <section className="mt-8 grid sm:grid-cols-2 gap-4">
+          <div className="rounded-lg border border-emerald-200 bg-emerald-50 dark:bg-emerald-900/20 dark:border-emerald-700 p-5">
+            <h2 className="font-semibold text-emerald-900 dark:text-emerald-200">What PayslipIQ is</h2>
+            <ul className="mt-2 list-disc pl-5 text-[14.5px] text-slate-700 dark:text-slate-300 space-y-1">
+              <li>An explainer for a pay stub you already have</li>
+              <li>A line-by-line, plain-English walkthrough</li>
+              <li>A way to check each figure against the 2026 tax numbers</li>
+              <li>Independent, free, and educational</li>
+            </ul>
+          </div>
+          <div className="rounded-lg border border-slate-200 dark:border-slate-700 p-5">
+            <h2 className="font-semibold">What PayslipIQ is not</h2>
+            <ul className="mt-2 list-disc pl-5 text-[14.5px] text-slate-700 dark:text-slate-300 space-y-1">
+              <li>A pay stub generator or maker</li>
+              <li>A way to create or fake a stub you do not have</li>
+              <li>Tax, legal, or payroll advice</li>
+              <li>Affiliated with the IRS, a state, or your employer</li>
+            </ul>
+          </div>
+        </section>
+
         <section className="mt-8 rounded-lg border border-amber-300 bg-amber-50 dark:bg-amber-900/20 dark:border-amber-700 p-5">
           <h2 className="font-medium">Before you upload</h2>
           <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
@@ -206,7 +248,7 @@ export default function PayStubCheckerPage() {
           <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
             Upload a pay stub (PDF, PNG, JPG) or paste your paycheck numbers below.
             The AI uploader is currently in private beta. If it is unavailable, use the manual
-            fallback below — same line-by-line breakdown, same methodology.
+            fallback below. It gives the same line-by-line breakdown and the same methodology.
           </p>
 
           <div className="mt-4">
@@ -272,6 +314,10 @@ export default function PayStubCheckerPage() {
               </div>
             ))}
           </dl>
+        </section>
+
+        <section className="mt-12">
+          <PayNumbers2026 variant="compact" />
         </section>
 
         <section className="mt-12">
