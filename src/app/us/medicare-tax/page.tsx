@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { PayNumbers2026 } from '@/components/PayNumbers2026';
 
 import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function Page() {
 <h2>Self-employment</h2>
 <p>1099 contractors pay 2.9 percent self-employment Medicare on all net earnings (no cap). Plus 0.9 percent above the thresholds. Half of the 2.9 percent is deductible above the line.</p>
 <h2>How it shows on your stub</h2>
-<p>MED, MEDICARE, FED MED, FICA-MED. The Additional Medicare Tax appears as a separate line if applicable.</p></>}
+<p>MED, MEDICARE, FED MED, FICA-MED. The Additional Medicare Tax appears as a separate line if applicable.</p><div className="not-prose mt-8"><PayNumbers2026 variant="compact" /></div></>}
       faqs={FAQS}
       related={RELATED}
       breadcrumbs={BREADCRUMBS}

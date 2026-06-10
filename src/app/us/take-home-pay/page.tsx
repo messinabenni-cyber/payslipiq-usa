@@ -4,6 +4,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { STATE_CONFIGS } from '@/components/StateGrossToNetConfig';
+import { PayNumbers2026 } from '@/components/PayNumbers2026';
 
 const PAGE_URL = 'https://payslipiq.com/us/take-home-pay';
 
@@ -41,6 +42,10 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <div className="mt-10">
+        <PayNumbers2026 variant="compact" />
+      </div>
 
       <section className="mt-10">
         <h2 className="text-2xl font-semibold tracking-tight">Related tools</h2>

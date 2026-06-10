@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { PayNumbers2026 } from '@/components/PayNumbers2026';
 
 export const metadata: Metadata = {
   title: "Federal Income Tax Withholding",
@@ -50,7 +51,7 @@ export default function Page() {
 <h2>Pre-tax deductions</h2>
 <p>401(k), HSA, FSA, Section 125 health insurance reduce federal income tax wages (the amount the calculation runs against). Higher pre-tax deductions = lower federal withholding.</p>
 <h2>Adjusting your withholding</h2>
-<p>Run the IRS Tax Withholding Estimator at irs.gov. If under-withheld, increase Step 4(c) extra withholding. If over-withheld, decrease Step 4(c) or claim more dependents in Step 3 if appropriate. Submit a new W-4 to your employer when changes are needed.</p></>}
+<p>Run the IRS Tax Withholding Estimator at irs.gov. If under-withheld, increase Step 4(c) extra withholding. If over-withheld, decrease Step 4(c) or claim more dependents in Step 3 if appropriate. Submit a new W-4 to your employer when changes are needed.</p><div className="not-prose mt-8"><PayNumbers2026 variant="compact" /></div></>}
       faqs={FAQS}
       related={RELATED}
       breadcrumbs={BREADCRUMBS}

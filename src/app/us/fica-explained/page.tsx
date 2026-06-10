@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { PayNumbers2026 } from '@/components/PayNumbers2026';
 
 export const metadata: Metadata = {
   title: "FICA on Your Paycheck (Social Security + Medicare)",
@@ -36,7 +37,7 @@ export default function Page() {
 <p>Section 125 cafeteria plan deductions (most pre-tax health insurance, FSA, traditional HSA via payroll) reduce FICA wages.</p>
 <p>Pre-tax 401(k) contributions do NOT reduce FICA wages, even though they reduce federal income tax wages.</p>
 <h2>What you see on your pay stub</h2>
-<p>Common labels: FICA, OASDI, SOC SEC, MED, MEDICARE, FED MED. Combined or split. Either way, the math is the same.</p></>}
+<p>Common labels: FICA, OASDI, SOC SEC, MED, MEDICARE, FED MED. Combined or split. Either way, the math is the same.</p><div className="not-prose mt-8"><PayNumbers2026 variant="compact" /></div></>}
       faqs={FAQS}
       related={RELATED}
       breadcrumbs={BREADCRUMBS}
