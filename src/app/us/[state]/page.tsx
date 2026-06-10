@@ -9,6 +9,8 @@ import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
+import { PayNumbers2026 } from '@/components/PayNumbers2026';
+import { SALARY_LADDER } from '@/lib/takeHomeSalaries';
 
 interface PageProps { params: { state: string }; }
 
@@ -19,9 +21,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const s = getStateBySlug(params.state);
   if (!s) return { title: 'State not found', robots: { index: false, follow: false } };
+  const taxLabel = s.category === 'no-income-tax' ? 'no state income tax' : s.category === 'flat' ? 'a flat state income tax' : 'progressive state income tax';
   return {
-    title: `${s.name} Paycheck Guide (2026)`,
-    description: `Federal tax, FICA, ${s.name} state tax, deductions, overtime. Plain-English. Educational only.`,
+    title: `${s.name} Paycheck Guide 2026: Tax, FICA & Take-Home`,
+    description: `How a ${s.name} paycheck works in 2026: federal tax, FICA (Social Security and Medicare), ${taxLabel}, deductions and overtime, with take-home pay by salary. Educational only.`,
     alternates: { canonical: `/us/${s.slug}` },
   };
 }
@@ -59,6 +62,9 @@ export default function Page({ params }: PageProps) {
   const stateTax = example.stateTaxPerPeriod;
   const net = example.netPerPeriod;
   const fmt = (n: number) => formatUSD(n);
+  const fmt0 = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+  // High-interest salaries that have a real take-home page in the Wave 1 ladder.
+  const featuredSalaries = SALARY_LADDER.filter((n) => [40000, 50000, 60000, 75000, 90000, 100000, 125000, 150000].includes(n));
 
   const stateFaqs = [
     {
@@ -126,6 +132,14 @@ export default function Page({ params }: PageProps) {
 
       <ReviewedBy />
 
+      {/* AEO direct-answer block, message-matched to "[State] paycheck" intent. */}
+      <section className="mt-6 rounded-md border border-slate-200 bg-slate-50 p-5">
+        <h2 className="text-base font-semibold text-slate-900">In short</h2>
+        <p className="mt-2 text-[15px] leading-relaxed text-slate-700">
+          A {s.name} paycheck has federal income tax, Social Security (6.2% up to the 2026 wage base of $184,500), and Medicare (1.45%){s.category === 'no-income-tax' ? ', and no state income tax on wages' : s.category === 'flat' && s.taxRate ? `, plus a flat ${(s.taxRate * 100).toFixed(2)}% ${s.name} state income tax` : `, plus progressive ${s.name} state income tax`}{s.hasLocalTax ? ', and local income tax in some cities' : ''}. On a $65,000 single-filer salary, estimated {s.name} take-home is about {fmt0(example.netAnnual)} a year, or {fmt0(net)} per biweekly paycheck.
+        </p>
+      </section>
+
       <div className="mt-6">
         <MasterDisclaimer variant="long" />
       </div>
@@ -155,6 +169,20 @@ export default function Page({ params }: PageProps) {
           <p className="mt-1 text-sm text-slate-600">Employer pay stub requirements in {s.name}.</p>
         </Link>
       </div>
+
+      <section className="mt-10">
+        <h2 className="text-2xl font-bold text-slate-900">{s.name} take-home pay by salary (2026)</h2>
+        <p className="mt-2 text-slate-700">See estimated {s.name} take-home for common salaries. Each page has a full federal, FICA, and {s.name} breakdown with per-paycheck figures.</p>
+        <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
+          {featuredSalaries.map((sal) => (
+            <Link key={sal} href={`/us/take-home-pay/${s.slug}/${sal}`} className="block rounded border border-slate-200 bg-white p-2 text-center hover:border-blue-300">{fmt0(sal)} after tax</Link>
+          ))}
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2 text-sm">
+          <Link href={`/us/take-home-pay/${s.slug}`} className="inline-block rounded bg-slate-900 px-4 py-2 font-medium text-white hover:bg-slate-700">All {s.name} salaries</Link>
+          <Link href={`/us/gross-to-net-paycheck/${s.slug}`} className="inline-block rounded border border-slate-200 px-4 py-2 font-medium hover:border-blue-300">{s.name} gross-to-net calculator</Link>
+        </div>
+      </section>
 
       <article className="mt-12 prose prose-slate max-w-none">
         <h2>How a {s.name} paycheck is built</h2>
@@ -210,6 +238,10 @@ export default function Page({ params }: PageProps) {
           <li><a href="https://www.dol.gov/agencies/whd" target="_blank" rel="noopener noreferrer">US Department of Labor, Wage and Hour Division</a></li>
         </ul>
       </article>
+
+      <div className="mt-12">
+        <PayNumbers2026 variant="compact" />
+      </div>
 
       <FAQSchema items={allFaqs} />
     </main>
