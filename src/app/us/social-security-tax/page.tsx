@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { PayNumbers2026 } from '@/components/PayNumbers2026';
 
 import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function Page() {
 <h2>Future benefit calculation</h2>
 <p>Your benefit at retirement is calculated from your highest 35 years of earnings (indexed). The Social Security Administration sends an annual statement showing your earnings record and projected benefits.</p>
 <h2>Common pay stub labels</h2>
-<p>SOC SEC, OASDI, SS, FICA-SS. The amount equals 6.2 percent of paycheck wages, capped once you hit the annual base.</p></>}
+<p>SOC SEC, OASDI, SS, FICA-SS. The amount equals 6.2 percent of paycheck wages, capped once you hit the annual base.</p><div className="not-prose mt-8"><PayNumbers2026 variant="compact" /></div></>}
       faqs={FAQS}
       related={RELATED}
       breadcrumbs={BREADCRUMBS}
