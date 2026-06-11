@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'What is CO FAMLI?', a: 'Colorado Family and Medical Leave Insurance. Total 2026 premium 0.88% of wages, capped at SS wage base ($184,500). Employee share 0.44% (50/50 split with employers of 10+). Funds Paid Family and Medical Leave benefits. Started 2023; benefits available since 2024.' },
   { q: 'What is the Colorado state tax rate?', a: 'Colorado is a flat-tax state, currently 4.40% (2026 — Coloradans approved Proposition 116 reducing the rate from 4.55% in 2020). Applies to taxable income; the standard deduction is generous.' },
   { q: 'Other Colorado cities with OPT?', a: 'Aurora ($2/mo employee), Glendale ($5/mo employee), Greenwood Village ($2/mo employee), Sheridan ($3/mo employee). Smaller flat amounts. If you work in any of these, your paycheck has the corresponding OPT line.' },
-  { q: 'What lines should I expect on a Denver paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). Colorado flat 4.40%. Denver OPT $5.75/month. CO FAMLI 0.44%. Standard pre-tax deductions if elected.' },
+  { q: 'What lines should I expect on a Denver paycheck?', a: 'Denver is one of the few US cities with a local head tax, so the stub is longer than most: federal income tax, Social Security (6.2% to $184,500) and Medicare (1.45%) on the federal side, then Colorado flat income tax at 4.40%, the Denver Occupational Privilege Tax (the $5.75/month head tax), and the CO FAMLI paid-leave premium (0.44% employee share). Pre-tax 401(k), HSA, FSA or Section 125 health appear only when elected.' },
 ];
 
 const BREADCRUMBS = [

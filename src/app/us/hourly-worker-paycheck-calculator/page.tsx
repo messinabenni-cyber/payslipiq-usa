@@ -2,21 +2,21 @@ import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
 export const metadata: Metadata = {
-  title: "Hourly Paycheck Calculator (US)",
-  description: "Estimate take-home pay for hourly US workers. Hours, rate, overtime, federal, state, FICA. Educational only.",
+  title: "Hourly Worker Paycheck Guide (2026)",
+  description: "How hourly pay works: hours, rate, overtime, shift differentials, tipped floor, federal, state and FICA. A plain-English guide. Educational only.",
   alternates: { canonical: "/us/hourly-worker-paycheck-calculator" },
 };
 
 const FAQS = [{"q": "Is overtime taxed at a higher rate?", "a": "No. Overtime hours are paid at 1.5x but taxed at the same rate as regular wages. A single big paycheck can look over-withheld because payroll annualizes it. The over-withholding comes back as a refund at filing time."}, {"q": "What is the federal minimum wage?", "a": "$7.25 per hour. Most states are higher. Your employer must pay the higher of state and federal."}, {"q": "Why is my pay stub rate lower than my offer letter?", "a": "Compare again carefully. If they really do not match, document and ask payroll in writing. Small variances can come from rounding to nearest cent on a different conversion (annualized vs hourly)."}];
 const RELATED = [{"label": "Paycheck Calculator", "href": "/us/paycheck-calculator"}, {"label": "Overtime explained", "href": "/us/overtime-paycheck"}, {"label": "Tipped worker guide", "href": "/us/tipped-worker-paycheck-guide"}, {"label": "Pay stub mistakes", "href": "/us/pay-stub-mistakes"}];
-const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/learn"}, {"name": "Hourly Paycheck Calculator", "url": "/us/hourly-worker-paycheck-calculator"}];
+const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/learn"}, {"name": "Hourly Worker Paycheck Guide", "url": "/us/hourly-worker-paycheck-calculator"}];
 
 export default function Page() {
   return (
     <RichArticle
-      title="Hourly Paycheck Calculator (US)"
+      title="Hourly Worker Paycheck Guide (2026)"
       url="/us/hourly-worker-paycheck-calculator"
-      description="Estimate take-home pay for hourly US workers. Hours, rate, overtime, federal, state, FICA. Educational only."
+      description="How hourly pay works: hours, rate, overtime, shift differentials, tipped floor, federal, state and FICA. A plain-English guide. Educational only."
       intro={<>Hourly workers see a paycheck that rises and falls with hours worked. Same hours one week, fewer the next, and your net swings. Here is how the math goes, line by line.</>}
       body={<><h2>The arithmetic</h2>
 <p>Gross per pay period equals (regular hours times regular rate) plus (overtime hours times 1.5 times regular rate). Federal FLSA requires 1.5x for hours above 40 in a workweek. California, Alaska, Nevada and Colorado add daily-overtime rules on top.</p>

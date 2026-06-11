@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'I get RSUs that vest — how do those show up on my paycheck?', a: 'RSUs are taxed as ordinary income at vest. The fair market value at vest is added to your W-2 wages on that paycheck and federal supplemental withholding applies (22% flat up to $1M/yr, 37% above). FICA applies. Your employer typically sells some shares to cover the withholding. No Texas state tax on the gain because Texas has no income tax.' },
   { q: 'My equity vested but my paycheck looks the same — why?', a: 'Many tech employers run RSU vesting through a separate off-cycle payroll run, which is why your normal pay stub does not change. Check your year-end W-2 or your equity portal (Schwab Stock Plan, Fidelity NetBenefits, E*TRADE Stock Plan) for the actual income added.' },
   { q: 'Does Texas have SDI or PFL?', a: 'No. Texas has no state-mandated SDI or Paid Family Leave program. Many Austin tech employers offer generous PTO and private disability instead.' },
-  { q: 'What lines should I expect on an Austin paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). Additional Medicare (0.9%) if YTD wages cross $200,000. Pre-tax 401(k), HSA, FSA, Section 125 health if elected. No state or local tax line.' },
+  { q: 'What lines should I expect on an Austin paycheck?', a: 'No Texas state income tax and no Austin or Travis County wage tax means the federal lines are it: federal income tax, Social Security (6.2% to $184,500) and Medicare (1.45%). Many Austin tech workers cross the $200,000 mark and pick up the 0.9% Additional Medicare line. Anything else — pre-tax 401(k), HSA, FSA, Section 125 health — only appears if you elected it, and RSU vesting income may show on a separate off-cycle run.' },
 ];
 
 const BREADCRUMBS = [

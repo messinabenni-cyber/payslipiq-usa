@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { STATES, getStateBySlug } from '@/lib/states';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
+import { SchemaGraph } from '@/components/SchemaGraph';
 
 interface PageProps { params: { state: string }; }
 
@@ -25,6 +26,20 @@ export default function Page({ params }: PageProps) {
   if (!s) return notFound();
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
+      <SchemaGraph
+        type="Article"
+        url={`/us/${s.slug}/overtime-pay`}
+        name={`${s.name} Overtime Pay Rules (2026)`}
+        description={`${s.name} overtime: ${s.dailyOvertime ? 'has stricter daily-overtime rules than federal FLSA' : 'follows federal FLSA (1.5× over 40/week)'}. Educational only.`}
+        about="flsa"
+        reviewed
+        dateModified="2026-06-11"
+        breadcrumbs={[
+          { name: 'Home', url: '/us' },
+          { name: s.name, url: `/us/${s.slug}` },
+          { name: 'Overtime', url: `/us/${s.slug}/overtime-pay` },
+        ]}
+      />
       <nav className="text-sm text-slate-500"><Link href="/" className="hover:text-slate-700">Home</Link> › <Link href={`/us/${s.slug}`} className="hover:text-slate-700">{s.name}</Link> › <span className="text-slate-700">Overtime</span></nav>
       <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900">{s.name} Overtime Pay Rules</h1>
       <article className="mt-6 prose prose-slate max-w-none">
@@ -40,6 +55,17 @@ export default function Page({ params }: PageProps) {
         <p><a href="https://www.dol.gov/agencies/whd" target="_blank" rel="noopener noreferrer">US Department of Labor, Wage and Hour Division</a></p>
       </article>
       <div className="mt-10"><MasterDisclaimer variant="long" /></div>
+      <section className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-6">
+        <p className="text-sm font-semibold text-slate-900">Related {s.name} pages</p>
+        <ul className="mt-2 grid grid-cols-1 gap-1 text-sm text-blue-700 sm:grid-cols-2">
+          <li><Link href={`/us/${s.slug}`}>{s.name} paycheck guide →</Link></li>
+          <li><Link href={`/us/${s.slug}/paycheck-calculator`}>{s.name} paycheck calculator →</Link></li>
+          <li><Link href={`/us/${s.slug}/pay-stub-checker`}>{s.name} pay stub checker →</Link></li>
+          <li><Link href={`/us/${s.slug}/state-tax`}>{s.name} state income tax →</Link></li>
+          <li><Link href={`/us/${s.slug}/pay-stub-laws`}>{s.name} pay stub laws →</Link></li>
+          <li><Link href="/us/overtime-paycheck">How overtime is taxed →</Link></li>
+        </ul>
+      </section>
     </main>
   );
 }

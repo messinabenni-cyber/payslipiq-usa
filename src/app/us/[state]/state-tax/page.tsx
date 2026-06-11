@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { STATES, getStateBySlug } from '@/lib/states';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
+import { SchemaGraph } from '@/components/SchemaGraph';
 
 interface PageProps { params: { state: string }; }
 
@@ -31,6 +32,20 @@ export default function Page({ params }: PageProps) {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
+      <SchemaGraph
+        type="Article"
+        url={`/us/${s.slug}/state-tax`}
+        name={`${s.name} State Income Tax (2026)`}
+        description={`${s.name} state income tax explained: rates, brackets, structure. Sourced from ${s.taxAuthority}. Educational only.`}
+        about="incomeTax"
+        reviewed
+        dateModified="2026-06-11"
+        breadcrumbs={[
+          { name: 'Home', url: '/us' },
+          { name: s.name, url: `/us/${s.slug}` },
+          { name: 'State Tax', url: `/us/${s.slug}/state-tax` },
+        ]}
+      />
       <nav className="text-sm text-slate-500"><Link href="/" className="hover:text-slate-700">Home</Link> › <Link href={`/us/${s.slug}`} className="hover:text-slate-700">{s.name}</Link> › <span className="text-slate-700">State Tax</span></nav>
       <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900">{s.name} State Income Tax</h1>
       <article className="mt-6 prose prose-slate max-w-none">
@@ -42,6 +57,17 @@ export default function Page({ params }: PageProps) {
         {s.hasPFL ? <p><strong>PFL:</strong> {s.name} has a Paid Family Leave program with employee-paid premiums.</p> : null}
       </article>
       <div className="mt-10"><MasterDisclaimer variant="long" /></div>
+      <section className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-6">
+        <p className="text-sm font-semibold text-slate-900">Related {s.name} pages</p>
+        <ul className="mt-2 grid grid-cols-1 gap-1 text-sm text-blue-700 sm:grid-cols-2">
+          <li><Link href={`/us/${s.slug}`}>{s.name} paycheck guide →</Link></li>
+          <li><Link href={`/us/${s.slug}/paycheck-calculator`}>{s.name} paycheck calculator →</Link></li>
+          <li><Link href={`/us/${s.slug}/pay-stub-checker`}>{s.name} pay stub checker →</Link></li>
+          <li><Link href={`/us/${s.slug}/overtime-pay`}>{s.name} overtime rules →</Link></li>
+          <li><Link href={`/us/${s.slug}/pay-stub-laws`}>{s.name} pay stub laws →</Link></li>
+          <li><Link href="/us/state-tax">All 50 states + DC →</Link></li>
+        </ul>
+      </section>
     </main>
   );
 }

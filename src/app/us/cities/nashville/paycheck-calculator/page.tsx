@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'Does Nashville have a city income tax?', a: 'No. The Metropolitan Government of Nashville and Davidson County does not impose an income tax on wages. Tennessee state has none either.' },
   { q: 'Does Tennessee have SDI or PFL?', a: 'No. Tennessee does not have a state-mandated SDI or Paid Family Leave program. Many Nashville employers (especially in healthcare and tech) offer private short-term disability and paid leave. Check your benefits portal.' },
   { q: 'What about the Hall Tax — is that still on my paycheck?', a: 'No. The Hall Income Tax taxed interest and dividends (not wages) and was fully phased out by 2021. It never appeared on a regular W-2 paycheck because it only applied to investment income at filing.' },
-  { q: 'What lines should I expect on a Nashville paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). Pre-tax 401(k), HSA, FSA, Section 125 health if elected. No state or local tax line.' },
+  { q: 'What lines should I expect on a Nashville paycheck?', a: 'Because Tennessee levies no state income tax and Nashville has no city tax, the only mandatory withholding lines are federal income tax, Social Security (6.2% up to the $184,500 wage base) and Medicare (1.45% on all wages, plus 0.9% Additional Medicare once year-to-date wages pass $200,000). Anything else — 401(k), HSA, FSA, Section 125 health — appears only if you elected it.' },
 ];
 
 const BREADCRUMBS = [

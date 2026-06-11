@@ -1,5 +1,14 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { DefinedTermSetSchema } from '@/components/DefinedTermSetSchema';
+
+const TERMS = [
+  { term: 'W-2', definition: 'IRS Form W-2, Wage and Tax Statement — the form an employer sends each employee and the IRS by January 31, reporting annual wages and taxes withheld.' },
+  { term: 'Box 1', definition: 'Wages, tips and other compensation: federal income tax wages, equal to gross pay minus pre-tax items such as 401(k), Section 125 health, FSA and traditional HSA.' },
+  { term: 'Box 3', definition: 'Social Security wages: the portion of pay subject to Social Security tax, capped at the annual wage base and including pre-tax 401(k) contributions.' },
+  { term: 'Box 5', definition: 'Medicare wages and tips: the portion of pay subject to Medicare tax, with no cap, including pre-tax 401(k) contributions.' },
+  { term: 'Federal wages', definition: 'The taxable wage figure reported in Box 1 that the IRS uses to calculate federal income tax, after pre-tax deductions are removed from gross pay.' },
+];
 
 export const metadata: Metadata = {
   title: "How to Read a W-2 (Box-by-Box)",
@@ -13,6 +22,7 @@ const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/le
 
 export default function Page() {
   return (
+    <>
     <RichArticle
       title="How to Read a W-2 (Box-by-Box)"
       url="/us/w2-explained"
@@ -66,5 +76,12 @@ export default function Page() {
       related={RELATED}
       breadcrumbs={BREADCRUMBS}
     />
+    <DefinedTermSetSchema
+      name="W-2 form terms"
+      description="Plain-English definitions of the key boxes and wage figures on a US Form W-2."
+      url="https://payslipiq.com/us/w2-explained"
+      terms={TERMS}
+    />
+    </>
   );
 }

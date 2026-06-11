@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'I work offshore — does that change anything?', a: 'For Texas-resident offshore workers, federal tax and FICA apply as normal. The federal foreign-earned income exclusion only applies if you are working outside the US for an extended period and meet the physical-presence or bona-fide-residence tests. For Gulf of Mexico US waters, treat the income as standard US W-2 wages.' },
   { q: 'My bonus is structured around energy-price targets — how is it taxed?', a: 'Performance bonuses are federal supplemental wages, taxed at the flat 22% withholding rate on amounts up to $1,000,000 per year and 37% on the portion above. FICA still applies. No Texas state tax. Your effective rate at filing may be different from withholding.' },
   { q: 'Does Texas have SDI or PFL?', a: 'No. Texas has no state-mandated SDI or Paid Family Leave program. Houston-area employers may offer private disability or PTO; check your benefits portal.' },
-  { q: 'What lines should I expect on a Houston paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). Pre-tax 401(k), HSA, FSA, Section 125 health if elected. No state or local tax line.' },
+  { q: 'What lines should I expect on a Houston paycheck?', a: 'Texas has no state income tax and Houston imposes no city wage tax, so the federal side is all you see withheld: federal income tax, Social Security (6.2% to the $184,500 wage base) and Medicare (1.45%, plus the 0.9% Additional Medicare surtax above $200,000 year-to-date). Pre-tax 401(k), HSA, FSA or Section 125 health lines show up only when you sign up for them.' },
 ];
 
 const BREADCRUMBS = [

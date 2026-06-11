@@ -1,5 +1,14 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { DefinedTermSetSchema } from '@/components/DefinedTermSetSchema';
+
+const TERMS = [
+  { term: 'W-4', definition: 'IRS Form W-4, Employee’s Withholding Certificate — the form that tells your employer how much federal income tax to withhold from each paycheck.' },
+  { term: 'Withholding allowance', definition: 'The old pre-2020 mechanism that reduced withholding per claimed allowance. The current W-4 replaced it with direct dollar-based adjustments for dependents and other income.' },
+  { term: 'Extra withholding', definition: 'A flat dollar amount entered in Step 4(c) of the W-4 that the employer adds to the federal tax withheld each pay period, used to fine-tune withholding.' },
+  { term: 'Filing status', definition: 'The category selected in Step 1 of the W-4 — Single, Married Filing Jointly, or Head of Household — that determines which withholding tables the employer applies.' },
+  { term: 'Dependents', definition: 'Qualifying children and other dependents claimed in Step 3 of the W-4, which reduces the federal tax withheld from each paycheck.' },
+];
 
 export const metadata: Metadata = {
   title: "W-4 Guide (How to Fill Out a W-4)",
@@ -13,6 +22,7 @@ const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/le
 
 export default function Page() {
   return (
+    <>
     <RichArticle
       title="W-4 Guide (How to Fill Out a W-4)"
       url="/us/w4-guide"
@@ -60,5 +70,12 @@ export default function Page() {
       related={RELATED}
       breadcrumbs={BREADCRUMBS}
     />
+    <DefinedTermSetSchema
+      name="W-4 form terms"
+      description="Plain-English definitions of the key terms used when filling out a US Form W-4."
+      url="https://payslipiq.com/us/w4-guide"
+      terms={TERMS}
+    />
+    </>
   );
 }
