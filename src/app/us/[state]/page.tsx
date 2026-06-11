@@ -10,6 +10,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { PayNumbers2026 } from '@/components/PayNumbers2026';
+import { NextStepsBlock } from '@/components/NextStepsBlock';
 import { SALARY_LADDER } from '@/lib/takeHomeSalaries';
 
 interface PageProps { params: { state: string }; }
@@ -241,6 +242,10 @@ export default function Page({ params }: PageProps) {
 
       <div className="mt-12">
         <PayNumbers2026 variant="compact" />
+      </div>
+
+      <div className="mt-10">
+        <NextStepsBlock />
       </div>
 
       <FAQSchema items={allFaqs} />
