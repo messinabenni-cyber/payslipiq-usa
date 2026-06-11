@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'What is WA PFML?', a: 'Washington Paid Family and Medical Leave. Total 2026 premium 1.13% of wages, capped at SS wage base ($184,500). Employee share ~71.43% of premium = ~0.807% of wages for employers with 50+ employees. Funds WA Paid Leave benefits.' },
   { q: 'What is WA Cares Fund?', a: 'A long-term care benefit. 0.58% employee-paid (no wage cap). Started July 2023. Employees who privately opted out before the deadline are exempt; the opt-out window has closed. Benefits begin July 2026 for qualifying workers.' },
   { q: 'Does Seattle have a city income tax?', a: 'No employee-side Seattle city income tax. The Seattle JumpStart Tax (Payroll Expense Tax) is paid by large employers on high salaries, not withheld from worker paychecks. The Seattle high-earner income tax attempt was struck down by the courts.' },
-  { q: 'What lines should I expect on a Seattle paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). WA PFML (~0.807%). WA Cares Fund (0.58%). No state income tax. Standard pre-tax deductions if elected (401k, HSA, FSA).' },
+  { q: 'What lines should I expect on a Seattle paycheck?', a: 'Washington has no state income tax and Seattle no city income tax, but two state-program premiums still show up alongside the federal lines (federal income tax, Social Security 6.2% to $184,500, Medicare 1.45%): the WA Paid Family and Medical Leave premium (employee share, around 0.807% of the total) and the WA Cares Fund long-term-care premium at 0.58%. Pre-tax 401(k), HSA, FSA or Section 125 health appear only when elected.' },
 ];
 
 const BREADCRUMBS = [

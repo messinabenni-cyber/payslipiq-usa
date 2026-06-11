@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'I work in hospitality and earn tips — how are those handled?', a: 'Tips are taxable federal income and subject to FICA. Cash tips of $20+ per month from a single employer must be reported. Credit-card tips are processed through payroll automatically. Florida adds no state tax. Federal supplemental withholding may apply on tip-out adjustments paid as separate supplemental wages.' },
   { q: 'Does Florida have SDI or PFL?', a: 'No. Florida has no state-mandated SDI or Paid Family Leave program. Some Miami employers offer private disability or PTO. Check your benefits portal.' },
   { q: 'What about Reemployment Tax / SUTA — does that hit my paycheck?', a: 'No. Florida Reemployment Tax (the FL version of state unemployment insurance) is paid entirely by employers. It does not appear on your pay stub.' },
-  { q: 'What lines should I expect on a Miami paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). Additional Medicare (0.9%) if YTD wages cross $200,000. Pre-tax 401(k), HSA, FSA, Section 125 health if elected. No state or local tax line.' },
+  { q: 'What lines should I expect on a Miami paycheck?', a: 'Florida has no state income tax and Miami-Dade imposes no local wage tax, so the only mandatory lines are federal income tax, Social Security (6.2% to the $184,500 wage base) and Medicare (1.45%, plus the 0.9% Additional Medicare surtax above $200,000 year-to-date). Tipped hospitality workers also see FICA on reported tips. Pre-tax 401(k), HSA, FSA or Section 125 health appear only when elected.' },
 ];
 
 const BREADCRUMBS = [

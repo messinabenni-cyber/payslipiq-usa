@@ -4,6 +4,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
+import { DatasetSchema } from '@/components/DatasetSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { PayNumbers2026 } from '@/components/PayNumbers2026';
 import { FED_RATES, STANDARD_DEDUCTION } from '@/lib/calc';
@@ -58,6 +59,7 @@ const FAQS = [
 export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
+      <DatasetSchema url="/us/2026-pay-numbers" />
       <BreadcrumbSchema items={[
         { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
         { name: '2026 pay numbers', url: PAGE_URL },

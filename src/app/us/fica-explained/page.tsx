@@ -1,6 +1,15 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 import { PayNumbers2026 } from '@/components/PayNumbers2026';
+import { DefinedTermSetSchema } from '@/components/DefinedTermSetSchema';
+
+const TERMS = [
+  { term: 'FICA', definition: 'Federal Insurance Contributions Act — the US federal payroll tax that funds Social Security and Medicare, withheld from employee wages and matched by the employer.' },
+  { term: 'Social Security tax', definition: 'The 6.2% payroll tax on wages up to the annual Social Security wage base ($184,500 for 2026) that funds retirement, disability and survivor benefits.' },
+  { term: 'Medicare tax', definition: 'The 1.45% payroll tax on all wages, with no wage cap, that funds Medicare Part A hospital insurance.' },
+  { term: 'OASDI', definition: 'Old-Age, Survivors, and Disability Insurance — the formal name for the Social Security portion of FICA.' },
+  { term: 'Additional Medicare Tax', definition: 'An extra 0.9% Medicare tax on wages above $200,000 (single) or $250,000 (married filing jointly). It is employee-only, with no employer match.' },
+];
 
 export const metadata: Metadata = {
   title: "FICA on Your Paycheck (Social Security + Medicare)",
@@ -14,6 +23,7 @@ const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/le
 
 export default function Page() {
   return (
+    <>
     <RichArticle
       title="FICA on Your Paycheck (Social Security + Medicare)"
       url="/us/fica-explained"
@@ -42,5 +52,12 @@ export default function Page() {
       related={RELATED}
       breadcrumbs={BREADCRUMBS}
     />
+    <DefinedTermSetSchema
+      name="FICA payroll tax terms"
+      description="Plain-English definitions of the federal payroll-tax terms that appear on a US pay stub."
+      url="https://payslipiq.com/us/fica-explained"
+      terms={TERMS}
+    />
+    </>
   );
 }

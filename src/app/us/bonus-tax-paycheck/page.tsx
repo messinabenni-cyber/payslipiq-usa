@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { BonusCalculator } from '@/components/BonusCalculator';
+import { SchemaGraph } from '@/components/SchemaGraph';
+import { SoftwareApplicationLd } from '@/components/ToolSchemas';
 
 import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
@@ -14,12 +17,30 @@ const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "US", "url": "/us/le
 
 export default function Page() {
   return (
-    <RichArticle
-      title="Why Is My Bonus Taxed at 22 Percent?"
-      url="/us/bonus-tax-paycheck"
-      description="Bonus tax explained. The 22 percent is withholding, not the actual tax rate. Percentage method vs aggregate method. Educational only."
-      intro={<>The 22 percent figure on a US bonus is not a tax rate. It is the federal supplemental withholding rate. Two methods exist for withholding on supplemental wages. Most employers use the percentage method.</>}
-      body={<><h2>What counts as supplemental wages</h2>
+    <>
+      <SchemaGraph
+        url="/us/bonus-tax-paycheck"
+        name="Why Is My Bonus Taxed at 22 Percent?"
+        description="Bonus tax explained. The 22 percent is withholding, not the actual tax rate. Percentage method vs aggregate method, with a dual-method bonus calculator. Educational only."
+        type="WebPage"
+        about="withholding"
+        mentions={['fica', 'incomeTax']}
+        reviewed
+        breadcrumbs={BREADCRUMBS}
+      />
+      <SoftwareApplicationLd
+        url="https://payslipiq.com/us/bonus-tax-paycheck"
+        name="PayslipIQ Bonus Tax Calculator (dual method)"
+        description="Estimate bonus withholding both ways — the flat 22% supplemental method and the aggregate method — plus FICA, state, and the average vs. marginal federal rate. 2026."
+      />
+      <RichArticle
+        title="Why Is My Bonus Taxed at 22 Percent?"
+        url="/us/bonus-tax-paycheck"
+        description="Bonus tax explained. The 22 percent is withholding, not the actual tax rate. Percentage method vs aggregate method. Educational only."
+        intro={<>The 22 percent figure on a US bonus is not a tax rate. It is the federal supplemental withholding rate. Two methods exist for withholding on supplemental wages. Most employers use the percentage method.</>}
+        directAnswer={<>A US bonus is usually withheld at a flat <strong>22% federal supplemental rate</strong> (37% on amounts over $1,000,000), plus FICA (Social Security 6.2% up to the 2026 wage base of $184,500, and Medicare 1.45%). That 22% is <strong>withholding, not your final tax</strong>. Employers can instead use the aggregate method, which lumps the bonus into a regular paycheck and often withholds more. Either way, your actual tax is settled when you file, so over-withholding comes back as a refund. The calculator below shows both methods side by side.</>}
+        body={<><BonusCalculator />
+<h2>What counts as supplemental wages</h2>
 <p>Bonuses, commissions, severance, back pay, retroactive pay raises, awards and prizes, accumulated sick leave paid out, and overtime in some cases. Anything paid in addition to regular wages.</p>
 <h2>The percentage method</h2>
 <p>22 percent flat federal withholding on supplemental wages up to $1 million per year. 37 percent on amounts above $1 million. Easy to calculate. Predictable. Most employers use it.</p>
@@ -40,9 +61,10 @@ export default function Page() {
 </ul>
 <h2>The myth in one sentence</h2>
 <p>Bonuses are not taxed at a higher rate. They are withheld at a flat rate that often over-collects, and the over-collection comes back at filing.</p></>}
-      faqs={FAQS}
-      related={RELATED}
-      breadcrumbs={BREADCRUMBS}
-    />
+        faqs={FAQS}
+        related={RELATED}
+        breadcrumbs={BREADCRUMBS}
+      />
+    </>
   );
 }

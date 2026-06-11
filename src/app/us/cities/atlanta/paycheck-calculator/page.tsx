@@ -27,7 +27,7 @@ const FAQS = [
   { q: 'Does Atlanta have a city income tax?', a: 'No. Atlanta does not impose a city-level income tax on wages. Same for the rest of Georgia. Your paycheck math is federal + FICA + Georgia state.' },
   { q: 'What is the Georgia state income tax rate?', a: 'Georgia recently moved to a flat tax: 5.39% as of 2025 (down from 5.49%), with a planned step-down to 5.19% in 2026 contingent on state revenue targets. Verify with the Georgia Department of Revenue for the rate that applies to your tax year.' },
   { q: 'Does Georgia have SDI or PFL?', a: 'No. Georgia does not have a state-mandated SDI or Paid Family Leave program. Your paycheck has federal + Georgia state tax + FICA only.' },
-  { q: 'What lines should I expect on an Atlanta paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). Georgia flat ~5.39%. Standard pre-tax deductions if elected (401k, HSA, FSA, Section 125 health).' },
+  { q: 'What lines should I expect on an Atlanta paycheck?', a: 'On top of the federal trio — federal income tax, Social Security (6.2% to $184,500) and Medicare (1.45%) — an Atlanta stub carries one state line: Georgia income tax at the flat 5.39% rate (stepping toward 5.19% if revenue triggers are met). There is no Atlanta or Fulton County wage tax. Pre-tax 401(k), HSA, FSA or Section 125 health appear only when you elect them.' },
   { q: 'I live in suburb Atlanta but work in downtown — anything different?', a: 'No. Georgia state tax applies regardless of which Atlanta-area city or county you live in. No GA city imposes a separate municipal income tax.' },
 ];
 

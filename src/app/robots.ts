@@ -19,10 +19,13 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'Googlebot', allow: '/', disallow },
       { userAgent: 'Bingbot', allow: '/', disallow },
       { userAgent: 'DuckDuckBot', allow: '/', disallow },
-      // LLM search-time crawlers
+      // LLM search-time crawlers (these fetch pages to CITE — must be allowed)
       { userAgent: 'ChatGPT-User', allow: '/', disallow },
       { userAgent: 'OAI-SearchBot', allow: '/', disallow },
       { userAgent: 'PerplexityBot', allow: '/', disallow },
+      { userAgent: 'Perplexity-User', allow: '/', disallow },
+      { userAgent: 'Claude-SearchBot', allow: '/', disallow },
+      { userAgent: 'Claude-User', allow: '/', disallow },
       // LLM training crawlers (allow for citation surface area)
       { userAgent: 'GPTBot', allow: '/', disallow },
       { userAgent: 'ClaudeBot', allow: '/', disallow },

@@ -27,7 +27,7 @@ const FAQS = [
   { q: 'Does Phoenix have a city income tax?', a: 'No. Phoenix does not impose a city-level income tax on wages. Same for every Arizona city. Your paycheck math is federal + FICA + Arizona state.' },
   { q: 'What is the Arizona state income tax rate?', a: 'Arizona is a flat-tax state at 2.5% — one of the lowest in the US (only Indiana 3.05%, North Dakota 2.5%, and the nine no-income-tax states are comparable or lower). Adopted in 2023.' },
   { q: 'Does Arizona have SDI or PFL?', a: 'No. Arizona does not have a state-mandated SDI or Paid Family Leave program. Your paycheck has federal + AZ state tax + FICA only.' },
-  { q: 'What lines should I expect on a Phoenix paycheck?', a: 'Federal income tax. Social Security (6.2% to $184,500). Medicare (1.45%). Arizona flat 2.5%. Standard pre-tax deductions if elected (401k, HSA, FSA, Section 125 health).' },
+  { q: 'What lines should I expect on a Phoenix paycheck?', a: 'A Phoenix stub adds just one state line — Arizona income tax at its flat 2.5%, among the lowest in the country — to the federal trio of federal income tax, Social Security (6.2% to $184,500) and Medicare (1.45%). Neither Phoenix nor Maricopa County imposes a local wage tax, and Arizona has no SDI or PFL. Pre-tax 401(k), HSA, FSA or Section 125 health appear only when elected.' },
   { q: 'How does Phoenix compare to California or NYC?', a: 'Vastly less in state and local tax. AZ 2.5% flat vs CA progressive (top 13.3%) or NYC stacked (NY state up to 10.9% + NYC up to 3.876%). On the same $80k gross, a Phoenix worker keeps roughly $2,000-$5,000 more per year than a California or NYC counterpart purely in state/local tax difference.' },
 ];
 
