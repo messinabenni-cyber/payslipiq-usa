@@ -10,6 +10,7 @@ import { STATE_CONFIGS, getStateConfig } from '@/components/StateGrossToNetConfi
 import { computePaycheck, federalIncomeTax, stateIncomeTax, formatUSD, FED_RATES } from '@/lib/calc';
 import { SALARY_LADDER } from '@/lib/takeHomeSalaries';
 import { PayNumbers2026 } from '@/components/PayNumbers2026';
+import { NextStepsBlock } from '@/components/NextStepsBlock';
 
 // Wave 1 (2026-06-09): programmatic "take-home pay by salary + state" pages.
 // Concept benchmarked from Talent.com's salary x state matrix, rebuilt to be
@@ -323,6 +324,10 @@ export default function Page({ params }: { params: { state: string; salary: stri
           {FAQS.map((f) => (<div key={f.q}><dt className="font-semibold text-ink">{f.q}</dt><dd className="mt-1 text-[15px] text-ink/80 leading-relaxed">{f.a}</dd></div>))}
         </dl>
       </section>
+
+      <div className="mt-10">
+        <NextStepsBlock />
+      </div>
 
       <section className="mt-10 border border-line rounded-md bg-white p-4">
         <h2 className="text-base font-semibold mb-2">Official sources</h2>

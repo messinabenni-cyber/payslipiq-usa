@@ -8,6 +8,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { EmailCapture } from '@/components/EmailCapture';
 import { PayNumbers2026 } from '@/components/PayNumbers2026';
+import { NextStepsBlock } from '@/components/NextStepsBlock';
 
 const PAGE_URL = 'https://payslipiq.com/us/pay-stub-checker';
 
@@ -340,6 +341,10 @@ export default function PayStubCheckerPage() {
               <div className="text-sm text-slate-500">Draft a polite, factual message to HR.</div>
             </Link>
           </div>
+        </section>
+
+        <section className="mt-12">
+          <NextStepsBlock />
         </section>
 
         <section className="mt-12">
