@@ -12,3 +12,6 @@ dist
 next-env.d.ts
 .turbo
 coverage
+# FUSE editor artifacts (from editing over a mounted filesystem) — never commit
+.fuse_hidden*
+**/.fuse_hidden*

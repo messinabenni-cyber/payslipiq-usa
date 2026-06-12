@@ -88,11 +88,15 @@ export type EntityKey = keyof typeof ENTITY;
 
 /**
  * Authoritative external profiles for the Organization `sameAs`.
- * NOTE: only verified third-party profiles belong here — sameAs is meant to point at
- * authoritative references about the entity, NOT at the brand's own alternate domains
- * (the previous value listed payslipiq.net/.shop/.info/.store/.xyz, which reads as
- * self-referential and adds no disambiguation value). Populate with the real handles
- * when they exist (LinkedIn company page, Crunchbase, X, etc.).
+ * NOTE: only verified third-party profiles belong here — sameAs points at authoritative
+ * references about THIS entity, not the brand's own alternate domains (the previous value
+ * listed payslipiq.net/.shop/.info/.store/.xyz, which is self-referential and adds no
+ * disambiguation value).
+ *
+ * Intentionally empty: a 2026-06-11 search found no PayslipIQ LinkedIn/Crunchbase/X profile
+ * (results returned the unrelated company "Payslip" / payslip.com — adding those would cause
+ * false entity conflation). Add the real handles here the moment they exist and they activate
+ * automatically via the spread in organizationNode().
  */
 export const ORG_SAME_AS: string[] = [
   // 'https://www.linkedin.com/company/payslipiq',
@@ -141,8 +145,17 @@ export function organizationNode() {
     ],
     // YMYL trust properties Google references for finance content.
     publishingPrinciples: `${SITE}/us/about-the-team`,
-    actionableFeedbackPolicy: `${SITE}/us/contact`,
+    correctionsPolicy: `${SITE}/us/about-the-team`,
+    actionableFeedbackPolicy: `${SITE}/contact`,
     ownershipFundingInfo: `${SITE}/us/about-the-team`,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'editorial',
+      email: 'editorial@payslipiq.com',
+      url: `${SITE}/contact`,
+      areaServed: 'US',
+      availableLanguage: 'en',
+    },
     ...(ORG_SAME_AS.length ? { sameAs: ORG_SAME_AS } : {}),
   };
 }

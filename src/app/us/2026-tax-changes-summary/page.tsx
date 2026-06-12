@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
+import { DatasetSchema } from '@/components/DatasetSchema';
 
 export const metadata: Metadata = {
   title: 'What Changed for Your 2026 Paycheck',
@@ -43,6 +44,8 @@ const BREADCRUMBS = [
 
 export default function Page() {
   return (
+    <>
+    <DatasetSchema url="/us/2026-tax-changes-summary" />
     <RichArticle
       title="What Changed for Your 2026 Paycheck"
       url="/us/2026-tax-changes-summary"
@@ -100,5 +103,6 @@ export default function Page() {
       related={RELATED}
       breadcrumbs={BREADCRUMBS}
     />
+    </>
   );
 }
