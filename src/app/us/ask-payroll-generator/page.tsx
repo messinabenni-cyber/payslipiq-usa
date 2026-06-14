@@ -6,6 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { AskPayrollClient } from '@/components/AskPayrollClient';
+import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 
 const PAGE_URL = 'https://payslipiq.com/us/ask-payroll-generator';
 
@@ -147,6 +148,12 @@ export default function AskPayrollGeneratorPage() {
           <MasterDisclaimer variant="long" />
         </section>
       </main>
+      <MobileStickyCTA
+        href="/us/pay-stub-checker"
+        label="Check My Pay Stub"
+        secondaryHref="/us/paycheck-calculator"
+        secondaryLabel="Paycheck Calc"
+      />
     </>
   );
 }

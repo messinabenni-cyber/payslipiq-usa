@@ -5,6 +5,8 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { STATE_CONFIGS } from '@/components/StateGrossToNetConfig';
 import { PayNumbers2026 } from '@/components/PayNumbers2026';
+import { NextStepsBlock } from '@/components/NextStepsBlock';
+import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 
 const PAGE_URL = 'https://payslipiq.com/us/take-home-pay';
 
@@ -57,7 +59,15 @@ export default function Page() {
         </div>
       </section>
 
+      <div className="mt-12"><NextStepsBlock /></div>
+
       <div className="mt-12"><MasterDisclaimer variant="long" /></div>
+      <MobileStickyCTA
+        href="/us/gross-to-net-paycheck-calculator"
+        label="Calculate Take-Home"
+        secondaryHref="/us/paycheck-calculator"
+        secondaryLabel="Paycheck Calc"
+      />
     </main>
   );
 }

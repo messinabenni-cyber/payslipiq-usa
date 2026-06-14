@@ -8,6 +8,7 @@ import { FinancialProductSchema } from '@/components/FinancialProductSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
+import { NextStepsBlock } from '@/components/NextStepsBlock';
 
 const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator';
 
@@ -222,6 +223,10 @@ export default function PaycheckCalculatorPage() {
               <div className="text-sm text-slate-500">NYC, Philly, Detroit, Ohio cities, and more.</div>
             </Link>
           </div>
+        </section>
+
+        <section className="mt-12">
+          <NextStepsBlock />
         </section>
 
         <section className="mt-12">

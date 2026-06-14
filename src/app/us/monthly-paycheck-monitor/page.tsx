@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
+import { ReviewedBy } from '@/components/ReviewedBy';
+import { EmailCapture } from '@/components/EmailCapture';
 
 export const metadata: Metadata = {
   title: 'Monthly Paycheck Monitor | PayslipIQ',
@@ -39,6 +40,7 @@ export default function Page() {
       <p className="mt-5 text-[17px] text-ink/80 leading-relaxed">
         Upload each pay stub as it lands. PayslipIQ tracks it against the prior stub, flags anything that shifted, and emails a plain-English summary. Designed for hourly, multi-job, tipped, and remote workers whose pay stubs change month to month. Educational only.
       </p>
+      <ReviewedBy />
 
       <div className="mt-8 card border border-line rounded-2xl p-6 bg-paper">
         <div className="flex items-baseline gap-2">
@@ -53,10 +55,16 @@ export default function Page() {
           <li>Monthly email digest</li>
           <li>One free Premium Pay Stub Report per quarter ($29 value)</li>
         </ul>
-        <Link href="/contact" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
-          Request Early Access
-        </Link>
-        <p className="text-[12px] text-ink/55 mt-3">Contact us to join the Paycheck Monitor early-access list. We will confirm availability and pricing by email.</p>
+        <div className="mt-6">
+          <EmailCapture
+            source="monthly-paycheck-monitor"
+            variant="waitlist"
+            waitlistId="paycheck-monitor"
+            headline="Join the Paycheck Monitor early-access list"
+            subheadline="Enter your email and we will confirm availability and pricing, and let you know the moment it opens. No spam, unsubscribe any time."
+            cta="Request early access"
+          />
+        </div>
       </div>
 
       <section className="mt-12">
@@ -68,8 +76,8 @@ export default function Page() {
           <li>New deduction line item or removed line item.</li>
           <li>FICA cap reached (Social Security wage base hit mid-year).</li>
           <li>Additional Medicare tax kicking in (YTD wages over $200k).</li>
-          <li>Pre-tax 401(k) limit approaching ($23,500 in 2025, $31,000 if 50+).</li>
-          <li>HSA limit approaching ($4,300 self, $8,550 family in 2025).</li>
+          <li>Pre-tax 401(k) limit approaching ($24,500 in 2026, $32,500 if 50+).</li>
+          <li>HSA limit approaching ($4,400 self, $8,750 family in 2026).</li>
           <li>Bonus or supplemental wage withheld at 22% flat (or 37% if YTD over $1M).</li>
         </ul>
       </section>

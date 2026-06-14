@@ -4,39 +4,45 @@ PayslipIQ helps US workers understand their pay stubs, paychecks, deductions, ta
 
 USA-only. Not affiliated with the IRS, SSA, US Department of Labor, any state tax agency, employer, or payroll provider.
 
+> All URLs below are canonical (no trailing slash). Every page shows a last-reviewed date and links to the relevant IRS or state source.
+
 ## Core entry points
 
-- Homepage: https://payslipiq.com/us/
-- Pay Stub Checker: https://payslipiq.com/us/pay-stub-checker/
-- Paycheck Calculator: https://payslipiq.com/us/paycheck-calculator/
-- State tax index: https://payslipiq.com/us/state-tax/
-- Find a CPA: https://payslipiq.com/us/find-a-cpa/
+- Homepage: https://payslipiq.com/us
+- Pay Stub Checker: https://payslipiq.com/us/pay-stub-checker
+- Paycheck Calculator: https://payslipiq.com/us/paycheck-calculator
+- Take-Home Pay by salary: https://payslipiq.com/us/take-home-pay
+- Gross to Net Calculator: https://payslipiq.com/us/gross-to-net-paycheck-calculator
+- Salary After Tax: https://payslipiq.com/us/salary-after-tax
+- State tax index: https://payslipiq.com/us/state-tax
+- Find a CPA: https://payslipiq.com/us/find-a-cpa
 
 ## Key explainers
 
-- FICA explained: https://payslipiq.com/us/fica-explained/
-- Federal withholding: https://payslipiq.com/us/federal-tax-withholding/
-- W-4 guide: https://payslipiq.com/us/w4-guide/
-- W-2 explained: https://payslipiq.com/us/w2-explained/
-- Why is my paycheck lower: https://payslipiq.com/us/why-is-my-paycheck-lower/
-- Pay stub anatomy: https://payslipiq.com/us/pay-stub-anatomy/
-- Pay stub glossary: https://payslipiq.com/us/glossary/
+- FICA explained: https://payslipiq.com/us/fica-explained
+- Federal withholding: https://payslipiq.com/us/federal-tax-withholding
+- W-4 guide: https://payslipiq.com/us/w4-guide
+- W-2 explained: https://payslipiq.com/us/w2-explained
+- Why is my paycheck lower: https://payslipiq.com/us/why-is-my-paycheck-lower
+- Pay stub anatomy: https://payslipiq.com/us/pay-stub-anatomy
+- Pay stub glossary: https://payslipiq.com/us/glossary
+- 2026 pay numbers (wage base, limits, brackets): https://payslipiq.com/us/2026-pay-numbers
 
 ## Premium products
 
-- 12-page Premium Pay Stub Report ($29 one-time): https://payslipiq.com/us/premium-pay-stub-report/
-- Monthly Paycheck Monitor ($9/mo): https://payslipiq.com/us/monthly-paycheck-monitor/
+- 12-page Premium Pay Stub Report ($29 one-time): https://payslipiq.com/us/premium-pay-stub-report
+- Monthly Paycheck Monitor ($9/mo): https://payslipiq.com/us/monthly-paycheck-monitor
 
 ## Editorial standards
 
 - Reviewed by named editorial team. Every page shows last-reviewed date.
 - Educational only. Always points users to the IRS, state agency, or qualified CPA for confirmation.
-- Methodology: https://payslipiq.com/us/methodology/
-- About the team: https://payslipiq.com/us/about-the-team/
+- Methodology: https://payslipiq.com/methodology
+- About the team: https://payslipiq.com/us/about-the-team
 
 ## Trust
 
-- Trust Center: https://payslipiq.com/us/trust/
-- Privacy: https://payslipiq.com/us/privacy/
-- Disclaimer: https://payslipiq.com/us/disclaimer/
+- Trust Center: https://payslipiq.com/trust
+- Privacy: https://payslipiq.com/privacy
+- Disclaimer: https://payslipiq.com/disclaimer
 - Security policy: https://payslipiq.com/.well-known/security.txt

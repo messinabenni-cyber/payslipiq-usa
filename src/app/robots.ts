@@ -35,10 +35,10 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'CCBot', allow: '/', disallow },
       { userAgent: 'Amazonbot', allow: '/', disallow },
     ],
-    sitemap: [
-      'https://payslipiq.com/sitemap.xml',
-      'https://payslipiq.com/sitemap-us.xml',
-    ],
+    // Single canonical sitemap. (Removed sitemap-us.xml — it 404s; all 1,358
+    // URLs already live in sitemap.xml, so advertising a missing file only
+    // wastes crawl budget and triggers GSC "couldn't fetch" sitemap errors.)
+    sitemap: 'https://payslipiq.com/sitemap.xml',
     host: 'https://payslipiq.com',
   };
 }
