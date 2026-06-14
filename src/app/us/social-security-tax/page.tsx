@@ -21,7 +21,7 @@ export default function Page() {
       description="Social Security tax: 6.2 percent of wages up to the annual wage base. Funds OASDI. Stops once you cross the cap. Educational only."
       intro={<>The Social Security line on your pay stub funds Old Age, Survivors and Disability Insurance. 6.2 percent of wages, capped each year at the wage base. Once you cross the cap, the tax stops until January.</>}
       body={<><h2>The rate and the cap</h2>
-<p>6.2 percent on wages up to the annual Social Security wage base. The 2024 wage base was $168,600. SSA publishes the new base each fall, indexed to wage growth. Once your year-to-date wages cross the base, Social Security tax stops for the rest of the calendar year.</p>
+<p>6.2 percent on wages up to the annual Social Security wage base. The 2026 wage base is $184,500 (up from $176,100 in 2025). SSA publishes the new base each fall, indexed to wage growth. Once your year-to-date wages cross the base, Social Security tax stops for the rest of the calendar year.</p>
 <h2>Employer match</h2>
 <p>Your employer pays an equal 6.2 percent on the employer side. So Social Security is funded by 12.4 percent total per worker, capped at the wage base.</p>
 <h2>What it funds</h2>

@@ -8,6 +8,7 @@ import { FinancialProductSchema } from '@/components/FinancialProductSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
+import { NextStepsBlock } from '@/components/NextStepsBlock';
 
 const PAGE_URL = 'https://payslipiq.com/us/gross-to-net-paycheck-calculator';
 
@@ -225,6 +226,10 @@ export default function Page() {
         <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide">W-4 Guide</Link>
         <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax">State index</Link>
       </nav>
+
+      <div className="mt-12">
+        <NextStepsBlock />
+      </div>
 
       {/* Master disclaimer */}
       <div className="mt-12">

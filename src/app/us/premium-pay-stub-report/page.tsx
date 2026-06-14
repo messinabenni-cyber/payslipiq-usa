@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
+import { ReviewedBy } from '@/components/ReviewedBy';
+import { EmailCapture } from '@/components/EmailCapture';
 
 export const metadata: Metadata = {
   title: 'Premium Pay Stub Report | PayslipIQ',
@@ -39,6 +40,7 @@ export default function Page() {
       <p className="mt-5 text-[17px] text-ink/80 leading-relaxed">
         Upload a single US pay stub and get back a detailed PDF that walks through every line, compares each deduction to standard rates, flags any items worth a polite question to payroll, and packages a checklist you can take to a CPA, HR, or a tax preparer. Educational only.
       </p>
+      <ReviewedBy />
 
       <div className="mt-8 card border border-line rounded-2xl p-6 bg-paper">
         <div className="flex items-baseline gap-2">
@@ -53,12 +55,16 @@ export default function Page() {
           <li>10-question pack to take to payroll</li>
           <li>7-day refund if the report did not match the upload</li>
         </ul>
-        <Link href="/contact" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
-          Request the Premium Report
-        </Link>
-        <p className="text-[12px] text-ink/55 mt-3">
-          Contact us to request the Premium Pay Stub Report. We will confirm availability and next steps by email.
-        </p>
+        <div className="mt-6">
+          <EmailCapture
+            source="premium-pay-stub-report"
+            variant="waitlist"
+            waitlistId="premium-report"
+            headline="Request the Premium Pay Stub Report"
+            subheadline="Enter your email and we will send secure upload and checkout details, and confirm turnaround. No spam, unsubscribe any time."
+            cta="Request my report"
+          />
+        </div>
       </div>
 
       <section className="mt-12">
