@@ -19,11 +19,11 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <Link
-            href="/us/pay-stub-checker"
-            className="hidden rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 md:inline-block"
+            href="/us/paycheck-calculator"
+            className="hidden rounded-md bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 md:inline-block"
             data-cta="header_primary"
           >
-            Check My Pay Stub
+            Check My Paycheck
           </Link>
         </div>
       </div>

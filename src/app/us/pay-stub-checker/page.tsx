@@ -5,18 +5,19 @@ import { ArticleSchema } from '@/components/ArticleSchema';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
+import { EmailCapture } from '@/components/EmailCapture';
 
-const PAGE_URL = 'https://payslipiq.com/us/pay-stub-checker/';
+const PAGE_URL = 'https://payslipiq.com/us/pay-stub-checker';
 
 export const metadata: Metadata = {
-  title: 'Pay Stub Checker (USA, 2026) · Plain-English Pay Stub Explainer',
+  title: 'Pay Stub Checker (USA 2026), Plain-English Explainer',
   description:
     'Walk through every line on a US pay stub: gross pay, federal withholding, FICA, state tax, local tax, deductions, and net pay. Educational only, not tax, legal, or financial advice.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
       'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/',
+      'es-US': 'https://payslipiq.com/es',
       'x-default': PAGE_URL
     }
   },
@@ -98,7 +99,7 @@ const HOW_TO_STEPS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Pay Stub Checker', url: PAGE_URL }
 ];
 
@@ -154,7 +155,7 @@ export default function PayStubCheckerPage() {
     <>
       <ArticleSchema headline="Pay Stub Checker (USA, 2026)" description="Plain-English line-by-line explanation of any US pay stub." url={PAGE_URL} />
       <BreadcrumbSchema items={BREADCRUMBS} />
-      <FAQSchema items={FAQS} />
+      <FAQSchema items={FAQS} visible={false} />
       <SoftwareApplicationLd />
       <HowToLd />
 
@@ -162,7 +163,7 @@ export default function PayStubCheckerPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Pay Stub Checker</span>
         </nav>
@@ -195,20 +196,38 @@ export default function PayStubCheckerPage() {
             fallback below — same line-by-line breakdown, same methodology.
           </p>
 
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="mt-4">
             <Link
-              href="/us/paycheck-calculator/"
+              href="/us/paycheck-calculator"
               className="inline-flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-slate-700"
             >
               Use the Paycheck Calculator
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:border-slate-600"
-            >
-              Request beta access
-            </Link>
           </div>
+
+          <EmailCapture
+            source="checker-beta-waitlist"
+            headline="Get notified when the AI uploader opens"
+            subheadline="One email when the beta opens to the public. Nothing else. No spam."
+            cta="Join the waitlist"
+            className="mt-4"
+          />
+        </section>
+
+        <section className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-5 dark:border-blue-800 dark:bg-blue-900/20">
+          <h2 className="font-semibold text-slate-900 dark:text-slate-100">Need a full check on a real pay stub today?</h2>
+          <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+            The Premium Pay Stub Report is a human-reviewable 12-page PDF: every line checked
+            against IRS Pub 15-T tables and your state&rsquo;s schedule, with a 10-question pack for
+            payroll. $29 one-time, 7-day refund if the report did not match the upload.
+          </p>
+          <Link
+            href="/us/premium-pay-stub-report"
+            data-cta="checker_premium_upsell"
+            className="mt-4 inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+          >
+            See the Premium Report
+          </Link>
         </section>
 
         <section className="mt-10">
@@ -257,19 +276,19 @@ export default function PayStubCheckerPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Paycheck Calculator</div>
               <div className="text-sm text-slate-500">Enter gross, state, filing status. Get take-home.</div>
             </Link>
-            <Link href="/us/gross-to-net-paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/gross-to-net-paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Gross to Net Calculator</div>
               <div className="text-sm text-slate-500">Any gross → estimated take-home, 2026 tables.</div>
             </Link>
-            <Link href="/us/year-to-date-paycheck-checker/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/year-to-date-paycheck-checker" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Year-to-Date Checker</div>
               <div className="text-sm text-slate-500">YTD wages, FICA caps, 401(k) progress.</div>
             </Link>
-            <Link href="/us/ask-payroll-generator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/ask-payroll-generator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Ask Payroll Generator</div>
               <div className="text-sm text-slate-500">Draft a polite, factual message to HR.</div>
             </Link>

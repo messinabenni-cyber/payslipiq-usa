@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/styles/globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -18,7 +20,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'PayslipIQ, Understand Your Paycheck | Plain-English Pay Stub Help (US)',
+    default: 'PayslipIQ, Understand Your US Paycheck & Pay Stub',
     template: '%s · PayslipIQ',
   },
   description:
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     canonical: "/",
     languages: {
       'en-US': '/',
-      'es-US': '/es/',
+      'es-US': '/es',
       'x-default': '/',
     },
   },
@@ -74,6 +76,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <div id="main">{children}</div>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -26,7 +26,7 @@ export function AiPayStubExplainer() {
         </>
       )}
 
-      {mode === 'manual' && <div className="text-sm text-slate-600">Manual entry: <a href="/us/paycheck-calculator/" className="text-blue-600 underline">use the paycheck calculator</a>.</div>}
+      {mode === 'manual' && <div className="text-sm text-slate-600">Manual entry: <a href="/us/paycheck-calculator" className="text-blue-600 underline">use the paycheck calculator</a>.</div>}
     </div>
   );
 }

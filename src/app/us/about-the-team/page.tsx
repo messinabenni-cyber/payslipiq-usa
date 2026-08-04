@@ -8,7 +8,7 @@ import { ArticleSchema } from '@/components/ArticleSchema';
 export const metadata: Metadata = {
   title: 'About the Team | PayslipIQ',
   description: 'PayslipIQ\'s editorial team and review standards. The people who sign off on every paycheck explainer.',
-  alternates: { canonical: 'https://payslipiq.com/us/about-the-team/' }
+  alternates: { canonical: 'https://payslipiq.com/us/about-the-team' }
 };
 
 export default function Page() {
@@ -16,13 +16,13 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'About the Team', url: 'https://payslipiq.com/us/about-the-team/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'About the Team', url: 'https://payslipiq.com/us/about-the-team' }
       ]} />
       <ArticleSchema
         headline="About the PayslipIQ Editorial Team"
         description="The editorial team that reviews PayslipIQ's pay-stub explainers, calculators, and state guides."
-        url="https://payslipiq.com/us/about-the-team/"
+        url="https://payslipiq.com/us/about-the-team"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Editorial</div>
@@ -41,7 +41,7 @@ export default function Page() {
           <li>Pages are reviewed at least quarterly and after any material federal or state-level change.</li>
         </ul>
         <p className="mt-4 text-[14px] text-slate-600">
-          Full editorial process documented on <Link href="/us/methodology/" className="text-blue-600 hover:underline">/us/methodology</Link>.
+          Full editorial process documented on <Link href="/us/methodology" className="text-blue-600 hover:underline">/us/methodology</Link>.
         </p>
       </section>
 

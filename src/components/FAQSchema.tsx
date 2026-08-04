@@ -8,13 +8,20 @@ export interface FAQItem {
 interface Props {
   items: FAQItem[];
   title?: string;
+  /**
+   * When false, emits ONLY the JSON-LD FAQPage schema (no visible section).
+   * Use visible={false} on pages that render their own FAQ markup, otherwise
+   * the questions appear twice on the page.
+   */
+  visible?: boolean;
 }
 
 /**
  * Renders a visible FAQ section AND emits JSON-LD FAQPage schema.
  * Use on every explainer/state/calculator page that has questions.
+ * Pass visible={false} if the page already renders its own FAQ section.
  */
-export function FAQSchema({ items, title = 'Frequently asked questions' }: Props) {
+export function FAQSchema({ items, title = 'Frequently asked questions', visible = true }: Props) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -24,6 +31,15 @@ export function FAQSchema({ items, title = 'Frequently asked questions' }: Props
       acceptedAnswer: { '@type': 'Answer', text: item.a },
     })),
   };
+
+  if (!visible) {
+    return (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    );
+  }
 
   return (
     <section className="mt-12 border-t border-slate-200 pt-10">

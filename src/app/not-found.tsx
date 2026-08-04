@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 };
 
 const POPULAR = [
-  { href: '/us/pay-stub-checker/', title: 'Pay Stub Checker', desc: 'Upload a stub, get a plain-English breakdown.' },
-  { href: '/us/paycheck-calculator/', title: 'Paycheck Calculator', desc: 'Estimate take-home pay from gross.' },
-  { href: '/us/state-tax/', title: 'State Tax Index', desc: 'Pick your state.' },
-  { href: '/us/why-is-my-paycheck-lower/', title: 'Why is my paycheck lower?', desc: 'Common reasons your net pay dropped.' },
-  { href: '/us/fica-explained/', title: 'FICA explained', desc: 'Social Security, Medicare, Additional Medicare.' },
-  { href: '/us/find-a-cpa/', title: 'Find a CPA', desc: 'When to talk to a credentialed professional.' }
+  { href: '/us/pay-stub-checker', title: 'Pay Stub Checker', desc: 'Upload a stub, get a plain-English breakdown.' },
+  { href: '/us/paycheck-calculator', title: 'Paycheck Calculator', desc: 'Estimate take-home pay from gross.' },
+  { href: '/us/state-tax', title: 'State Tax Index', desc: 'Pick your state.' },
+  { href: '/us/why-is-my-paycheck-lower', title: 'Why is my paycheck lower?', desc: 'Common reasons your net pay dropped.' },
+  { href: '/us/fica-explained', title: 'FICA explained', desc: 'Social Security, Medicare, Additional Medicare.' },
+  { href: '/us/find-a-cpa', title: 'Find a CPA', desc: 'When to talk to a credentialed professional.' }
 ];
 
 export default function NotFound() {
@@ -26,10 +26,10 @@ export default function NotFound() {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/us/" className="inline-flex items-center justify-center bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700">
+        <Link href="/us" className="inline-flex items-center justify-center bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700">
           Go to homepage
         </Link>
-        <Link href="/us/pay-stub-checker/" className="inline-flex items-center justify-center bg-white text-slate-900 px-5 py-3 rounded-lg font-semibold ring-1 ring-slate-300 hover:bg-slate-50">
+        <Link href="/us/pay-stub-checker" className="inline-flex items-center justify-center bg-white text-slate-900 px-5 py-3 rounded-lg font-semibold ring-1 ring-slate-300 hover:bg-slate-50">
           Check a Pay Stub
         </Link>
       </div>

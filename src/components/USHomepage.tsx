@@ -45,18 +45,18 @@ export default function USHomepage() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/us/pay-stub-checker"
+              href="/us/paycheck-calculator"
               className="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-700"
               data-cta="hero_primary"
             >
-              Check My Pay Stub
+              Check My Paycheck Now
             </Link>
             <Link
-              href="/us/paycheck-calculator"
+              href="/us/pay-stub-checker"
               className="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 hover:border-slate-400"
               data-cta="hero_secondary"
             >
-              Calculate Take-Home Pay
+              Pay Stub Explainer
             </Link>
           </div>
           <p className="mt-6 max-w-2xl text-xs text-slate-500">

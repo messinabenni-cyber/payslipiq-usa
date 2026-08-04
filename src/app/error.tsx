@@ -21,7 +21,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
         <button onClick={reset} className="inline-flex items-center justify-center bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700">
           Try again
         </button>
-        <Link href="/us/" className="inline-flex items-center justify-center bg-white text-slate-900 px-5 py-3 rounded-lg font-semibold ring-1 ring-slate-300 hover:bg-slate-50">
+        <Link href="/us" className="inline-flex items-center justify-center bg-white text-slate-900 px-5 py-3 rounded-lg font-semibold ring-1 ring-slate-300 hover:bg-slate-50">
           Go to homepage
         </Link>
       </div>

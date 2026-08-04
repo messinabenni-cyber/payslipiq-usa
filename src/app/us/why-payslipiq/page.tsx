@@ -8,7 +8,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: 'Why PayslipIQ?',
   description: 'How PayslipIQ compares to SmartAsset, NerdWallet, ADP, and a CPA. Worker-first, plain-English, educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/why-payslipiq/' }
+  alternates: { canonical: 'https://payslipiq.com/us/why-payslipiq' }
 };
 
 const COMPARISON = [
@@ -88,13 +88,13 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Why PayslipIQ', url: 'https://payslipiq.com/us/why-payslipiq/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Why PayslipIQ', url: 'https://payslipiq.com/us/why-payslipiq' }
       ]} />
       <ArticleSchema
         headline="Why PayslipIQ"
         description="How PayslipIQ compares to SmartAsset, NerdWallet, ADP, and a CPA on pay stub help and paycheck explanation."
-        url="https://payslipiq.com/us/why-payslipiq/"
+        url="https://payslipiq.com/us/why-payslipiq"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Compare</div>
@@ -151,7 +151,7 @@ export default function Page() {
         <p>Pay-stub questions live in a YMYL (Your Money, Your Life) zone where wrong information has real cost. Most consumer tax sites are written by SEO writers, not payroll specialists, and the language drifts toward soft advice. PayslipIQ deliberately holds the line: the worker asks the question, the IRS or state agency or CPA confirms the answer.</p>
 
         <h2>How we are funded</h2>
-        <p>The free site is supported by two paid products: a one-time <Link href="/us/premium-pay-stub-report/">$29 Premium Pay Stub Report</Link> and a <Link href="/us/monthly-paycheck-monitor/">$9/mo Paycheck Monitor</Link>. We do not run ad networks, we do not sell payroll data, and we do not generate leads for predatory finance products. <Link href="/us/affiliate-disclosure/">Affiliate disclosure</Link> is published.</p>
+        <p>The free site is supported by two paid products: a one-time <Link href="/us/premium-pay-stub-report">$29 Premium Pay Stub Report</Link> and a <Link href="/us/monthly-paycheck-monitor">$9/mo Paycheck Monitor</Link>. We do not run ad networks, we do not sell payroll data, and we do not generate leads for predatory finance products. <Link href="/us/affiliate-disclosure">Affiliate disclosure</Link> is published.</p>
       </section>
 
       <div className="mt-12">

@@ -76,15 +76,15 @@ export async function POST(req: NextRequest) {
   const html = isFreeGuide
     ? `
       <p>Thanks for asking for the guide.</p>
-      <p>Read it here: <a href="https://payslipiq.com/us/free-guide/">https://payslipiq.com/us/free-guide/</a></p>
+      <p>Read it here: <a href="https://payslipiq.com/us/free-guide">https://payslipiq.com/us/free-guide/</a></p>
       <p>This is the same content as the on-page guide, formatted to print or save as PDF (Ctrl/Cmd + P, then Save as PDF).</p>
-      <p>If you want a personalized review of your own pay stub, the <a href="https://payslipiq.com/us/premium-pay-stub-report/">Premium Pay Stub Report</a> is $29 one-time.</p>
+      <p>If you want a personalized review of your own pay stub, the <a href="https://payslipiq.com/us/premium-pay-stub-report">Premium Pay Stub Report</a> is $29 one-time.</p>
       <p>Educational only. Not tax, legal, financial, or payroll advice. Always verify important matters with payroll, the IRS, or a qualified CPA.</p>
       <p style="color:#64748b;font-size:12px;">PayslipIQ USA. Unsubscribe anytime. Reply STOP.</p>
     `
     : `
       <p>Thanks for joining PayslipIQ.</p>
-      <p>Bookmark <a href="https://payslipiq.com/us/">payslipiq.com/us</a>. Open the <a href="https://payslipiq.com/us/pay-stub-checker/">Pay Stub Checker</a> next time a paycheck looks off.</p>
+      <p>Bookmark <a href="https://payslipiq.com/us">payslipiq.com/us</a>. Open the <a href="https://payslipiq.com/us/pay-stub-checker">Pay Stub Checker</a> next time a paycheck looks off.</p>
       <p>Educational only. Not advice.</p>
       <p style="color:#64748b;font-size:12px;">PayslipIQ USA. Unsubscribe anytime. Reply STOP.</p>
     `;

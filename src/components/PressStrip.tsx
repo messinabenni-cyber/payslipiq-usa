@@ -15,7 +15,7 @@ export function PressStrip() {
         <div className="flex items-center gap-2">
           <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-emerald-600" stroke="currentColor" strokeWidth="2"><path d="M5 12l5 5 9-9" strokeLinecap="round" strokeLinejoin="round"/></svg>
           <span><strong className="text-slate-900">Reviewed</strong> by named editors on every page.</span>
-          <Link href="/us/about-the-team/" className="text-blue-600 hover:underline ml-2">See the team</Link>
+          <Link href="/us/about-the-team" className="text-blue-600 hover:underline ml-2">See the team</Link>
         </div>
         <div className="flex items-center gap-2">
           <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-emerald-600" stroke="currentColor" strokeWidth="2"><path d="M12 2l3 6 6 1-4.5 4 1 6L12 16l-5.5 3 1-6L3 9l6-1z" strokeLinecap="round" strokeLinejoin="round"/></svg>

@@ -19,6 +19,12 @@ export function Footer() {
               <li><Link href="/us/w4-guide">W-4 Guide</Link></li>
               <li><Link href="/us/401k-deductions">401(k) Explainer</Link></li>
             </ul>
+            <h3 className="mt-6 text-sm font-semibold text-slate-900">Premium</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+              <li><Link href="/us/premium-pay-stub-report">Premium Pay Stub Report ($29)</Link></li>
+              <li><Link href="/us/monthly-paycheck-monitor">Paycheck Monitor ($9/mo)</Link></li>
+              <li><Link href="/us/free-guide">Free Pay Stub Guide</Link></li>
+            </ul>
           </div>
           <div>
             <h3 className="text-sm font-semibold text-slate-900">By State</h3>

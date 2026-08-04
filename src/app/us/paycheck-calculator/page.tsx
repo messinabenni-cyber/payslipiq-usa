@@ -7,17 +7,17 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/paycheck-calculator';
 
 export const metadata: Metadata = {
-  title: 'US Paycheck Calculator (2026) · Estimate Take-Home Pay',
+  title: 'US Paycheck Calculator 2026, Take-Home Pay',
   description:
     'Estimate take-home pay from gross. Federal income tax (IRS Pub 15-T 2026), FICA, state tax for all 50 states + DC. Plain-English line-by-line breakdown. Educational only.',
   alternates: {
     canonical: PAGE_URL,
     languages: {
       'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque/',
+      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',
       'x-default': PAGE_URL
     }
   },
@@ -87,7 +87,7 @@ const HOW_TO_STEPS = [
 
 const BREADCRUMBS = [
   { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-  { name: 'USA', url: 'https://payslipiq.com/us/' },
+  { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Paycheck Calculator', url: PAGE_URL }
 ];
 
@@ -139,7 +139,7 @@ export default function PaycheckCalculatorPage() {
     <>
       <ArticleSchema headline="US Paycheck Calculator (2026)" description="Estimate take-home pay from gross. Federal, FICA, state tax for all 50 states + DC." url={PAGE_URL} />
       <BreadcrumbSchema items={BREADCRUMBS} />
-      <FAQSchema items={FAQS} />
+      <FAQSchema items={FAQS} visible={false} />
       <SoftwareApplicationLd />
       <HowToLd />
 
@@ -147,7 +147,7 @@ export default function PaycheckCalculatorPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
           <Link href="/" className="hover:underline">PayslipIQ</Link>
           <span className="mx-2">/</span>
-          <Link href="/us/" className="hover:underline">USA</Link>
+          <Link href="/us" className="hover:underline">USA</Link>
           <span className="mx-2">/</span>
           <span aria-current="page">Paycheck Calculator</span>
         </nav>
@@ -169,6 +169,23 @@ export default function PaycheckCalculatorPage() {
             Enter gross, state, and filing status. Estimates only.
           </p>
           <GrossToNetCalculator />
+        </section>
+
+        <section className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-5 dark:border-blue-800 dark:bg-blue-900/20">
+          <h2 className="font-semibold text-slate-900 dark:text-slate-100">Want this as a 12-page PDF you can take to payroll?</h2>
+          <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+            The Premium Pay Stub Report checks one real pay stub line by line against IRS Pub 15-T
+            tables and your state&rsquo;s schedule, flags anything outside standard ranges, and packs a
+            10-question checklist for payroll. $29 one-time, 7-day refund if the report did not match
+            the upload. Educational only.
+          </p>
+          <Link
+            href="/us/premium-pay-stub-report"
+            data-cta="calculator_premium_upsell"
+            className="mt-4 inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+          >
+            See the Premium Report
+          </Link>
         </section>
 
         <section className="mt-10">
@@ -213,19 +230,19 @@ export default function PaycheckCalculatorPage() {
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link href="/us/pay-stub-checker/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/pay-stub-checker" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Pay Stub Checker</div>
               <div className="text-sm text-slate-500">Upload a pay stub. Plain-English line-by-line walkthrough.</div>
             </Link>
-            <Link href="/us/gross-to-net-paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/gross-to-net-paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Gross to Net Calculator</div>
               <div className="text-sm text-slate-500">Any gross → estimated take-home, 2026 tables.</div>
             </Link>
-            <Link href="/us/salary-after-tax/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/salary-after-tax" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Salary After Tax</div>
               <div className="text-sm text-slate-500">Annual salary → bi-weekly or monthly take-home.</div>
             </Link>
-            <Link href="/us/local-paycheck-taxes/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+            <Link href="/us/local-paycheck-taxes" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
               <div className="font-medium">Local Tax Calculator</div>
               <div className="text-sm text-slate-500">NYC, Philly, Detroit, Ohio cities, and more.</div>
             </Link>

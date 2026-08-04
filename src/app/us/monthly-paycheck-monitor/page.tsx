@@ -6,9 +6,9 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 
 export const metadata: Metadata = {
-  title: 'Monthly Paycheck Monitor | PayslipIQ',
+  title: 'Monthly Paycheck Monitor, $9/mo',
   description: 'Submit each pay stub for tracking. PayslipIQ flags net pay changes, withholding shifts, and anomalies in plain English. Educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/monthly-paycheck-monitor/' }
+  alternates: { canonical: 'https://payslipiq.com/us/monthly-paycheck-monitor' }
 };
 
 const FAQS = [
@@ -24,15 +24,15 @@ export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Monthly Paycheck Monitor', url: 'https://payslipiq.com/us/monthly-paycheck-monitor/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Monthly Paycheck Monitor', url: 'https://payslipiq.com/us/monthly-paycheck-monitor' }
       ]} />
       <ArticleSchema
         headline="Monthly Paycheck Monitor"
         description="Subscription pay stub tracking with anomaly alerts and withholding shift detection."
-        url="https://payslipiq.com/us/monthly-paycheck-monitor/"
+        url="https://payslipiq.com/us/monthly-paycheck-monitor"
       />
-      <FAQSchema items={FAQS} />
+      <FAQSchema items={FAQS} visible={false} />
 
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Subscription</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">A second set of eyes on every paycheck.</h1>
@@ -53,7 +53,7 @@ export default function Page() {
           <li>Monthly email digest</li>
           <li>One free Premium Pay Stub Report per quarter ($29 value)</li>
         </ul>
-        <Link href="/us/monthly-paycheck-monitor/start/" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
+        <Link href="/us/monthly-paycheck-monitor/checkout" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
           Start Monitoring
         </Link>
         <p className="text-[12px] text-ink/55 mt-3">First 30 days free. Cancel before day 30 to avoid the first charge.</p>

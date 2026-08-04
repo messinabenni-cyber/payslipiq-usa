@@ -8,7 +8,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: 'Pay Stub Glossary (100+ terms)',
   description: 'Every code, abbreviation, and acronym you might see on a US pay stub. 100+ terms, A to Z, plain English.',
-  alternates: { canonical: 'https://payslipiq.com/us/glossary/' }
+  alternates: { canonical: 'https://payslipiq.com/us/glossary' }
 };
 
 interface Term {
@@ -78,13 +78,13 @@ export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Glossary', url: 'https://payslipiq.com/us/glossary/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Glossary', url: 'https://payslipiq.com/us/glossary' }
       ]} />
       <ArticleSchema
         headline="Pay Stub Glossary"
         description="Every code, abbreviation, and acronym you might see on a US pay stub."
-        url="https://payslipiq.com/us/glossary/"
+        url="https://payslipiq.com/us/glossary"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Glossary</div>

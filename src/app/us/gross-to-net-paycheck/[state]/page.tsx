@@ -77,12 +77,11 @@ export default function Page({ params }: { params: { state: string } }) {
   return (
     <main className="piq-container py-10 max-w-3xl">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Gross to Net Paycheck', url: 'https://payslipiq.com/us/gross-to-net-paycheck-calculator/' },
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Gross to Net Paycheck', url: 'https://payslipiq.com/us/gross-to-net-paycheck-calculator' },
         { name: cfg!.name, url }
       ]} />
       <ArticleSchema headline={`${cfg!.name} Gross to Net Paycheck Calculator (2026)`} description={`Convert any gross paycheck into estimated take-home pay in ${cfg!.name} for tax year 2026.`} url={url} />
-      <FAQSchema items={FAQS} />
 
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">{cfg!.name} · USA 2026</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">
@@ -171,14 +170,15 @@ export default function Page({ params }: { params: { state: string } }) {
       </section>
 
       <nav className="mt-10 grid grid-cols-2 sm:grid-cols-5 gap-2 text-sm" aria-label="Core PayslipIQ pages">
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/gross-to-net-paycheck-calculator/">Master Gross to Net</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/paycheck-calculator/">Paycheck Calculator</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained/">FICA explained</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide/">W-4 Guide</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/gross-to-net-paycheck-calculator">Master Gross to Net</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/paycheck-calculator">Paycheck Calculator</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained">FICA explained</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide">W-4 Guide</Link>
         <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href={`/us/${cfg!.slug}/`}>State hub</Link>
       </nav>
 
       <div className="mt-12">
+        <FAQSchema items={FAQS} />
         <MasterDisclaimer variant="long" />
       </div>
     </main>

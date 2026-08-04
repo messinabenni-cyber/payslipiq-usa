@@ -34,7 +34,7 @@ export const LOCALES: Record<Locale, LocaleMeta> = {
   es: {
     code: 'es',
     label: 'Spanish',
-    nativeLabel: 'Espanol',
+    nativeLabel: 'Español',
     htmlLang: 'es-US',
     hreflang: 'es-US',
     prefix: '/es',
@@ -54,32 +54,26 @@ export const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
  * If an English page is not in this map, the switcher falls back to /es/ landing.
  */
 export const ES_AVAILABLE_PAGES: Record<string, string> = {
-  '/': '/es/',
-  '/us/': '/es/',
-  '/us': '/es/',
-  '/us/paycheck-calculator': '/es/calculadora-de-cheque/',
-  '/us/paycheck-calculator/': '/es/calculadora-de-cheque/',
-  '/us/find-a-cpa': '/es/encontrar-un-cpa/',
-  '/us/find-a-cpa/': '/es/encontrar-un-cpa/',
-  '/us/why-is-my-paycheck-lower': '/es/preguntas-frecuentes/',
-  '/us/why-is-my-paycheck-lower/': '/es/preguntas-frecuentes/',
-  '/us/pay-stub-glossary': '/es/glosario/',
-  '/us/pay-stub-glossary/': '/es/glosario/',
-  '/us/glossary': '/es/glosario/',
-  '/us/glossary/': '/es/glosario/'
+  '/': '/es',
+  '/us': '/es',
+  '/us/paycheck-calculator': '/es/calculadora-de-cheque',
+  '/us/find-a-cpa': '/es/encontrar-un-cpa',
+  '/us/why-is-my-paycheck-lower': '/es/preguntas-frecuentes',
+  '/us/pay-stub-glossary': '/es/glosario',
+  '/us/glossary': '/es/glosario'
 };
 
 /** Reverse direction: Spanish path -> English equivalent. */
 export const EN_FROM_ES: Record<string, string> = (() => {
-  const out: Record<string, string> = { '/es/': '/us/', '/es': '/us/' };
+  const out: Record<string, string> = { '/es': '/us' };
   for (const [en, es] of Object.entries(ES_AVAILABLE_PAGES)) {
-    if (en.endsWith('/')) out[es] = en;
+    if (!(es in out)) out[es] = en;
   }
   return out;
 })();
 
 export function detectLocaleFromPath(pathname: string): Locale {
-  if (pathname === '/es' || pathname.startsWith('/es/')) return 'es';
+  if (pathname === '/es' || pathname.startsWith('/es')) return 'es';
   return 'en';
 }
 
@@ -96,10 +90,10 @@ export function alternateUrl(currentPathname: string, target: Locale): string {
   if (current === target) return currentPathname;
 
   if (target === 'es') {
-    return ES_AVAILABLE_PAGES[currentPathname] ?? '/es/';
+    return ES_AVAILABLE_PAGES[currentPathname] ?? '/es';
   }
   // target === 'en'
-  return EN_FROM_ES[currentPathname] ?? '/us/';
+  return EN_FROM_ES[currentPathname] ?? '/us';
 }
 
 /**
@@ -116,7 +110,7 @@ export function alternateUrl(currentPathname: string, target: Locale): string {
  */
 export function buildHreflangs(pathname: string, siteOrigin = 'https://payslipiq.com'): Array<{ hreflang: string; href: string }> {
   const current = detectLocaleFromPath(pathname);
-  const enPath = current === 'es' ? (EN_FROM_ES[pathname] ?? '/us/') : pathname;
+  const enPath = current === 'es' ? (EN_FROM_ES[pathname] ?? '/us') : pathname;
   const esPath = current === 'en' ? ES_AVAILABLE_PAGES[pathname] : pathname;
 
   const out: Array<{ hreflang: string; href: string }> = [

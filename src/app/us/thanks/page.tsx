@@ -19,11 +19,11 @@ export default function Page() {
       </p>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-2">
-        <Link href="/us/" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
+        <Link href="/us" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
           <div className="font-semibold text-slate-900">Back to PayslipIQ</div>
           <div className="mt-1 text-sm text-slate-600">Homepage</div>
         </Link>
-        <Link href="/us/pay-stub-checker/" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
+        <Link href="/us/pay-stub-checker" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
           <div className="font-semibold text-slate-900">Try another pay stub</div>
           <div className="mt-1 text-sm text-slate-600">Pay Stub Checker</div>
         </Link>

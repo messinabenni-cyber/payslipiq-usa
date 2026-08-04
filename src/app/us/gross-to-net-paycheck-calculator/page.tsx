@@ -7,7 +7,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 import { ReviewedBy } from '@/components/ReviewedBy';
 import { GrossToNetCalculator } from '@/components/GrossToNetCalculator';
 
-const PAGE_URL = 'https://payslipiq.com/us/gross-to-net-paycheck-calculator/';
+const PAGE_URL = 'https://payslipiq.com/us/gross-to-net-paycheck-calculator';
 
 export const metadata: Metadata = {
   title: 'Gross to Net Paycheck Calculator (USA, 2026)',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       'en-US': PAGE_URL,
-      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque/',
+      'es-US': 'https://payslipiq.com/es/calculadora-de-cheque',
       'x-default': PAGE_URL
     }
   },
@@ -92,14 +92,14 @@ const STATES_NO_INCOME_TAX = [
 ];
 
 const RELATED_TOOLS = [
-  { href: '/us/paycheck-calculator/', title: 'Paycheck Calculator', blurb: 'Start from an annual salary and project per-period pay.' },
-  { href: '/us/salary-after-tax/', title: 'Salary After Tax', blurb: 'See what an annual salary becomes weekly, biweekly, monthly.' },
-  { href: '/us/bonus-tax-paycheck/', title: 'Bonus Paycheck Calculator', blurb: 'Why bonuses look heavily taxed (22% supplemental rate).' },
-  { href: '/us/overtime-paycheck/', title: 'Overtime Calculator', blurb: 'FLSA federal + state daily overtime rules.' },
-  { href: '/us/why-is-my-paycheck-lower/', title: 'Why is my paycheck lower?', blurb: 'Common reasons take-home shrinks vs expected.' },
-  { href: '/us/w4-guide/', title: 'W-4 Guide', blurb: 'Plain-English walkthrough of the form that drives withholding.' },
-  { href: '/us/fica-explained/', title: 'FICA Explained', blurb: 'Social Security + Medicare in plain English.' },
-  { href: '/us/state-tax/', title: 'State Tax Index', blurb: 'Pick your state for verified rates and rules.' }
+  { href: '/us/paycheck-calculator', title: 'Paycheck Calculator', blurb: 'Start from an annual salary and project per-period pay.' },
+  { href: '/us/salary-after-tax', title: 'Salary After Tax', blurb: 'See what an annual salary becomes weekly, biweekly, monthly.' },
+  { href: '/us/bonus-tax-paycheck', title: 'Bonus Paycheck Calculator', blurb: 'Why bonuses look heavily taxed (22% supplemental rate).' },
+  { href: '/us/overtime-paycheck', title: 'Overtime Calculator', blurb: 'FLSA federal + state daily overtime rules.' },
+  { href: '/us/why-is-my-paycheck-lower', title: 'Why is my paycheck lower?', blurb: 'Common reasons take-home shrinks vs expected.' },
+  { href: '/us/w4-guide', title: 'W-4 Guide', blurb: 'Plain-English walkthrough of the form that drives withholding.' },
+  { href: '/us/fica-explained', title: 'FICA Explained', blurb: 'Social Security + Medicare in plain English.' },
+  { href: '/us/state-tax', title: 'State Tax Index', blurb: 'Pick your state for verified rates and rules.' }
 ];
 
 export default function Page() {
@@ -107,7 +107,7 @@ export default function Page() {
     <main className="piq-container py-10 max-w-3xl">
       <BreadcrumbSchema
         items={[
-          { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
+          { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
           { name: 'Gross to Net Paycheck Calculator', url: PAGE_URL }
         ]}
       />
@@ -116,7 +116,6 @@ export default function Page() {
         description="Convert any gross paycheck into estimated take-home pay after federal, FICA, and state tax. Educational only, not advice."
         url={PAGE_URL}
       />
-      <FAQSchema items={FAQS} />
 
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Calculator</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">
@@ -221,7 +220,7 @@ export default function Page() {
         <div className="font-semibold text-sm mb-1">If your real paycheck is materially different, ask payroll</div>
         <p className="text-sm text-ink/80">
           A gap between this estimate and your real paycheck is usually a W-4 setting, a benefit deduction, a state-specific worker contribution, or a year-to-date adjustment, not necessarily an error.
-          {' '}Use the <Link href="/us/ask-payroll-generator/" className="text-accent underline">Ask Payroll Generator</Link> to draft a polite, specific message in 30 seconds.
+          {' '}Use the <Link href="/us/ask-payroll-generator" className="text-accent underline">Ask Payroll Generator</Link> to draft a polite, specific message in 30 seconds.
         </p>
       </section>
 
@@ -240,15 +239,16 @@ export default function Page() {
 
       {/* Standard internal-link cluster */}
       <nav className="mt-10 grid grid-cols-2 sm:grid-cols-5 gap-2 text-sm" aria-label="Core PayslipIQ pages">
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker/">Pay Stub Checker</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/paycheck-calculator/">Paycheck Calculator</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained/">FICA explained</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide/">W-4 Guide</Link>
-        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax/">State index</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/pay-stub-checker">Pay Stub Checker</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/paycheck-calculator">Paycheck Calculator</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/fica-explained">FICA explained</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/w4-guide">W-4 Guide</Link>
+        <Link className="block bg-white border border-line rounded p-3 text-center hover:border-accent" href="/us/state-tax">State index</Link>
       </nav>
 
       {/* Master disclaimer */}
       <div className="mt-12">
+        <FAQSchema items={FAQS} />
         <MasterDisclaimer variant="long" />
       </div>
 

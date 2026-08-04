@@ -8,7 +8,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 export const metadata: Metadata = {
   title: 'Find a CPA or Tax Preparer | PayslipIQ',
   description: 'When the pay stub questions go beyond educational guidance, talk to a qualified CPA or IRS-credentialed tax preparer. Here is how to find one and what to ask.',
-  alternates: { canonical: 'https://payslipiq.com/us/find-a-cpa/' }
+  alternates: { canonical: 'https://payslipiq.com/us/find-a-cpa' }
 };
 
 const FAQS = [
@@ -45,15 +45,15 @@ export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Find a CPA', url: 'https://payslipiq.com/us/find-a-cpa/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Find a CPA', url: 'https://payslipiq.com/us/find-a-cpa' }
       ]} />
       <ArticleSchema
         headline="Find a CPA or Tax Preparer"
         description="When paycheck questions exceed educational guidance, here is how to find a qualified American CPA or IRS-credentialed tax preparer."
-        url="https://payslipiq.com/us/find-a-cpa/"
+        url="https://payslipiq.com/us/find-a-cpa"
       />
-      <FAQSchema items={FAQS} />
+      <FAQSchema items={FAQS} visible={false} />
 
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Directory</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">When the pay stub question is too big for a checker.</h1>

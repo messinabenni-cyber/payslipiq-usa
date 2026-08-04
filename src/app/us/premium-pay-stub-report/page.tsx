@@ -6,9 +6,9 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { FAQSchema } from '@/components/FAQSchema';
 
 export const metadata: Metadata = {
-  title: 'Premium Pay Stub Report | PayslipIQ',
+  title: 'Premium Pay Stub Report, $29 PDF',
   description: 'Detailed pay stub analysis with deduction breakdown, withholding optimization checklist, and a personalized payroll question pack. Educational only, not advice.',
-  alternates: { canonical: 'https://payslipiq.com/us/premium-pay-stub-report/' }
+  alternates: { canonical: 'https://payslipiq.com/us/premium-pay-stub-report' }
 };
 
 const FAQS = [
@@ -24,15 +24,15 @@ export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
       <BreadcrumbSchema items={[
-        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us/' },
-        { name: 'Premium Pay Stub Report', url: 'https://payslipiq.com/us/premium-pay-stub-report/' }
+        { name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' },
+        { name: 'Premium Pay Stub Report', url: 'https://payslipiq.com/us/premium-pay-stub-report' }
       ]} />
       <ArticleSchema
         headline="Premium Pay Stub Report"
         description="Detailed paid analysis of one US pay stub, with comparisons to federal IRS Pub 15-T tables and state-by-state expectations."
-        url="https://payslipiq.com/us/premium-pay-stub-report/"
+        url="https://payslipiq.com/us/premium-pay-stub-report"
       />
-      <FAQSchema items={FAQS} />
+      <FAQSchema items={FAQS} visible={false} />
 
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Premium</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">A 12-page report on one pay stub.</h1>
@@ -53,7 +53,7 @@ export default function Page() {
           <li>10-question pack to take to payroll</li>
           <li>7-day refund if the report did not match the upload</li>
         </ul>
-        <Link href="/us/premium-pay-stub-report/checkout/" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
+        <Link href="/us/premium-pay-stub-report/checkout" className="mt-6 inline-flex items-center justify-center w-full bg-accent text-white py-3 rounded-lg font-semibold">
           Buy Premium Report
         </Link>
         <p className="text-[12px] text-ink/55 mt-3">

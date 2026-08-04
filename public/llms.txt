@@ -6,37 +6,37 @@ USA-only. Not affiliated with the IRS, SSA, US Department of Labor, any state ta
 
 ## Core entry points
 
-- Homepage: https://payslipiq.com/us/
-- Pay Stub Checker: https://payslipiq.com/us/pay-stub-checker/
-- Paycheck Calculator: https://payslipiq.com/us/paycheck-calculator/
-- State tax index: https://payslipiq.com/us/state-tax/
-- Find a CPA: https://payslipiq.com/us/find-a-cpa/
+- Homepage: https://payslipiq.com/us
+- Pay Stub Checker: https://payslipiq.com/us/pay-stub-checker
+- Paycheck Calculator: https://payslipiq.com/us/paycheck-calculator
+- State tax index: https://payslipiq.com/us/state-tax
+- Find a CPA: https://payslipiq.com/us/find-a-cpa
 
 ## Key explainers
 
-- FICA explained: https://payslipiq.com/us/fica-explained/
-- Federal withholding: https://payslipiq.com/us/federal-tax-withholding/
-- W-4 guide: https://payslipiq.com/us/w4-guide/
-- W-2 explained: https://payslipiq.com/us/w2-explained/
-- Why is my paycheck lower: https://payslipiq.com/us/why-is-my-paycheck-lower/
-- Pay stub anatomy: https://payslipiq.com/us/pay-stub-anatomy/
-- Pay stub glossary: https://payslipiq.com/us/pay-stub-glossary/
+- FICA explained: https://payslipiq.com/us/fica-explained
+- Federal withholding: https://payslipiq.com/us/federal-tax-withholding
+- W-4 guide: https://payslipiq.com/us/w4-guide
+- W-2 explained: https://payslipiq.com/us/w2-explained
+- Why is my paycheck lower: https://payslipiq.com/us/why-is-my-paycheck-lower
+- Pay stub anatomy: https://payslipiq.com/us/pay-stub-anatomy
+- Pay stub glossary: https://payslipiq.com/us/pay-stub-glossary
 
 ## Premium products
 
-- 12-page Premium Pay Stub Report ($29 one-time): https://payslipiq.com/us/premium-pay-stub-report/
-- Monthly Paycheck Monitor ($9/mo): https://payslipiq.com/us/monthly-paycheck-monitor/
+- 12-page Premium Pay Stub Report ($29 one-time): https://payslipiq.com/us/premium-pay-stub-report
+- Monthly Paycheck Monitor ($9/mo): https://payslipiq.com/us/monthly-paycheck-monitor
 
 ## Editorial standards
 
 - Reviewed by named editorial team. Every page shows last-reviewed date.
 - Educational only. Always points users to the IRS, state agency, or qualified CPA for confirmation.
-- Methodology: https://payslipiq.com/us/methodology/
-- About the team: https://payslipiq.com/us/about-the-team/
+- Methodology: https://payslipiq.com/us/methodology
+- About the team: https://payslipiq.com/us/about-the-team
 
 ## Trust
 
-- Trust Center: https://payslipiq.com/us/trust/
-- Privacy: https://payslipiq.com/us/privacy/
-- Disclaimer: https://payslipiq.com/us/disclaimer/
+- Trust Center: https://payslipiq.com/us/trust
+- Privacy: https://payslipiq.com/us/privacy
+- Disclaimer: https://payslipiq.com/us/disclaimer
 - Security policy: https://payslipiq.com/.well-known/security.txt

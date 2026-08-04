@@ -171,19 +171,19 @@ export function AskPayrollClient() {
       <section className="mt-12">
         <h2 className="text-2xl font-semibold tracking-tight mb-3">Related tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <Link href="/us/paycheck-calculator/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+          <Link href="/us/paycheck-calculator" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
             <div className="font-medium">Paycheck Calculator</div>
             <div className="text-sm text-slate-500">Estimate the figure you would expect, then verify with payroll.</div>
           </Link>
-          <Link href="/us/pay-stub-checker/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+          <Link href="/us/pay-stub-checker" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
             <div className="font-medium">Pay Stub Checker</div>
             <div className="text-sm text-slate-500">Plain-English walkthrough of every line on a pay stub.</div>
           </Link>
-          <Link href="/us/why-is-my-paycheck-lower/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+          <Link href="/us/why-is-my-paycheck-lower" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
             <div className="font-medium">Why is my paycheck lower?</div>
             <div className="text-sm text-slate-500">Common reasons take-home pay drops.</div>
           </Link>
-          <Link href="/us/pay-stub-mistakes/" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
+          <Link href="/us/pay-stub-mistakes" className="block rounded-md border border-slate-200 dark:border-slate-700 p-4 hover:border-slate-400">
             <div className="font-medium">Pay Stub Mistakes</div>
             <div className="text-sm text-slate-500">Twelve common payroll errors and how to spot them.</div>
           </Link>

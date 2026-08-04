@@ -9,8 +9,8 @@
  *   STRIPE_SECRET_KEY                  - sk_live_... or sk_test_...
  *   STRIPE_PRICE_ID_PREMIUM_REPORT     - price_... ($29 one-time)
  *   STRIPE_PRICE_ID_MONTHLY_MONITOR    - price_... ($9/mo recurring)
- *   STRIPE_SUCCESS_URL                 - default: https://payslipiq.com/us/thanks/
- *   STRIPE_CANCEL_URL                  - default: https://payslipiq.com/us/checkout-cancelled/
+ *   STRIPE_SUCCESS_URL                 - default: https://payslipiq.com/us/thanks
+ *   STRIPE_CANCEL_URL                  - default: https://payslipiq.com/us/checkout-cancelled
  */
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -68,8 +68,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'price_not_configured', envVar: productConfig.envVar }, { status: 503 });
   }
 
-  const successUrl = process.env.STRIPE_SUCCESS_URL ?? 'https://payslipiq.com/us/thanks/';
-  const cancelUrl = process.env.STRIPE_CANCEL_URL ?? 'https://payslipiq.com/us/checkout-cancelled/';
+  const successUrl = process.env.STRIPE_SUCCESS_URL ?? 'https://payslipiq.com/us/thanks';
+  const cancelUrl = process.env.STRIPE_CANCEL_URL ?? 'https://payslipiq.com/us/checkout-cancelled';
 
   // Direct Stripe REST API call (no SDK dependency to keep bundle lean).
   const params = new URLSearchParams();

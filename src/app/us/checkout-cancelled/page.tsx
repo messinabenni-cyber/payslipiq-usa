@@ -19,11 +19,11 @@ export default function Page() {
       </p>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-2">
-        <Link href="/us/premium-pay-stub-report/" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
+        <Link href="/us/premium-pay-stub-report" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
           <div className="font-semibold text-slate-900">Premium Pay Stub Report</div>
           <div className="mt-1 text-sm text-slate-600">Try again, $29 one-time.</div>
         </Link>
-        <Link href="/us/monthly-paycheck-monitor/" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
+        <Link href="/us/monthly-paycheck-monitor" className="rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300">
           <div className="font-semibold text-slate-900">Monthly Paycheck Monitor</div>
           <div className="mt-1 text-sm text-slate-600">Try again, $9/mo.</div>
         </Link>
