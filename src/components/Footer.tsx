@@ -3,11 +3,23 @@ import Link from 'next/link';
 import { MasterDisclaimer } from './MasterDisclaimer';
 import { STATES } from '@/lib/states';
 
+// The other PayslipIQ country sites. Plain <a> rather than next/link because
+// they leave the app, and same-tab with rel="noopener" only — deliberately not
+// "noopener noreferrer": noreferrer strips the Referer header, which would make
+// this traffic show up as Direct in the receiving site's analytics instead of
+// as a referral from payslipiq.com. Every URL is checked live before shipping.
+const NETWORK = [
+  { href: 'https://payslipiq.co.uk', label: 'United Kingdom & Ireland' },
+  { href: 'https://payslip-canada.vercel.app', label: 'Canada' },
+  { href: 'https://payslip-australia.vercel.app', label: 'Australia' },
+  { href: 'https://payslipiq-ae-pro.vercel.app', label: 'United Arab Emirates' },
+];
+
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div>
             <h3 className="text-sm font-semibold text-slate-900">Tools</h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
@@ -53,6 +65,19 @@ export function Footer() {
               <li><Link href="/terms">Terms</Link></li>
               <li><Link href="/disclaimer">Disclaimers</Link></li>
               <li><Link href="/contact">Contact</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">PayslipIQ network</h3>
+            <p className="mt-3 text-xs text-slate-500">
+              Same team, same sourcing rule, a different country&apos;s payroll.
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+              {NETWORK.map((n) => (
+                <li key={n.href}>
+                  <a href={n.href} rel="noopener">{n.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
