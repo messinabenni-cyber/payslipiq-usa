@@ -83,6 +83,14 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t border-slate-200 pt-8">
           <MasterDisclaimer variant="footer" />
+          {/* Companies Act 2006 s.82 and the Company, LLP and Business Names
+              Regulations 2015: the operating company must state its registered
+              name, number, place of registration and registered office. */}
+          <p className="mt-3 text-xs leading-5 text-slate-500">
+            PayslipIQ is a trading name of GoldPaid Ltd, a company registered in England
+            and Wales (no. 17382540). Registered office: Unit 217, Bristol Business Centre, 179 Whiteladies Road, Clifton, Bristol BS8 2AG.
+            ICO registration ZC214216.
+          </p>
           <p className="mt-3 text-xs text-slate-500">
             © {new Date().getFullYear()} PayslipIQ. Built for the United States.
           </p>

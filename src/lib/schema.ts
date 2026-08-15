@@ -112,6 +112,20 @@ export function organizationNode() {
     name: 'PayslipIQ',
     alternateName: 'PayslipIQ USA',
     url: `${SITE}/us/`,
+    legalName: 'GoldPaid Ltd',
+    identifier: {
+      "@type": "PropertyValue",
+      name: 'Companies House company number',
+      value: '17382540',
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: 'Unit 217, Bristol Business Centre, 179 Whiteladies Road',
+      addressLocality: 'Bristol',
+      addressRegion: 'Clifton',
+      postalCode: 'BS8 2AG',
+      addressCountry: 'GB',
+    },
     logo: {
       '@type': 'ImageObject',
       '@id': LOGO_ID,
