@@ -27,7 +27,7 @@ const FAQS = [
   { q: 'What does PayslipIQ do that ADP’s free calculator does not?', a: 'PayslipIQ explains every line in plain English — federal income tax, Social Security, Medicare, state income tax, state worker contributions (CA SDI, NY PFL, NJ FLI and similar), and local taxes — rather than only returning a net figure. It also offers an AI pay-stub upload explainer, dedicated city pages, and an open methodology page.' },
   { q: 'Which is more accurate?', a: 'Both use the IRS Publication 15-T withholding method and published state rates, so for a standard scenario the results are close. Differences usually come from edge cases such as multi-state work, supplemental wages, or mid-year W-4 changes. Treat any calculator result as an estimate and verify with your payroll team.' },
   { q: 'Should my employer use PayslipIQ instead of ADP?', a: 'No — they do different jobs. ADP (or another payroll provider) runs the actual payroll. PayslipIQ helps the employee understand the pay stub that payroll produces. They are complementary, not substitutes.' },
-  { q: 'Does PayslipIQ cover all 50 states like ADP?', a: 'Yes. PayslipIQ covers all 50 states plus DC, plus 11 jurisdictions with explicit employee worker contributions and dedicated pages for major metros.' },
+  { q: 'Does PayslipIQ cover all 50 states like ADP?', a: 'Yes. PayslipIQ covers all 50 states plus DC, plus 13 jurisdictions with explicit employee worker contributions and dedicated pages for major metros.' },
 ];
 
 const BREADCRUMBS = [
@@ -95,7 +95,7 @@ export default function VsAdpPage() {
                 <tr><td className="px-3 py-2">All 50 states + DC</td><td className="px-3 py-2">Yes</td><td className="px-3 py-2">Yes</td></tr>
                 <tr><td className="px-3 py-2">Plain-English line-by-line explainer</td><td className="px-3 py-2">Yes — every line</td><td className="px-3 py-2">Limited</td></tr>
                 <tr><td className="px-3 py-2">AI pay-stub upload explainer</td><td className="px-3 py-2">Yes (waitlist)</td><td className="px-3 py-2">No</td></tr>
-                <tr><td className="px-3 py-2">State worker contributions explicit (SDI/PFL/PFML/TDI/FAMLI)</td><td className="px-3 py-2">11 jurisdictions encoded</td><td className="px-3 py-2">Partial</td></tr>
+                <tr><td className="px-3 py-2">State worker contributions explicit (SDI/PFL/PFML/TDI/FAMLI)</td><td className="px-3 py-2">13 jurisdictions encoded</td><td className="px-3 py-2">Partial</td></tr>
                 <tr><td className="px-3 py-2">City-specific pages</td><td className="px-3 py-2">Major metros</td><td className="px-3 py-2">No</td></tr>
                 <tr><td className="px-3 py-2">Open methodology with citations</td><td className="px-3 py-2"><Link className="text-blue-600 underline" href="/methodology">/methodology</Link></td><td className="px-3 py-2">Not published</td></tr>
                 <tr><td className="px-3 py-2">Runs actual payroll for employers</td><td className="px-3 py-2">No</td><td className="px-3 py-2">Yes — core product</td></tr>

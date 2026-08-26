@@ -62,6 +62,12 @@ const STATE_WORKER_CONTRIBUTIONS_2026: Record<string, StateWorkerContribLine[]> 
   'district-of-columbia': [
     { label: 'DC PFL', rate: 0.0026, note: 'DC PFL 2026 (verify with DOES); 0.26% employer-paid in DC but listed for transparency on DC paychecks where the employer chooses to pass through' },
   ],
+  minnesota: [
+    { label: 'MN Paid Leave', rate: 0.0044, annualCap: 185000 * 0.0044, note: 'MN DEED 2026; employee share up to 0.44% of 0.88% total. Wage base is SS limit rounded to nearest thousand ($185,000). mn.gov/deed' },
+  ],
+  delaware: [
+    { label: 'DE Paid Leave', rate: 0.004, annualCap: 184500 * 0.004, note: 'DE DOL 2026; employee up to 50% of 0.8% full coverage (0.4%). Employers 10-24 parental only (employee up to 0.16%). labor.delaware.gov' },
+  ],
 };
 
 /**
@@ -238,7 +244,7 @@ export function computePaycheck(input: {
   const ficaPerPeriod = ficaCalc.total / periods;
 
   // 2026-05-16: state worker contributions (CA SDI, NY SDI+PFL, NJ SDI+FLI,
-  // MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI).
+  // MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI, MN Paid Leave, DE Paid Leave).
   // Subtract from net so the take-home figure matches what the worker actually receives.
   const workerContribsAnnual = stateWorkerContributions(grossAnnual, stateSlug);
   const stateWorkerContribsPerPeriod = workerContribsAnnual.map((w) => ({

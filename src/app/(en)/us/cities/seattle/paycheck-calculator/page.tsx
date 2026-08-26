@@ -112,7 +112,7 @@ export default function SeattlePaycheckCalculatorPage() {
               <div className="text-sm text-slate-500">WA PFML + WA Cares + no-income-tax context.</div>
             </Link>
             <Link href="/us/state-worker-contributions" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
-              <div className="font-medium">State Worker Contributions (all 11 states)</div>
+              <div className="font-medium">State Worker Contributions (13 jurisdictions)</div>
               <div className="text-sm text-slate-500">SDI / PFL / PFML / FAMLI / TDI rates summary.</div>
             </Link>
           </div>

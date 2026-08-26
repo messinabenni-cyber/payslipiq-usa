@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 const POSTURE = [
   {
     framework: 'SOC 2 Type 1',
-    status: 'In progress',
-    detail: 'PayslipIQ is operating to SOC 2 Common Criteria. A formal Type 1 audit is planned in 2026. Internal controls documentation is maintained on the same standard reviewers expect.'
+    status: 'Roadmapped',
+    detail: 'We do not claim SOC 2 certification. Same as the Trust Centre: roadmapped, not earned. No Type 1 audit is claimed as scheduled.'
   },
   {
     framework: 'FCRA (Fair Credit Reporting Act)',

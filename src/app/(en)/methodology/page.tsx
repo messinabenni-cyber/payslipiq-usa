@@ -12,7 +12,7 @@ const FAQS = [
   { q: "Are PayslipIQ's calculators audited?", a: "Each calculator function is unit-tested against IRS Publication 15-T examples and state-published worksheets. We do not currently undergo external audit." },
   { q: "How do I report a content error?", a: "Email content@payslipiq.com with the URL, the input, the value we returned, and the source you believe is correct. We log corrections and post a dated public changelog entry." },
   { q: "Where do PayslipIQ's federal numbers come from?", a: "IRS Publication 15-T (2026), IRS Notice 2025-67 (2026 retirement and inflation adjustments), Topic 751 (FICA), SSA annual cost-of-living adjustment, and SECURE 2.0 Act §109 + §603 for catch-up rules." },
-  { q: "Which states have explicit worker-contribution lines?", a: "Eleven jurisdictions are encoded directly into the calculator: California (SDI), New York (SDI + PFL), New Jersey (SDI + FLI), Massachusetts (PFML), Oregon (Paid Leave), Washington (PFML + WA Cares), Rhode Island (TDI), Colorado (FAMLI), Hawaii (TDI), Connecticut (PFML), District of Columbia (PFL). The remaining states have no employee-paid worker contribution." },
+  { q: "Which states have explicit worker-contribution lines?", a: "Thirteen jurisdictions are encoded: California (SDI), New York (SDI + PFL), New Jersey (SDI + FLI), Massachusetts (PFML), Oregon (Paid Leave), Washington (PFML + WA Cares), Rhode Island (TDI), Colorado (FAMLI), Hawaii (TDI), Connecticut (PFML), District of Columbia (PFL), Minnesota (Paid Leave), Delaware (Paid Leave). Maryland FAMLI withholding starts 1 Jan 2027, so it is not in the 2026 calculator. Other states have no employee-paid worker contribution." },
 ];
 
 const RELATED = [
@@ -50,7 +50,7 @@ export default function Page() {
 <li><strong>Flat-tax states 2026:</strong> AZ 2.5%, CO 4.40%, IL 4.95%, IN 3.05%, KY ~4.0%, MA 5%, MI 4.25%, NC 3.99%, PA 3.07%, UT 4.55%.</li>
 <li><strong>No state income tax:</strong> AK, FL, NV, NH, SD, TN, TX, WA, WY.</li>
 </ul>
-<h2>State worker contributions (SDI / PFL / PFML / TDI / FAMLI / Cares) — 11 jurisdictions encoded</h2>
+<h2>State worker contributions (SDI / PFL / PFML / TDI / FAMLI / Cares) — 13 jurisdictions encoded</h2>
 <table>
 <thead><tr><th>Jurisdiction</th><th>Program</th><th>2026 employee rate</th><th>Cap</th></tr></thead>
 <tbody>
@@ -68,6 +68,8 @@ export default function Page() {
 <tr><td>Hawaii</td><td>TDI</td><td>0.5%</td><td>$7.50/wk</td></tr>
 <tr><td>Connecticut</td><td>PFML</td><td>0.5%</td><td>$184,500 wage base</td></tr>
 <tr><td>DC</td><td>PFL</td><td>0.26%</td><td>Employer-paid; surfaced for transparency</td></tr>
+<tr><td>Minnesota</td><td>Paid Leave</td><td>0.44%</td><td>$185,000 wage base (DEED rounds SS limit)</td></tr>
+<tr><td>Delaware</td><td>Paid Leave</td><td>0.40%</td><td>$184,500 FICA wages; typical 25+ full coverage</td></tr>
 </tbody>
 </table>
 <p>Each rate is taken from the agency-published 2026 schedule. Verify with the linked agency before relying on it.</p>
