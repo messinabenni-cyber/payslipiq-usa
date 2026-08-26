@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'PayslipIQ ayuda a los trabajadores en EE.UU. a entender su cheque de pago, los impuestos federales y estatales, FICA, y las deducciones. Solo educativo, no es asesoramiento.',
   alternates: {
     canonical: 'https://payslipiq.com/es',
-    languages: { 'en-US': '/us/', 'es-US': '/es/', 'x-default': '/us/' }
+    languages: { 'en-US': 'https://payslipiq.com/us', 'es-US': 'https://payslipiq.com/es', 'x-default': 'https://payslipiq.com/us' }
   }
 };
 
