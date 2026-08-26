@@ -17,7 +17,6 @@ const SOFTWARE_APP = {
   name: 'PayslipIQ Pay Stub Explainer',
   operatingSystem: 'Any (web)',
   applicationCategory: 'FinanceApplication',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   isAccessibleForFree: true,
   url: 'https://payslipiq.com/us/pay-stub-checker',
   publisher: { '@id': ORG_ID },
@@ -29,7 +28,7 @@ const SOFTWARE_APP = {
 const FAQ = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  '@id': 'https://payslipiq.com/us/#faq',
+  '@id': 'https://payslipiq.com/#faq',
   isPartOf: { '@id': WEBSITE_ID },
   speakable: {
     '@type': 'SpeakableSpecification',

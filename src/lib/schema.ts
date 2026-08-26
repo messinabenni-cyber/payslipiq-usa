@@ -111,7 +111,7 @@ export function organizationNode() {
     '@id': ORG_ID,
     name: 'PayslipIQ',
     alternateName: 'PayslipIQ USA',
-    url: `${SITE}/us/`,
+    url: SITE,
     legalName: 'GoldPaid Ltd',
     identifier: {
       "@type": "PropertyValue",
@@ -180,7 +180,7 @@ export function websiteNode() {
     '@type': 'WebSite',
     '@id': WEBSITE_ID,
     name: 'PayslipIQ',
-    url: `${SITE}/us/`,
+    url: SITE,
     inLanguage: 'en-US',
     publisher: { '@id': ORG_ID },
     // /us/search is a real static route (takes precedence over the [state] dynamic segment),
