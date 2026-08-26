@@ -29,7 +29,7 @@ const FAQS = [
   { q: 'Does Michigan tax wages?', a: 'Yes. Michigan is a flat-tax state at 4.25% (2026, verify with Michigan Department of Treasury). The flat rate applies in addition to any city income tax (Detroit being the largest of ~24 Michigan cities that levy one).' },
   { q: 'Which other Michigan cities have local income tax?', a: 'Detroit is the largest, but ~22 other Michigan cities levy a city income tax: Grand Rapids, Flint, Lansing, Saginaw, Pontiac, Battle Creek, Big Rapids, East Lansing, Hamtramck, Hudson, Ionia, Jackson, Lapeer, Muskegon, Muskegon Heights, Port Huron, Portland, Springfield, Walker, plus others. Rates typically 1% resident / 0.5% non-resident, though Detroit is higher at 2.4% / 1.2%.' },
   { q: 'I live in Detroit but work in the suburbs — what do I pay?', a: 'You pay Detroit resident tax (2.4%) on all wages because Detroit taxes its residents regardless of where they work. If your work city also has a city income tax (Hamtramck, Highland Park, etc.) you may pay non-resident tax there too; the resident-city tax credit applies.' },
-  { q: 'Does the calculator include the Detroit line?', a: 'The PayslipIQ Paycheck Calculator handles federal + FICA + MI flat 4.25% in the main tool. For the Detroit city line specifically, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Michigan city (Detroit etc.)" and enter 2.4% (resident) or 1.2% (non-resident).' },
+  { q: 'Does the calculator include the Detroit line?', a: 'The PayslipIQ Paycheck Calculator handles federal + FICA + MI flat 4.25% in the main tool. For the Detroit city line specifically, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "Michigan city (Detroit etc.)" and enter 2.4% (resident) or 1.2% (non-resident).' },
 ];
 
 const BREADCRUMBS = [
@@ -76,14 +76,14 @@ export default function DetroitPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Michigan flat 4.25%</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + Michigan + Detroit city tax</h2>
           <PaycheckCalculator defaultStateSlug="michigan" defaultLocality="mi-city" defaultLocalRatePct="2.4" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Detroit city tax</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Michigan city (Detroit etc.)&quot;</strong> below. Enter <strong>2.4%</strong> if
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;Michigan city (Detroit etc.)&quot;</strong> below. Enter <strong>2.4%</strong> if
             you live in Detroit (regardless of work location), or <strong>1.2%</strong> if you work
             in Detroit but live elsewhere.
           </p>

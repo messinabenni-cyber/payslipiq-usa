@@ -29,7 +29,7 @@ const FAQS = [
   { q: 'What is the LST?', a: 'Pittsburgh Local Services Tax: $52/year ($1/week) for working in Pittsburgh, regardless of where you live. Phased out for low earners (under ~$12,000 annual). Withheld pro-rata each pay period.' },
   { q: 'How is Pittsburgh different from Philadelphia?', a: 'Both are PA cities but on different systems. Philadelphia is OUTSIDE PA Act 32 with its own EIT structure (3.74% resident / 3.43% non-resident). Pittsburgh is INSIDE Act 32 with the standard EIT structure (3% resident split between city and school district / 1% non-resident).' },
   { q: 'I live in a suburb but work in Pittsburgh — what do I pay?', a: 'You pay Pittsburgh 1% non-resident EIT on your Pittsburgh wages, plus the $52 LST. Your home municipality and school district typically receive their EIT separately. PA Act 32 ensures EIT goes to your residence under most circumstances; verify with the PA DCED PSD code finder.' },
-  { q: 'Does the calculator include the Pittsburgh lines?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and PA flat 3.07% in the main tool. For the Pittsburgh EIT, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "PA EIT municipality" and enter 3% (resident) or 1% (non-resident). The LST is not yet modelled in the estimator; subtract $52/26 = ~$2/biweekly check.' },
+  { q: 'Does the calculator include the Pittsburgh lines?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and PA flat 3.07% in the main tool. For the Pittsburgh EIT, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "PA EIT municipality" and enter 3% (resident) or 1% (non-resident). The LST is not yet modelled in the estimator; subtract $52/26 = ~$2/biweekly check.' },
 ];
 
 const BREADCRUMBS = [
@@ -77,14 +77,14 @@ export default function PittsburghPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + PA flat 3.07%</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + PA + Pittsburgh EIT</h2>
           <PaycheckCalculator defaultStateSlug="pennsylvania" defaultLocality="paeit" defaultLocalRatePct="3" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add Pittsburgh EIT</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;PA EIT municipality&quot;</strong> below and enter your applicable
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;PA EIT municipality&quot;</strong> below and enter your applicable
             rate: <strong>3%</strong> if you live in Pittsburgh, or <strong>1%</strong> if you
             work in Pittsburgh but live elsewhere. Add ~$2/biweekly for the $52 LST.
           </p>

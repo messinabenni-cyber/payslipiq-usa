@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const FAQS = [
   { q: 'What is the Philadelphia EIT?', a: 'Earned Income Tax. Philadelphia residents pay 3.74% (effective 2025-07-01 through 2026). Non-residents who work in Philadelphia pay 3.43%. Both apply to wages and self-employment income. Unlike most PA municipalities, Philadelphia is outside the PA Act 32 system.' },
   { q: 'How does Philadelphia EIT differ from PA Act 32 EIT elsewhere in Pennsylvania?', a: 'Act 32 applies to every other PA municipality and school district. Rates vary by Tax Collection District (TCD) and PSD code, commonly 1-2%. Philadelphia is exempt from Act 32 and has its own rates published by the City of Philadelphia. The "source rule" (work-state credit) is different; Philadelphia EIT generally beats your home-municipality EIT.' },
-  { q: 'Does the calculator include the Philadelphia EIT?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and PA state flat 3.07% in the main tool. For the Philadelphia EIT specifically, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "PA EIT municipality" and enter 3.74% (resident) or 3.43% (non-resident).' },
+  { q: 'Does the calculator include the Philadelphia EIT?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and PA state flat 3.07% in the main tool. For the Philadelphia EIT specifically, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "PA EIT municipality" and enter 3.74% (resident) or 3.43% (non-resident).' },
   { q: 'I live in NJ but work in Philadelphia — what do I pay?', a: 'You pay Philadelphia non-resident EIT (3.43%) on your Philadelphia wages. NJ then credits you for the Philadelphia tax paid against your NJ state income tax under the NJ-PA reciprocity rules (but those rules have shifted over the years — verify with a CPA in any year you have multi-state work).' },
   { q: 'Are there other Philadelphia payroll lines?', a: 'Most Philadelphia workers see federal, FICA, PA state 3.07%, Philadelphia EIT, and standard pre-tax deductions (401k, health). Self-employed Philadelphia residents owe a separate Net Profits Tax / Business Income & Receipts Tax — those are not employee payroll deductions.' },
 ];
@@ -77,14 +77,14 @@ export default function PhiladelphiaPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + PA flat 3.07%</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + PA + Philadelphia EIT</h2>
           <PaycheckCalculator defaultStateSlug="pennsylvania" defaultLocality="paeit" defaultLocalRatePct="3.74" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Philadelphia EIT</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;PA EIT municipality&quot;</strong> in the dropdown below and enter your
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;PA EIT municipality&quot;</strong> in the dropdown below and enter your
             applicable Philadelphia rate: <strong>3.74%</strong> if you live in Philadelphia
             (regardless of where you work), or <strong>3.43%</strong> if you work in Philadelphia
             but live outside.

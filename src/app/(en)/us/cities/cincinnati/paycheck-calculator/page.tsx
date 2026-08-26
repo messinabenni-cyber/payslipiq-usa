@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'What is the Cincinnati earnings tax?', a: 'Cincinnati levies a 1.8% city earnings tax (verify current rate with the Cincinnati Income Tax Division). It applies to (a) Cincinnati residents on all earned income and (b) non-residents on wages earned in Cincinnati. Administered directly by the city, not through RITA.' },
   { q: 'How does it differ from Cleveland?', a: 'Cleveland is administered by RITA at 2.5%. Cincinnati administers its own tax at 1.8%. Both are municipal income taxes under Ohio law; the rate, administrator, and credit rules differ.' },
   { q: 'I live in a Cincinnati suburb but work downtown — what do I pay?', a: 'You pay Cincinnati 1.8% on Cincinnati wages as a non-resident. Your home municipality typically gives a credit for the Cincinnati tax paid; the exact credit varies by suburb. Most Ohio suburbs give partial credit to avoid double taxation.' },
-  { q: 'Does the calculator include the Cincinnati line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Ohio state in the main tool. For the Cincinnati line, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Ohio RITA / CCA city" and enter 1.8%. (Cincinnati is administered directly by the city, not RITA, but the rate input field handles it the same way.)' },
+  { q: 'Does the calculator include the Cincinnati line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Ohio state in the main tool. For the Cincinnati line, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "Ohio RITA / CCA city" and enter 1.8%. (Cincinnati is administered directly by the city, not RITA, but the rate input field handles it the same way.)' },
   { q: 'Are there other Cincinnati payroll lines?', a: 'No additional employee-side city programs beyond the 1.8% earnings tax. Standard federal + Ohio + Cincinnati stack.' },
 ];
 
@@ -76,14 +76,14 @@ export default function CincinnatiPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Ohio state</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + Ohio + Cincinnati earnings tax</h2>
           <PaycheckCalculator defaultStateSlug="ohio" defaultLocality="oh-rita" defaultLocalRatePct="1.8" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Cincinnati earnings tax</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Ohio RITA / CCA city&quot;</strong> below and enter <strong>1.8%</strong>.
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;Ohio RITA / CCA city&quot;</strong> below and enter <strong>1.8%</strong>.
             (Cincinnati administers its own tax, not via RITA, but the calc field works the same.)
           </p>
           <LocalTaxCalculator defaultLocality="oh-rita" defaultRatePct="1.8" />

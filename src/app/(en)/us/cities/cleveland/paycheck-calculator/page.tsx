@@ -29,7 +29,7 @@ const FAQS = [
   { q: 'What is RITA?', a: 'The Regional Income Tax Agency. A consortium that administers local income tax collection for about 350 Ohio municipalities. Cleveland is the largest RITA city. If your employer is in a RITA city, RITA handles the withholding and remittance.' },
   { q: 'I live in a suburb but work in Cleveland — what do I pay?', a: 'You pay Cleveland 2.5% non-resident tax on Cleveland wages. Your home city typically gives a credit for the Cleveland tax paid; the credit varies by suburb. Most Ohio suburbs give partial credit (75-100%) to avoid double taxation.' },
   { q: 'I live in Cleveland but work in a suburb — what do I pay?', a: 'You pay Cleveland 2.5% on all wages as a resident, less any credit for tax paid to your work city. If your work city has its own 2.0% municipal income tax, you generally get a credit for that 2.0% and pay Cleveland the remaining 0.5%. Verify with RITA.' },
-  { q: 'Does the calculator include the Cleveland RITA line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Ohio state in the main tool. For the Cleveland line, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Ohio RITA / CCA city" and enter 2.5%.' },
+  { q: 'Does the calculator include the Cleveland RITA line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Ohio state in the main tool. For the Cleveland line, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "Ohio RITA / CCA city" and enter 2.5%.' },
 ];
 
 const BREADCRUMBS = [
@@ -76,14 +76,14 @@ export default function ClevelandPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Ohio state</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + Ohio + Cleveland 2.5%</h2>
           <PaycheckCalculator defaultStateSlug="ohio" defaultLocality="oh-rita" defaultLocalRatePct="2.5" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Cleveland RITA 2.5%</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Ohio RITA / CCA city&quot;</strong> below and enter <strong>2.5%</strong>.
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;Ohio RITA / CCA city&quot;</strong> below and enter <strong>2.5%</strong>.
             If you live in a suburb and your work-city credit applies, you may owe less; check with
             RITA for the exact net.
           </p>

@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'How does Indiana local income tax work?', a: 'Indiana has 92 counties, each levying its own Local Income Tax (LIT). The rate that applies is your COUNTY OF RESIDENCE ON JANUARY 1 of the tax year — even if you move mid-year. Marion County (Indianapolis) is currently 2.02% (verify with the Indiana Department of Revenue).' },
   { q: 'What about the IN state rate?', a: 'Indiana is a flat-tax state, currently 3.05% (verify with Indiana DOR; the legislature is gradually reducing the flat rate). The LIT applies on top of the flat state rate.' },
   { q: 'I moved from Hamilton County to Marion County in March — which rate applies?', a: 'Your county on January 1 applies for the whole year. If you were a Hamilton County resident on Jan 1, you pay Hamilton County rates all year regardless of when you moved. Reverse if you were in Marion on Jan 1. Verify with your employer or DOR if there is any doubt; this is residence-based, not pro-rated.' },
-  { q: 'Does the calculator include the Marion County line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Indiana state flat in the main tool. For the Marion County LIT specifically, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Indiana county tax" and enter 2.02%.' },
+  { q: 'Does the calculator include the Marion County line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Indiana state flat in the main tool. For the Marion County LIT specifically, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "Indiana county tax" and enter 2.02%.' },
   { q: 'Other Indianapolis-area county rates?', a: 'Hamilton County ~1.1%, Hancock ~1.94%, Hendricks ~1.7%, Johnson ~1.4%, Madison ~2.25%, Morgan ~2.72%, Shelby ~1.6%. Confirm exact current rates with Indiana DOR before relying on a number.' },
 ];
 
@@ -76,14 +76,14 @@ export default function IndianapolisPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Indiana flat 3.05%</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + Indiana + Marion County LIT</h2>
           <PaycheckCalculator defaultStateSlug="indiana" defaultLocality="in-county" defaultLocalRatePct="2.02" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add Marion County LIT</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Indiana county tax&quot;</strong> below and enter <strong>2.02%</strong> for
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;Indiana county tax&quot;</strong> below and enter <strong>2.02%</strong> for
             Marion County. Different IN counties have different LIT rates; check yours.
           </p>
           <LocalTaxCalculator defaultLocality="in-county" defaultRatePct="2.02" />

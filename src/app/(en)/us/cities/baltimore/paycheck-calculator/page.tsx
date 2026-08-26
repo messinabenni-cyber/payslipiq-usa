@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'How is Maryland local income tax structured?', a: 'Maryland is unusual: every county (and Baltimore City) piggybacks on the state income tax with its own rate, between 2.25% and 3.2%. Withheld by your employer based on your county of residence on the last day of the tax year. Baltimore City is treated as a county for this purpose and its rate is 3.2% (the maximum allowed).' },
   { q: 'What is Baltimore City\'s rate?', a: 'Baltimore City levies the maximum allowed county-level rate of 3.20% of MD taxable income. Higher than most MD counties. Applies to Baltimore City residents.' },
   { q: 'I live in Baltimore County but work in Baltimore City — what do I pay?', a: 'Maryland piggyback is RESIDENCE-based, not work-based. You pay Baltimore County\'s rate (currently 3.20% as well, same as Baltimore City) regardless of where you work. Out-of-state residents working in MD pay Maryland\'s non-resident rate of 1.75% in lieu of a county piggyback.' },
-  { q: 'Does the calculator include the Baltimore City line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Maryland state in the main tool. For the Baltimore City piggyback, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Maryland county piggyback" and enter 3.20%.' },
+  { q: 'Does the calculator include the Baltimore City line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and Maryland state in the main tool. For the Baltimore City piggyback, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "Maryland county piggyback" and enter 3.20%.' },
   { q: 'Are there other Baltimore / MD payroll lines?', a: 'No additional employee-side city programs in Baltimore. Maryland does not have employee-side SDI or PFL programs yet (FAMLI starts contributions in 2026, employer split TBD). Standard federal + MD state + Baltimore piggyback.' },
 ];
 
@@ -76,14 +76,14 @@ export default function BaltimorePaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Maryland state</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + Maryland + Baltimore City piggyback</h2>
           <PaycheckCalculator defaultStateSlug="maryland" defaultLocality="md-county" defaultLocalRatePct="3.20" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Baltimore City piggyback</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Maryland county piggyback&quot;</strong> below and enter
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;Maryland county piggyback&quot;</strong> below and enter
             <strong> 3.20%</strong> if you live in Baltimore City. If you live in a different MD
             county, enter that county&apos;s rate from the MD Comptroller table.
           </p>

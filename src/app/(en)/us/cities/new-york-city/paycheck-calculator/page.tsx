@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const FAQS = [
   { q: 'Does NYC have its own income tax?', a: 'Yes. NYC residents pay a separate NYC resident income tax on top of federal and NY state tax. Rates 3.078% to 3.876% across four brackets (top bracket above $50,000 single / $90,000 married jointly). Non-residents who work in NYC do not pay NYC income tax (the non-resident commuter tax was abolished in 1999).' },
-  { q: 'Does this calculator include the NYC line?', a: 'The PayslipIQ Paycheck Calculator estimates federal, FICA, and NY state tax with NY SDI + PFL. For the NYC top-marginal resident line specifically, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "New York City resident". If you pick it in Gross-to-Net or the Paycheck Calculator, take-home already includes that line. Do not add it twice.' },
+  { q: 'Does this calculator include the NYC line?', a: 'The PayslipIQ Paycheck Calculator estimates federal, FICA, and NY state tax with NY SDI + PFL. This city page already preselects "New York City resident" (top-marginal resident rate, not a full NYC bracket table) in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. If take-home already includes the line, do not add the estimator twice. Non-residents who work in NYC do not pay this tax.' },
   { q: 'Why does the NYC line vary so much by income?', a: 'NYC uses progressive brackets, just like NY state and federal. At the top bracket the marginal rate is 3.876%; at the bottom it is 3.078%. The "average" NYC worker earning $80,000 sits around 3.7% effective on the NYC line alone.' },
   { q: 'Are there other NYC payroll lines I should expect?', a: 'NY SDI ($0.60/week, capped at $31.20/year), NY PFL (0.432% of wages, capped at $411.91/year for 2026), and federal payroll lines (Social Security, Medicare). The main calculator handles those automatically.' },
   { q: 'What if I live in NYC but work in NJ (or vice versa)?', a: 'Multi-state withholding gets complex. Generally the work state withholds, and the resident state credits the work-state tax. NYC resident income tax still applies if you are a NYC resident, regardless of where you work. This is a common area for tax-preparer questions; verify with payroll or a CPA.' },
@@ -76,15 +76,15 @@ export default function NYCPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + NY state + NY SDI/PFL</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + NY state + NY SDI/PFL + NYC resident</h2>
           <PaycheckCalculator defaultStateSlug="new-york" defaultLocality="nyc" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the NYC resident income tax</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;New York City resident&quot;</strong> below to get the NYC line. Add the result to
-            the state-tax line from Step 1 to get your full take-home picture as a NYC resident.
+            This estimator also defaults to <strong>&quot;New York City resident&quot;</strong> (top-marginal rate).
+            The paycheck tool above already includes that line. Do not add the two together.
             Non-residents working in NYC do not pay NYC income tax.
           </p>
           <LocalTaxCalculator defaultLocality="nyc" />

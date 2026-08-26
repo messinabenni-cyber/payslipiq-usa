@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'How is the Wilmington wage tax calculated?', a: 'Wilmington imposes a 1.25% City Wage Tax on wages earned in Wilmington. It applies regardless of where you live; what matters is whether the work is performed in Wilmington. Flat rate, no brackets, no exemptions.' },
   { q: 'I live in Wilmington but work outside the city — do I owe?', a: 'Generally no. The Wilmington City Wage Tax is work-location-based. If your job is outside Wilmington, you do not pay it even if you live in Wilmington. (Self-employed Wilmington residents owe the Wilmington Net Profits Tax separately.)' },
   { q: 'What about Delaware state tax?', a: 'Delaware has progressive brackets ranging up to 6.6% at the top. The state tax applies before any local tax. Verify current brackets with the Delaware Division of Revenue.' },
-  { q: 'Does the calculator include the Wilmington line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and DE state in the main tool. For the Wilmington line specifically, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Wilmington, DE" and the rate is automatically 1.25%.' },
+  { q: 'Does the calculator include the Wilmington line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and DE state in the main tool. For the Wilmington line specifically, this city page already preselects that locality in the Paycheck Calculator and the estimator below. Gross-to-Net still defaults to none until you pick it. Do not add the estimator line twice. On this page: select "Wilmington, DE" and the rate is automatically 1.25%.' },
   { q: 'Are there other Wilmington / Delaware payroll lines?', a: 'No other employee-side local taxes in Wilmington. Delaware does not have employee-side SDI or PFL programs (DE has a Paid Family Leave program starting 2026 but funding details are employer-paid for now). Standard federal + DE + Wilmington stack.' },
 ];
 
@@ -76,14 +76,14 @@ export default function WilmingtonPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Delaware</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + Delaware + Wilmington wage tax</h2>
           <PaycheckCalculator defaultStateSlug="delaware" defaultLocality="wilmington" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Wilmington City Wage Tax</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Wilmington, DE&quot;</strong> below. The rate is automatically 1.25% on
+            Already selected on the paycheck tool above. Do not add this estimator on top of that take-home. Select <strong>&quot;Wilmington, DE&quot;</strong> below. The rate is automatically 1.25% on
             wages earned in Wilmington.
           </p>
           <LocalTaxCalculator defaultLocality="wilmington" />

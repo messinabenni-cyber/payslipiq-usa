@@ -76,17 +76,17 @@ export default function YonkersPaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + NY state + NY SDI/PFL</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Federal + FICA + NY state + NY SDI/PFL + Yonkers surcharge</h2>
           <PaycheckCalculator defaultStateSlug="new-york" defaultLocality="yonkers" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Yonkers surcharge</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Yonkers (NY) resident&quot;</strong> in the dropdown below. The estimator
-            applies ~1% of wages as a defensible mid-income approximation. For precision: multiply
-            your NY state tax (from Step 1, the &quot;New York state tax&quot; line × 26 for biweekly)
-            by 0.1675 and divide by 26 — that is your exact Yonkers surcharge per paycheck.
+            This estimator also defaults to <strong>&quot;Yonkers (NY) resident&quot;</strong> at ~1% of wages,
+            a mid-income approximation of the 16.75% surcharge on NY state tax. The paycheck tool
+            above already includes that line. Do not add the two together. For precision: NY state
+            tax this check × 0.1675.
           </p>
           <LocalTaxCalculator defaultLocality="yonkers" />
         </section>
