@@ -12,11 +12,11 @@ const PAGE_URL = 'https://payslipiq.com/us/local-paycheck-taxes';
 
 export const metadata: Metadata = {
   title: 'Local Paycheck Taxes (USA, 2026) | PayslipIQ',
-  description: 'NYC, Yonkers, PA EIT, Ohio RITA, MD county, Wilmington, KC/STL, IN county, Detroit. Plain-English guide to US local income tax + an estimator.',
+  description: 'NYC, Yonkers, PA EIT, Ohio RITA, MD county, Wilmington, KC/STL, IN county, Detroit, Louisville Metro. Plain-English guide to US local income tax + an estimator.',
   alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'x-default': PAGE_URL } },
   openGraph: {
     title: 'Local Paycheck Taxes (USA, 2026)',
-    description: 'NYC, Yonkers, PA EIT, Ohio RITA, MD county, Wilmington, KC/STL, IN county, Detroit. Estimator + plain-English guide.',
+    description: 'NYC, Yonkers, PA EIT, Ohio RITA, MD county, Wilmington, KC/STL, IN county, Detroit, Louisville Metro. Estimator + plain-English guide.',
     url: PAGE_URL,
     type: 'website',
     images: [{ url: 'https://payslipiq.com/api/og?title=Local%20Paycheck%20Taxes&eyebrow=USA%202026', width: 1200, height: 630 }]
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const FAQS = [
   { q: 'What is a local income tax?', a: 'A tax levied by a city, county, or school district on wage income on top of federal and state tax. Some localities tax residents only (NYC, Yonkers). Others tax anyone who works there (Kansas City, St. Louis earnings tax, Detroit nonresident, Wilmington wage tax). PA cities use Earned Income Tax (EIT) under Act 32 with a rate that varies by municipality and school district.' },
-  { q: 'Do all states have local income taxes?', a: 'No. Most do not. The big locality clusters are Pennsylvania (every municipality and school district has an EIT), Ohio (RITA / CCA cities), Maryland (every county piggybacks on state tax), Indiana (every county), Michigan (city of Detroit and ~22 others), New York (NYC + Yonkers residents), Kansas City and St. Louis (earnings tax), and Wilmington DE. California, Texas, Florida, and most states do not have employee local income tax.' },
+  { q: 'Do all states have local income taxes?', a: 'No. Most do not. The big locality clusters are Pennsylvania (every municipality and school district has an EIT), Ohio (RITA / CCA cities), Maryland (every county piggybacks on state tax), Indiana (every county), Michigan (city of Detroit and ~22 others), New York (NYC + Yonkers residents), Kansas City and St. Louis (earnings tax), Wilmington DE, and Kentucky occupational license taxes (Louisville Metro is in this picker; other KY cities are not). California, Texas, Florida, and most states do not have employee local income tax. Oregon PFA/SHS are high-earner taxes on taxable income, not in this picker.' },
   { q: 'How do I find my local rate?', a: 'PA: PA DCED Local Tax Finder by address. Ohio: RITA or CCA city register. Maryland: Comptroller of MD county tax table. Indiana: Indiana DOR County Tax Rates. Michigan: city treasurer. NYC / Yonkers: NY Department of Taxation and Finance. Kansas City / St. Louis: city Revenue Division. Wilmington: City of Wilmington Earned Income Tax. Always verify with the official agency, not a third-party blog.' },
   { q: 'Does the calculator on this page handle all of them?', a: 'It estimates the most common locality patterns: NYC top-marginal resident rate, Yonkers surcharge, PA EIT (you enter your rate), Ohio RITA / CCA (you enter), Maryland county (you enter or use mid-range default), Indiana county (you enter), Michigan city (you enter), Wilmington 1.25%, KC and STL 1%, Louisville Metro occupational 2.2% resident / 1.45% nonresident. Other KY occupational taxes and Oregon Multnomah/Metro PFA+SHS high-earner taxes are not in the picker. For unusual cases, use the city revenue agency directly.' },
   { q: 'Is my employer required to withhold local tax?', a: 'In some states (PA Act 32, Ohio courtesy withholding rules, Maryland piggyback) employers must withhold for the work location, the resident location, or both. In states without local income tax, the locality lines on your stub will be blank. If you live in a locality with tax but your employer is not withholding, you may owe at filing. Check with payroll and the city revenue agency.' },
@@ -53,7 +53,7 @@ export default function Page() {
   return (
     <main className="piq-container py-10 max-w-3xl">
       <BreadcrumbSchema items={[{ name: 'PayslipIQ USA', url: 'https://payslipiq.com/us' }, { name: 'Local Paycheck Taxes', url: PAGE_URL }]} />
-      <ArticleSchema headline="Local Paycheck Taxes (USA, 2026)" description="NYC, Yonkers, PA EIT, Ohio RITA, MD county, Wilmington, KC/STL, Indiana county, Detroit. Plain-English guide and estimator." url={PAGE_URL} />
+      <ArticleSchema headline="Local Paycheck Taxes (USA, 2026)" description="NYC, Yonkers, PA EIT, Ohio RITA, MD county, Wilmington, KC/STL, Indiana county, Detroit, Louisville Metro. Plain-English guide and estimator." url={PAGE_URL} />
       <FAQSchema items={FAQS} />
 
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Local taxes</div>
@@ -67,7 +67,7 @@ export default function Page() {
       <section className="mt-8 rounded-md border border-line bg-white p-5">
         <h2 className="text-xl font-semibold mb-2">In plain English</h2>
         <p className="text-[15px] text-ink/85 leading-relaxed">
-          A local income tax is a city, county, or school-district tax on wages, on top of federal and state tax. Most US workers do not pay one, but if you live or work in NYC, Yonkers, any Pennsylvania municipality, an Ohio RITA / CCA city, a Maryland county, an Indiana county, Detroit (or ~22 other Michigan cities), Wilmington DE, Kansas City MO, or St. Louis MO, your paycheck has an extra line. Rates range from 1% (Wilmington, KC, STL) to ~3.9% (NYC top marginal). PayslipIQ&apos;s estimator below approximates the most common patterns. Verify with your city or county revenue agency before relying on a number.
+          A local income tax is a city, county, or school-district tax on wages, on top of federal and state tax. Most US workers do not pay one, but if you live or work in NYC, Yonkers, any Pennsylvania municipality, an Ohio RITA / CCA city, a Maryland county, an Indiana county, Detroit (or ~22 other Michigan cities), Wilmington DE, Kansas City MO, St. Louis MO, or Louisville Metro KY, your paycheck has an extra line. Rates range from 1% (Wilmington, KC, STL) to ~3.9% (NYC top marginal). Louisville Metro is 2.2% resident / 1.45% nonresident. PayslipIQ&apos;s estimator below approximates the most common patterns. Verify with your city or county revenue agency before relying on a number.
         </p>
       </section>
 
@@ -145,8 +145,8 @@ export default function Page() {
       </nav>
 
       <div className="mt-12">
-      <SoftwareApplicationLd url="https://payslipiq.com/us/local-paycheck-taxes" name="PayslipIQ Local Tax Calculator" description="Free local-tax estimator covering NYC, Yonkers, Philadelphia, Detroit, Ohio RITA and CCA cities, Indiana and Maryland counties. Educational only." category="FinanceApplication" />
-      <HowToLd name="How to use the PayslipIQ Local Tax Calculator" description="Step-by-step guide to using the PayslipIQ Local Tax Calculator." steps={[ { name: "Enter your gross pay", text: "Type your per-period gross pay so the calculator can apply local rates." }, { name: "Select your locality", text: "Pick from NYC, Yonkers, Philadelphia, Detroit, Ohio RITA / CCA, Indiana and Maryland counties." }, { name: "Review the breakdown", text: "The calculator returns the local tax line in plain English with a one-line explanation." } ]} />
+      <SoftwareApplicationLd url="https://payslipiq.com/us/local-paycheck-taxes" name="PayslipIQ Local Tax Calculator" description="Free local-tax estimator covering NYC, Yonkers, Philadelphia, Detroit, Louisville Metro, Ohio RITA and CCA cities, Indiana and Maryland counties. Educational only." category="FinanceApplication" />
+      <HowToLd name="How to use the PayslipIQ Local Tax Calculator" description="Step-by-step guide to using the PayslipIQ Local Tax Calculator." steps={[ { name: "Enter your gross pay", text: "Type your per-period gross pay so the calculator can apply local rates." }, { name: "Select your locality", text: "Pick from NYC, Yonkers, Philadelphia, Detroit, Louisville Metro, Ohio RITA / CCA, Indiana and Maryland counties." }, { name: "Review the breakdown", text: "The calculator returns the local tax line in plain English with a one-line explanation." } ]} />
         <MasterDisclaimer variant="long" />
       </div>
     </main>

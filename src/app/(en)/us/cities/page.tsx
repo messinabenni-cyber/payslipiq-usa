@@ -88,8 +88,148 @@ const CITIES = [
     name: 'Portland / Multnomah (OR)',
     slug: 'portland-multnomah',
     state: 'Oregon',
-    blurb: 'Multnomah PFA + Portland Metro SHS above income thresholds ($125k+ single). OR Paid Leave 0.6% applies to all.',
+    blurb: 'Multnomah PFA + Portland Metro SHS above income thresholds ($125k+ single). OR Paid Leave 0.6% applies to all. PFA/SHS are not in the local-tax picker.',
     rate: '1.5% / 3.0% / +1%',
+  },
+  {
+    name: 'Baltimore (MD)',
+    slug: 'baltimore',
+    state: 'Maryland',
+    blurb: 'Baltimore City piggyback 3.20% (MD maximum) on top of Maryland state tax. Residence-based. Pick Maryland county piggyback in the calculator.',
+    rate: '3.20%',
+  },
+  {
+    name: 'Cleveland (OH)',
+    slug: 'cleveland',
+    state: 'Ohio',
+    blurb: '2.5% municipal income tax via RITA, residents and Cleveland wages of nonresidents. Pick Ohio RITA / CCA and enter 2.5%.',
+    rate: '2.5%',
+  },
+  {
+    name: 'Cincinnati (OH)',
+    slug: 'cincinnati',
+    state: 'Ohio',
+    blurb: '1.8% city earnings tax, administered by the city (not RITA). Same rate field as Ohio RITA / CCA. Enter 1.8%.',
+    rate: '1.8%',
+  },
+  {
+    name: 'Indianapolis (IN)',
+    slug: 'indianapolis',
+    state: 'Indiana',
+    blurb: 'Marion County local income tax 2.02% (residence on Jan 1). Pick Indiana county tax and enter 2.02%. Other IN counties differ.',
+    rate: '2.02%',
+  },
+  {
+    name: 'Pittsburgh (PA)',
+    slug: 'pittsburgh',
+    state: 'Pennsylvania',
+    blurb: 'Act 32 EIT 3% resident / 1% nonresident. LST $52/year is not in the estimator. Pick PA EIT and enter 3% or 1%.',
+    rate: '3% / 1%',
+  },
+  {
+    name: 'Atlanta (GA)',
+    slug: 'atlanta',
+    state: 'Georgia',
+    blurb: 'No city income tax. Georgia flat state tax. Federal + FICA + GA only.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Austin (TX)',
+    slug: 'austin',
+    state: 'Texas',
+    blurb: 'No Texas state income tax and no Austin or Travis County income tax. Federal + FICA only.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Boston (MA)',
+    slug: 'boston',
+    state: 'Massachusetts',
+    blurb: 'No city income tax. Massachusetts 5% plus MA PFML 0.46% employee share. Millionaire surtax is separate.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Charlotte (NC)',
+    slug: 'charlotte',
+    state: 'North Carolina',
+    blurb: 'No city income tax. North Carolina flat 3.99% for 2026. Federal + FICA + NC.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Dallas (TX)',
+    slug: 'dallas',
+    state: 'Texas',
+    blurb: 'No Texas state income tax and no Dallas city or county income tax. Federal + FICA only.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Denver (CO)',
+    slug: 'denver',
+    state: 'Colorado',
+    blurb: 'Employee Occupational Privilege Tax $5.75/month if you earn $500+ in Denver. Not a percent wage tax, so it is not in the local-tax picker. CO FAMLI is in the paycheck tool.',
+    rate: '$5.75/mo OPT',
+  },
+  {
+    name: 'Houston (TX)',
+    slug: 'houston',
+    state: 'Texas',
+    blurb: 'No Texas state income tax and no Houston or Harris County income tax. Federal + FICA only.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Las Vegas (NV)',
+    slug: 'las-vegas',
+    state: 'Nevada',
+    blurb: 'No Nevada state income tax and no Las Vegas or Clark County income tax. Federal + FICA only.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Miami (FL)',
+    slug: 'miami',
+    state: 'Florida',
+    blurb: 'No Florida state income tax and no Miami or Miami-Dade income tax. Federal + FICA only.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Minneapolis (MN)',
+    slug: 'minneapolis',
+    state: 'Minnesota',
+    blurb: 'No city income tax. Minnesota progressive state tax plus MN Paid Leave on the paycheck tool.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Nashville (TN)',
+    slug: 'nashville',
+    state: 'Tennessee',
+    blurb: 'No Tennessee state income tax (Hall Tax repealed) and no Nashville city income tax. Federal + FICA only.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Newark (NJ)',
+    slug: 'newark',
+    state: 'New Jersey',
+    blurb: 'No employee-side Newark city income tax. Newark Payroll Tax 1.1% is employer-paid. NJ SDI/FLI are on the paycheck tool.',
+    rate: 'Employer payroll tax',
+  },
+  {
+    name: 'Phoenix (AZ)',
+    slug: 'phoenix',
+    state: 'Arizona',
+    blurb: 'No city income tax. Arizona flat 2.5%. Federal + FICA + AZ.',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'San Diego (CA)',
+    slug: 'san-diego',
+    state: 'California',
+    blurb: 'No city income tax. California progressive state tax plus CA SDI 1.3% (no wage cap).',
+    rate: 'No employee city tax',
+  },
+  {
+    name: 'Seattle (WA)',
+    slug: 'seattle',
+    state: 'Washington',
+    blurb: 'No Washington state income tax and no Seattle city income tax. WA PFML and WA Cares are on the paycheck tool.',
+    rate: 'No employee city tax',
   },
 ];
 
@@ -118,10 +258,9 @@ export default function CitiesIndexPage() {
           <p className="text-xs uppercase tracking-wide text-slate-500 mb-2">USA · CITY PAYCHECK CALCULATORS · 2026 · Educational only</p>
           <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">US city paycheck calculators</h1>
           <p className="mt-4 text-lg text-slate-700">
-            Per-city paycheck calculators that factor in the local income tax most state-level
-            calculators skip. Each page walks through the full stack: federal + FICA + state +
-            any state worker contributions (SDI, PFL, PFML, FAMLI, TDI) + the city/local tax.
-            Primary-sourced rates, verified for 2026.
+            Every live city paycheck page on PayslipIQ is listed here. Pages with an employee
+            local tax preselect that line. Pages with no city income tax say so. Other KY
+            occupational rates and Oregon PFA/SHS stay out of the picker.
           </p>
         </header>
 
@@ -145,15 +284,14 @@ export default function CitiesIndexPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-semibold tracking-tight mb-3">Cities not on this page yet</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">Localities without their own page</h2>
           <p className="text-slate-700">
-            For Ohio RITA / CCA cities, Maryland counties, Indiana counties, PA Act 32 municipalities
-            outside Philadelphia, Pittsburgh, and any other US locality with an employee-paid local
-            income tax, use the general{' '}
+            Other Ohio RITA / CCA cities, Maryland counties, Indiana counties, PA Act 32 municipalities,
+            and Kentucky occupational cities besides Louisville Metro: use the{' '}
             <Link href="/us/local-paycheck-taxes" className="text-blue-600 underline">
               Local Paycheck Taxes estimator
             </Link>{' '}
-            and enter your specific rate.
+            and enter the published rate. Do not use Louisville Metro 2.2% for those KY cities.
           </p>
         </section>
 
