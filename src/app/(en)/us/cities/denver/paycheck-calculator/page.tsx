@@ -118,7 +118,7 @@ export default function DenverPaycheckCalculatorPage() {
               <div className="text-sm text-slate-500">CO flat 4.40% + FAMLI + Denver OPT context.</div>
             </Link>
             <Link href="/us/state-worker-contributions" className="block rounded-md border border-slate-200 p-4 hover:border-slate-400">
-              <div className="font-medium">State Worker Contributions (14 jurisdictions)</div>
+              <div className="font-medium">State Worker Contributions (13 jurisdictions)</div>
               <div className="text-sm text-slate-500">SDI / PFL / PFML / FAMLI / TDI rates summary.</div>
             </Link>
           </div>

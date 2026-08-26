@@ -9,12 +9,12 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 const PAGE_URL = 'https://payslipiq.com/us/state-worker-contributions';
 
 export const metadata: Metadata = {
-  title: 'State Worker Contributions 2026 — SDI, PFL, PFML, FAMLI, TDI (14 jurisdictions)',
+  title: 'State Worker Contributions 2026 — SDI, PFL, PFML, FAMLI, TDI (13 jurisdictions)',
   description:
     'Verified 2026 employee-paid state worker contribution rates: CA SDI, NY SDI+PFL, NJ SDI+FLI, MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI, CT PFML, DC PFL, MN Paid Leave, DE Paid Leave, ME PFML. Maryland FAMLI withholding starts 2027.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'State Worker Contributions 2026 — 14 jurisdictions',
+    title: 'State Worker Contributions 2026 — 13 jurisdictions',
     description: 'Verified 2026 SDI / PFL / PFML / FAMLI / TDI rates across every US state with an employee-paid program.',
     url: PAGE_URL,
     type: 'website',
@@ -50,7 +50,7 @@ const ROWS: ContribRow[] = [
   {
     state: 'District of Columbia',
     abbr: 'DC',
-    programs: [{ name: 'DC PFL', rate: '0.26%', note: 'Typically employer-paid; listed where employer passes through' }],
+    programs: [{ name: 'DC PFL', rate: 'none on stub', note: '100% employer-funded at 0.75% of wages in 2026. DOES: may not be deducted from a worker paycheck. Not in the calculator.' }],
     source: 'https://does.dc.gov/page/dc-paid-family-leave',
   },
   {
@@ -104,7 +104,10 @@ const ROWS: ContribRow[] = [
   {
     state: 'Oregon',
     abbr: 'OR',
-    programs: [{ name: 'OR Paid Leave', rate: '0.6%', cap: '$184,500', note: 'Employee share 60% of 1.0% total' }],
+    programs: [
+      { name: 'OR Paid Leave', rate: '0.6%', cap: '$184,500', note: 'Employee share 60% of 1.0% total' },
+      { name: 'OR STT', rate: '0.1%', cap: 'No cap', note: 'Oregon Statewide Transit Tax; employee withholding. oregon.gov/dor' },
+    ],
     source: 'https://paidleave.oregon.gov/',
   },
   {
@@ -141,7 +144,7 @@ const BREADCRUMBS = [
 export default function StateWorkerContributionsPage() {
   return (
     <>
-      <ArticleSchema headline="State Worker Contributions 2026 — 14 jurisdictions" description="Verified 2026 employee-paid state worker contribution rates across every US state with a program." url={PAGE_URL} />
+      <ArticleSchema headline="State Worker Contributions 2026 — 13 jurisdictions" description="Verified 2026 employee-paid state worker contribution rates across every US state with a program." url={PAGE_URL} />
       <BreadcrumbSchema items={BREADCRUMBS} />
       <FAQSchema items={FAQS} />
 
@@ -161,7 +164,7 @@ export default function StateWorkerContributionsPage() {
             Employee-paid state benefit programs: SDI (State Disability Insurance), PFL (Paid Family
             Leave), PFML (Paid Family and Medical Leave), FAMLI (Family and Medical Leave Insurance),
             TDI (Temporary Disability Insurance), and WA Cares (long-term care).
-            <strong> 14 jurisdictions</strong> currently have a program. Primary-sourced rates, verified
+            <strong> 13 jurisdictions</strong> currently have an employee-paid program. DC PFL is employer-only. Primary-sourced rates, verified
             2026-05-16.
           </p>
         </header>

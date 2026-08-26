@@ -41,6 +41,7 @@ const STATE_WORKER_CONTRIBUTIONS_2026: Record<string, StateWorkerContribLine[]> 
   ],
   oregon: [
     { label: 'OR Paid Leave', rate: 0.006, annualCap: 184500 * 0.006, note: 'Paid Leave Oregon 2026, employee share 60% of 1.0%' },
+    { label: 'OR STT', rate: 0.001, note: 'Oregon Statewide Transit Tax 0.1% employee withholding, no wage cap. oregon.gov/dor statewide-transit-tax' },
   ],
   washington: [
     { label: 'WA PFML', rate: 0.00807, annualCap: 184500 * 0.00807, note: 'WA Paid Leave 2026, employee ~71.43% of 1.13% premium' },
@@ -55,12 +56,8 @@ const STATE_WORKER_CONTRIBUTIONS_2026: Record<string, StateWorkerContribLine[]> 
   hawaii: [
     { label: 'HI TDI', rate: 0.005, annualCap: 7.50 * 52, note: 'HI DLIR 2026; capped at $7.50/wk' },
   ],
-  // 2026-05-16 v7: added CT PFML + DC PFL to round out the East Coast worker-contribution map.
   connecticut: [
     { label: 'CT PFML', rate: 0.005, annualCap: 184500 * 0.005, note: 'CT Paid Leave Authority 2026; 0.5% employee contribution capped at SS wage base' },
-  ],
-  'district-of-columbia': [
-    { label: 'DC PFL', rate: 0.0026, note: 'DC PFL 2026 (verify with DOES); 0.26% employer-paid in DC but listed for transparency on DC paychecks where the employer chooses to pass through' },
   ],
   minnesota: [
     { label: 'MN Paid Leave', rate: 0.0044, annualCap: 185000 * 0.0044, note: 'MN DEED 2026; employee share up to 0.44% of 0.88% total. Wage base is SS limit rounded to nearest thousand ($185,000). mn.gov/deed' },

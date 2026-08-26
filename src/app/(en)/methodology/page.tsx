@@ -12,7 +12,7 @@ const FAQS = [
   { q: "Are PayslipIQ's calculators audited?", a: "Each calculator function is unit-tested against IRS Publication 15-T examples and state-published worksheets. We do not currently undergo external audit." },
   { q: "How do I report a content error?", a: "Email content@payslipiq.com with the URL, the input, the value we returned, and the source you believe is correct. We log corrections and post a dated public changelog entry." },
   { q: "Where do PayslipIQ's federal numbers come from?", a: "IRS Publication 15-T (2026), IRS Notice 2025-67 (2026 retirement and inflation adjustments), Topic 751 (FICA), SSA annual cost-of-living adjustment, and SECURE 2.0 Act §109 + §603 for catch-up rules." },
-  { q: "Which states have explicit worker-contribution lines?", a: "Fourteen jurisdictions are encoded: California (SDI), New York (SDI + PFL), New Jersey (SDI + FLI), Massachusetts (PFML), Oregon (Paid Leave), Washington (PFML + WA Cares), Rhode Island (TDI), Colorado (FAMLI), Hawaii (TDI), Connecticut (PFML), District of Columbia (PFL), Minnesota (Paid Leave), Delaware (Paid Leave), Maine (PFML). Maryland FAMLI withholding starts 1 Jan 2027, so it is not in the 2026 calculator. Other states have no employee-paid worker contribution." },
+  { q: "Which states have explicit worker-contribution lines?", a: "Thirteen jurisdictions have employee-paid lines: California (SDI), New York (SDI + PFL), New Jersey (SDI + FLI), Massachusetts (PFML), Oregon (Paid Leave + Statewide Transit Tax 0.1%), Washington (PFML + WA Cares), Rhode Island (TDI), Colorado (FAMLI), Hawaii (TDI), Connecticut (PFML), Minnesota (Paid Leave), Delaware (Paid Leave), Maine (PFML). DC Paid Family Leave is 100% employer-funded (0.75% in 2026) and is not deducted from wages. Maryland FAMLI withholding starts 1 Jan 2027, so it is not in the 2026 calculator. Other states have no employee-paid worker contribution." },
 ];
 
 const RELATED = [
@@ -50,7 +50,7 @@ export default function Page() {
 <li><strong>Flat-tax states 2026:</strong> AZ 2.5%, CO 4.40%, IL 4.95%, IN 3.05%, KY ~4.0%, MA 5%, MI 4.25%, NC 3.99%, PA 3.07%, UT 4.55%.</li>
 <li><strong>No state income tax:</strong> AK, FL, NV, NH, SD, TN, TX, WA, WY.</li>
 </ul>
-<h2>State worker contributions (SDI / PFL / PFML / TDI / FAMLI / Cares) — 14 jurisdictions encoded</h2>
+<h2>State worker contributions (SDI / PFL / PFML / TDI / FAMLI / Cares) — 13 jurisdictions encoded</h2>
 <table>
 <thead><tr><th>Jurisdiction</th><th>Program</th><th>2026 employee rate</th><th>Cap</th></tr></thead>
 <tbody>
@@ -61,13 +61,13 @@ export default function Page() {
 <tr><td>New Jersey</td><td>FLI</td><td>0.23%</td><td>$393.53/yr on first $171,100</td></tr>
 <tr><td>Massachusetts</td><td>PFML</td><td>0.46%</td><td>$184,500 wage base</td></tr>
 <tr><td>Oregon</td><td>Paid Leave</td><td>0.60%</td><td>$184,500 wage base</td></tr>
+<tr><td>Oregon</td><td>Statewide Transit Tax</td><td>0.10%</td><td>No cap (employee withholding)</td></tr>
 <tr><td>Washington</td><td>PFML</td><td>0.807%</td><td>$184,500 wage base</td></tr>
 <tr><td>Washington</td><td>WA Cares</td><td>0.58%</td><td>No cap</td></tr>
 <tr><td>Rhode Island</td><td>TDI</td><td>1.1%</td><td>$1,100/yr</td></tr>
 <tr><td>Colorado</td><td>FAMLI</td><td>0.44%</td><td>$184,500 wage base</td></tr>
 <tr><td>Hawaii</td><td>TDI</td><td>0.5%</td><td>$7.50/wk</td></tr>
 <tr><td>Connecticut</td><td>PFML</td><td>0.5%</td><td>$184,500 wage base</td></tr>
-<tr><td>DC</td><td>PFL</td><td>0.26%</td><td>Employer-paid; surfaced for transparency</td></tr>
 <tr><td>Minnesota</td><td>Paid Leave</td><td>0.44%</td><td>$185,000 wage base (DEED rounds SS limit)</td></tr>
 <tr><td>Delaware</td><td>Paid Leave</td><td>0.40%</td><td>$184,500 FICA wages; typical 25+ full coverage</td></tr>
 <tr><td>Maine</td><td>PFML</td><td>0.50%</td><td>$184,500 wage base; employee up to half of 1.0%</td></tr>
@@ -86,6 +86,7 @@ export default function Page() {
 <li>Mid-year W-4 amendments and look-back wage recalculations.</li>
 <li>Wage garnishments below the federal CCPA limits.</li>
 <li>FUTA / SUTA (employer-paid; not on the worker&apos;s pay stub).</li>
+<li>DC Paid Family Leave (employer-paid 0.75% in 2026; DOES says it may not be deducted from wages).</li>
 </ul>
 <p>These are second-order effects. The PayslipIQ estimate is directional; for a binding figure, verify with your payroll team.</p>
 <h2>How explanations are written</h2>
