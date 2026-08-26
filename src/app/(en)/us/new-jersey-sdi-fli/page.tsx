@@ -24,7 +24,7 @@ export default function Page() {
 <li><strong>NJ FLI:</strong> family leave to care for others or bond with a new child.</li>
 </ul>
 <h2>The rates</h2>
-<p>Both are small percentages of wages with annual caps. Set annually by NJ Department of Labor. Verify current values at myleavebenefits.nj.gov.</p>
+<p>2026 employee rates (NJ DOL, myleavebenefits.nj.gov): TDI/SDI 0.19% on the first $171,100 (max $325.09). FLI 0.23% on the first $171,100 (max $393.53). Set annually. Verify current values at the source.</p>
 <h2>Benefit amounts</h2>
 <p>Roughly 85 percent of average weekly wage, capped at a statewide maximum. Specific replacement rate is set by NJ.</p>
 <h2>Stub labels</h2>

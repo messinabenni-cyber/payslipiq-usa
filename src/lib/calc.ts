@@ -33,8 +33,8 @@ const STATE_WORKER_CONTRIBUTIONS_2026: Record<string, StateWorkerContribLine[]> 
     { label: 'NY PFL', rate: 0.00432, annualCap: 411.91, note: 'NY PFL 2026 (paidfamilyleave.ny.gov/2026)' },
   ],
   'new-jersey': [
-    { label: 'NJ SDI', rate: 0.0023, annualCap: 393.53, note: 'NJ DOL 2026' },
-    { label: 'NJ FLI', rate: 0.0019, annualCap: 325.09, note: 'NJ DOL 2026' },
+    { label: 'NJ SDI', rate: 0.0019, annualCap: 325.09, note: 'NJ DOL 2026 TDI employee 0.19% on first $171,100 (max $325.09). myleavebenefits.nj.gov' },
+    { label: 'NJ FLI', rate: 0.0023, annualCap: 393.53, note: 'NJ DOL 2026 FLI employee 0.23% on first $171,100 (max $393.53). myleavebenefits.nj.gov' },
   ],
   massachusetts: [
     { label: 'MA PFML', rate: 0.0046, annualCap: 184500 * 0.0046, note: 'MA DFML 2026, employers 25+; 0.28% medical + 0.18% family' },

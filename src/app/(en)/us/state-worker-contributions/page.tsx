@@ -69,8 +69,8 @@ const ROWS: ContribRow[] = [
     state: 'New Jersey',
     abbr: 'NJ',
     programs: [
-      { name: 'NJ SDI', rate: '0.23%', cap: '$393.53/year', note: 'NJ DOL 2026' },
-      { name: 'NJ FLI', rate: '0.19%', cap: '$325.09/year', note: 'NJ DOL 2026' },
+      { name: 'NJ SDI', rate: '0.19%', cap: '$325.09/year', note: 'NJ DOL 2026 TDI employee rate on first $171,100' },
+      { name: 'NJ FLI', rate: '0.23%', cap: '$393.53/year', note: 'NJ DOL 2026 FLI employee rate on first $171,100' },
     ],
     source: 'https://www.nj.gov/labor/lwdhome/press/2025/20251229_newbenefitrates2026.shtml',
   },

@@ -57,8 +57,8 @@ export default function Page() {
 <tr><td>California</td><td>SDI</td><td>1.3%</td><td>No cap (SB 951)</td></tr>
 <tr><td>New York</td><td>SDI</td><td>$0.60/wk</td><td>$31.20/yr</td></tr>
 <tr><td>New York</td><td>PFL</td><td>0.432%</td><td>$411.91/yr</td></tr>
-<tr><td>New Jersey</td><td>SDI</td><td>0.23%</td><td>$393.53/yr</td></tr>
-<tr><td>New Jersey</td><td>FLI</td><td>0.19%</td><td>$325.09/yr</td></tr>
+<tr><td>New Jersey</td><td>SDI (TDI)</td><td>0.19%</td><td>$325.09/yr on first $171,100</td></tr>
+<tr><td>New Jersey</td><td>FLI</td><td>0.23%</td><td>$393.53/yr on first $171,100</td></tr>
 <tr><td>Massachusetts</td><td>PFML</td><td>0.46%</td><td>$184,500 wage base</td></tr>
 <tr><td>Oregon</td><td>Paid Leave</td><td>0.60%</td><td>$184,500 wage base</td></tr>
 <tr><td>Washington</td><td>PFML</td><td>0.807%</td><td>$184,500 wage base</td></tr>
