@@ -42,6 +42,8 @@ function cityPaycheckRedirects() {
     { source: `/paycheck-calculator/${city}`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
     { source: `/us/paycheck-calculator/${city}`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
     { source: `/us/cities/${city}`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
+    { source: `/us/${city}`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
+    { source: `/us/${city}/paycheck-calculator`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
   ]);
 }
 
