@@ -212,6 +212,8 @@ export interface PaycheckResult {
   stateWorkerContribsTotalPerPeriod: number;
   preTaxDeductionsPerPeriod: number;
   postTaxDeductionsPerPeriod: number;
+  localTaxPerPeriod: number;
+  localTaxLabel: string;
   netPerPeriod: number;
   netAnnual: number;
 }
@@ -224,11 +226,15 @@ export function computePaycheck(input: {
   preTaxPerPeriod?: number;
   postTaxPerPeriod?: number;
   ytdGross?: number;
+  localTaxPerPeriod?: number;
+  localTaxLabel?: string;
 }): PaycheckResult {
   const { grossPerPeriod, freq, stateSlug, filing } = input;
   const preTaxPP = input.preTaxPerPeriod ?? 0;
   const postTaxPP = input.postTaxPerPeriod ?? 0;
   const ytd = input.ytdGross ?? 0;
+  const localPP = input.localTaxPerPeriod ?? 0;
+  const localLabel = input.localTaxLabel ?? '';
 
   const grossAnnual = annualGross(grossPerPeriod, freq);
   const preTaxAnnual = preTaxPP * PAY_PERIODS[freq];
@@ -256,7 +262,7 @@ export function computePaycheck(input: {
     stateWorkerContribsPerPeriod.reduce((s, w) => s + w.amount, 0)
   );
 
-  const netPerPeriod = grossPerPeriod - preTaxPP - postTaxPP - federalTaxPerPeriod - stateTaxPerPeriod - ficaPerPeriod - stateWorkerContribsTotalPerPeriod;
+  const netPerPeriod = grossPerPeriod - preTaxPP - postTaxPP - federalTaxPerPeriod - stateTaxPerPeriod - ficaPerPeriod - stateWorkerContribsTotalPerPeriod - localPP;
 
   return {
     grossAnnual: round2(grossAnnual),
@@ -274,6 +280,8 @@ export function computePaycheck(input: {
     stateWorkerContribsTotalPerPeriod,
     preTaxDeductionsPerPeriod: round2(preTaxPP),
     postTaxDeductionsPerPeriod: round2(postTaxPP),
+    localTaxPerPeriod: round2(localPP),
+    localTaxLabel: localLabel,
     netPerPeriod: round2(netPerPeriod),
     netAnnual: round2(netPerPeriod * periods),
   };

@@ -58,7 +58,7 @@ export default function Page() {
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Local taxes</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">Local paycheck taxes, in plain English.</h1>
       <p className="mt-5 text-[17px] text-ink/80 leading-relaxed">
-        US cities and counties that levy income tax on residents, on workers, or on both, with verified rates and an estimator. This is the layer the standard paycheck calculator usually skips.
+        US cities and counties that levy income tax on residents, on workers, or on both, with verified rates and an estimator. Gross-to-net, bonus, and gross-up tools include the same locality list (default none).
       </p>
 
       <ReviewedBy />
@@ -129,9 +129,9 @@ export default function Page() {
       <section className="mt-10 border-l-4 border-accent bg-cyan-50 px-4 py-3 rounded">
         <div className="font-semibold text-sm mb-1">Pair this with the gross-to-net calculator</div>
         <p className="text-sm text-ink/80">
-          The estimator above is local tax in isolation. For a complete pre-tax to take-home view, use the
+          The estimator above is local tax in isolation. The
           {' '}<Link href="/us/gross-to-net-paycheck-calculator" className="text-accent underline">Gross to Net Paycheck Calculator</Link>
-          {' '}and add the local figure to its state tax line.
+          {' '}has the same locality list, so take-home can include this line instead of adding it by hand.
         </p>
       </section>
 

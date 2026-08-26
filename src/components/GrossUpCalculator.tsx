@@ -2,6 +2,7 @@
 import { useMemo, useState } from 'react';
 import { stateWorkerContributions } from '@/lib/calc';
 import { STATES as STATE_META } from '@/lib/states';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages } from '@/lib/localTax';
 
 const SLUG_BY_ABBR: Record<string, string> = Object.fromEntries(
   STATE_META.map((s) => [s.abbr, s.slug]),
@@ -137,7 +138,7 @@ function annualFederal(annualWages: number, filing: Filing): number {
 function round2(n: number): number { return Math.round(n * 100) / 100; }
 
 // Forward function: gross-per-period -> total tax + net for one paycheck.
-function taxesForGross(grossPerCheck: number, freq: Freq, filing: Filing, stateRate: number, stateCode: string) {
+function taxesForGross(grossPerCheck: number, freq: Freq, filing: Filing, stateRate: number, stateCode: string, localityId: LocalKind, localOverridePct?: number) {
   const periods = PERIODS[freq];
 
   const annualWages = grossPerCheck * periods;
@@ -157,32 +158,33 @@ function taxesForGross(grossPerCheck: number, freq: Freq, filing: Filing, stateR
     amount: round2(w.annual / periods),
   })).filter((w) => w.amount > 0);
   const workerTotal = workerContribs.reduce((s, w) => s + w.amount, 0);
+  const local = localTaxOnWages(grossPerCheck, localityId, localOverridePct);
 
-  const totalTax = fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck + workerTotal;
+  const totalTax = fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck + workerTotal + local.amount;
   const net = grossPerCheck - totalTax;
-  return { fedPerCheck, ssPerCheck, medicarePerCheck, addMedicarePerCheck, statePerCheck, workerContribs, workerTotal, totalTax, net };
+  return { fedPerCheck, ssPerCheck, medicarePerCheck, addMedicarePerCheck, statePerCheck, workerContribs, workerTotal, local, totalTax, net };
 }
 
 // Inverse solver: binary search on gross until net matches the desired take-home.
-function solveGross(desiredNet: number, freq: Freq, filing: Filing, stateRate: number, stateCode: string) {
+function solveGross(desiredNet: number, freq: Freq, filing: Filing, stateRate: number, stateCode: string, localityId: LocalKind, localOverridePct?: number) {
   if (desiredNet <= 0) {
-    return { gross: 0, ...taxesForGross(0, freq, filing, stateRate, stateCode) };
+    return { gross: 0, ...taxesForGross(0, freq, filing, stateRate, stateCode, localityId, localOverridePct) };
   }
   let lo = desiredNet;            // gross is always >= net
   let hi = desiredNet * 3 + 1000; // generous upper bound; net is a monotonic, sub-linear function of gross
   // Make sure hi actually overshoots the desired net.
-  for (let guard = 0; guard < 40 && taxesForGross(hi, freq, filing, stateRate, stateCode).net < desiredNet; guard++) {
+  for (let guard = 0; guard < 40 && taxesForGross(hi, freq, filing, stateRate, stateCode, localityId, localOverridePct).net < desiredNet; guard++) {
     hi *= 2;
   }
   let mid = hi;
   for (let i = 0; i < 100; i++) {
     mid = (lo + hi) / 2;
-    const net = taxesForGross(mid, freq, filing, stateRate, stateCode).net;
+    const net = taxesForGross(mid, freq, filing, stateRate, stateCode, localityId, localOverridePct).net;
     if (Math.abs(net - desiredNet) < 0.005) break;
     if (net < desiredNet) lo = mid; else hi = mid;
   }
   const gross = round2(mid);
-  return { gross, ...taxesForGross(gross, freq, filing, stateRate, stateCode) };
+  return { gross, ...taxesForGross(gross, freq, filing, stateRate, stateCode, localityId, localOverridePct) };
 }
 
 // ----- Component ------------------------------------------------------------
@@ -197,13 +199,15 @@ export function GrossUpCalculator({
   const [freq, setFreq] = useState<Freq>('biweekly');
   const [stateCode, setStateCode] = useState(defaultState);
   const [filing, setFiling] = useState<Filing>('single');
+  const [localityId, setLocalityId] = useState<LocalKind>('none');
+  const [localRatePct, setLocalRatePct] = useState('1.0');
 
   const stateRate = STATES.find((s) => s.code === stateCode)?.rate ?? 0;
   const desiredNet = parseFloat(net) || 0;
 
   const result = useMemo(
-    () => solveGross(desiredNet, freq, filing, stateRate, stateCode),
-    [desiredNet, freq, filing, stateRate, stateCode]
+    () => solveGross(desiredNet, freq, filing, stateRate, stateCode, localityId, getLocality(localityId).inputRate ? parseFloat(localRatePct) : undefined),
+    [desiredNet, freq, filing, stateRate, stateCode, localityId, localRatePct]
   );
 
   const periods = PERIODS[freq];
@@ -240,6 +244,20 @@ export function GrossUpCalculator({
           </select>
         </Row>
 
+
+        <Row label="Local city / county tax">
+          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => setLocalityId(e.target.value as LocalKind)} aria-label="Local city or county tax">
+            {LOCAL_TAX_OPTIONS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
+          </select>
+        </Row>
+        {getLocality(localityId).inputRate && (
+          <Row label="Local rate (%)">
+            <div className="flex items-center border border-line rounded">
+              <input className="w-full px-2 py-2 outline-none" inputMode="decimal" value={localRatePct} onChange={(e) => setLocalRatePct(e.target.value)} aria-label="Local tax rate percent" />
+              <span className="px-2 text-ink/50">%</span>
+            </div>
+          </Row>
+        )}
         <Row label="State (optional)">
           <select className="w-full px-2 py-2 border border-line rounded bg-white" value={stateCode} onChange={(e) => setStateCode(e.target.value)}>
             {STATES.map((s) => <option key={s.code || 'none'} value={s.code}>{s.name}</option>)}
@@ -280,6 +298,9 @@ export function GrossUpCalculator({
               {result.workerContribs.map((w) => (
                 <tr key={w.label}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
               ))}
+              {result.local.amount > 0 && (
+                <tr><td className="py-1 text-ink/70">{result.local.label}</td><td className="text-right tabular-nums">−${result.local.amount.toFixed(2)}</td></tr>
+              )}
               <tr className="font-semibold border-t border-line">
                 <td className="py-2">Take-home (net)</td>
                 <td className="text-right tabular-nums">${result.net.toFixed(2)}</td>
@@ -291,8 +312,8 @@ export function GrossUpCalculator({
             Tax year 2026. Federal withholding uses the IRS Pub. 15-T 2026 percentage method (Standard Withholding tables).
             Social Security is capped at the SSA 2026 wage base of $184,500. State tax uses the most recently verified flat or
             top-marginal rate and may not reflect brackets, local taxes, or mid-year changes. The solved gross is an estimate,
-            so payroll&apos;s real gross-up can differ once W-4 details, year-to-date wages, pre-tax benefits, and local taxes
-            are applied. 2026 employee-paid state worker contributions are included for the selected state. Use it as a
+            so payroll&apos;s real gross-up can differ once W-4 details, year-to-date wages, and pre-tax benefits
+            are applied. 2026 employee-paid state worker contributions are included for the selected state. Local city or county tax is included when you pick a locality. Use it as a
             starting point, not a final figure.
           </p>
         </div>

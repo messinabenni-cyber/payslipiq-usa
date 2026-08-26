@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from 'react';
 import { computePaycheck, formatUSD, type FilingStatus, type PayFrequency } from '@/lib/calc';
 import { STATES } from '@/lib/states';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages } from '@/lib/localTax';
 import { MasterDisclaimer } from './MasterDisclaimer';
 
 interface Props {
@@ -16,10 +17,27 @@ export function PaycheckCalculator({ defaultStateSlug = 'california' }: Props) {
   const [filing, setFiling] = useState<FilingStatus>('single');
   const [preTax, setPreTax] = useState<number>(0);
   const [postTax, setPostTax] = useState<number>(0);
+  const [localityId, setLocalityId] = useState<LocalKind>('none');
+  const [localRatePct, setLocalRatePct] = useState('1.0');
+
+  const local = localTaxOnWages(
+    gross,
+    localityId,
+    getLocality(localityId).inputRate ? parseFloat(localRatePct) : undefined,
+  );
 
   const result = useMemo(
-    () => computePaycheck({ grossPerPeriod: gross, freq, stateSlug, filing, preTaxPerPeriod: preTax, postTaxPerPeriod: postTax }),
-    [gross, freq, stateSlug, filing, preTax, postTax],
+    () => computePaycheck({
+      grossPerPeriod: gross,
+      freq,
+      stateSlug,
+      filing,
+      preTaxPerPeriod: preTax,
+      postTaxPerPeriod: postTax,
+      localTaxPerPeriod: local.amount,
+      localTaxLabel: local.label,
+    }),
+    [gross, freq, stateSlug, filing, preTax, postTax, local.amount, local.label],
   );
 
   return (
@@ -65,6 +83,18 @@ export function PaycheckCalculator({ defaultStateSlug = 'california' }: Props) {
         <Field label="Pre-tax deductions / period (401k, HSA, etc.)">
           <input type="number" min="0" step="0.01" value={preTax} onChange={(e) => setPreTax(Number(e.target.value))} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
         </Field>
+        <Field label="Local city / county tax">
+          <select value={localityId} onChange={(e) => setLocalityId(e.target.value as LocalKind)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm">
+            {LOCAL_TAX_OPTIONS.map((l) => (
+              <option key={l.id} value={l.id}>{l.label}</option>
+            ))}
+          </select>
+        </Field>
+        {getLocality(localityId).inputRate ? (
+          <Field label="Local rate (%)">
+            <input type="number" min="0" step="0.01" value={localRatePct} onChange={(e) => setLocalRatePct(e.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+          </Field>
+        ) : null}
         <Field label="Post-tax deductions / period (Roth, garnishments, etc.)">
           <input type="number" min="0" step="0.01" value={postTax} onChange={(e) => setPostTax(Number(e.target.value))} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
         </Field>
@@ -93,6 +123,9 @@ export function PaycheckCalculator({ defaultStateSlug = 'california' }: Props) {
           {result.stateWorkerContribsPerPeriod.map((w) => (
             <Row key={w.label} label={w.label} value={`-${formatUSD(w.amount)}`} />
           ))}
+          {result.localTaxPerPeriod > 0 ? (
+            <Row label={result.localTaxLabel || 'Local tax'} value={`-${formatUSD(result.localTaxPerPeriod)}`} />
+          ) : null}
           <Row label="Post-tax deductions" value={`-${formatUSD(result.postTaxDeductionsPerPeriod)}`} />
           <hr className="my-2 border-slate-200" />
           <Row label="Net (take-home)" value={formatUSD(result.netPerPeriod)} bold />

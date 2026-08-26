@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: 'Does it include local taxes?',
-    a: 'The basic Paycheck Calculator does not include city or county income tax. For NYC, Yonkers, Philadelphia, Detroit, Ohio RITA and CCA cities, and Indiana/Maryland counties, use the dedicated Local Paycheck Tax Calculator at /us/local-paycheck-taxes/.'
+    a: 'Pick a locality in the calculator to include city or county income tax (NYC, Yonkers, PA EIT, Ohio RITA / CCA, Maryland or Indiana county, Wilmington, Kansas City, St. Louis, Detroit). Default is none. Rates you can edit (PA, Ohio, MD, IN, Detroit) need your actual published rate. KY occupational tax and Oregon Multnomah/Metro high-earner taxes are not in the list. Dedicated explainer: /us/local-paycheck-taxes/.'
   },
   {
     q: 'Why is my real paycheck different from the estimate?',

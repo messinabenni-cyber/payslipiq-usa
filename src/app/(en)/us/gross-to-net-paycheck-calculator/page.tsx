@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: 'Why is my net pay lower than this calculator suggests?',
-    a: 'Real paychecks include things this calculator does not always know: extra W-4 withholding, garnishments, child support orders, union dues, employer-specific benefit deductions, and year-to-date wage adjustments that change Social Security or Additional Medicare withholding. 2026 employee-paid state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, MN Paid Leave, DE Paid Leave, and the rest of the encoded programs) are included for the selected state. Local city taxes are not. Use the result as a directional estimate and verify with your payroll team if a real stub is materially different.'
+    a: 'Real paychecks include things this calculator does not always know: extra W-4 withholding, garnishments, child support orders, union dues, employer-specific benefit deductions, and year-to-date wage adjustments that change Social Security or Additional Medicare withholding. 2026 employee-paid state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, MN Paid Leave, DE Paid Leave, ME PFML, and the rest of the encoded programs) are included for the selected state. Local city or county tax is included when you pick a locality; the default is none. Use the result as a directional estimate and verify with your payroll team if a real stub is materially different.'
   },
   {
     q: 'Is this calculator the same as a paycheck calculator?',
@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: 'Does it handle state and local taxes?',
-    a: 'It estimates state income tax for all 50 states and DC using the most recently verified state rate. It does not yet model every local income tax (NYC, Yonkers, Ohio RITA / CCA cities, Pennsylvania EIT / LST, Maryland county tax, San Francisco, Wilmington, Kansas City / St. Louis earnings tax, Indiana county tax). For those, use the state hub linked below or verify with payroll.'
+    a: 'It estimates state income tax for all 50 states and DC using the most recently verified state rate. Local city or county tax is optional: pick NYC, Yonkers, PA EIT, Ohio RITA / CCA, a Maryland or Indiana county, Wilmington, Kansas City, St. Louis, or Detroit. Default is none. San Francisco payroll expense tax is employer-paid and is not an employee line. KY occupational tax and Oregon Multnomah/Metro high-earner taxes are not in the list.'
   },
   {
     q: 'Can I rely on this for tax filing?',

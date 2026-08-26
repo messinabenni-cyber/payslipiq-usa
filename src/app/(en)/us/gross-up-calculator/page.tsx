@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: 'Can I rely on this for actual payroll?',
-    a: 'No. This is educational only and not tax, payroll, accounting, or financial advice. It does not model W-4 dependents, multiple jobs, extra withholding, year-to-date wages, local taxes (NYC, Yonkers, PA EIT, Ohio RITA, MD county), or pre-tax benefits. 2026 employee-paid state worker contributions are included for the selected state. For a real gross-up, confirm the figure with your payroll provider or a qualified CPA.',
+    a: 'No. This is educational only and not tax, payroll, accounting, or financial advice. It does not model W-4 dependents, multiple jobs, extra withholding, year-to-date wages, or pre-tax benefits. 2026 employee-paid state worker contributions are included for the selected state. Local city or county tax is included when you pick a locality; the default is none. For a real gross-up, confirm the figure with your payroll provider or a qualified CPA.',
   },
 ];
 

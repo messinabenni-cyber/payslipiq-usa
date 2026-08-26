@@ -2,6 +2,7 @@
 import { useMemo, useState } from 'react';
 import { stateWorkerContributions } from '@/lib/calc';
 import { STATES as STATE_META } from '@/lib/states';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages } from '@/lib/localTax';
 
 const SLUG_BY_ABBR: Record<string, string> = Object.fromEntries(
   STATE_META.map((s) => [s.abbr, s.slug]),
@@ -172,8 +173,10 @@ function calcBonus(args: {
   freq: Freq;
   filing: Filing;
   stateCode: string;
+  localityId: LocalKind;
+  localOverridePct?: number;
 }) {
-  const { bonus, regularGross, freq, filing, stateCode } = args;
+  const { bonus, regularGross, freq, filing, stateCode, localityId, localOverridePct } = args;
   const periods = PERIODS[freq];
   const stateRate = STATES.find((s) => s.code === stateCode)?.rate ?? 0;
   const regAnnual = regularGross * periods;
@@ -187,6 +190,7 @@ function calcBonus(args: {
     })
     .filter((w) => w.amount > 0);
   const workerTotal = round2(workerContribs.reduce((s, w) => s + w.amount, 0));
+  const local = localTaxOnWages(bonus, localityId, localOverridePct);
 
   // ---- (a) Percentage / flat method -------------------------------------
   const flatFedOver = Math.max(0, bonus - SUPPLEMENTAL_MILLION_THRESHOLD);
@@ -194,7 +198,7 @@ function calcBonus(args: {
   const flatFederal = round2(flatFedUnder * SUPPLEMENTAL_RATE + flatFedOver * SUPPLEMENTAL_RATE_MILLION);
   const flatFica = ficaOnBonus(bonus, filing);
   const flatState = round2(bonus * stateRate);
-  const flatTotal = round2(flatFederal + flatFica + flatState + workerTotal);
+  const flatTotal = round2(flatFederal + flatFica + flatState + workerTotal + local.amount);
   const flatNet = round2(bonus - flatTotal);
   const flatEffective = bonus > 0 ? flatTotal / bonus : 0;
 
@@ -211,7 +215,7 @@ function calcBonus(args: {
   const aggFederal = round2(aggFederalAnnual / periods);
   const aggFica = ficaOnBonus(bonus, filing); // FICA identical regardless of method
   const aggState = round2(bonus * stateRate);
-  const aggTotal = round2(aggFederal + aggFica + aggState + workerTotal);
+  const aggTotal = round2(aggFederal + aggFica + aggState + workerTotal + local.amount);
   const aggNet = round2(bonus - aggTotal);
   const aggEffective = bonus > 0 ? aggTotal / bonus : 0;
 
@@ -224,6 +228,7 @@ function calcBonus(args: {
     stateRate,
     workerContribs,
     workerTotal,
+    local,
     flat: { federal: flatFederal, fica: flatFica, state: flatState, total: flatTotal, net: flatNet, effective: flatEffective },
     agg: { federal: aggFederal, fica: aggFica, state: aggState, total: aggTotal, net: aggNet, effective: aggEffective },
     avgFederalRate,
@@ -244,14 +249,18 @@ export function BonusCalculator({
   const [freq, setFreq] = useState<Freq>('biweekly');
   const [stateCode, setStateCode] = useState(defaultState);
   const [filing, setFiling] = useState<Filing>('single');
+  const [localityId, setLocalityId] = useState<LocalKind>('none');
+  const [localRatePct, setLocalRatePct] = useState('1.0');
 
   const r = useMemo(() => calcBonus({
     bonus: parseFloat(bonus) || 0,
     regularGross: parseFloat(regularGross) || 0,
     freq,
     filing,
-    stateCode
-  }), [bonus, regularGross, freq, filing, stateCode]);
+    stateCode,
+    localityId,
+    localOverridePct: getLocality(localityId).inputRate ? parseFloat(localRatePct) : undefined,
+  }), [bonus, regularGross, freq, filing, stateCode, localityId, localRatePct]);
 
   return (
     <div className="grid lg:grid-cols-5 gap-6 my-8">
@@ -290,6 +299,20 @@ export function BonusCalculator({
           </select>
         </Row>
 
+
+        <Row label="Local city / county tax">
+          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => setLocalityId(e.target.value as LocalKind)} aria-label="Local city or county tax">
+            {LOCAL_TAX_OPTIONS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
+          </select>
+        </Row>
+        {getLocality(localityId).inputRate && (
+          <Row label="Local rate (%)">
+            <div className="flex items-center border border-line rounded">
+              <input className="w-full px-2 py-2 outline-none" inputMode="decimal" value={localRatePct} onChange={(e) => setLocalRatePct(e.target.value)} aria-label="Local tax rate percent" />
+              <span className="px-2 text-ink/50">%</span>
+            </div>
+          </Row>
+        )}
         <Row label="State (optional)">
           <select className="w-full px-2 py-2 border border-line rounded bg-white" value={stateCode} onChange={(e) => setStateCode(e.target.value)}>
             {STATES.map((s) => <option key={s.code || 'none'} value={s.code}>{s.name}</option>)}
@@ -325,6 +348,9 @@ export function BonusCalculator({
                 {r.workerContribs.map((w) => (
                   <tr key={`flat-${w.label}`}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
                 ))}
+                {r.local.amount > 0 && (
+                  <tr><td className="py-1 text-ink/70">{r.local.label}</td><td className="text-right tabular-nums">−${r.local.amount.toFixed(2)}</td></tr>
+                )}
                 <tr className="font-semibold border-t border-line">
                   <td className="py-2">Effective withholding rate</td>
                   <td className="text-right tabular-nums">{(r.flat.effective * 100).toFixed(1)}%</td>
@@ -353,6 +379,9 @@ export function BonusCalculator({
                 {r.workerContribs.map((w) => (
                   <tr key={`agg-${w.label}`}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
                 ))}
+                {r.local.amount > 0 && (
+                  <tr><td className="py-1 text-ink/70">{r.local.label}</td><td className="text-right tabular-nums">−${r.local.amount.toFixed(2)}</td></tr>
+                )}
                 <tr className="font-semibold border-t border-line">
                   <td className="py-2">Effective withholding rate</td>
                   <td className="text-right tabular-nums">{(r.agg.effective * 100).toFixed(1)}%</td>
@@ -381,7 +410,7 @@ export function BonusCalculator({
           final tax. Your actual tax on the bonus is settled when you file your return based on your total annual income, so
           over-withholding comes back as part of a refund and under-withholding is paid at filing. 2026 employee-paid
           state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, ME PFML, and the rest of the encoded programs) are
-          included for the selected state. Local city taxes are not. Both methods are estimates; your real check depends
+          included for the selected state. Local city or county tax is included when you pick a locality. Both methods are estimates; your real check depends
           on year-to-date wages, W-4 details, and employer-specific settings.
         </aside>
       </div>

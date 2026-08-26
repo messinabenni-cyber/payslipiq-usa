@@ -2,6 +2,7 @@
 import { useMemo, useState } from 'react';
 import { stateWorkerContributions } from '@/lib/calc';
 import { STATES as STATE_META } from '@/lib/states';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages } from '@/lib/localTax';
 
 const SLUG_BY_ABBR: Record<string, string> = Object.fromEntries(
   STATE_META.map((s) => [s.abbr, s.slug]),
@@ -145,8 +146,10 @@ function calcPaycheck(args: {
   pretaxHsa: number;
   pretaxHealth: number;
   extraWithholding: number;
+  localityId: LocalKind;
+  localOverridePct?: number;
 }) {
-  const { grossPay, freq, filing, stateCode, pretax401k, pretaxHsa, pretaxHealth, extraWithholding } = args;
+  const { grossPay, freq, filing, stateCode, pretax401k, pretaxHsa, pretaxHealth, extraWithholding, localityId, localOverridePct } = args;
   const periods = PERIODS[freq];
 
   const preTaxTotal = pretax401k + pretaxHsa + pretaxHealth;
@@ -178,8 +181,9 @@ function calcPaycheck(args: {
     amount: +(w.annual / periods).toFixed(2),
   }));
   const workerTotal = workerPerCheck.reduce((s, w) => s + w.amount, 0);
+  const local = localTaxOnWages(grossPay, localityId, localOverridePct);
 
-  const totalDeductions = +(preTaxTotal + fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck + workerTotal).toFixed(2);
+  const totalDeductions = +(preTaxTotal + fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck + workerTotal + local.amount).toFixed(2);
   const netPay = +(grossPay - totalDeductions).toFixed(2);
   const effectiveTax = grossPay > 0 ? (fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck) / grossPay : 0;
   const takeHome = grossPay > 0 ? netPay / grossPay : 0;
@@ -193,6 +197,8 @@ function calcPaycheck(args: {
     additionalMedicare: addMedicarePerCheck,
     stateTax: statePerCheck,
     workerContribs: workerPerCheck,
+    localTax: local.amount,
+    localLabel: local.label,
     netPay,
     effectiveTax,
     takeHome,
@@ -220,6 +226,8 @@ export function GrossToNetCalculator({
   const [pretaxHsaPerCheck, setPretaxHsaPerCheck] = useState('0');
   const [healthMonthly, setHealthMonthly] = useState('0');
   const [extraWithholding, setExtraWithholding] = useState('0');
+  const [localityId, setLocalityId] = useState<LocalKind>('none');
+  const [localRatePct, setLocalRatePct] = useState('1.0');
 
   const grossPerCheck = useMemo(() => {
     if (mode === 'paycheck') return parseFloat(gross) || 0;
@@ -236,8 +244,10 @@ export function GrossToNetCalculator({
     pretax401k: grossPerCheck * (parseFloat(pretax401kPct) / 100 || 0),
     pretaxHsa: parseFloat(pretaxHsaPerCheck) || 0,
     pretaxHealth: (parseFloat(healthMonthly) || 0) * (12 / PERIODS[freq]),
-    extraWithholding: parseFloat(extraWithholding) || 0
-  }), [grossPerCheck, freq, filing, stateCode, pretax401kPct, pretaxHsaPerCheck, healthMonthly, extraWithholding]);
+    extraWithholding: parseFloat(extraWithholding) || 0,
+    localityId,
+    localOverridePct: getLocality(localityId).inputRate ? parseFloat(localRatePct) : undefined,
+  }), [grossPerCheck, freq, filing, stateCode, pretax401kPct, pretaxHsaPerCheck, healthMonthly, extraWithholding, localityId, localRatePct]);
 
   const annualNet = result.netPay * PERIODS[freq];
   const annualGross = grossPerCheck * PERIODS[freq];
@@ -311,6 +321,20 @@ export function GrossToNetCalculator({
           </select>
         </Row>
 
+
+        <Row label="Local city / county tax">
+          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => setLocalityId(e.target.value as LocalKind)} aria-label="Local city or county tax">
+            {LOCAL_TAX_OPTIONS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
+          </select>
+        </Row>
+        {getLocality(localityId).inputRate && (
+          <Row label="Local rate (%)">
+            <div className="flex items-center border border-line rounded">
+              <input className="w-full px-2 py-2 outline-none" inputMode="decimal" value={localRatePct} onChange={(e) => setLocalRatePct(e.target.value)} aria-label="Local tax rate percent" />
+              <span className="px-2 text-ink/50">%</span>
+            </div>
+          </Row>
+        )}
         <Row label="Filing status (W-4)">
           <select className="w-full px-2 py-2 border border-line rounded bg-white" value={filing} onChange={(e) => setFiling(e.target.value as Filing)}>
             <option value="single">Single or married filing separately</option>
@@ -378,6 +402,9 @@ export function GrossToNetCalculator({
               {result.workerContribs.map((w) => (
                 <tr key={w.label}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
               ))}
+              {result.localTax > 0 && (
+                <tr><td className="py-1 text-ink/70">{result.localLabel}</td><td className="text-right tabular-nums">−${result.localTax.toFixed(2)}</td></tr>
+              )}
               <tr className="font-semibold border-t border-line">
                 <td className="py-2">Estimated take-home (net)</td>
                 <td className="text-right tabular-nums">${result.netPay.toFixed(2)}</td>
@@ -388,8 +415,8 @@ export function GrossToNetCalculator({
           <p className="text-xs text-ink/60 mt-4">
             Tax year 2026. Federal withholding uses the IRS Pub. 15-T 2026 percentage method (Standard Withholding tables).
             Social Security is capped at the SSA 2026 wage base of $184,500. State tax uses the most recently verified flat or top-marginal rate
-            and may not reflect mid-year changes, brackets, or local taxes (NYC, Yonkers, PA EIT, Ohio RITA, MD county, KY occupational, IN county, DE Wilmington, MO KC/STL, OR Multnomah).
-            Employee-paid state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, MN Paid Leave, DE Paid Leave, and the other 2026 programs) are included for the selected state. Local city taxes are not.
+            and may not reflect mid-year changes or full state brackets.
+            Employee-paid state worker contributions are included for the selected state. Local city or county tax is included when you pick a locality (NYC, Yonkers, PA EIT, Ohio RITA, MD/IN county, Wilmington, KC/STL, Detroit). Default is none. KY occupational and OR Multnomah/Metro high-earner taxes are not in this list.
             Use the result as a starting point, not a final answer. Your real paycheck depends on year-to-date wages, dependents, multiple jobs,
             and employer-specific settings.
           </p>
