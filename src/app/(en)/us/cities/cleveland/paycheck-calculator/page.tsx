@@ -77,7 +77,7 @@ export default function ClevelandPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Ohio state</h2>
-          <PaycheckCalculator defaultStateSlug="ohio" />
+          <PaycheckCalculator defaultStateSlug="ohio" defaultLocality="oh-rita" defaultLocalRatePct="2.5" />
         </section>
 
         <section className="mt-10">
@@ -87,7 +87,7 @@ export default function ClevelandPaycheckCalculatorPage() {
             If you live in a suburb and your work-city credit applies, you may owe less; check with
             RITA for the exact net.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="oh-rita" defaultRatePct="2.5" />
         </section>
 
         <section className="mt-12">

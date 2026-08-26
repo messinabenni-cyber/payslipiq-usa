@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 import { stateWorkerContributions } from '@/lib/calc';
 import { STATES as STATE_META } from '@/lib/states';
-import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages } from '@/lib/localTax';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages, ratePercentDefault } from '@/lib/localTax';
 
 const SLUG_BY_ABBR: Record<string, string> = Object.fromEntries(
   STATE_META.map((s) => [s.abbr, s.slug]),
@@ -250,7 +250,7 @@ export function BonusCalculator({
   const [stateCode, setStateCode] = useState(defaultState);
   const [filing, setFiling] = useState<Filing>('single');
   const [localityId, setLocalityId] = useState<LocalKind>('none');
-  const [localRatePct, setLocalRatePct] = useState('1.0');
+  const [localRatePct, setLocalRatePct] = useState(ratePercentDefault('none'));
 
   const r = useMemo(() => calcBonus({
     bonus: parseFloat(bonus) || 0,
@@ -301,7 +301,11 @@ export function BonusCalculator({
 
 
         <Row label="Local city / county tax">
-          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => setLocalityId(e.target.value as LocalKind)} aria-label="Local city or county tax">
+          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => {
+            const id = e.target.value as LocalKind;
+            setLocalityId(id);
+            setLocalRatePct(ratePercentDefault(id));
+          }} aria-label="Local city or county tax">
             {LOCAL_TAX_OPTIONS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
           </select>
         </Row>

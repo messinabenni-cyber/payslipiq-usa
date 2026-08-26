@@ -77,7 +77,7 @@ export default function NYCPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + NY state + NY SDI/PFL</h2>
-          <PaycheckCalculator defaultStateSlug="new-york" />
+          <PaycheckCalculator defaultStateSlug="new-york" defaultLocality="nyc" />
         </section>
 
         <section className="mt-10">
@@ -87,7 +87,7 @@ export default function NYCPaycheckCalculatorPage() {
             the state-tax line from Step 1 to get your full take-home picture as a NYC resident.
             Non-residents working in NYC do not pay NYC income tax.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="nyc" />
         </section>
 
         <section className="mt-12">

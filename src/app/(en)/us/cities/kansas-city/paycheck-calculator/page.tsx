@@ -77,7 +77,7 @@ export default function KansasCityPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Missouri</h2>
-          <PaycheckCalculator defaultStateSlug="missouri" />
+          <PaycheckCalculator defaultStateSlug="missouri" defaultLocality="kc" />
         </section>
 
         <section className="mt-10">
@@ -86,7 +86,7 @@ export default function KansasCityPaycheckCalculatorPage() {
             Select <strong>&quot;Kansas City, MO earnings tax&quot;</strong> below. The rate is automatically
             1%.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="kc" />
         </section>
 
         <section className="mt-12">

@@ -77,7 +77,7 @@ export default function IndianapolisPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Indiana flat 3.05%</h2>
-          <PaycheckCalculator defaultStateSlug="indiana" />
+          <PaycheckCalculator defaultStateSlug="indiana" defaultLocality="in-county" defaultLocalRatePct="2.02" />
         </section>
 
         <section className="mt-10">
@@ -86,7 +86,7 @@ export default function IndianapolisPaycheckCalculatorPage() {
             Select <strong>&quot;Indiana county tax&quot;</strong> below and enter <strong>2.02%</strong> for
             Marion County. Different IN counties have different LIT rates; check yours.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="in-county" defaultRatePct="2.02" />
         </section>
 
         <section className="mt-12">

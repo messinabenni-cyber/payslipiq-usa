@@ -77,7 +77,7 @@ export default function DetroitPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Michigan flat 4.25%</h2>
-          <PaycheckCalculator defaultStateSlug="michigan" />
+          <PaycheckCalculator defaultStateSlug="michigan" defaultLocality="mi-city" defaultLocalRatePct="2.4" />
         </section>
 
         <section className="mt-10">
@@ -87,7 +87,7 @@ export default function DetroitPaycheckCalculatorPage() {
             you live in Detroit (regardless of work location), or <strong>1.2%</strong> if you work
             in Detroit but live elsewhere.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="mi-city" defaultRatePct="2.4" />
         </section>
 
         <section className="mt-12">

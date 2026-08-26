@@ -3,22 +3,24 @@
 import React, { useMemo, useState } from 'react';
 import { computePaycheck, formatUSD, type FilingStatus, type PayFrequency } from '@/lib/calc';
 import { STATES } from '@/lib/states';
-import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages } from '@/lib/localTax';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages, ratePercentDefault } from '@/lib/localTax';
 import { MasterDisclaimer } from './MasterDisclaimer';
 
 interface Props {
   defaultStateSlug?: string;
+  defaultLocality?: LocalKind;
+  defaultLocalRatePct?: string;
 }
 
-export function PaycheckCalculator({ defaultStateSlug = 'california' }: Props) {
+export function PaycheckCalculator({ defaultStateSlug = 'california', defaultLocality = 'none', defaultLocalRatePct }: Props) {
   const [gross, setGross] = useState<number>(3000);
   const [freq, setFreq] = useState<PayFrequency>('biweekly');
   const [stateSlug, setStateSlug] = useState<string>(defaultStateSlug);
   const [filing, setFiling] = useState<FilingStatus>('single');
   const [preTax, setPreTax] = useState<number>(0);
   const [postTax, setPostTax] = useState<number>(0);
-  const [localityId, setLocalityId] = useState<LocalKind>('none');
-  const [localRatePct, setLocalRatePct] = useState('1.0');
+  const [localityId, setLocalityId] = useState<LocalKind>(defaultLocality);
+  const [localRatePct, setLocalRatePct] = useState(defaultLocalRatePct ?? ratePercentDefault(defaultLocality));
 
   const local = localTaxOnWages(
     gross,
@@ -84,7 +86,11 @@ export function PaycheckCalculator({ defaultStateSlug = 'california' }: Props) {
           <input type="number" min="0" step="0.01" value={preTax} onChange={(e) => setPreTax(Number(e.target.value))} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
         </Field>
         <Field label="Local city / county tax">
-          <select value={localityId} onChange={(e) => setLocalityId(e.target.value as LocalKind)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm">
+          <select value={localityId} onChange={(e) => {
+            const id = e.target.value as LocalKind;
+            setLocalityId(id);
+            setLocalRatePct(ratePercentDefault(id));
+          }} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm">
             {LOCAL_TAX_OPTIONS.map((l) => (
               <option key={l.id} value={l.id}>{l.label}</option>
             ))}

@@ -77,7 +77,7 @@ export default function YonkersPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + NY state + NY SDI/PFL</h2>
-          <PaycheckCalculator defaultStateSlug="new-york" />
+          <PaycheckCalculator defaultStateSlug="new-york" defaultLocality="yonkers" />
         </section>
 
         <section className="mt-10">
@@ -88,7 +88,7 @@ export default function YonkersPaycheckCalculatorPage() {
             your NY state tax (from Step 1, the &quot;New York state tax&quot; line × 26 for biweekly)
             by 0.1675 and divide by 26 — that is your exact Yonkers surcharge per paycheck.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="yonkers" />
         </section>
 
         <section className="mt-12">

@@ -78,7 +78,7 @@ export default function PhiladelphiaPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + PA flat 3.07%</h2>
-          <PaycheckCalculator defaultStateSlug="pennsylvania" />
+          <PaycheckCalculator defaultStateSlug="pennsylvania" defaultLocality="paeit" defaultLocalRatePct="3.74" />
         </section>
 
         <section className="mt-10">
@@ -89,7 +89,7 @@ export default function PhiladelphiaPaycheckCalculatorPage() {
             (regardless of where you work), or <strong>3.43%</strong> if you work in Philadelphia
             but live outside.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="paeit" defaultRatePct="3.74" />
         </section>
 
         <section className="mt-12">

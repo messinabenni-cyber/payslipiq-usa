@@ -77,7 +77,7 @@ export default function WilmingtonPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Delaware</h2>
-          <PaycheckCalculator defaultStateSlug="delaware" />
+          <PaycheckCalculator defaultStateSlug="delaware" defaultLocality="wilmington" />
         </section>
 
         <section className="mt-10">
@@ -86,7 +86,7 @@ export default function WilmingtonPaycheckCalculatorPage() {
             Select <strong>&quot;Wilmington, DE&quot;</strong> below. The rate is automatically 1.25% on
             wages earned in Wilmington.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="wilmington" />
         </section>
 
         <section className="mt-12">

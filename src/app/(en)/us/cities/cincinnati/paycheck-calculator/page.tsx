@@ -77,7 +77,7 @@ export default function CincinnatiPaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Ohio state</h2>
-          <PaycheckCalculator defaultStateSlug="ohio" />
+          <PaycheckCalculator defaultStateSlug="ohio" defaultLocality="oh-rita" defaultLocalRatePct="1.8" />
         </section>
 
         <section className="mt-10">
@@ -86,7 +86,7 @@ export default function CincinnatiPaycheckCalculatorPage() {
             Select <strong>&quot;Ohio RITA / CCA city&quot;</strong> below and enter <strong>1.8%</strong>.
             (Cincinnati administers its own tax, not via RITA, but the calc field works the same.)
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="oh-rita" defaultRatePct="1.8" />
         </section>
 
         <section className="mt-12">

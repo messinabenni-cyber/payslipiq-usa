@@ -66,3 +66,7 @@ export function localTaxOnWages(wages: number, id: LocalKind, overridePercent?: 
   const amount = Math.round(wages * rate * 100) / 100;
   return { label: loc.id === 'none' ? '' : loc.label, rate, amount };
 }
+
+export function ratePercentDefault(id: LocalKind): string {
+  return (getLocality(id).rate * 100).toFixed(2);
+}

@@ -77,7 +77,7 @@ export default function BaltimorePaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Maryland state</h2>
-          <PaycheckCalculator defaultStateSlug="maryland" />
+          <PaycheckCalculator defaultStateSlug="maryland" defaultLocality="md-county" defaultLocalRatePct="3.20" />
         </section>
 
         <section className="mt-10">
@@ -87,7 +87,7 @@ export default function BaltimorePaycheckCalculatorPage() {
             <strong> 3.20%</strong> if you live in Baltimore City. If you live in a different MD
             county, enter that county&apos;s rate from the MD Comptroller table.
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="md-county" defaultRatePct="3.20" />
         </section>
 
         <section className="mt-12">

@@ -1,11 +1,11 @@
 'use client';
 import { useMemo, useState } from 'react';
-import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localRateFor } from '@/lib/localTax';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localRateFor, ratePercentDefault } from '@/lib/localTax';
 
-export function LocalTaxCalculator({ defaultGross = '3000', defaultLocality = 'nyc' as LocalKind }: { defaultGross?: string; defaultLocality?: LocalKind }) {
+export function LocalTaxCalculator({ defaultGross = '3000', defaultLocality = 'nyc' as LocalKind, defaultRatePct }: { defaultGross?: string; defaultLocality?: LocalKind; defaultRatePct?: string }) {
   const [gross, setGross] = useState(defaultGross);
   const [localityId, setLocalityId] = useState<LocalKind>(defaultLocality);
-  const [customRate, setCustomRate] = useState('1.0');
+  const [customRate, setCustomRate] = useState(defaultRatePct ?? ratePercentDefault(defaultLocality));
 
   const locality = getLocality(localityId);
   const effectiveRate = localRateFor(localityId, locality.inputRate ? parseFloat(customRate) : undefined);
@@ -29,7 +29,11 @@ export function LocalTaxCalculator({ defaultGross = '3000', defaultLocality = 'n
         </label>
         <label className="block">
           <span className="block text-xs text-ink/70 mb-1">Locality</span>
-          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => setLocalityId(e.target.value as LocalKind)}>
+          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => {
+            const id = e.target.value as LocalKind;
+            setLocalityId(id);
+            setCustomRate(ratePercentDefault(id));
+          }}>
             {LOCAL_TAX_OPTIONS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
           </select>
         </label>

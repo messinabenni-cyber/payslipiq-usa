@@ -77,7 +77,7 @@ export default function LouisvillePaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Kentucky flat 4.0%</h2>
-          <PaycheckCalculator defaultStateSlug="kentucky" />
+          <PaycheckCalculator defaultStateSlug="kentucky" defaultLocality="custom" defaultLocalRatePct="2.2" />
         </section>
 
         <section className="mt-10">
@@ -86,7 +86,7 @@ export default function LouisvillePaycheckCalculatorPage() {
             Select <strong>&quot;Other / custom rate&quot;</strong> below and enter <strong>2.2%</strong>
             (the combined Louisville/Jefferson Metro occupational license rate).
           </p>
-          <LocalTaxCalculator />
+          <LocalTaxCalculator defaultLocality="custom" defaultRatePct="2.2" />
         </section>
 
         <section className="mt-12">
