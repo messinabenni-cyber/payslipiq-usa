@@ -9,12 +9,12 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 const PAGE_URL = 'https://payslipiq.com/us/state-worker-contributions';
 
 export const metadata: Metadata = {
-  title: 'State Worker Contributions 2026 — SDI, PFL, PFML, FAMLI, TDI (13 jurisdictions)',
+  title: 'State Worker Contributions 2026 — SDI, PFL, PFML, FAMLI, TDI (14 jurisdictions)',
   description:
-    'Verified 2026 employee-paid state worker contribution rates: CA SDI, NY SDI+PFL, NJ SDI+FLI, MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI, CT PFML, DC PFL, MN Paid Leave, DE Paid Leave. Maryland FAMLI withholding starts 2027.',
+    'Verified 2026 employee-paid state worker contribution rates: CA SDI, NY SDI+PFL, NJ SDI+FLI, MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI, CT PFML, DC PFL, MN Paid Leave, DE Paid Leave, ME PFML. Maryland FAMLI withholding starts 2027.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'State Worker Contributions 2026 — 13 jurisdictions',
+    title: 'State Worker Contributions 2026 — 14 jurisdictions',
     description: 'Verified 2026 SDI / PFL / PFML / FAMLI / TDI rates across every US state with an employee-paid program.',
     url: PAGE_URL,
     type: 'website',
@@ -70,6 +70,12 @@ const ROWS: ContribRow[] = [
     abbr: 'MA',
     programs: [{ name: 'MA PFML', rate: '0.46%', cap: '$184,500', note: 'Employee share for employers with 25+ employees (0.28% medical + 0.18% family)' }],
     source: 'https://www.mass.gov/info-details/paid-family-and-medical-leave-employer-contribution-rates-and-calculator',
+  },
+  {
+    state: 'Maine',
+    abbr: 'ME',
+    programs: [{ name: 'ME PFML', rate: '0.50%', cap: '$184,500', note: 'Employee up to 0.5% of 1.0% total for employers 15+. Withholdings began Jan 2025. maine.gov/paidleave' }],
+    source: 'https://www.maine.gov/paidleave',
   },
   {
     state: 'Minnesota',
@@ -135,7 +141,7 @@ const BREADCRUMBS = [
 export default function StateWorkerContributionsPage() {
   return (
     <>
-      <ArticleSchema headline="State Worker Contributions 2026 — 13 jurisdictions" description="Verified 2026 employee-paid state worker contribution rates across every US state with a program." url={PAGE_URL} />
+      <ArticleSchema headline="State Worker Contributions 2026 — 14 jurisdictions" description="Verified 2026 employee-paid state worker contribution rates across every US state with a program." url={PAGE_URL} />
       <BreadcrumbSchema items={BREADCRUMBS} />
       <FAQSchema items={FAQS} />
 
@@ -155,7 +161,7 @@ export default function StateWorkerContributionsPage() {
             Employee-paid state benefit programs: SDI (State Disability Insurance), PFL (Paid Family
             Leave), PFML (Paid Family and Medical Leave), FAMLI (Family and Medical Leave Insurance),
             TDI (Temporary Disability Insurance), and WA Cares (long-term care).
-            <strong> 13 jurisdictions</strong> currently have a program. Primary-sourced rates, verified
+            <strong> 14 jurisdictions</strong> currently have a program. Primary-sourced rates, verified
             2026-05-16.
           </p>
         </header>

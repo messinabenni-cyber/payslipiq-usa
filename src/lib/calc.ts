@@ -68,6 +68,9 @@ const STATE_WORKER_CONTRIBUTIONS_2026: Record<string, StateWorkerContribLine[]> 
   delaware: [
     { label: 'DE Paid Leave', rate: 0.004, annualCap: 184500 * 0.004, note: 'DE DOL 2026; employee up to 50% of 0.8% full coverage (0.4%). Employers 10-24 parental only (employee up to 0.16%). labor.delaware.gov' },
   ],
+  maine: [
+    { label: 'ME PFML', rate: 0.005, annualCap: 184500 * 0.005, note: 'Maine DOL 2025-2027; employee up to 0.5% of 1.0% total (employers 15+). Cap is SSA wage base $184,500. maine.gov/paidleave' },
+  ],
 };
 
 /**
