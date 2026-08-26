@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { headers } from 'next/headers';
 import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { Header } from '@/components/Header';
@@ -59,8 +60,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = headers().get('x-pathname') || '';
+  const lang = pathname === '/es' || pathname.startsWith('/es/') ? 'es-US' : 'en-US';
   return (
-    <html lang="en-US" className={inter.variable}>
+    <html lang={lang} className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://va.vercel-scripts.com" />
         <link rel="preconnect" href="https://vitals.vercel-insights.com" />

@@ -62,6 +62,8 @@ export function Footer() {
               <li><Link href="/trust">Trust Center</Link></li>
               <li><Link href="/ai-transparency">AI Transparency</Link></li>
               <li><Link href="/privacy">Privacy</Link></li>
+              <li><Link href="/your-privacy-choices">Your Privacy Choices</Link></li>
+              <li><Link href="/us/accessibility">Accessibility</Link></li>
               <li><Link href="/terms">Terms</Link></li>
               <li><Link href="/disclaimer">Disclaimers</Link></li>
               <li><Link href="/contact">Contact</Link></li>

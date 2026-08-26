@@ -151,7 +151,7 @@ export default function Page() {
         <p>Pay-stub questions live in a YMYL (Your Money, Your Life) zone where wrong information has real cost. Most consumer tax sites are written by SEO writers, not payroll specialists, and the language drifts toward soft advice. PayslipIQ deliberately holds the line: the worker asks the question, the IRS or state agency or CPA confirms the answer.</p>
 
         <h2>How we are funded</h2>
-        <p>The free site is supported by two paid products: a one-time <Link href="/us/premium-pay-stub-report">$29 Premium Pay Stub Report</Link> and a <Link href="/us/monthly-paycheck-monitor">$9/mo Paycheck Monitor</Link>. We do not run ad networks, we do not sell payroll data, and we do not generate leads for predatory finance products. <Link href="/us/affiliate-disclosure">Affiliate disclosure</Link> is published.</p>
+        <p>PayslipIQ intends to support the free site with two listed products: a one-time <Link href="/us/premium-pay-stub-report">$29 Premium Pay Stub Report</Link> and a <Link href="/us/monthly-paycheck-monitor">$9/mo Paycheck Monitor</Link>. Both are waitlist / early-access today, not live checkout. We do not run ad networks, we do not sell payroll data, and we do not generate leads for predatory finance products. <Link href="/us/affiliate-disclosure">Affiliate disclosure</Link> is published.</p>
       </section>
 
       <div className="mt-12">

@@ -91,6 +91,16 @@ const nextConfig = {
       { source: '/us/monthly-paycheck-monitor/:path+', destination: '/us/monthly-paycheck-monitor', permanent: true },
       { source: '/us/trust', destination: '/trust', permanent: true },
       { source: '/business', destination: '/us', permanent: true },
+      // Day 1: accessibility statement lives at /us/accessibility; Trust promised it in the footer.
+      { source: '/accessibility', destination: '/us/accessibility', permanent: true },
+      // Day 1: CCPA/CPRA "Your Privacy Choices" aliases (were 404). Canonical is /your-privacy-choices.
+      { source: '/do-not-sell', destination: '/your-privacy-choices', permanent: true },
+      { source: '/do-not-sell-or-share', destination: '/your-privacy-choices', permanent: true },
+      { source: '/privacy-choices', destination: '/your-privacy-choices', permanent: true },
+      { source: '/ccpa', destination: '/your-privacy-choices', permanent: true },
+      { source: '/donotsell', destination: '/your-privacy-choices', permanent: true },
+      { source: '/us/do-not-sell', destination: '/your-privacy-choices', permanent: true },
+      { source: '/us/your-privacy-choices', destination: '/your-privacy-choices', permanent: true },
     ];
   },
 };

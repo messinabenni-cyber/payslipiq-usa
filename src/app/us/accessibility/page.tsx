@@ -75,6 +75,7 @@ export default function AccessibilityPage() {
           <ul>
             <li>Some PDF source documents we link to (IRS publications, state DOR forms) are hosted on third-party government sites and may not meet AA themselves. We cannot remediate third-party content.</li>
             <li>Complex interactive calculators have been tested with screen readers but may have edge cases. Report any issue and we will prioritize a fix.</li>
+            <li>Spanish-beta pages historically shipped with an English html lang attribute. Spanish routes now set lang to es-US. The interactive paycheck calculator remains English-only.</li>
           </ul>
 
           <h2>Reporting an accessibility issue</h2>

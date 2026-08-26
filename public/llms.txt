@@ -4,6 +4,8 @@ PayslipIQ helps US workers understand their pay stubs, paychecks, deductions, ta
 
 USA-only. Not affiliated with the IRS, SSA, US Department of Labor, any state tax agency, employer, or payroll provider.
 
+Operator: GoldPaid Ltd, England and Wales no. 17382540, trading as PayslipIQ. Not a US-incorporated company.
+
 > All URLs below are canonical (no trailing slash). Every page shows a last-reviewed date and links to the relevant IRS or state source.
 
 ## Core entry points
@@ -28,21 +30,35 @@ USA-only. Not affiliated with the IRS, SSA, US Department of Labor, any state ta
 - Pay stub glossary: https://payslipiq.com/us/glossary
 - 2026 pay numbers (wage base, limits, brackets): https://payslipiq.com/us/2026-pay-numbers
 
-## Premium products
+## Paid products (waitlist, checkout not live)
 
-- 12-page Premium Pay Stub Report ($29 one-time): https://payslipiq.com/us/premium-pay-stub-report
-- Monthly Paycheck Monitor ($9/mo): https://payslipiq.com/us/monthly-paycheck-monitor
+Listed prices appear on-page. As of 26 Aug 2026 there is no live Stripe checkout. Both pages are email waitlists.
+
+- 12-page Premium Pay Stub Report (listed $29 one-time, waitlist): https://payslipiq.com/us/premium-pay-stub-report
+- Monthly Paycheck Monitor (listed $9/mo, early access): https://payslipiq.com/us/monthly-paycheck-monitor
 
 ## Editorial standards
 
-- Reviewed by named editorial team. Every page shows last-reviewed date.
+- Reviewed by an in-house editorial team, not a panel of named, individually credentialed reviewers. Every page shows a last-reviewed date.
 - Educational only. Always points users to the IRS, state agency, or qualified CPA for confirmation.
 - Methodology: https://payslipiq.com/methodology
 - About the team: https://payslipiq.com/us/about-the-team
+
+## Spanish (beta)
+
+Interactive calculator remains English-only. Spanish hub and explainers:
+
+- https://payslipiq.com/es
+- https://payslipiq.com/es/calculadora-de-cheque
+- https://payslipiq.com/es/glosario
+- https://payslipiq.com/es/preguntas-frecuentes
+- https://payslipiq.com/es/encontrar-un-cpa
 
 ## Trust
 
 - Trust Center: https://payslipiq.com/trust
 - Privacy: https://payslipiq.com/privacy
+- Your Privacy Choices: https://payslipiq.com/your-privacy-choices
+- Accessibility: https://payslipiq.com/us/accessibility
 - Disclaimer: https://payslipiq.com/disclaimer
 - Security policy: https://payslipiq.com/.well-known/security.txt

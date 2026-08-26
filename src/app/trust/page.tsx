@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/trust" },
 };
 
-const FAQS = [{"q": "Does PayslipIQ give tax advice?", "a": "No. PayslipIQ provides educational explanations and estimated calculations only. Always verify with your payroll department, a qualified CPA, the IRS, your state tax authority, or another appropriately qualified professional."}, {"q": "Is my pay stub stored?", "a": "Free tier: pay stub files are retained only long enough to return the explanation, then purged within 24 hours. Premium tier (saved reports): files are retained encrypted at rest for the lifetime of the saved report. Users can delete reports any time."}, {"q": "Does PayslipIQ sell user data?", "a": "No. We do not sell user data. We do not share pay stub content with employers, advertisers, or data brokers. We do not use pay stub content to train AI models."}, {"q": "Can PayslipIQ correct an error on my pay stub?", "a": "No. We help you understand the stub. You raise any errors with your employer's payroll team. We do not represent workers in any dispute."}, {"q": "Is PayslipIQ affiliated with the IRS or Social Security Administration?", "a": "No. We are independent. We are not affiliated with the IRS, the Social Security Administration, the Department of Labor, or any state tax authority."}];
+const FAQS = [{"q": "Does PayslipIQ give tax advice?", "a": "No. PayslipIQ provides educational explanations and estimated calculations only. Always verify with your payroll department, a qualified CPA, the IRS, your state tax authority, or another appropriately qualified professional."}, {"q": "Is my pay stub stored?", "a": "Free tier: pay stub files are retained only long enough to return the explanation, then purged within 24 hours. Paid saved reports are not a live product today. If they open, files would be retained encrypted at rest for the lifetime of the saved report, and users could delete them."}, {"q": "Does PayslipIQ sell user data?", "a": "No. We do not sell user data. We do not share pay stub content with employers, advertisers, or data brokers. We do not use pay stub content to train AI models."}, {"q": "Can PayslipIQ correct an error on my pay stub?", "a": "No. We help you understand the stub. You raise any errors with your employer's payroll team. We do not represent workers in any dispute."}, {"q": "Is PayslipIQ affiliated with the IRS or Social Security Administration?", "a": "No. We are independent. We are not affiliated with the IRS, the Social Security Administration, the Department of Labor, or any state tax authority."}];
 const RELATED = [{"label": "Security", "href": "/security"}, {"label": "AI Transparency", "href": "/ai-transparency"}, {"label": "Methodology", "href": "/methodology"}, {"label": "Privacy", "href": "/privacy"}, {"label": "Disclaimers", "href": "/disclaimer"}, {"label": "How it works", "href": "/how-it-works"}];
 const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "Trust Center", "url": "/trust"}];
 
@@ -23,7 +23,7 @@ export default function Page() {
 <li>An educational pay stub and paycheck explainer for US workers.</li>
 <li>A free set of paycheck calculators and explainer tools.</li>
 <li>An AI-assisted plain-English layer over payroll line items.</li>
-<li>An independent media and tools brand operating in the United States.</li>
+<li>An independent media and tools brand. This site is built for US workers. The legal person is GoldPaid Ltd (England and Wales no. 17382540), trading as PayslipIQ. See <a href="/terms">Terms</a>.</li>
 </ul>
 <h2>What PayslipIQ is not</h2>
 <ul>
@@ -67,9 +67,9 @@ export default function Page() {
 </ul>
 <h2>Compliance posture</h2>
 <ul>
-<li><strong>US privacy:</strong> CCPA / CPRA compliant. State-specific notices honored (Virginia, Colorado, Connecticut, Utah, others as enacted).</li>
+<li><strong>US privacy:</strong> CCPA / CPRA compliant. We do not sell personal information. <a href="/your-privacy-choices">Your Privacy Choices</a>. State-specific notices honored (Virginia, Colorado, Connecticut, Utah, others as enacted). GPC honored as a default opt-out because we do not sell or share.</li>
 <li><strong>Children:</strong> We do not knowingly collect data from anyone under 13. COPPA-aligned.</li>
-<li><strong>Accessibility:</strong> Working toward WCAG 2.1 AA. Statement in footer.</li>
+<li><strong>Accessibility:</strong> Working toward WCAG 2.1 AA. <a href="/us/accessibility">Statement</a> (also linked in the footer).</li>
 <li><strong>SOC 2:</strong> Roadmapped. We do not claim certification until earned.</li>
 <li><strong>Tax authority claims:</strong> None. We are independent.</li>
 </ul>

@@ -14,12 +14,14 @@ export default function Page() {
       <h1 className="text-4xl font-bold tracking-tight text-slate-900">Terms of Service</h1>
       <article className="mt-8 prose prose-slate max-w-none">
         <p><strong>Effective:</strong> 2026-05-16. By using PayslipIQ you agree to these terms.</p>
+        <h2>Who we are</h2>
+        <p>These Terms are an agreement between you and <strong>GoldPaid Ltd</strong>, a company registered in England and Wales (no. 17382540), trading as PayslipIQ. Registered office: Unit 217, Bristol Business Centre, 179 Whiteladies Road, Clifton, Bristol BS8 2AG. ICO registration ZC214216. PayslipIQ is not a Delaware company and is not a US-incorporated company. This site is built for workers in the United States.</p>
         <h2>1. Educational use only</h2>
         <p>PayslipIQ is an educational paycheck explainer. It is not tax, legal, financial, accounting, employment, benefits, or payroll advice.</p>
         <h2>2. No warranties</h2>
         <p>The Service is provided &quot;as is&quot;. We make no warranty of accuracy, completeness, or fitness for a particular purpose. Always verify with your payroll team, a CPA, or the appropriate authority.</p>
         <h2>3. Account terms</h2>
-        <p>Premium accounts are subject to subscription billing terms displayed at signup. Cancel anytime via the account settings.</p>
+        <p>If paid products are offered, additional billing terms will be shown at the point of purchase. As of these Terms, the Premium Pay Stub Report and Monthly Paycheck Monitor pages are waitlist / early-access email lists, not live checkout.</p>
         <h2>4. Acceptable use</h2>
         <p>Do not attempt to scrape, reverse-engineer, or attack the Service. Do not upload others&apos; pay stubs without their consent.</p>
         <h2>5. Limitation of liability</h2>
@@ -27,7 +29,7 @@ export default function Page() {
         <h2>6. Indemnity</h2>
         <p>You agree to indemnify and hold PayslipIQ harmless from any claims arising from your use of the Service or any content you submit.</p>
         <h2>7. Jurisdiction and governing law</h2>
-        <p>These terms are governed by the laws of the State of Delaware, without regard to conflict-of-laws principles. Subject to the arbitration agreement in section 8, you and PayslipIQ submit to the exclusive jurisdiction of the state and federal courts located in Delaware for any dispute, except where applicable consumer-protection law requires otherwise.</p>
+        <p>These terms are governed by the laws of the State of Delaware, without regard to conflict-of-laws principles. That is a contractual choice of law and forum for US users of this site. It is not a statement that PayslipIQ or GoldPaid Ltd is incorporated in Delaware or in the United States. The legal person is GoldPaid Ltd (England and Wales), as named above. Subject to the arbitration agreement in section 8, you and PayslipIQ submit to the exclusive jurisdiction of the state and federal courts located in Delaware for any dispute, except where applicable consumer-protection law requires otherwise.</p>
         <h2>8. Arbitration agreement and class-action waiver</h2>
         <p><strong>Please read this section carefully. It affects your legal rights.</strong></p>
         <p>Any dispute, claim, or controversy arising out of or relating to your use of PayslipIQ, these Terms, or the relationship between you and PayslipIQ (a &quot;Dispute&quot;) will be resolved by binding individual arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules, except that either party may bring an individual action in small-claims court if the claim qualifies and remains in that court. The arbitrator, not any court or agency, has exclusive authority to resolve any Dispute, including the scope and enforceability of this arbitration agreement.</p>
