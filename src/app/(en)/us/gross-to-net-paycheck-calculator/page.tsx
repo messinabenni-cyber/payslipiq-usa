@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: 'Why is my net pay lower than this calculator suggests?',
-    a: 'Real paychecks include things this calculator does not always know: extra W-4 withholding, garnishments, child support orders, union dues, state-specific worker contributions like California SDI, New Jersey FLI, Oregon Paid Leave, Washington Cares, or Massachusetts PFML, employer-specific benefit deductions, and year-to-date wage adjustments that change Social Security or Additional Medicare withholding. Use the result as a directional estimate and verify with your payroll team if a real stub is materially different.'
+    a: 'Real paychecks include things this calculator does not always know: extra W-4 withholding, garnishments, child support orders, union dues, employer-specific benefit deductions, and year-to-date wage adjustments that change Social Security or Additional Medicare withholding. 2026 employee-paid state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, MN Paid Leave, DE Paid Leave, and the rest of the encoded programs) are included for the selected state. Local city taxes are not. Use the result as a directional estimate and verify with your payroll team if a real stub is materially different.'
   },
   {
     q: 'Is this calculator the same as a paycheck calculator?',
@@ -200,7 +200,7 @@ export default function Page() {
       <section className="mt-10 border-l-4 border-accent bg-cyan-50 px-4 py-3 rounded">
         <div className="font-semibold text-sm mb-1">If your real paycheck is materially different, ask payroll</div>
         <p className="text-sm text-ink/80">
-          A gap between this estimate and your real paycheck is usually a W-4 setting, a benefit deduction, a state-specific worker contribution, or a year-to-date adjustment, not necessarily an error.
+          A gap between this estimate and your real paycheck is usually a W-4 setting, a benefit deduction, a local city tax, or a year-to-date adjustment, not necessarily an error.
           {' '}Use the <Link href="/us/ask-payroll-generator" className="text-accent underline">Ask Payroll Generator</Link> to draft a polite, specific message in 30 seconds.
         </p>
       </section>

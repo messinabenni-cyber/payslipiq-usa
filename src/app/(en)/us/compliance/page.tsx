@@ -6,7 +6,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 
 export const metadata: Metadata = {
   title: 'Compliance | PayslipIQ',
-  description: 'PayslipIQ compliance posture: SOC 2 readiness, FCRA boundary, CCPA, GDPR, HIPAA-equivalent privacy posture for sensitive payroll data.',
+  description: 'PayslipIQ compliance posture: FCRA boundary, CCPA / CPRA, GDPR where applicable, sub-processor list. SOC 2 is roadmapped, not certified.',
   alternates: { canonical: 'https://payslipiq.com/us/compliance' }
 };
 
@@ -48,7 +48,7 @@ const SUBPROCESSORS = [
   { name: 'Anthropic', purpose: 'Claude vision model for pay-stub extraction', cert: 'No-training agreement', region: 'United States' },
   { name: 'GitHub', purpose: 'Source control', cert: 'SOC 2 Type 2', region: 'United States' },
   { name: 'Stripe', purpose: 'Not in use. Checkout is not live. Would process payments if billing opens.', cert: 'PCI DSS Level 1', region: 'United States' },
-  { name: 'Resend', purpose: 'Transactional email (lead magnets, receipts)', cert: 'SOC 2 Type 2', region: 'United States' },
+  { name: 'Resend', purpose: 'Transactional email (waitlist and contact). No payment receipts today.', cert: 'SOC 2 Type 2', region: 'United States' },
   { name: 'Plausible', purpose: 'Cookie-less analytics', cert: 'EU GDPR-aligned', region: 'European Union' },
 ];
 
@@ -61,14 +61,14 @@ export default function Page() {
       ]} />
       <ArticleSchema
         headline="PayslipIQ Compliance"
-        description="SOC 2 readiness, FCRA boundary, CCPA, GDPR, sub-processor list."
+        description="FCRA boundary, CCPA / CPRA, GDPR where applicable, sub-processor list. SOC 2 is roadmapped, not certified."
         url="https://payslipiq.com/us/compliance"
       />
 
       <div className="text-[12px] uppercase tracking-[0.14em] font-semibold text-blue-600">Compliance</div>
       <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 piq-display">Compliance posture.</h1>
       <p className="mt-5 text-lg leading-relaxed text-slate-700">
-        PayslipIQ runs on auditor-ready process and tooling. The frameworks below are the ones that apply to a US-only educational paycheck explainer. Items marked "in progress" are tracked toward formal certification.
+        The frameworks below are the ones that apply to a US-audience educational paycheck explainer. SOC 2 is roadmapped, not certified. The operator is GoldPaid Ltd (England and Wales).
       </p>
 
       <section className="mt-10">

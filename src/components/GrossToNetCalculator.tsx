@@ -1,5 +1,11 @@
 'use client';
 import { useMemo, useState } from 'react';
+import { stateWorkerContributions } from '@/lib/calc';
+import { STATES as STATE_META } from '@/lib/states';
+
+const SLUG_BY_ABBR: Record<string, string> = Object.fromEntries(
+  STATE_META.map((s) => [s.abbr, s.slug]),
+);
 
 // PayslipIQ USA - Gross to Net Paycheck Calculator (self-contained, production-portable)
 // Educational only. Not advice. Tax year 2026.
@@ -166,7 +172,14 @@ function calcPaycheck(args: {
   const stateRate = STATES.find((s) => s.code === stateCode)?.rate ?? 0;
   const statePerCheck = +(federalTaxable * stateRate).toFixed(2);
 
-  const totalDeductions = +(preTaxTotal + fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck).toFixed(2);
+  const slug = SLUG_BY_ABBR[stateCode] ?? '';
+  const workerPerCheck = stateWorkerContributions(grossPay * periods, slug).map((w) => ({
+    label: w.label,
+    amount: +(w.annual / periods).toFixed(2),
+  }));
+  const workerTotal = workerPerCheck.reduce((s, w) => s + w.amount, 0);
+
+  const totalDeductions = +(preTaxTotal + fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck + workerTotal).toFixed(2);
   const netPay = +(grossPay - totalDeductions).toFixed(2);
   const effectiveTax = grossPay > 0 ? (fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck) / grossPay : 0;
   const takeHome = grossPay > 0 ? netPay / grossPay : 0;
@@ -179,6 +192,7 @@ function calcPaycheck(args: {
     medicare: medicarePerCheck,
     additionalMedicare: addMedicarePerCheck,
     stateTax: statePerCheck,
+    workerContribs: workerPerCheck,
     netPay,
     effectiveTax,
     takeHome,
@@ -361,6 +375,9 @@ export function GrossToNetCalculator({
               <tr><td className="py-1 text-ink/70">Social Security (6.2%)</td><td className="text-right tabular-nums">−${result.socialSecurity.toFixed(2)}</td></tr>
               <tr><td className="py-1 text-ink/70">Medicare (1.45%{result.additionalMedicare > 0 ? ' + 0.9% additional' : ''})</td><td className="text-right tabular-nums">−${(result.medicare + result.additionalMedicare).toFixed(2)}</td></tr>
               <tr><td className="py-1 text-ink/70">State income tax (est.)</td><td className="text-right tabular-nums">−${result.stateTax.toFixed(2)}</td></tr>
+              {result.workerContribs.map((w) => (
+                <tr key={w.label}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
+              ))}
               <tr className="font-semibold border-t border-line">
                 <td className="py-2">Estimated take-home (net)</td>
                 <td className="text-right tabular-nums">${result.netPay.toFixed(2)}</td>
@@ -372,7 +389,7 @@ export function GrossToNetCalculator({
             Tax year 2026. Federal withholding uses the IRS Pub. 15-T 2026 percentage method (Standard Withholding tables).
             Social Security is capped at the SSA 2026 wage base of $184,500. State tax uses the most recently verified flat or top-marginal rate
             and may not reflect mid-year changes, brackets, or local taxes (NYC, Yonkers, PA EIT, Ohio RITA, MD county, KY occupational, IN county, DE Wilmington, MO KC/STL, OR Multnomah).
-            Worker contributions like CA SDI, NJ SDI/FLI/UI, NY PFL, MA PFML, OR Paid Leave, WA PFML/Cares, RI TDI/TCI, CO FAMLI are not included.
+            Employee-paid state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, MN Paid Leave, DE Paid Leave, and the other 2026 programs) are included for the selected state. Local city taxes are not.
             Use the result as a starting point, not a final answer. Your real paycheck depends on year-to-date wages, dependents, multiple jobs,
             and employer-specific settings.
           </p>
