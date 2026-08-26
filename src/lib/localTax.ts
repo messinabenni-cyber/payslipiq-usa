@@ -17,6 +17,7 @@ export type LocalKind =
   | 'stl'
   | 'in-county'
   | 'mi-city'
+  | 'louisville'
   | 'custom';
 
 export interface Locality {
@@ -39,6 +40,7 @@ export const LOCAL_TAX_OPTIONS: Locality[] = [
   { id: 'stl', label: 'St. Louis, MO earnings tax', rate: 0.01, inputRate: false, notes: '1% earnings tax on residents and on wages earned in STL by nonresidents.' },
   { id: 'in-county', label: 'Indiana county tax', rate: 0.0175, inputRate: true, notes: 'IN county income tax (0.35-3.38% range). Defaults to typical; enter actual.' },
   { id: 'mi-city', label: 'Michigan city (Detroit etc.)', rate: 0.024, inputRate: true, notes: 'Detroit resident 2.4%, nonresident 1.2%. Many MI cities have lower rates.' },
+  { id: 'louisville', label: 'Louisville Metro occupational', rate: 0.022, inputRate: true, notes: 'Louisville/Jefferson County occupational license tax on wages earned in Louisville Metro. Resident 2.2%; nonresident 1.45% (no school board). Enter 1.45 if you live outside Louisville Metro. Not a statewide KY occupational rate. Source: Louisville Metro Revenue Commission OL-3 / W-1KJC.' },
   { id: 'custom', label: 'Other / custom rate', rate: 0.01, inputRate: true, notes: 'Enter your local rate as a percent.' },
 ];
 

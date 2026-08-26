@@ -25,11 +25,11 @@ export const metadata: Metadata = {
 };
 
 const FAQS = [
-  { q: 'What is the Louisville Metro occupational license tax?', a: 'Louisville/Jefferson County imposes a 2.2% occupational license tax on wages earned within the Jefferson County boundaries. Combined city/county rate. It applies regardless of where you live; what matters is whether the work is performed in Louisville/Jefferson County.' },
+  { q: 'What is the Louisville Metro occupational license tax?', a: 'Louisville/Jefferson County withholds occupational license tax on compensation for work performed in Louisville Metro (all of Jefferson County). The resident employee rate is 2.2% (Louisville Metro 1.25% + TARC 0.2% + school boards 0.75%). The nonresident employee rate is 1.45% (no school board). Source: Louisville Metro Revenue Commission OL-3 and W-1KJC instructions.' },
   { q: 'How does this differ from Kentucky state tax?', a: 'Kentucky has a flat state income tax (currently 4.0%, with legislative plans to lower further). The Louisville Metro occupational tax is on top of the state tax. Both come out of your paycheck if you work in Louisville.' },
-  { q: 'I live in Indiana but work in Louisville — what do I pay?', a: 'You pay Louisville/Jefferson 2.2% on Louisville wages plus KY non-resident state tax. Indiana then credits you for the KY tax (per KY-IN reciprocity rules) but the occupational tax is generally NOT covered by the reciprocity agreement — verify with a CPA on multi-state filing.' },
-  { q: 'I live in Louisville but work in Indiana — what do I pay?', a: 'You still owe Louisville/Jefferson 2.2% on all your earnings as a Louisville resident (residence-based for the city portion). Indiana state withholds for your IN work; KY credits you at filing.' },
-  { q: 'Does the calculator include the Louisville line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and KY state flat 4.0% in the main tool. For the Louisville Metro 2.2%, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Other / custom rate" and enter 2.2%.' },
+  { q: 'I live in Indiana but work in Louisville — what do I pay?', a: 'On wages for work performed in Louisville Metro, the nonresident occupational rate is 1.45%, not 2.2%. Kentucky nonresident state tax may also apply. Indiana reciprocity generally does not cover the occupational line. Verify the stack with a CPA on multi-state filing.' },
+  { q: 'I live in Louisville but work in Indiana — what do I pay?', a: 'Louisville Metro withholding is on compensation for work performed in Louisville Metro. Work performed only in Indiana is not automatically the 2.2% line. Indiana state withholding may apply to Indiana work. Confirm with the Louisville Metro Revenue Commission or a CPA; do not assume a residence-based 2.2% on out-of-county wages.' },
+  { q: 'Does the calculator include the Louisville line?', a: 'This city page preselects "Louisville Metro occupational" at the 2.2% resident rate in the Paycheck Calculator and the estimator. Gross-to-Net still defaults to no local tax until you pick the same locality. If you already picked it in take-home, do not add the estimator line twice. Nonresidents should change the rate field to 1.45%.' },
 ];
 
 const BREADCRUMBS = [
@@ -67,9 +67,10 @@ export default function LouisvillePaycheckCalculatorPage() {
           <p className="text-xs uppercase tracking-wide text-slate-500 mb-2">USA · LOUISVILLE · 2026 · Educational only</p>
           <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">Louisville Paycheck Calculator</h1>
           <p className="mt-4 text-lg text-slate-700">
-            Louisville Metro / Jefferson County imposes a <strong>2.2% occupational license tax</strong>
-            on wages earned in the county. Kentucky state flat 4.0% applies first. Work-location
-            based for non-residents; residence-based for Louisville residents.
+            Louisville Metro / Jefferson County occupational license tax is{' '}
+            <strong>2.2% for residents</strong> and <strong>1.45% for nonresidents</strong> on
+            wages for work in Jefferson County. Kentucky state flat 4.0% applies first. Other
+            Kentucky cities have their own occupational rates; this page is Louisville Metro only.
           </p>
         </header>
 
@@ -77,25 +78,31 @@ export default function LouisvillePaycheckCalculatorPage() {
 
         <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Kentucky flat 4.0%</h2>
-          <PaycheckCalculator defaultStateSlug="kentucky" defaultLocality="custom" defaultLocalRatePct="2.2" />
+          <PaycheckCalculator defaultStateSlug="kentucky" defaultLocality="louisville" defaultLocalRatePct="2.2" />
         </section>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 2 — add the Louisville Metro 2.2%</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Local tax estimator (already on this page&apos;s paycheck tool)</h2>
           <p className="text-slate-700 mb-4">
-            Select <strong>&quot;Other / custom rate&quot;</strong> below and enter <strong>2.2%</strong>
-            (the combined Louisville/Jefferson Metro occupational license rate).
+            This estimator also defaults to <strong>Louisville Metro occupational</strong> at{' '}
+            <strong>2.2%</strong> (resident). Enter <strong>1.45%</strong> if you live outside
+            Louisville Metro. If take-home already includes this line, do not add it twice.
           </p>
-          <LocalTaxCalculator defaultLocality="custom" defaultRatePct="2.2" />
+          <LocalTaxCalculator defaultLocality="louisville" defaultRatePct="2.2" />
         </section>
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">Source</h2>
           <p className="text-slate-700">
-            Louisville Metro Occupational License Tax: 2.2%. Source:{' '}
-            <a href="https://louisvilleky.gov/government/revenue-commission" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
-              Louisville Metro Revenue Commission
-            </a>.
+            Louisville Metro occupational license tax: resident 2.2%, nonresident 1.45%. Source:{' '}
+            <a href="https://louisvilleky.gov/revenue-commission/forms/form-ol-3-occupational-license-return" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
+              Louisville Metro Revenue Commission Form OL-3
+            </a>
+            {' '}and{' '}
+            <a href="https://louisvilleky.gov/sites/default/files/2024-12/w-1kjc_instructions_2025.pdf" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
+              Form W-1KJC instructions
+            </a>
+            . Other Kentucky cities are not this rate.
           </p>
         </section>
 

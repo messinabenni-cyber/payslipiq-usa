@@ -24,10 +24,10 @@ export const metadata: Metadata = {
 };
 
 const FAQS = [
-  { q: 'What is the Multnomah County Preschool for All (PFA) tax?', a: 'A personal income tax funding universal preschool. 1.5% on income over $125,000 (single) or $200,000 (married jointly). An additional 1.5% (so 3.0% total) on income over $250,000 single / $400,000 joint. Applies to Multnomah County residents and to income earned by non-residents working in Multnomah. Note: a 2026 rate increase was delayed; verify before relying on any number.' },
+  { q: 'What is the Multnomah County Preschool for All (PFA) tax?', a: 'A personal income tax on Multnomah County taxable income: 1.5% over $125,000 single / $200,000 joint, and an additional 1.5% (3.0% total) over $250,000 single / $400,000 joint. The rate increases 0.8% in 2027. Employers generally withhold starting at $200,000 of Multnomah wages (1.5% above $200k, 3% above $400k); employees can opt in or out. Source: Portland Revenue Division personal-tax and withholding pages.' },
   { q: 'What is the Portland Metro Supportive Housing Services (SHS) tax?', a: 'A personal income tax funding services for people experiencing homelessness. 1% on income over $128,000 (single) or $205,000 (married jointly) in 2026 (inflation-adjusted from the original thresholds). Applies to residents and to income earned within the Portland Metro region.' },
   { q: 'How do these stack with OR state tax and federal?', a: 'They are layered on top of: federal income tax, FICA (Social Security + Medicare), Oregon progressive state tax (up to 9.9%), and Oregon Paid Leave (0.6% employee share of the 1.0% total). Most Portland workers under the PFA/SHS thresholds will not see those lines at all.' },
-  { q: 'Does the calculator include the PFA + SHS lines?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, Oregon state, and Oregon Paid Leave automatically. The PFA and SHS taxes apply only above income thresholds and depend on residency, so they are not yet automated in the main calculator. For those, see the Portland Revenue Division or use the Multnomah / Metro online calculators.' },
+  { q: 'Does the calculator include the PFA + SHS lines?', a: 'No. Federal, FICA, Oregon state, and Oregon Paid Leave are in the paycheck tool. PFA and SHS are high-earner taxes on taxable income (not a flat wage percent), with employer withholding generally only once wages hit $200,000, so they are not in the local-tax picker. Use the Portland Revenue Division calculators for those lines.' },
   { q: 'I live in Vancouver WA but work in Portland — what do I pay?', a: 'You owe Oregon state income tax on your Portland wages (the Oregon-side income). You also owe Metro SHS on the portion earned in the Metro region above the threshold. You do not owe Multnomah PFA unless your work is in Multnomah County and you exceed the threshold. WA state tax does not apply (WA has no income tax). Multi-state filings get complex; consult a CPA.' },
 ];
 
@@ -88,7 +88,7 @@ export default function PortlandMultnomahPaycheckCalculatorPage() {
             (2026 thresholds, inflation-adjusted) the Portland Metro SHS tax also applies. For
             personalized estimates of those lines, use the Portland Revenue Division&apos;s online
             tools or consult a CPA. PayslipIQ does not yet model the per-jurisdiction PFA/SHS
-            withholding mechanics in the main calculator.
+            withholding mechanics in the main calculator. Employer withholding for both programs generally starts at $200,000 of local wages.
           </p>
         </section>
 
