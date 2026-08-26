@@ -78,6 +78,13 @@ const CITIES = [
     rate: '1%',
   },
   {
+    name: 'Louisville Metro (KY)',
+    slug: 'louisville',
+    state: 'Kentucky',
+    blurb: 'Occupational license tax 2.2% resident / 1.45% nonresident on wages for work in Jefferson County. Other KY cities are not this rate.',
+    rate: '2.2% / 1.45%',
+  },
+  {
     name: 'Portland / Multnomah (OR)',
     slug: 'portland-multnomah',
     state: 'Oregon',

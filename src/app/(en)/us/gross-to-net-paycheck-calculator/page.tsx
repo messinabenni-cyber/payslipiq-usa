@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: 'Does it handle state and local taxes?',
-    a: 'It estimates state income tax for all 50 states and DC using the most recently verified state rate. Local city or county tax is optional: pick NYC, Yonkers, PA EIT, Ohio RITA / CCA, a Maryland or Indiana county, Wilmington, Kansas City, St. Louis, or Detroit. Default is none. San Francisco payroll expense tax is employer-paid and is not an employee line. KY occupational tax and Oregon Multnomah/Metro high-earner taxes are not in the list.'
+    a: 'It estimates state income tax for all 50 states and DC using the most recently verified state rate. Local city or county tax is optional: pick NYC, Yonkers, PA EIT, Ohio RITA / CCA, a Maryland or Indiana county, Wilmington, Kansas City, St. Louis, Detroit, or Louisville Metro. Default is none. San Francisco payroll expense tax is employer-paid and is not an employee line. Louisville Metro occupational tax is in the list (2.2% resident / 1.45% nonresident; enter the rate that matches you). Other KY cities and Oregon Multnomah/Metro high-earner PFA/SHS taxes are not in the list.'
   },
   {
     q: 'Can I rely on this for tax filing?',

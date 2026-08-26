@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: 'Does it include local taxes?',
-    a: 'Pick a locality in the calculator to include city or county income tax (NYC, Yonkers, PA EIT, Ohio RITA / CCA, Maryland or Indiana county, Wilmington, Kansas City, St. Louis, Detroit). Default is none. Rates you can edit (PA, Ohio, MD, IN, Detroit) need your actual published rate. KY occupational tax and Oregon Multnomah/Metro high-earner taxes are not in the list. Dedicated explainer: /us/local-paycheck-taxes/.'
+    a: 'Pick a locality in the calculator to include city or county income tax (NYC, Yonkers, PA EIT, Ohio RITA / CCA, Maryland or Indiana county, Wilmington, Kansas City, St. Louis, Detroit, Louisville Metro). Default is none. Rates you can edit (PA, Ohio, MD, IN, Detroit, Louisville) need your actual published rate. Louisville Metro occupational tax is in the list (2.2% resident / 1.45% nonresident; enter the rate that matches you). Other KY cities and Oregon Multnomah/Metro high-earner PFA/SHS taxes are not in the list. Dedicated explainer: /us/local-paycheck-taxes/.'
   },
   {
     q: 'Why is my real paycheck different from the estimate?',

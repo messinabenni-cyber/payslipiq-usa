@@ -420,7 +420,7 @@ export function GrossToNetCalculator({
             Tax year 2026. Federal withholding uses the IRS Pub. 15-T 2026 percentage method (Standard Withholding tables).
             Social Security is capped at the SSA 2026 wage base of $184,500. State tax uses the most recently verified flat or top-marginal rate
             and may not reflect mid-year changes or full state brackets.
-            Employee-paid state worker contributions are included for the selected state. Local city or county tax is included when you pick a locality (NYC, Yonkers, PA EIT, Ohio RITA, MD/IN county, Wilmington, KC/STL, Detroit). Default is none. KY occupational and OR Multnomah/Metro high-earner taxes are not in this list.
+            Employee-paid state worker contributions are included for the selected state. Local city or county tax is included when you pick a locality (NYC, Yonkers, PA EIT, Ohio RITA, MD/IN county, Wilmington, KC/STL, Detroit, Louisville Metro). Default is none. Louisville Metro occupational (2.2% resident / 1.45% nonresident) is in this list. Other KY cities and OR Multnomah/Metro high-earner PFA/SHS taxes are not.
             Use the result as a starting point, not a final answer. Your real paycheck depends on year-to-date wages, dependents, multiple jobs,
             and employer-specific settings.
           </p>

@@ -157,10 +157,10 @@ export const STATE_NARRATIVES: Record<string, StateNarrative> = {
     [['How are Kansas withholding brackets indexed?', 'Kansas K-4 uses graduated brackets. The thresholds adjust periodically, but not strictly annually. Check the most recent K-4 form for current figures.']]),
 
   KY: make('KY',
-    'Kentucky runs a flat 4.0% state income tax (down from 4.5% in 2024). Many Kentucky cities and counties also levy an Occupational License Tax (OLT) on payroll, ranging from 0.5% to 2.5%. Louisville Metro charges 1.45%.',
+    'Kentucky runs a flat 4.0% state income tax (down from 4.5% in 2024). Many Kentucky cities and counties also levy an Occupational License Tax (OLT) on payroll, ranging from 0.5% to 2.5%. Louisville Metro charges 2.2% on resident employees who work in Louisville Metro and 1.45% on nonresidents (no school board). Other KY cities set their own occupational rates.',
     ['State flat rate cut to 4.0% in 2025, with future cuts tied to revenue triggers.', 'Local OLT rates adjusted by individual cities and counties.'],
     ['OLT line on most Kentucky paychecks for work in incorporated areas.', 'OLT applies based on where work is performed, not where the employee lives.', 'Both city OLT and county OLT can stack.'],
-    [['What is the OLT on my Louisville paycheck?', 'Louisville Metro Occupational License Tax, 1.45% of wages for work in Louisville Metro.'],
+    [['What is the OLT on my Louisville paycheck?', 'Louisville Metro Occupational License Tax. Resident employees who work in Louisville Metro: 2.2%. Nonresidents who work there: 1.45%. Other KY cities are not this rate.'],
      ['I work in two Kentucky counties. Do I owe OLT to both?', 'Possibly. OLT is sourced to the location where the work was performed. Talk to payroll about how they allocate your hours.']]),
 
   LA: make('LA',

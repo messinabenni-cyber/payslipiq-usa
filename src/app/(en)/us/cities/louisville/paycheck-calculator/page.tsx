@@ -77,7 +77,7 @@ export default function LouisvillePaycheckCalculatorPage() {
         <ReviewedBy />
 
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Kentucky flat 4.0%</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">Step 1 — federal + FICA + Kentucky flat 4.0% + Louisville Metro occupational</h2>
           <PaycheckCalculator defaultStateSlug="kentucky" defaultLocality="louisville" defaultLocalRatePct="2.2" />
         </section>
 
