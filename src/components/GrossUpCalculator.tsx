@@ -1,5 +1,11 @@
 'use client';
 import { useMemo, useState } from 'react';
+import { stateWorkerContributions } from '@/lib/calc';
+import { STATES as STATE_META } from '@/lib/states';
+
+const SLUG_BY_ABBR: Record<string, string> = Object.fromEntries(
+  STATE_META.map((s) => [s.abbr, s.slug]),
+);
 
 // PayslipIQ USA - Gross-Up / Net-to-Gross Calculator (self-contained, production-portable)
 // Educational only. Not advice. Tax year 2026.
@@ -131,7 +137,7 @@ function annualFederal(annualWages: number, filing: Filing): number {
 function round2(n: number): number { return Math.round(n * 100) / 100; }
 
 // Forward function: gross-per-period -> total tax + net for one paycheck.
-function taxesForGross(grossPerCheck: number, freq: Freq, filing: Filing, stateRate: number) {
+function taxesForGross(grossPerCheck: number, freq: Freq, filing: Filing, stateRate: number, stateCode: string) {
   const periods = PERIODS[freq];
 
   const annualWages = grossPerCheck * periods;
@@ -145,32 +151,38 @@ function taxesForGross(grossPerCheck: number, freq: Freq, filing: Filing, stateR
     : 0;
 
   const statePerCheck = grossPerCheck * stateRate;
+  const slug = SLUG_BY_ABBR[stateCode] ?? '';
+  const workerContribs = stateWorkerContributions(annualWages, slug).map((w) => ({
+    label: w.label,
+    amount: round2(w.annual / periods),
+  })).filter((w) => w.amount > 0);
+  const workerTotal = workerContribs.reduce((s, w) => s + w.amount, 0);
 
-  const totalTax = fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck;
+  const totalTax = fedPerCheck + ssPerCheck + medicarePerCheck + addMedicarePerCheck + statePerCheck + workerTotal;
   const net = grossPerCheck - totalTax;
-  return { fedPerCheck, ssPerCheck, medicarePerCheck, addMedicarePerCheck, statePerCheck, totalTax, net };
+  return { fedPerCheck, ssPerCheck, medicarePerCheck, addMedicarePerCheck, statePerCheck, workerContribs, workerTotal, totalTax, net };
 }
 
 // Inverse solver: binary search on gross until net matches the desired take-home.
-function solveGross(desiredNet: number, freq: Freq, filing: Filing, stateRate: number) {
+function solveGross(desiredNet: number, freq: Freq, filing: Filing, stateRate: number, stateCode: string) {
   if (desiredNet <= 0) {
-    return { gross: 0, ...taxesForGross(0, freq, filing, stateRate) };
+    return { gross: 0, ...taxesForGross(0, freq, filing, stateRate, stateCode) };
   }
   let lo = desiredNet;            // gross is always >= net
   let hi = desiredNet * 3 + 1000; // generous upper bound; net is a monotonic, sub-linear function of gross
   // Make sure hi actually overshoots the desired net.
-  for (let guard = 0; guard < 40 && taxesForGross(hi, freq, filing, stateRate).net < desiredNet; guard++) {
+  for (let guard = 0; guard < 40 && taxesForGross(hi, freq, filing, stateRate, stateCode).net < desiredNet; guard++) {
     hi *= 2;
   }
   let mid = hi;
   for (let i = 0; i < 100; i++) {
     mid = (lo + hi) / 2;
-    const net = taxesForGross(mid, freq, filing, stateRate).net;
+    const net = taxesForGross(mid, freq, filing, stateRate, stateCode).net;
     if (Math.abs(net - desiredNet) < 0.005) break;
     if (net < desiredNet) lo = mid; else hi = mid;
   }
   const gross = round2(mid);
-  return { gross, ...taxesForGross(gross, freq, filing, stateRate) };
+  return { gross, ...taxesForGross(gross, freq, filing, stateRate, stateCode) };
 }
 
 // ----- Component ------------------------------------------------------------
@@ -190,8 +202,8 @@ export function GrossUpCalculator({
   const desiredNet = parseFloat(net) || 0;
 
   const result = useMemo(
-    () => solveGross(desiredNet, freq, filing, stateRate),
-    [desiredNet, freq, filing, stateRate]
+    () => solveGross(desiredNet, freq, filing, stateRate, stateCode),
+    [desiredNet, freq, filing, stateRate, stateCode]
   );
 
   const periods = PERIODS[freq];
@@ -265,6 +277,9 @@ export function GrossUpCalculator({
               {stateRate > 0 && (
                 <tr><td className="py-1 text-ink/70">State income tax (est.)</td><td className="text-right tabular-nums">−${result.statePerCheck.toFixed(2)}</td></tr>
               )}
+              {result.workerContribs.map((w) => (
+                <tr key={w.label}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
+              ))}
               <tr className="font-semibold border-t border-line">
                 <td className="py-2">Take-home (net)</td>
                 <td className="text-right tabular-nums">${result.net.toFixed(2)}</td>
@@ -277,7 +292,8 @@ export function GrossUpCalculator({
             Social Security is capped at the SSA 2026 wage base of $184,500. State tax uses the most recently verified flat or
             top-marginal rate and may not reflect brackets, local taxes, or mid-year changes. The solved gross is an estimate,
             so payroll&apos;s real gross-up can differ once W-4 details, year-to-date wages, pre-tax benefits, and local taxes
-            are applied. Use it as a starting point, not a final figure.
+            are applied. 2026 employee-paid state worker contributions are included for the selected state. Use it as a
+            starting point, not a final figure.
           </p>
         </div>
       </div>

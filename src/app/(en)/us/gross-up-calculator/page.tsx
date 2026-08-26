@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: 'What is a gross-up?',
-    a: 'A gross-up is the reverse of a normal paycheck calculation. Instead of starting with a gross amount and subtracting taxes to find the net, you start with the net (take-home) you want a worker to keep and solve for the larger gross that, after federal income tax withholding, Social Security, Medicare, and any state tax, leaves exactly that net. Employers commonly gross up relocation payments, sign-on bonuses, or fringe benefits so the recipient is not out of pocket for the tax.',
+    a: 'A gross-up is the reverse of a normal paycheck calculation. Instead of starting with a gross amount and subtracting taxes to find the net, you start with the net (take-home) you want a worker to keep and solve for the larger gross that, after federal income tax withholding, Social Security, Medicare, state tax, and 2026 employee-paid state worker contributions, leaves exactly that net. Employers commonly gross up relocation payments, sign-on bonuses, or fringe benefits so the recipient is not out of pocket for the tax.',
   },
   {
     q: 'How does this net-to-gross calculator find the answer?',
@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: 'Can I rely on this for actual payroll?',
-    a: 'No. This is educational only and not tax, payroll, accounting, or financial advice. It does not model W-4 dependents, multiple jobs, extra withholding, year-to-date wages, local taxes (NYC, Yonkers, PA EIT, Ohio RITA, MD county), pre-tax benefits, or state worker contributions. For a real gross-up, confirm the figure with your payroll provider or a qualified CPA.',
+    a: 'No. This is educational only and not tax, payroll, accounting, or financial advice. It does not model W-4 dependents, multiple jobs, extra withholding, year-to-date wages, local taxes (NYC, Yonkers, PA EIT, Ohio RITA, MD county), or pre-tax benefits. 2026 employee-paid state worker contributions are included for the selected state. For a real gross-up, confirm the figure with your payroll provider or a qualified CPA.',
   },
 ];
 

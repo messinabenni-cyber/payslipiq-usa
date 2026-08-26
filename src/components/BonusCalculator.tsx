@@ -1,5 +1,11 @@
 'use client';
 import { useMemo, useState } from 'react';
+import { stateWorkerContributions } from '@/lib/calc';
+import { STATES as STATE_META } from '@/lib/states';
+
+const SLUG_BY_ABBR: Record<string, string> = Object.fromEntries(
+  STATE_META.map((s) => [s.abbr, s.slug]),
+);
 
 // PayslipIQ USA - Dual-method Bonus Tax Calculator (self-contained, production-portable)
 // Educational only. Not advice. Tax year 2026.
@@ -170,6 +176,17 @@ function calcBonus(args: {
   const { bonus, regularGross, freq, filing, stateCode } = args;
   const periods = PERIODS[freq];
   const stateRate = STATES.find((s) => s.code === stateCode)?.rate ?? 0;
+  const regAnnual = regularGross * periods;
+  const slug = SLUG_BY_ABBR[stateCode] ?? '';
+  const withBonus = stateWorkerContributions(regAnnual + bonus, slug);
+  const without = stateWorkerContributions(regAnnual, slug);
+  const workerContribs = withBonus
+    .map((w) => {
+      const prior = without.find((x) => x.label === w.label)?.annual ?? 0;
+      return { label: w.label, amount: round2(Math.max(0, w.annual - prior)) };
+    })
+    .filter((w) => w.amount > 0);
+  const workerTotal = round2(workerContribs.reduce((s, w) => s + w.amount, 0));
 
   // ---- (a) Percentage / flat method -------------------------------------
   const flatFedOver = Math.max(0, bonus - SUPPLEMENTAL_MILLION_THRESHOLD);
@@ -177,7 +194,7 @@ function calcBonus(args: {
   const flatFederal = round2(flatFedUnder * SUPPLEMENTAL_RATE + flatFedOver * SUPPLEMENTAL_RATE_MILLION);
   const flatFica = ficaOnBonus(bonus, filing);
   const flatState = round2(bonus * stateRate);
-  const flatTotal = round2(flatFederal + flatFica + flatState);
+  const flatTotal = round2(flatFederal + flatFica + flatState + workerTotal);
   const flatNet = round2(bonus - flatTotal);
   const flatEffective = bonus > 0 ? flatTotal / bonus : 0;
 
@@ -185,7 +202,6 @@ function calcBonus(args: {
   // Federal withholding on a regular check alone vs. a check that includes the bonus,
   // both annualised via the Pub 15-T percentage method, then the difference is the
   // federal withholding attributable to the bonus.
-  const regAnnual = regularGross * periods;
   const combinedAnnual = (regularGross + bonus) * periods;
   const fedTaxRegularAnnual = annualFederal(regAnnual, filing);
   const fedTaxCombinedAnnual = annualFederal(combinedAnnual, filing);
@@ -195,7 +211,7 @@ function calcBonus(args: {
   const aggFederal = round2(aggFederalAnnual / periods);
   const aggFica = ficaOnBonus(bonus, filing); // FICA identical regardless of method
   const aggState = round2(bonus * stateRate);
-  const aggTotal = round2(aggFederal + aggFica + aggState);
+  const aggTotal = round2(aggFederal + aggFica + aggState + workerTotal);
   const aggNet = round2(bonus - aggTotal);
   const aggEffective = bonus > 0 ? aggTotal / bonus : 0;
 
@@ -206,6 +222,8 @@ function calcBonus(args: {
   return {
     bonus,
     stateRate,
+    workerContribs,
+    workerTotal,
     flat: { federal: flatFederal, fica: flatFica, state: flatState, total: flatTotal, net: flatNet, effective: flatEffective },
     agg: { federal: aggFederal, fica: aggFica, state: aggState, total: aggTotal, net: aggNet, effective: aggEffective },
     avgFederalRate,
@@ -304,6 +322,9 @@ export function BonusCalculator({
                 {r.stateRate > 0 && (
                   <tr><td className="py-1 text-ink/70">State (est.)</td><td className="text-right tabular-nums">−${r.flat.state.toFixed(2)}</td></tr>
                 )}
+                {r.workerContribs.map((w) => (
+                  <tr key={`flat-${w.label}`}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
+                ))}
                 <tr className="font-semibold border-t border-line">
                   <td className="py-2">Effective withholding rate</td>
                   <td className="text-right tabular-nums">{(r.flat.effective * 100).toFixed(1)}%</td>
@@ -329,6 +350,9 @@ export function BonusCalculator({
                 {r.stateRate > 0 && (
                   <tr><td className="py-1 text-ink/70">State (est.)</td><td className="text-right tabular-nums">−${r.agg.state.toFixed(2)}</td></tr>
                 )}
+                {r.workerContribs.map((w) => (
+                  <tr key={`agg-${w.label}`}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.amount.toFixed(2)}</td></tr>
+                ))}
                 <tr className="font-semibold border-t border-line">
                   <td className="py-2">Effective withholding rate</td>
                   <td className="text-right tabular-nums">{(r.agg.effective * 100).toFixed(1)}%</td>
@@ -355,8 +379,10 @@ export function BonusCalculator({
         <aside className="border-l-4 border-amber-300 bg-amber-50 px-4 py-3 text-[13px] leading-relaxed text-amber-900 rounded" role="note">
           <strong className="font-semibold">A flat 22% is what most employers use,</strong> and it is withholding, not your
           final tax. Your actual tax on the bonus is settled when you file your return based on your total annual income, so
-          over-withholding comes back as part of a refund and under-withholding is paid at filing. Both methods above are
-          estimates; your real check depends on year-to-date wages, W-4 details, and employer-specific settings.
+          over-withholding comes back as part of a refund and under-withholding is paid at filing. 2026 employee-paid
+          state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, ME PFML, and the rest of the encoded programs) are
+          included for the selected state. Local city taxes are not. Both methods are estimates; your real check depends
+          on year-to-date wages, W-4 details, and employer-specific settings.
         </aside>
       </div>
     </div>
