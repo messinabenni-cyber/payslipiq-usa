@@ -29,7 +29,7 @@ export default function Page() {
 <h3>Comp time</h3>
 <p>Private-sector employers in most states cannot give time off in lieu of overtime pay. Public-sector rules differ.</p>
 <h2>Use the calculator</h2>
-<p>The <a href="/us/paycheck-calculator">PayslipIQ paycheck calculator</a> handles hourly. Set frequency to weekly or bi-weekly, enter hours times rate as gross, pick your state. The output breaks out federal, FICA, state and net.</p></>}
+<p>The <a href="/us/paycheck-calculator">PayslipIQ paycheck calculator</a> handles hourly. Set frequency to weekly or bi-weekly, enter hours times rate as gross, pick your state. The output breaks out federal, FICA, state, employee-paid state programs where they apply, and net. Local tax is optional (default none).</p></>}
       faqs={FAQS}
       related={RELATED}
       breadcrumbs={BREADCRUMBS}

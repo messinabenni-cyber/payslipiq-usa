@@ -27,7 +27,7 @@ const FAQS = [
   { q: 'Why does $25/hour come out as ~$52,000 a year, not $50,000?', a: '$25 × 40 hours × 52 weeks = $52,000. The often-quoted "$50k = $25/hour" rule of thumb assumes 50 weeks worked (i.e. 2 weeks unpaid vacation). Both are right; the difference is whether you are paid for vacation weeks or not. Salaried employees usually are; many hourly workers are not.' },
   { q: 'Does this handle overtime?', a: 'Yes. The optional overtime block adds (overtime hours per week × hourly rate × multiplier × weeks) to the base. Federal FLSA standard is 1.5x for hours over 40 per week. California, Alaska, Nevada, Colorado, and a few others have daily overtime rules (>8 hours/day at 1.5x, >12 at 2x). The calculator uses your chosen multiplier on the weekly overtime hours you enter.' },
   { q: 'Are part-time and gig hours included?', a: 'Yes. Enter whatever weekly hours you actually work. 20 hours/week × 52 weeks at $25/hour = $26,000 annual. The math is the same; the tax estimate scales accordingly.' },
-  { q: 'What about taxes?', a: 'The right-hand panel runs an annualised estimate using the IRS Pub 15-T 2026 percentage method (Single filer) plus 6.2% Social Security up to the SSA 2026 wage base of $184,500, plus 1.45% Medicare, plus the most recently verified state rate. It does not include local taxes, pre-tax 401(k)/HSA, or W-4 dependents. For precise per-paycheck numbers, use the Gross to Net Paycheck Calculator linked below.' },
+  { q: 'What about taxes?', a: 'The right-hand panel runs an annualised estimate using the IRS Pub 15-T 2026 percentage method (Single filer) plus 6.2% Social Security up to the SSA 2026 wage base of $184,500, plus 1.45% Medicare, Additional Medicare 0.9% above $200,000, the most recently verified state rate, and employee-paid state programs where they apply (CA SDI, NY PFL, and the same lines as the paycheck calculator). Optional local city or county tax is in the picker; default is none. Pre-tax 401(k)/HSA and W-4 dependents are not modelled. For per-paycheck numbers, use the Gross to Net Paycheck Calculator linked below.' },
   { q: 'How does an hourly worker get paid sick / vacation time?', a: 'Depends on employer and state. Most US workers do not have a federal right to paid leave, but several states (CA, CO, MA, NJ, NY, OR, RI, WA, AZ, MD, MI, NM, VT, MN, IL, ME, NV, MT, CT, DC, SC for state employees) require paid sick leave. Check your state labor agency. PayslipIQ does not include sick/vacation accrual in this conversion.' },
   { q: 'Is hourly or salary better?', a: 'Different trade-offs. Hourly: overtime pay (FLSA non-exempt), more predictable per-hour earnings, less likely to get unpaid extra hours. Salary: usually exempt from overtime, often comes with paid vacation, often more job stability. Whether you "make more" depends on actual hours worked. A salaried role at $52k working 50 hours/week is effectively $20/hour; a $25/hour role doing 40 hours is also $52k but you keep the extra hours.' }
 ];
@@ -55,7 +55,7 @@ export default function Page() {
       </section>
 
       <aside className="mt-6 border-l-4 border-amber-300 bg-amber-50 px-4 py-3 text-[13px] leading-relaxed text-amber-900 rounded" role="note">
-        <strong className="font-semibold">Important:</strong> Estimates only. Single-filer assumption, no 401(k)/HSA, no local tax, no dependents. Verify with payroll for any decision that depends on the number.
+        <strong className="font-semibold">Important:</strong> Estimates only. Single-filer assumption, no 401(k)/HSA, no dependents. Local tax is optional and defaults to none. Verify with payroll for any decision that depends on the number.
       </aside>
 
       <HourlySalaryConverter direction="h2s" />
@@ -103,7 +103,7 @@ export default function Page() {
           Total tax: ~$20,888. <strong>Annual take-home: ~$53,212</strong>. Effective tax rate: ~28.2%.
         </p>
         <p className="text-xs text-ink/60 mt-3">
-          Single-filer assumption with no pre-tax 401(k), no HSA, no dependents, and no local tax. Adding a 5% 401(k) contribution would lift take-home roughly $410 (because the deferral reduces federal tax) but reduce the net paycheck because $3,705 a year goes into the retirement account.
+          Single-filer assumption with no pre-tax 401(k), no HSA, no dependents, and no local tax selected. Adding a 5% 401(k) contribution would lift take-home roughly $410 (because the deferral reduces federal tax) but reduce the net paycheck because $3,705 a year goes into the retirement account.
         </p>
       </section>
 

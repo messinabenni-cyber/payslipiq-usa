@@ -1,9 +1,12 @@
 'use client';
 import { useMemo, useState } from 'react';
+import { STATES } from '@/lib/states';
+import { stateWorkerContributions } from '@/lib/calc';
+import { LOCAL_TAX_OPTIONS, type LocalKind, getLocality, localTaxOnWages, ratePercentDefault } from '@/lib/localTax';
 
 // PayslipIQ USA - Hourly <-> Salary Converter
 // Educational only. Not advice.
-// Uses simplified flat tax estimate (federal effective + 7.65% FICA + state).
+// Annualised federal (Pub 15-T 2026 Single brackets) + FICA + state rate + worker contribs + optional local.
 // For precise per-paycheck withholding, use the Gross to Net Paycheck Calculator.
 
 type Direction = 'h2s' | 's2h';
@@ -95,6 +98,8 @@ export function HourlySalaryConverter({ direction = 'h2s' as Direction, defaultS
   const [overtimeMultiplier, setOvertimeMultiplier] = useState('1.5');
   const [salary, setSalary] = useState('60000');
   const [stateCode, setStateCode] = useState(defaultState);
+  const [localityId, setLocalityId] = useState<LocalKind>('none');
+  const [localRatePct, setLocalRatePct] = useState(ratePercentDefault('none'));
 
   const result = useMemo(() => {
     let annualGross: number;
@@ -120,9 +125,18 @@ export function HourlySalaryConverter({ direction = 'h2s' as Direction, defaultS
     const fed = annualFederal(annualGross);
     const ss = Math.min(annualGross, SS_CAP) * SS_RATE;
     const medicare = annualGross * MED_RATE;
+    const addMed = annualGross > 200000 ? (annualGross - 200000) * 0.009 : 0;
     const stateRate = STATES_FLAT_RATE.find((s) => s.code === stateCode)?.rate ?? 0;
     const stateTax = annualGross * stateRate;
-    const totalTax = fed + ss + medicare + stateTax;
+    const slug = STATES.find((s) => s.abbr === stateCode)?.slug ?? '';
+    const worker = stateWorkerContributions(annualGross, slug);
+    const workerTotal = worker.reduce((sum, w) => sum + w.annual, 0);
+    const local = localTaxOnWages(
+      annualGross,
+      localityId,
+      getLocality(localityId).inputRate ? parseFloat(localRatePct) : undefined,
+    );
+    const totalTax = fed + ss + medicare + addMed + stateTax + workerTotal + local.amount;
     const netAnnual = annualGross - totalTax;
 
     return {
@@ -132,10 +146,10 @@ export function HourlySalaryConverter({ direction = 'h2s' as Direction, defaultS
       biweekly: annualGross / 26,
       weekly: annualGross / 52,
       daily: annualGross / 260, // 5 days × 52 weeks
-      fed, ss, medicare, stateTax, totalTax, netAnnual,
+      fed, ss, medicare, addMed, stateTax, worker, local, totalTax, netAnnual,
       effectiveTax: annualGross > 0 ? totalTax / annualGross : 0
     };
-  }, [direction, hourly, hoursPerWeek, weeksPerYear, overtimeHoursPerWeek, overtimeMultiplier, salary, stateCode]);
+  }, [direction, hourly, hoursPerWeek, weeksPerYear, overtimeHoursPerWeek, overtimeMultiplier, salary, stateCode, localityId, localRatePct]);
 
   return (
     <div className="grid lg:grid-cols-5 gap-6 my-8">
@@ -194,6 +208,20 @@ export function HourlySalaryConverter({ direction = 'h2s' as Direction, defaultS
             {STATES_FLAT_RATE.map((s) => <option key={s.code} value={s.code}>{s.name}</option>)}
           </select>
         </Row>
+        <Row label="Local city / county tax">
+          <select className="w-full px-2 py-2 border border-line rounded bg-white" value={localityId} onChange={(e) => {
+            const id = e.target.value as LocalKind;
+            setLocalityId(id);
+            setLocalRatePct(ratePercentDefault(id));
+          }} aria-label="Local city or county tax">
+            {LOCAL_TAX_OPTIONS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
+          </select>
+        </Row>
+        {getLocality(localityId).inputRate ? (
+          <Row label="Local rate (%)">
+            <input className="w-full px-2 py-2 border border-line rounded outline-none" inputMode="decimal" value={localRatePct} onChange={(e) => setLocalRatePct(e.target.value)} aria-label="Local rate percent" />
+          </Row>
+        ) : null}
       </form>
 
       <div className="lg:col-span-3 space-y-4">
@@ -217,7 +245,16 @@ export function HourlySalaryConverter({ direction = 'h2s' as Direction, defaultS
               <tr><td className="py-1 text-ink/70">Federal income tax (est.)</td><td className="text-right tabular-nums">−${result.fed.toFixed(0)}</td></tr>
               <tr><td className="py-1 text-ink/70">Social Security (6.2%)</td><td className="text-right tabular-nums">−${result.ss.toFixed(0)}</td></tr>
               <tr><td className="py-1 text-ink/70">Medicare (1.45%)</td><td className="text-right tabular-nums">−${result.medicare.toFixed(0)}</td></tr>
+              {result.addMed > 0 ? (
+                <tr><td className="py-1 text-ink/70">Additional Medicare (0.9%)</td><td className="text-right tabular-nums">−${result.addMed.toFixed(0)}</td></tr>
+              ) : null}
               <tr><td className="py-1 text-ink/70">State tax (est.)</td><td className="text-right tabular-nums">−${result.stateTax.toFixed(0)}</td></tr>
+              {result.worker.map((w) => (
+                <tr key={w.label}><td className="py-1 text-ink/70">{w.label}</td><td className="text-right tabular-nums">−${w.annual.toFixed(0)}</td></tr>
+              ))}
+              {result.local.amount > 0 ? (
+                <tr><td className="py-1 text-ink/70">{result.local.label || 'Local tax'}</td><td className="text-right tabular-nums">−${result.local.amount.toFixed(0)}</td></tr>
+              ) : null}
               <tr className="font-semibold border-t border-line"><td className="py-2">Annual take-home</td><td className="text-right tabular-nums">${result.netAnnual.toFixed(0)}</td></tr>
               <tr><td className="py-1 text-ink/70">Net per month (avg)</td><td className="text-right tabular-nums">${(result.netAnnual / 12).toFixed(0)}</td></tr>
               <tr><td className="py-1 text-ink/70">Net per biweekly check</td><td className="text-right tabular-nums">${(result.netAnnual / 26).toFixed(0)}</td></tr>
@@ -225,7 +262,7 @@ export function HourlySalaryConverter({ direction = 'h2s' as Direction, defaultS
             </tbody>
           </table>
           <p className="text-xs text-ink/60 mt-3">
-            Single filer assumption. State tax uses each state&apos;s flat or top-marginal rate verified 2026-05-06. Pre-tax 401(k), HSA, FSA, health premiums, W-4 dependents, and local city or county tax are not modelled here. For a take-home that can include a locality, use the
+            Single filer, annualised estimate. State tax uses each state&apos;s flat or top-marginal rate. Employee-paid state programs (SDI/PFL where they apply) are included. Local city or county tax is included when you pick a locality (default none). Pre-tax 401(k), HSA, FSA, health premiums, and W-4 dependents are not modelled. For per-paycheck withholding with those, use the
             <a className="text-accent underline mx-1" href="/us/gross-to-net-paycheck-calculator">Gross to Net Paycheck Calculator</a>.
           </p>
         </div>
