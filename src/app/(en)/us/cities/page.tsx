@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'US City Paycheck Calculators (2026)',
-    description: '9 cities covered. Local income tax layered on top of federal + state.',
+    description: 'NYC, Detroit, Louisville Metro, Portland/Multnomah and more. Local income tax layered on top of federal + state.',
     url: PAGE_URL,
     type: 'website',
   },

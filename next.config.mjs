@@ -27,6 +27,24 @@ const SECURITY_HEADERS = [
   },
 ];
 
+
+// Live city paycheck pages live at /us/cities/{slug}/paycheck-calculator.
+// Short guesses like /paycheck-calculator/detroit 404'd; only known slugs redirect.
+const CITY_PAYCHECK_SLUGS = [
+  'atlanta', 'austin', 'baltimore', 'boston', 'charlotte', 'cincinnati', 'cleveland',
+  'dallas', 'denver', 'detroit', 'houston', 'indianapolis', 'kansas-city', 'las-vegas',
+  'louisville', 'miami', 'minneapolis', 'nashville', 'new-york-city', 'newark',
+  'philadelphia', 'phoenix', 'pittsburgh', 'portland-multnomah', 'san-diego',
+  'san-francisco', 'seattle', 'st-louis', 'wilmington', 'yonkers',
+];
+function cityPaycheckRedirects() {
+  return CITY_PAYCHECK_SLUGS.flatMap((city) => [
+    { source: `/paycheck-calculator/${city}`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
+    { source: `/us/paycheck-calculator/${city}`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
+    { source: `/us/cities/${city}`, destination: `/us/cities/${city}/paycheck-calculator`, permanent: true },
+  ]);
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -101,6 +119,7 @@ const nextConfig = {
       { source: '/donotsell', destination: '/your-privacy-choices', permanent: true },
       { source: '/us/do-not-sell', destination: '/your-privacy-choices', permanent: true },
       { source: '/us/your-privacy-choices', destination: '/your-privacy-choices', permanent: true },
+      ...cityPaycheckRedirects(),
     ];
   },
 };
