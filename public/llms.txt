@@ -10,7 +10,7 @@ Operator: GoldPaid Ltd, England and Wales no. 17382540, trading as PayslipIQ. No
 
 ## Core entry points
 
-- Homepage: https://payslipiq.com/us
+- Homepage: https://payslipiq.com
 - Pay Stub Checker: https://payslipiq.com/us/pay-stub-checker
 - Paycheck Calculator: https://payslipiq.com/us/paycheck-calculator
 - Take-Home Pay by salary: https://payslipiq.com/us/take-home-pay
