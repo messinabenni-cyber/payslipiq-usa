@@ -11,16 +11,13 @@ export function middleware(req: NextRequest) {
     url.search = '';
     return NextResponse.redirect(url, 308);
   }
-  return NextResponse.next();
+  const requestHeaders = new Headers(req.headers);
+  requestHeaders.set('x-pathname', pathname);
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
   matcher: [
-    '/uk', '/uk/:path*',
-    '/ie', '/ie/:path*',
-    '/ca', '/ca/:path*',
-    '/au', '/au/:path*',
-    '/countries', '/countries/:path*',
-    '/global', '/global/:path*',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)',
   ],
 };

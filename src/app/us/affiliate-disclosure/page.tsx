@@ -50,8 +50,9 @@ export default function AffiliateDisclosurePage() {
         <section className="prose prose-slate max-w-none">
           <h2>How PayslipIQ is funded</h2>
           <p>
-            The free tools and guides on PayslipIQ are supported by two paid products: a one-time
-            Premium Pay Stub Report and a low-cost monthly Paycheck Monitor. PayslipIQ does not run
+            PayslipIQ intends to support the free tools with two listed products: a one-time
+            Premium Pay Stub Report and a monthly Paycheck Monitor. As of this page those products
+            are waitlist / early-access email lists, not live checkout. PayslipIQ does not run
             display-ad networks, does not sell or share user pay stub data, and does not generate
             leads for payday lenders or other high-cost finance products.
           </p>

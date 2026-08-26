@@ -55,7 +55,14 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   // Wave 1 (2026-06-09): take-home-pay by salary + state hub
   '/us/take-home-pay',
   // Wave 2 (2026-06-09): 2026 pay numbers authority page
-  '/us/2026-pay-numbers'];
+  '/us/2026-pay-numbers',
+  '/your-privacy-choices',
+  // Spanish beta (html lang=es-US). Keep labelled beta; interactive calculator remains English.
+  '/es',
+  '/es/calculadora-de-cheque',
+  '/es/glosario',
+  '/es/preguntas-frecuentes',
+  '/es/encontrar-un-cpa'];
 
 // Wave 1: salary ladder for programmatic take-home-pay pages (keep in sync with
 // src/app/us/take-home-pay/[state]/[salary]/page.tsx SALARY_LADDER).

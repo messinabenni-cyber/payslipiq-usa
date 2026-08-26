@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 
 const FAQS = [
   { q: 'What is a Premium Pay Stub Report?', a: 'A 12-page printable PDF that walks through every line on the pay stub uploaded, compares it to standard rates and IRS Pub 15-T expectations, and lays out a checklist of items to verify with payroll. Educational only, not professional advice.' },
-  { q: 'How long does it take?', a: 'Most reports are emailed within 60 minutes of upload. Complex multi-state stubs can take up to 24 hours.' },
+  { q: 'How long does it take?', a: 'This page is a waitlist. Checkout is not live. When a report is offered for purchase we will confirm turnaround before you pay. Do not treat the listed $29 as a live checkout price.' },
   { q: 'How is my data handled?', a: 'The pay stub image is processed by an AI vision model under a no-training agreement, the structured extract is stored encrypted for 30 days, and the original image is deleted within 24 hours. Cover SSN, bank, and any identifiers before upload.' },
   { q: 'Is this tax advice?', a: 'No. PayslipIQ is educational only and not a CPA, attorney, or tax preparer. Always confirm anything that could affect a tax return with a qualified professional.' },
-  { q: 'Can I get a refund?', a: 'Yes, within 7 days of delivery if the report did not match the upload, no questions asked.' },
+  { q: 'Can I get a refund?', a: 'Refund terms will be shown at purchase if checkout opens. There is no live purchase on this page, so there is no refund to request yet.' },
   { q: 'Will the report identify employer errors?', a: 'It will flag deductions that look outside standard ranges and prompt questions for payroll. It will not declare an error or instruct an employer correction. That is the role of the worker, payroll, and a CPA.' }
 ];
 
@@ -38,14 +38,14 @@ export default function Page() {
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Premium</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">A 12-page report on one pay stub.</h1>
       <p className="mt-5 text-[17px] text-ink/80 leading-relaxed">
-        Upload a single US pay stub and get back a detailed PDF that walks through every line, compares each deduction to standard rates, flags any items worth a polite question to payroll, and packages a checklist you can take to a CPA, HR, or a tax preparer. Educational only.
+        When this product opens, you would upload a single US pay stub and get a detailed PDF that walks through every line, compares each deduction to standard rates, flags any items worth a polite question to payroll, and packages a checklist you can take to a CPA, HR, or a tax preparer. Educational only.
       </p>
       <ReviewedBy />
 
       <div className="mt-8 card border border-line rounded-2xl p-6 bg-paper">
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-semibold">$29</span>
-          <span className="text-ink/60 text-sm">one-time, per stub</span>
+          <span className="text-ink/60 text-sm">listed one-time price, waitlist, checkout not live</span>
         </div>
         <ul className="mt-4 grid gap-2 text-[15px] text-ink/85">
           <li>12-page printable PDF report</li>
@@ -53,7 +53,7 @@ export default function Page() {
           <li>Federal, state, FICA, and local tax check</li>
           <li>W-4 withholding optimization checklist</li>
           <li>10-question pack to take to payroll</li>
-          <li>7-day refund if the report did not match the upload</li>
+          <li>Waitlist only today. Refund terms, if any, will be shown at purchase.</li>
         </ul>
         <div className="mt-6">
           <EmailCapture
@@ -61,7 +61,7 @@ export default function Page() {
             variant="waitlist"
             waitlistId="premium-report"
             headline="Request the Premium Pay Stub Report"
-            subheadline="Enter your email and we will send secure upload and checkout details, and confirm turnaround. No spam, unsubscribe any time."
+            subheadline="Waitlist. Checkout is not live. Enter your email and we will tell you if this opens, including price and turnaround. No spam, unsubscribe any time."
             cta="Request my report"
           />
         </div>

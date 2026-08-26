@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/how-it-works" },
 };
 
-const FAQS = [{"q": "Do I need an account to use PayslipIQ?", "a": "No. The free explainer and all calculators work without an account. Premium features (saved reports, monitoring) require email magic-link authentication."}, {"q": "Does PayslipIQ contact my employer?", "a": "No. We help you understand and frame questions. You contact your employer."}, {"q": "What if I disagree with PayslipIQ's explanation?", "a": "Use the 'Report this explanation' link or email feedback@payslipiq.com. Verify with your payroll team or a CPA. PayslipIQ is educational only, not authoritative."}];
+const FAQS = [{"q": "Do I need an account to use PayslipIQ?", "a": "No. The free explainer and all calculators work without an account. The Premium Pay Stub Report and Paycheck Monitor are waitlists. There is no live premium login."}, {"q": "Does PayslipIQ contact my employer?", "a": "No. We help you understand and frame questions. You contact your employer."}, {"q": "What if I disagree with PayslipIQ's explanation?", "a": "Use the 'Report this explanation' link or email feedback@payslipiq.com. Verify with your payroll team or a CPA. PayslipIQ is educational only, not authoritative."}];
 const RELATED = [{"label": "Trust Center", "href": "/trust"}, {"label": "AI Transparency", "href": "/ai-transparency"}, {"label": "Methodology", "href": "/methodology"}];
 const BREADCRUMBS = [{"name": "Home", "url": "/"}, {"name": "Trust", "url": "/trust"}, {"name": "How It Works", "url": "/how-it-works"}];
 

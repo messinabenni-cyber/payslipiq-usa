@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 
 const FAQS = [
   { q: 'What does the Monthly Monitor track?', a: 'Each pay stub uploaded is compared to the previous one and to your YTD baseline. The system flags any noticeable change in net pay, withholding rate, deduction amounts, or new line items, and emails a plain-English summary.' },
-  { q: 'Is this real-time?', a: 'Reports run within 1 hour of upload. Email digest goes out daily if any change is flagged.' },
+  { q: 'Is this live yet?', a: 'No. This page is an early-access waitlist. Checkout is not live. Listed $9/month is the intended price, not a loaded Stripe price. We will confirm availability and pricing before any charge.' },
   { q: 'How is my data handled?', a: 'Pay stub images are processed by an AI vision model under a no-training agreement, the structured extracts are stored encrypted for the duration of your subscription plus 30 days, originals are deleted within 24 hours of processing. Cover SSN, bank, and identifiers before upload.' },
   { q: 'Will the Monitor catch payroll errors?', a: 'It flags items that look outside expected ranges. It does not declare an employer error or instruct a correction. Workers and payroll handle that, the Monitor surfaces the question.' },
-  { q: 'How do I cancel?', a: 'Cancel anytime in account settings. No prorated refunds, but you keep access until the end of the billing month.' },
+  { q: 'How do I cancel?', a: 'There is no live subscription and no account settings billing portal on this site yet. If a paid monitor opens, cancel terms will be shown at signup.' },
   { q: 'Is this financial or tax advice?', a: 'No. Educational only. Confirm anything tax-related with a CPA or qualified tax preparer.' }
 ];
 
@@ -38,14 +38,14 @@ export default function Page() {
       <div className="text-[12px] uppercase tracking-[0.14em] text-accent font-semibold">Subscription</div>
       <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">A second set of eyes on every paycheck.</h1>
       <p className="mt-5 text-[17px] text-ink/80 leading-relaxed">
-        Upload each pay stub as it lands. PayslipIQ tracks it against the prior stub, flags anything that shifted, and emails a plain-English summary. Designed for hourly, multi-job, tipped, and remote workers whose pay stubs change month to month. Educational only.
+        When this product opens, you would upload each pay stub as it lands. PayslipIQ would track it against the prior stub, flags anything that shifted, and emails a plain-English summary. Designed for hourly, multi-job, tipped, and remote workers whose pay stubs change month to month. Educational only.
       </p>
       <ReviewedBy />
 
       <div className="mt-8 card border border-line rounded-2xl p-6 bg-paper">
         <div className="flex items-baseline gap-2">
           <span className="text-3xl font-semibold">$9</span>
-          <span className="text-ink/60 text-sm">/month, cancel anytime</span>
+          <span className="text-ink/60 text-sm">listed monthly price, early access, checkout not live</span>
         </div>
         <ul className="mt-4 grid gap-2 text-[15px] text-ink/85">
           <li>Unlimited pay stub uploads per month</li>
@@ -53,7 +53,7 @@ export default function Page() {
           <li>Withholding shift detection</li>
           <li>Year-to-date trend chart</li>
           <li>Monthly email digest</li>
-          <li>One free Premium Pay Stub Report per quarter ($29 value)</li>
+          <li>Planned: one Premium Pay Stub Report per quarter if both products open (listed $29). Not live.</li>
         </ul>
         <div className="mt-6">
           <EmailCapture
