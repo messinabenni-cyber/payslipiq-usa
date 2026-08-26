@@ -29,7 +29,7 @@ const FAQS = [
   { q: 'I live in Kansas City but work in Overland Park (KS) — do I owe?', a: 'Yes. As a KCMO resident you owe the 1% on all your earnings, regardless of work location. The KS state tax (Kansas) will withhold for your Kansas work; you reconcile MO state credit at filing.' },
   { q: 'I live in suburban Kansas but work in downtown KCMO — do I owe?', a: 'Yes. As a non-resident working in KCMO you owe the 1% on KCMO wages only. Your home state (Kansas) typically allows a credit for the KCMO tax paid; consult a CPA on multi-state reconciliation.' },
   { q: 'Does Missouri tax wages?', a: 'Yes. Missouri uses progressive brackets up to ~4.95% in 2025/2026 (verify with Missouri Department of Revenue). The state tax applies in addition to KCMO.' },
-  { q: 'Does the calculator include the KCMO line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and MO state in the main tool. For the KCMO line, use the Local Tax Estimator below: select "Kansas City, MO earnings tax" — the rate is automatically 1%.' },
+  { q: 'Does the calculator include the KCMO line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and MO state in the main tool. For the KCMO line, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Kansas City, MO earnings tax" — the rate is automatically 1%.' },
 ];
 
 const BREADCRUMBS = [

@@ -311,7 +311,7 @@ export function GrossUpCalculator({
           <p className="text-xs text-ink/60 mt-4 leading-relaxed">
             Tax year 2026. Federal withholding uses the IRS Pub. 15-T 2026 percentage method (Standard Withholding tables).
             Social Security is capped at the SSA 2026 wage base of $184,500. State tax uses the most recently verified flat or
-            top-marginal rate and may not reflect brackets, local taxes, or mid-year changes. The solved gross is an estimate,
+            top-marginal rate and may not reflect full brackets or mid-year changes. The solved gross is an estimate,
             so payroll&apos;s real gross-up can differ once W-4 details, year-to-date wages, and pre-tax benefits
             are applied. 2026 employee-paid state worker contributions are included for the selected state. Local city or county tax is included when you pick a locality. Use it as a
             starting point, not a final figure.

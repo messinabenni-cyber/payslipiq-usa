@@ -28,7 +28,7 @@ const FAQS = [
   { q: 'What is the St. Louis Earnings Tax?', a: 'St. Louis imposes a 1% Earnings Tax on (a) all wages of St. Louis residents (regardless of where they work) and (b) wages earned in St. Louis by non-residents. Renewed by voters in April 2026 through 2031, same as the KCMO Earnings Tax structure.' },
   { q: 'I live in St. Louis but work outside the city — do I owe?', a: 'Yes. As a STL resident you owe the 1% on all your earnings, regardless of work location. As a non-resident working in STL, you owe the 1% on STL wages only. Same as the KCMO rule.' },
   { q: 'Does Missouri tax wages?', a: 'Yes. Missouri uses progressive brackets up to ~4.95% in 2025/2026 (verify with Missouri Department of Revenue). The state tax applies in addition to STL.' },
-  { q: 'Does the calculator include the STL line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and MO state in the main tool. For the STL line, use the Local Tax Estimator below: select "St. Louis, MO earnings tax" — the rate is automatically 1%.' },
+  { q: 'Does the calculator include the STL line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and MO state in the main tool. For the STL line, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "St. Louis, MO earnings tax" — the rate is automatically 1%.' },
   { q: 'What about remote work?', a: 'A recent court case (Boles v. City of St. Louis) addressed whether STL can tax wages of non-residents who work remotely from outside the city. As of 2026 the City of St. Louis has narrowed its position; if you work from outside STL for a STL-based employer, verify your obligation with the city Revenue Division.' },
 ];
 

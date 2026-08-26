@@ -29,7 +29,7 @@ const FAQS = [
   { q: 'How does this differ from Kentucky state tax?', a: 'Kentucky has a flat state income tax (currently 4.0%, with legislative plans to lower further). The Louisville Metro occupational tax is on top of the state tax. Both come out of your paycheck if you work in Louisville.' },
   { q: 'I live in Indiana but work in Louisville — what do I pay?', a: 'You pay Louisville/Jefferson 2.2% on Louisville wages plus KY non-resident state tax. Indiana then credits you for the KY tax (per KY-IN reciprocity rules) but the occupational tax is generally NOT covered by the reciprocity agreement — verify with a CPA on multi-state filing.' },
   { q: 'I live in Louisville but work in Indiana — what do I pay?', a: 'You still owe Louisville/Jefferson 2.2% on all your earnings as a Louisville resident (residence-based for the city portion). Indiana state withholds for your IN work; KY credits you at filing.' },
-  { q: 'Does the calculator include the Louisville line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and KY state flat 4.0% in the main tool. For the Louisville Metro 2.2%, use the Local Tax Estimator below: select "Other / custom rate" and enter 2.2%.' },
+  { q: 'Does the calculator include the Louisville line?', a: 'The PayslipIQ Paycheck Calculator handles federal, FICA, and KY state flat 4.0% in the main tool. For the Louisville Metro 2.2%, pick the same locality in the Paycheck Calculator or Gross-to-Net (default is none), or use the Local Tax Estimator on this page: select "Other / custom rate" and enter 2.2%.' },
 ];
 
 const BREADCRUMBS = [
