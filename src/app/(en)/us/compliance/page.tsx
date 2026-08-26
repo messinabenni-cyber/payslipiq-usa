@@ -24,7 +24,7 @@ const POSTURE = [
   {
     framework: 'CCPA / CPRA (California)',
     status: 'Compliant',
-    detail: 'PayslipIQ does not sell personal information. CA residents may request access, deletion, or correction by emailing privacy@payslipiq.com. The Pay Stub Checker upload flow is opt-in. Analytics use cookie-less tooling.'
+    detail: 'PayslipIQ does not sell personal information and does not share it for cross-context ads. See Your Privacy Choices. Rights via privacy@payslipiq.com. GPC is honored as the default because there is no sale or share. Analytics are cookie-less Plausible.'
   },
   {
     framework: 'GDPR (EU/UK residents)',
@@ -38,8 +38,8 @@ const POSTURE = [
   },
   {
     framework: 'PCI DSS',
-    status: 'Out of scope (Stripe-handled)',
-    detail: 'Card data is processed by Stripe. PayslipIQ never touches a primary account number. Stripe is PCI DSS Level 1 certified.'
+    status: 'Not in scope',
+    detail: 'Checkout is not live. PayslipIQ does not collect or process card data. If billing opens through a PCI-certified processor, that processor would be named here.'
   }
 ];
 
@@ -47,7 +47,7 @@ const SUBPROCESSORS = [
   { name: 'Vercel', purpose: 'Hosting and edge CDN', cert: 'SOC 2 Type 2', region: 'United States' },
   { name: 'Anthropic', purpose: 'Claude vision model for pay-stub extraction', cert: 'No-training agreement', region: 'United States' },
   { name: 'GitHub', purpose: 'Source control', cert: 'SOC 2 Type 2', region: 'United States' },
-  { name: 'Stripe', purpose: 'Payment processing for premium products', cert: 'PCI DSS Level 1', region: 'United States' },
+  { name: 'Stripe', purpose: 'Not in use. Checkout is not live. Would process payments if billing opens.', cert: 'PCI DSS Level 1', region: 'United States' },
   { name: 'Resend', purpose: 'Transactional email (lead magnets, receipts)', cert: 'SOC 2 Type 2', region: 'United States' },
   { name: 'Plausible', purpose: 'Cookie-less analytics', cert: 'EU GDPR-aligned', region: 'European Union' },
 ];

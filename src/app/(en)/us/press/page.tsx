@@ -17,9 +17,9 @@ const FACTS = [
   ['AI', 'Optional Claude vision pay-stub upload under a no-training agreement. Image deleted within 24 hours of processing.'],
   ['Independence', 'Not affiliated with the IRS, SSA, US Department of Labor, any state tax agency, employer, or payroll provider.'],
   ['Privacy', 'Cookie-less analytics. No third-party ad networks. No data sold.'],
-  ['Funded by', 'Two paid products ($29 one-time Premium Pay Stub Report, $9/mo Paycheck Monitor). No ads.'],
+  ['Funded by', 'Free tools. Two listed products ($29 Premium Pay Stub Report, $9/mo Paycheck Monitor) are waitlists; checkout is not live. No ads.'],
   ['Founded', '2025'],
-  ['HQ', 'United States'],
+  ['Legal entity', 'GoldPaid Ltd (England and Wales no. 17382540), trading as PayslipIQ. This site is for US workers. Not a US-incorporated company.'],
 ];
 
 const ASSETS = [

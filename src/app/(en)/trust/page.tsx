@@ -47,7 +47,7 @@ export default function Page() {
 <h2>How pay stub uploads are handled</h2>
 <p>On upload: TLS 1.2+ in transit, encrypted at rest during processing, processed by our pay stub parser (rules + AI summarization), result returned to your session.</p>
 <p>Free tier retention: pay stub files are retained only long enough to return the explanation, then automatically purged within 24 hours. Free tier files are not linked to any persistent identity.</p>
-<p>Premium tier retention: files associated with saved reports are retained for the lifetime of the saved report, encrypted at rest, accessible only to the user. Users can delete reports at any time.</p>
+<p>Paid saved reports are not a live product today. If they open, files would be retained encrypted at rest for the lifetime of the saved report, and users could delete them.</p>
 <p>What we do not do: sell pay stub content, share it with employers, use it for advertising profiling, or train AI models on user pay stubs.</p>
 <h2>How AI is used</h2>
 <ol>
