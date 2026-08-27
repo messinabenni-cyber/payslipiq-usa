@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "HSA and FSA Explained",
   description: "How Health Savings Account and Flexible Spending Account work on a US paycheck. Pre-tax. Limits. Tax-free for medical. Educational only.",
-  alternates: { canonical: "/us/hsa-fsa-explained" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/hsa-fsa-explained',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/hsa-fsa-explained',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/hsa-fsa-explained'
+    }
+  },
 };
 
 const FAQS = [{"q": "What is the HSA contribution limit?", "a": "The IRS sets it annually. Verify the current year at irs.gov. There is a catch-up contribution for age 55+."}, {"q": "Can I have HSA and FSA at the same time?", "a": "Limited Purpose FSA (dental and vision only) yes. General-purpose FSA disqualifies HSA contributions."}, {"q": "What happens to my FSA when I leave a job?", "a": "Unspent funds typically forfeit unless your plan offers run-out or COBRA-style continuation."}, {"q": "Can I invest my HSA?", "a": "Yes, once you hit the plan's investment threshold. Most custodians allow mutual fund investments inside HSA."}];
