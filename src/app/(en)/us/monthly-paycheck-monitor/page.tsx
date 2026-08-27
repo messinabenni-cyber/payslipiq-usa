@@ -9,7 +9,7 @@ import { EmailCapture } from '@/components/EmailCapture';
 export const metadata: Metadata = {
   title: 'Monthly Paycheck Monitor | PayslipIQ',
   description: 'Submit each pay stub for tracking. PayslipIQ flags net pay changes, withholding shifts, and anomalies in plain English. Educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/monthly-paycheck-monitor' }
+  alternates: { canonical: 'https://payslipiq.com/us/monthly-paycheck-monitor', languages: { 'en-US': 'https://payslipiq.com/us/monthly-paycheck-monitor', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/monthly-paycheck-monitor' } }
 };
 
 const FAQS = [
