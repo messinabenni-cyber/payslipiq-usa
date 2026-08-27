@@ -13,7 +13,7 @@ const PAGE_URL = 'https://payslipiq.com/us/salary-to-hourly';
 export const metadata: Metadata = {
   title: 'Salary to Hourly Calculator (USA, 2026) | PayslipIQ',
   description: 'Convert any US annual salary into an hourly equivalent. Adjusts for real working hours and includes after-tax estimates for all 50 states.',
-  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'x-default': PAGE_URL } },
+  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': PAGE_URL } },
   openGraph: {
     title: 'Salary to Hourly Calculator (USA, 2026)',
     description: 'See your true hourly equivalent at any US salary.',
