@@ -5,7 +5,7 @@ import { MobileStickyCTA } from '@/components/MobileStickyCTA';
 export const metadata: Metadata = {
   title: "Hourly Paycheck Calculator (US)",
   description: "Hourly paycheck calculator for US workers. Hours times rate, overtime, federal, FICA, state. Educational only.",
-  alternates: { canonical: "/us/hourly-paycheck-calculator" },
+  alternates: { canonical: 'https://payslipiq.com/us/hourly-paycheck-calculator', languages: { 'en-US': 'https://payslipiq.com/us/hourly-paycheck-calculator', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/hourly-paycheck-calculator' } },
 };
 
 const FAQS = [{"q": "How is overtime calculated for hourly workers?", "a": "1.5x the regular rate for hours above 40 in a workweek (federal FLSA). Some states (CA, NV, AK, CO) have stricter daily-OT rules."}, {"q": "What about shift differentials?", "a": "Differentials are part of the regular rate for FLSA OT calculations. Overtime is 1.5x (base + differential), not 1.5x base alone."}, {"q": "Do hourly workers get pre-tax 401(k) and benefits?", "a": "Yes, eligibility depends on plan rules, not on hourly vs salaried."}];
