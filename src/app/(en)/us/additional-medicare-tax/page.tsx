@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Additional Medicare Tax (0.9 Percent)",
   description: "Additional Medicare Tax: 0.9 percent on wages above $200,000 single or $250,000 MFJ. Employee-only. Form 8959 reconciliation. Educational only.",
-  alternates: { canonical: "/us/additional-medicare-tax" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/additional-medicare-tax',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/additional-medicare-tax',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/additional-medicare-tax'
+    }
+  },
 };
 
 const FAQS = [{"q": "What is the Additional Medicare Tax?", "a": "A 0.9 percent surcharge on Medicare wages above $200,000 single or $250,000 married filing jointly. Created by the Affordable Care Act. Employee-only, no employer match."}, {"q": "Does my employer withhold it automatically?", "a": "Only on wages above $200,000 in a calendar year with that employer. With multiple jobs, the threshold may not trigger automatically and you reconcile at filing time using Form 8959."}, {"q": "Are the thresholds indexed for inflation?", "a": "No. They have been the same since 2013."}, {"q": "Is this the same as the Net Investment Income Tax?", "a": "No. NIIT is a separate 3.8 percent tax on investment income for high earners. Different tax, different form (Form 8960)."}];
