@@ -5,7 +5,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Common Pay Stub Mistakes (US)",
   description: "Twelve common payroll errors and how to spot them on a US pay stub. Educational only.",
-  alternates: { canonical: "/us/pay-stub-mistakes" },
+  alternates: { canonical: 'https://payslipiq.com/us/pay-stub-mistakes', languages: { 'en-US': 'https://payslipiq.com/us/pay-stub-mistakes', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/pay-stub-mistakes' } },
 };
 
 const FAQS = [{"q": "Is my employer required to give me a pay stub?", "a": "Depends on the state. See your state's pay stub laws page. Federal FLSA requires recordkeeping but does not require you receive a stub."}, {"q": "Can I sue my employer over a pay stub mistake?", "a": "Maybe, depending on the violation and state law. Consult an employment attorney."}, {"q": "Will PayslipIQ contact my employer for me?", "a": "No. We help you understand the stub and draft polite messages. You contact your employer."}];
