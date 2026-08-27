@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     languages: {
       'en-US': 'https://payslipiq.com/us/find-a-cpa',
       'es-US': 'https://payslipiq.com/es/encontrar-un-cpa',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
       'x-default': 'https://payslipiq.com/us/find-a-cpa'
     }
   }
