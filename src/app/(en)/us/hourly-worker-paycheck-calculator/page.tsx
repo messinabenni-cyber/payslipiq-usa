@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Hourly Worker Paycheck Guide (2026)",
   description: "How hourly pay works: hours, rate, overtime, shift differentials, tipped floor, federal, state and FICA. A plain-English guide. Educational only.",
-  alternates: { canonical: "/us/hourly-worker-paycheck-calculator" },
+  alternates: { canonical: 'https://payslipiq.com/us/hourly-worker-paycheck-calculator', languages: { 'en-US': 'https://payslipiq.com/us/hourly-worker-paycheck-calculator', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/hourly-worker-paycheck-calculator' } },
 };
 
 const FAQS = [{"q": "Is overtime taxed at a higher rate?", "a": "No. Overtime hours are paid at 1.5x but taxed at the same rate as regular wages. A single big paycheck can look over-withheld because payroll annualizes it. The over-withholding comes back as a refund at filing time."}, {"q": "What is the federal minimum wage?", "a": "$7.25 per hour. Most states are higher. Your employer must pay the higher of state and federal."}, {"q": "Why is my pay stub rate lower than my offer letter?", "a": "Compare again carefully. If they really do not match, document and ask payroll in writing. Small variances can come from rounding to nearest cent on a different conversion (annualized vs hourly)."}];
