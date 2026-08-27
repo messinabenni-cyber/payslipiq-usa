@@ -5,7 +5,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: "Disclaimers, PayslipIQ",
   description: "Master disclaimer + per-tool disclaimers for PayslipIQ. Educational only, not advice.",
-  alternates: { canonical: '/disclaimer' },
+  alternates: { canonical: 'https://payslipiq.com/disclaimer', languages: { 'en-US': 'https://payslipiq.com/disclaimer', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/disclaimer' } },
 };
 
 export default function Page() {
