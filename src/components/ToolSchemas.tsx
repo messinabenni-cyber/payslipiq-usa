@@ -23,7 +23,6 @@ export function SoftwareApplicationLd({
     operatingSystem: 'Web',
     applicationCategory: category,
     url,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     description,
     isAccessibleForFree: true
   };

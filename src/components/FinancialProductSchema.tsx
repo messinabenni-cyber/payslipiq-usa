@@ -25,8 +25,7 @@ export function FinancialProductSchema({ name, description, url, category = 'Pay
     description,
     url,
     category,
-    provider: { '@type': 'Organization', name: 'PayslipIQ', url: 'https://payslipiq.com/' },
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    provider: { '@type': 'Organization', name: 'PayslipIQ', url: 'https://payslipiq.com' },
     areaServed: { '@type': 'Country', name: 'United States' },
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
