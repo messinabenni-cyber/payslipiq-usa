@@ -8,7 +8,15 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Why Is My Bonus Taxed at 22 Percent?",
   description: "Bonus tax explained. The 22 percent is withholding, not the actual tax rate. Percentage method vs aggregate method. Educational only.",
-  alternates: { canonical: "/us/bonus-tax-paycheck" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/bonus-tax-paycheck',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/bonus-tax-paycheck',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/bonus-tax-paycheck'
+    }
+  },
 };
 
 const FAQS = [{"q": "Is 22 percent the actual tax rate on bonuses?", "a": "No. It is the federal withholding rate. Your actual tax depends on your total annual income. Over-withholding refunds at filing time."}, {"q": "What if my bonus is over $1 million?", "a": "Amounts above $1 million in a calendar year are withheld at 37 percent under the percentage method."}, {"q": "Can I ask payroll to withhold less?", "a": "Hard. The percentage method is fixed at 22 percent. You can lower regular-wage withholding via your W-4 to offset, or direct bonus dollars into 401(k) or HSA."}, {"q": "Does FICA apply to bonuses?", "a": "Yes. 6.2 percent Social Security up to the wage base and 1.45 percent Medicare on every dollar. Plus 0.9 percent Additional Medicare above thresholds. 2026 employee-paid state worker contributions (CA SDI, NY PFL, NJ SDI/FLI, ME PFML, and the rest of the encoded programs) also apply to the bonus for the selected state."}, {"q": "Does the 2025 no-tax-on-overtime or no-tax-on-tips deduction apply to my bonus?", "a": "No. Those deductions cover qualified overtime premium pay and qualified tips for tax years 2025 through 2028. A bonus is supplemental wages and does not qualify. It stays subject to federal income tax and FICA."}];
