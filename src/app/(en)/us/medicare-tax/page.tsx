@@ -6,7 +6,15 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Medicare Tax Explained",
   description: "Medicare tax: 1.45 percent on all wages, no cap. Plus 0.9 percent Additional Medicare for high earners. Funds Medicare Part A. Educational only.",
-  alternates: { canonical: "/us/medicare-tax" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/medicare-tax',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/medicare-tax',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/medicare-tax'
+    }
+  },
 };
 
 const FAQS = [{"q": "What is the Medicare tax rate?", "a": "1.45 percent on all wages, no cap. The 0.9 percent Additional Medicare Tax applies to wages above $200,000 single or $250,000 married filing jointly."}, {"q": "Does my employer match Medicare?", "a": "Yes, 1.45 percent on the base. The 0.9 percent Additional Medicare is employee-only, no employer match."}, {"q": "Does 401(k) reduce Medicare?", "a": "No. Pre-tax 401(k) reduces federal income tax wages, not Medicare wages."}, {"q": "I have multiple jobs and crossed $200k. Will withholding be right?", "a": "Employers withhold the Additional Medicare based on wages with that employer alone. With multiple jobs, your combined wages may trigger the surcharge before either employer recognizes it. You may owe additional at filing or have over-withheld. Use Form 8959 at filing time."}];
