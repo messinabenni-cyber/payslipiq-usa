@@ -13,7 +13,7 @@ const TERMS = [
 export const metadata: Metadata = {
   title: "How to Read a W-2 (Box-by-Box)",
   description: "What every W-2 box means. Box 1 wages, Box 2 federal tax, Box 3-6 FICA, Box 12 codes, state boxes. Educational only.",
-  alternates: { canonical: "/us/w2-explained" },
+  alternates: { canonical: 'https://payslipiq.com/us/w2-explained', languages: { 'en-US': 'https://payslipiq.com/us/w2-explained', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/w2-explained' } },
 };
 
 const FAQS = [{"q": "Why is Box 1 less than my actual annual gross?", "a": "Pre-tax 401(k), traditional HSA, FSA, Section 125 health insurance all reduce Box 1. Your gross is on your last pay stub of the year. Box 1 is reduced by these pre-tax items."}, {"q": "What is code DD in Box 12?", "a": "The cost of employer-sponsored health insurance. Informational only. Not taxable. Not included in Box 1 wages."}, {"q": "I worked in two states. How is that on the W-2?", "a": "You may receive separate W-2s, or one W-2 with multiple state lines. Boxes 15-20 separate state-by-state wages and withholding."}, {"q": "When does my employer have to send my W-2?", "a": "By January 31 of the following year. If you have not received it by mid-February, contact payroll. If still unreceived by February 14, contact the IRS."}];
