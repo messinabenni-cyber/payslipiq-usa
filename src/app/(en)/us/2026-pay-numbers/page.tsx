@@ -20,7 +20,7 @@ const ssMax = Math.round(ssBase * FED_RATES.socialSecurity);
 export const metadata: Metadata = {
   title: '2026 US Pay Numbers: FICA, Brackets, 401(k) Limits | PayslipIQ',
   description: `The 2026 figures that drive every US paycheck: Social Security 6.2% up to ${fmt0(ssBase)}, Medicare 1.45%, 2026 federal tax brackets, standard deduction ${fmt0(STANDARD_DEDUCTION.single)}, and the ${fmt0(24500)} 401(k) limit. Sourced and dated. Educational only.`,
-  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'x-default': PAGE_URL } },
+  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': PAGE_URL } },
   openGraph: {
     title: '2026 US Pay Numbers: FICA, Brackets, 401(k) Limits',
     description: 'The verified 2026 federal figures behind your paycheck, in one sourced reference.',
