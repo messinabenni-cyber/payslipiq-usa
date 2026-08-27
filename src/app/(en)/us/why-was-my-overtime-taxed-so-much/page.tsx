@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Why Was My Overtime Taxed So Much?",
   description: "The myth that overtime is taxed at a higher rate. The reality: same rate, more withholding, refundable. Educational only.",
-  alternates: { canonical: "/us/why-was-my-overtime-taxed-so-much" },
+  alternates: { canonical: 'https://payslipiq.com/us/why-was-my-overtime-taxed-so-much', languages: { 'en-US': 'https://payslipiq.com/us/why-was-my-overtime-taxed-so-much', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/why-was-my-overtime-taxed-so-much' } },
 };
 
 const FAQS = [{"q": "Is overtime taxed at a higher rate?", "a": "No. Same rate as regular wages. The withholding looks higher because payroll annualizes a big check, which projects you into a higher bracket. The over-withholding refunds at year-end."}, {"q": "Should I avoid overtime to save tax?", "a": "No. You will earn more after-tax overall. The temporary over-withholding is not a real tax cost, it is a cash-flow timing issue."}, {"q": "How is FICA on overtime?", "a": "Same as regular wages. 6.2 percent SS up to the wage base, 1.45 percent Medicare. The 0.9 percent Additional Medicare kicks in above $200k single. No special treatment for overtime hours."}];
