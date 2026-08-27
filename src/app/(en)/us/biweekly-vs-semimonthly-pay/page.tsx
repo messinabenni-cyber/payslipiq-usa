@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Bi-Weekly vs Semi-Monthly Pay",
   description: "Difference between bi-weekly (26 paychecks/year) and semi-monthly (24 paychecks/year). Math, timing, budgeting. Educational only.",
-  alternates: { canonical: "/us/biweekly-vs-semimonthly-pay" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/biweekly-vs-semimonthly-pay',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/biweekly-vs-semimonthly-pay',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/biweekly-vs-semimonthly-pay'
+    }
+  },
 };
 
 const FAQS = [{"q": "How many paychecks in a year?", "a": "Bi-weekly is 26. Semi-monthly is 24. Weekly is 52. Monthly is 12."}, {"q": "Are bi-weekly paychecks smaller than semi-monthly?", "a": "On the same salary, yes (slightly). Annual salary divided by 26 < annual salary divided by 24. Across the year both add to the same total."}, {"q": "Do I save on tax with semi-monthly?", "a": "No. Annual tax is identical. Per-paycheck withholding is just calculated to total to the same annual amount."}];
