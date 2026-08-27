@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Nurse Paycheck Guide (Shifts, Overtime, Travel Nurse)",
   description: "Shift differentials, mandatory overtime, travel nurse stipends, and how each shows on a nurse pay stub. Educational only.",
-  alternates: { canonical: "/us/nurse-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/nurse-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/nurse-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/nurse-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Are shift differentials taxed?", "a": "Yes. Differentials are wages and are taxed and FICA-taxed like regular wages."}, {"q": "How is overtime calculated when I have multiple rates?", "a": "FLSA requires a weighted-average regular rate including all non-discretionary differentials and bonuses. Overtime is 1.5x that weighted rate."}, {"q": "Are travel nurse stipends taxable?", "a": "Tax-free only if you maintain a separate tax home and the assignment is genuinely temporary (under 12 months). Otherwise taxable. The IRS scrutinizes this."}, {"q": "Why is my overtime more than 1.5x base?", "a": "Because it includes shift differentials. 1.5 times (base plus $4 differential) is bigger than 1.5 times base alone."}];
