@@ -6,7 +6,15 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Press kit | PayslipIQ',
   description: 'PayslipIQ press kit: brand assets, fact sheet, founder bio, media inquiries.',
-  alternates: { canonical: 'https://payslipiq.com/us/press' }
+  alternates: {
+    canonical: 'https://payslipiq.com/us/press',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/press',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/press'
+    }
+  }
 };
 
 const FACTS = [
