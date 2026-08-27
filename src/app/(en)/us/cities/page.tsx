@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'US City Paycheck Calculators — Local Tax by City (2026)',
   description:
     'Per-city US paycheck calculators that factor in local income tax: NYC, Yonkers, Philadelphia, Detroit, Wilmington and more. 2026 rates, primary-sourced.',
-  alternates: { canonical: PAGE_URL },
+  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': PAGE_URL } },
   openGraph: {
     title: 'US City Paycheck Calculators (2026)',
     description: 'NYC, Detroit, Louisville Metro, Portland/Multnomah and more. Local income tax layered on top of federal + state.',
