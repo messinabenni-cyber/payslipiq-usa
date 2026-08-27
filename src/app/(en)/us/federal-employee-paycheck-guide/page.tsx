@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Federal Civilian Paycheck Guide (GS, FERS, TSP)",
   description: "GS pay scale, locality pay, FERS retirement, FEHB health insurance, Thrift Savings Plan. Educational only.",
-  alternates: { canonical: "/us/federal-employee-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/federal-employee-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/federal-employee-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/federal-employee-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Where do I find my GS pay?", "a": "OPM publishes annual GS pay tables at opm.gov. Find your grade, step and locality."}, {"q": "What is FEHB?", "a": "Federal Employees Health Benefits. The largest employer-sponsored health insurance program in the US. Premiums partly subsidized."}, {"q": "Are TSP contributions pre-tax or Roth?", "a": "Both. Traditional reduces taxable wages now. Roth is post-tax with tax-free qualified withdrawals. You can split."}, {"q": "What is the FERS pension?", "a": "Defined-benefit pension based on years of service times high-3 average salary times 1 percent (or 1.1 percent if you retire at 62 plus with 20+ years). Vesting at 5 years."}];
