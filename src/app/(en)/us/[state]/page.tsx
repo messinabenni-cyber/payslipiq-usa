@@ -26,7 +26,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${s.name} Paycheck Guide 2026: Tax, FICA & Take-Home`,
     description: `How a ${s.name} paycheck works in 2026: federal tax, FICA (Social Security and Medicare), ${taxLabel}, deductions and overtime, with take-home pay by salary. Educational only.`,
-    alternates: { canonical: `/us/${s.slug}` },
+    alternates: {
+      canonical: `https://payslipiq.com/us/${s.slug}`,
+      languages: {
+        'en-US': `https://payslipiq.com/us/${s.slug}`,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': `https://payslipiq.com/us/${s.slug}`
+      }
+    },
   };
 }
 
