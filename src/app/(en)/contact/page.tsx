@@ -5,7 +5,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: "Contact PayslipIQ",
   description: "Contact PayslipIQ: general, privacy, security, press, partnerships.",
-  alternates: { canonical: '/contact' },
+  alternates: { canonical: 'https://payslipiq.com/contact', languages: { 'en-US': 'https://payslipiq.com/contact', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/contact' } },
 };
 
 export default function Page() {
