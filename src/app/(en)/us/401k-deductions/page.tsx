@@ -5,7 +5,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "401(k) Deductions on Your Paycheck",
   description: "How 401(k) deductions work: pre-tax, Roth, employer match, vesting, loans. FICA still applies. Educational only.",
-  alternates: { canonical: "/us/401k-deductions" },
+  alternates: { canonical: 'https://payslipiq.com/us/401k-deductions', languages: { 'en-US': 'https://payslipiq.com/us/401k-deductions', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/401k-deductions' } },
 };
 
 const FAQS = [{"q": "Does my 401(k) reduce my Social Security tax?", "a": "No. Pre-tax 401(k) reduces federal income tax wages, not FICA wages."}, {"q": "Pre-tax or Roth?", "a": "Depends on your current vs expected retirement tax bracket. Lower in retirement = pre-tax wins. Higher = Roth wins. Many people split because future brackets are unknown."}, {"q": "Is the employer match free money?", "a": "Yes, after vesting. Always contribute enough to capture the full match. Leaving before vesting forfeits unvested match."}, {"q": "Why didn't my 401(k) reduce my Medicare tax?", "a": "Pre-tax 401(k) is not exempt from FICA (Social Security + Medicare). It is exempt from federal income tax."}];
