@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "HSA vs FSA",
   description: "Health Savings Account versus Flexible Spending Account. Eligibility, limits, rollover, ownership. Educational only.",
-  alternates: { canonical: "/us/hsa-vs-fsa" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/hsa-vs-fsa',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/hsa-vs-fsa',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/hsa-vs-fsa'
+    }
+  },
 };
 
 const FAQS = [{"q": "Can I have both HSA and FSA?", "a": "Generally not at the same time. A limited-purpose FSA (dental and vision only) can co-exist with HSA. A general-purpose FSA disqualifies HSA contributions."}, {"q": "Do HSA contributions reduce FICA?", "a": "Pre-tax HSA contributions through payroll (cafeteria plan) reduce FICA wages. After-tax HSA contributions you make outside payroll do not."}, {"q": "What happens to my FSA if I leave my job?", "a": "Unspent FSA funds typically forfeit, with limited COBRA-style continuation rights in some plans. Use it before you leave."}];
