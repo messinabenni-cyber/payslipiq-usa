@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "1099 Contractor vs W-2 Employee",
   description: "Pay and tax differences between a 1099 contractor and a W-2 employee. Self-employment tax, benefits, quarterly estimates. Educational only.",
-  alternates: { canonical: "/us/contractor-vs-employee-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/contractor-vs-employee-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/contractor-vs-employee-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/contractor-vs-employee-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Why do contractors pay more tax than employees?", "a": "Both halves of FICA. Employees pay 7.65 percent and the employer pays the matching 7.65 percent. Contractors pay the full 15.3 percent themselves, called self-employment tax."}, {"q": "Do contractors get pay stubs?", "a": "No. You get an invoice or direct payment. At year-end you receive Form 1099-NEC instead of a W-2."}, {"q": "How much should a contractor set aside for taxes?", "a": "A safe rule is 25 to 35 percent of gross, depending on income and state. Use Form 1040-ES to estimate."}, {"q": "Can I be both employee and contractor at the same time?", "a": "Yes. Many people are. You receive both a W-2 and a 1099. Combine on your return."}];
