@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Multi-State Payroll Guide",
   description: "How payroll works when you live and work across states. Reciprocity, credits, withholding. Educational only.",
-  alternates: { canonical: "/us/multi-state-payroll-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/multi-state-payroll-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/multi-state-payroll-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/multi-state-payroll-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Will I be double-taxed working in two states?", "a": "Usually no. The residence state credits tax paid to the work-location state. You file in both states but pay total tax close to what you would have paid in just one."}, {"q": "How do I know if my states have reciprocity?", "a": "Check the residence state's Department of Revenue website. Common pairs: PA-NJ (limited), IL-IN, MD-VA, WI-IL, MI-IN, KY-IN. File the exemption form with payroll."}, {"q": "My employer only withholds for one state. Is that wrong?", "a": "Maybe. If your work crosses state lines and reciprocity does not apply, the employer should withhold for the work state. If they are not, raise it with payroll. You may owe estimated taxes to the second state at year-end."}];
