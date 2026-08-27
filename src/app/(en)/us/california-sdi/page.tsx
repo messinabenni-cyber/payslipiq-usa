@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "California State Disability Insurance (SDI)",
   description: "California SDI is an employee-paid payroll deduction. Funds short-term disability and Paid Family Leave. Educational only.",
-  alternates: { canonical: "/us/california-sdi" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/california-sdi',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/california-sdi',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/california-sdi'
+    }
+  },
 };
 
 const FAQS = [{"q": "Is California SDI capped?", "a": "The wage cap was removed in 2024. The percentage now applies to every dollar of California wages. Verify the current rate with the California EDD."}, {"q": "What does CA SDI fund?", "a": "California Disability Insurance (short-term disability) and Paid Family Leave. Both benefits are funded entirely by employee SDI contributions."}, {"q": "Is CA SDI the same as PFL?", "a": "PFL is funded by SDI. They are two benefit programs sharing one payroll deduction."}];
