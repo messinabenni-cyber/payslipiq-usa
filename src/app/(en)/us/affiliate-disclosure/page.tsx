@@ -9,7 +9,15 @@ export const metadata: Metadata = {
   title: 'Affiliate Disclosure',
   description:
     'How PayslipIQ is funded and how we handle partner and affiliate links. Affiliate relationships never change tool results or editorial content. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
 };
 
 const BREADCRUMBS = [
