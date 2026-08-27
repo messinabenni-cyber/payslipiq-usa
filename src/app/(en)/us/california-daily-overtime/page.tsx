@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "California Daily Overtime Rules",
   description: "California overtime: 1.5x over 8/day, 2x over 12/day, 7th-day rules. Stricter than federal FLSA. Educational only.",
-  alternates: { canonical: "/us/california-daily-overtime" },
+  alternates: { canonical: 'https://payslipiq.com/us/california-daily-overtime', languages: { 'en-US': 'https://payslipiq.com/us/california-daily-overtime', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/california-daily-overtime' } },
 };
 
 const FAQS = [{"q": "Does California have daily overtime?", "a": "Yes. 1.5x over 8 hours per day, 2x over 12 hours per day, plus the 7th-consecutive-day rules."}, {"q": "Can my California employer make me work 12+ hour days at straight time?", "a": "Only if you are exempt from FLSA. Non-exempt workers earn 1.5x for hours 9-12 and 2x for hours 13+, regardless of weekly total."}, {"q": "What is the 7th-day rule?", "a": "If you work 7 consecutive days in a workweek, the first 8 hours of the 7th day are at 1.5x and any hours over 8 on that day are at 2x."}];
