@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Military Paycheck Guide (LES, BAH, BAS, CZTE, TSP)",
   description: "Active-duty pay structure: base pay, BAH, BAS, special pays, combat zone tax exclusion, Thrift Savings Plan. Educational only.",
-  alternates: { canonical: "/us/military-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/military-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/military-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/military-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Is BAH taxed?", "a": "No. BAH is tax-free federally and in most states. Does not appear in Box 1 wages on the W-2."}, {"q": "Is BAS taxed?", "a": "No. Same treatment as BAH."}, {"q": "Do I pay state tax where I am stationed?", "a": "Generally no. You pay state tax in your State of Legal Residence (SLR), regardless of where you are stationed. The Servicemembers Civil Relief Act protects this. You set SLR via DD 2058."}, {"q": "How does the combat zone exclusion show on my LES?", "a": "The pay earned in the combat zone is shown but excluded from federal income tax. Enlisted get full exclusion. Officers are capped."}];
