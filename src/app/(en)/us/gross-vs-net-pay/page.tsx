@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Gross Pay vs Net Pay",
   description: "Gross pay vs net pay. The math behind what gets deducted between the two. Educational only.",
-  alternates: { canonical: "/us/gross-vs-net-pay" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/gross-vs-net-pay',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/gross-vs-net-pay',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/gross-vs-net-pay'
+    }
+  },
 };
 
 const FAQS = [{"q": "What is the difference between gross and net pay?", "a": "Gross is what you earned. Net is what lands in your bank after federal income tax, FICA, state and local tax, and any voluntary deductions."}, {"q": "Why is my net so much less than my gross?", "a": "Combined federal income tax, FICA, state tax, local tax (where applicable), plus benefits typically reduce gross by 25 to 40 percent."}, {"q": "Is my W-2 Box 1 my gross?", "a": "No. Box 1 is gross minus pre-tax 401(k), traditional HSA, FSA, Section 125 health insurance. So Box 1 is usually less than your end-of-year gross."}];
