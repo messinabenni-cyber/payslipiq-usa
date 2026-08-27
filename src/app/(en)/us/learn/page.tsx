@@ -8,7 +8,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 export const metadata: Metadata = {
   title: "Learn, All Paycheck Topics (US)",
   description: "Index of all PayslipIQ paycheck guides for US workers: federal, state, FICA, W-4, 401(k), benefits, overtime. Educational only.",
-  alternates: { canonical: '/us/learn' },
+  alternates: { canonical: 'https://payslipiq.com/us/learn', languages: { 'en-US': 'https://payslipiq.com/us/learn', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/learn' } },
 };
 
 const BREADCRUMBS = [
