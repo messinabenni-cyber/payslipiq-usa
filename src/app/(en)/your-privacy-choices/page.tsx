@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Your Privacy Choices, PayslipIQ (US)',
   description:
     'Do Not Sell or Share My Personal Information. PayslipIQ does not sell personal information and does not share it for cross-context behavioral advertising. Honor GPC. Rights via privacy@payslipiq.com.',
-  alternates: { canonical: '/your-privacy-choices' },
+  alternates: { canonical: 'https://payslipiq.com/your-privacy-choices', languages: { 'en-US': 'https://payslipiq.com/your-privacy-choices', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/your-privacy-choices' } },
 };
 
 export default function Page() {
