@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Local Income Taxes (US Cities and Counties)",
   description: "Cities and counties that levy local income tax in addition to state. NYC, Yonkers, Philadelphia, Detroit, Ohio cities, and more. Educational only.",
-  alternates: { canonical: "/us/local-taxes" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/local-taxes',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/local-taxes',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/local-taxes'
+    }
+  },
 };
 
 const FAQS = [{"q": "Which US cities have a local income tax?", "a": "NYC, Yonkers, Philadelphia, Pittsburgh, Detroit, several Ohio cities, Wilmington DE, Newark NJ, Birmingham, Kansas City, St Louis, plus dozens of smaller cities and most Maryland counties, Indiana counties, and Kentucky cities."}, {"q": "Do I pay city tax if I work in a city but live elsewhere?", "a": "Depends on the city. NYC tax is residence-based (commuters from NJ do not pay NYC tax). Philadelphia, Detroit, most Ohio cities tax both residents and non-residents who work in the city, often at different rates."}, {"q": "How is local tax calculated?", "a": "Usually a flat percentage of taxable wages. Sometimes the percentage differs for residents vs non-residents. Verify with the city's Department of Revenue."}];
