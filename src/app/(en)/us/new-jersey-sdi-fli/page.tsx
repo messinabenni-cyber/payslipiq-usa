@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "New Jersey SDI and FLI",
   description: "NJ Temporary Disability Insurance (SDI) and Family Leave Insurance (FLI) employee-paid premiums. Educational only.",
-  alternates: { canonical: "/us/new-jersey-sdi-fli" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/new-jersey-sdi-fli',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/new-jersey-sdi-fli',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/new-jersey-sdi-fli'
+    }
+  },
 };
 
 const FAQS = [{"q": "What is NJ TDI?", "a": "Temporary Disability Insurance. Short-term disability benefits for NJ workers, funded by employee-paid payroll premiums. Often labeled SDI on stubs."}, {"q": "Is NJ FLI separate from NJ TDI?", "a": "Yes, two separate programs with separate premiums. TDI covers your own disability. FLI covers leave to care for someone else."}, {"q": "Are the premiums capped?", "a": "Yes, both have annual caps set by the NJ Department of Labor. Verify current values at myleavebenefits.nj.gov."}];
