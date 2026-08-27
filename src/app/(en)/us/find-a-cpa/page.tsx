@@ -8,7 +8,7 @@ import { FAQSchema } from '@/components/FAQSchema';
 export const metadata: Metadata = {
   title: 'Find a CPA or Tax Preparer | PayslipIQ',
   description: 'When the pay stub questions go beyond educational guidance, talk to a qualified CPA or IRS-credentialed tax preparer. Here is how to find one and what to ask.',
-  alternates: { canonical: 'https://payslipiq.com/us/find-a-cpa' }
+  alternates: { canonical: 'https://payslipiq.com/us/find-a-cpa', languages: { 'en-US': 'https://payslipiq.com/us/find-a-cpa', 'es-US': 'https://payslipiq.com/es/encontrar-un-cpa', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/find-a-cpa' } }
 };
 
 const FAQS = [
