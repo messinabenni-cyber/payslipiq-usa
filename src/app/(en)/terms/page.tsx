@@ -5,7 +5,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: "Terms of Service, PayslipIQ (US)",
   description: "PayslipIQ Terms of Service: educational use, no advice, no warranties, US jurisdiction, account terms.",
-  alternates: { canonical: '/terms' },
+  alternates: { canonical: 'https://payslipiq.com/terms', languages: { 'en-US': 'https://payslipiq.com/terms', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/terms' } },
 };
 
 export default function Page() {
