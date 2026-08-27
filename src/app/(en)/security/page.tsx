@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Security",
   description: "How PayslipIQ secures pay stub data: TLS, encryption at rest, security headers, vulnerability disclosure, sub-processors.",
-  alternates: { canonical: "/security" },
+  alternates: { canonical: 'https://payslipiq.com/security', languages: { 'en-US': 'https://payslipiq.com/security', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/security' } },
 };
 
 const FAQS = [{"q": "Does PayslipIQ store my Social Security Number?", "a": "No. The pay stub explainer detects and redacts SSNs before processing. We do not store SSNs."}, {"q": "How can I report a security vulnerability?", "a": "Email security@payslipiq.com. We acknowledge within 5 business days. Good-faith research is welcomed."}, {"q": "Is my pay stub encrypted at rest?", "a": "Yes. Pay stub files are encrypted at rest during processing. Free-tier files are auto-purged within 24 hours. Paid saved reports are not a live product today."}, {"q": "Does PayslipIQ run third-party trackers?", "a": "No. Only Plausible Analytics, which is cookieless and does not collect PII. No Google Analytics, no Facebook Pixel, no advertising trackers."}];
