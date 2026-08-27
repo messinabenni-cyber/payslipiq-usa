@@ -7,7 +7,15 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: 'Compliance | PayslipIQ',
   description: 'PayslipIQ compliance posture: FCRA boundary, CCPA / CPRA, GDPR where applicable, sub-processor list. SOC 2 is roadmapped, not certified.',
-  alternates: { canonical: 'https://payslipiq.com/us/compliance' }
+  alternates: {
+    canonical: 'https://payslipiq.com/us/compliance',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/compliance',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/compliance'
+    }
+  }
 };
 
 const POSTURE = [
