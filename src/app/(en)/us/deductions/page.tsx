@@ -8,7 +8,15 @@ import { FAQSchema } from '@/components/FAQSchema';
 export const metadata: Metadata = {
   title: "Paycheck Deductions Explained (US)",
   description: "Every type of paycheck deduction explained. Federal, FICA, state, local, pre-tax, post-tax. Educational only.",
-  alternates: { canonical: '/us/deductions' },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/deductions',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/deductions',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/deductions'
+    }
+  },
 };
 
 const BREADCRUMBS = [
