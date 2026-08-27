@@ -8,7 +8,15 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: 'Free Pay Stub Anatomy Guide',
   description: 'Free 12-page printable PDF that walks through every line on a US pay stub. Educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/free-guide' }
+  alternates: {
+    canonical: 'https://payslipiq.com/us/free-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/free-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/free-guide'
+    }
+  }
 };
 
 const CHAPTERS = [
