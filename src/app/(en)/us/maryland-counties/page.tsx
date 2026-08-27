@@ -12,7 +12,15 @@ export const metadata: Metadata = {
   title: 'Maryland County Income Tax Rates (2026) — All 23 Counties + Baltimore City',
   description:
     'Maryland local income tax piggyback rates for all 23 counties + Baltimore City for 2026. Residence-based: follows where you live, not where you work. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Maryland County Income Tax Rates (2026)',
     description: 'All 23 MD counties + Baltimore City piggyback rates. Residence-based.',
