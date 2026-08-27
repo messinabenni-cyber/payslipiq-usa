@@ -5,7 +5,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: "About PayslipIQ",
   description: "PayslipIQ explains their paycheck. Plain-English. Privacy-first. Educational only.",
-  alternates: { canonical: '/about' },
+  alternates: { canonical: 'https://payslipiq.com/about', languages: { 'en-US': 'https://payslipiq.com/about', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/about' } },
 };
 
 export default function Page() {
