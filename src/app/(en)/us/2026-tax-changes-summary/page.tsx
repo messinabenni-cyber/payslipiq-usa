@@ -6,7 +6,15 @@ export const metadata: Metadata = {
   title: 'What Changed for Your 2026 Paycheck',
   description:
     '2026 paycheck and tax changes in plain English: new federal brackets, a higher standard deduction, the $184,500 Social Security wage base, and 2026 401(k), HSA, and FSA limits. Educational only.',
-  alternates: { canonical: '/us/2026-tax-changes-summary' },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/2026-tax-changes-summary',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/2026-tax-changes-summary',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/2026-tax-changes-summary'
+    }
+  },
 };
 
 const FAQS = [
