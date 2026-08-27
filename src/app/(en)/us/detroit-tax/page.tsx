@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Detroit and Michigan City Income Taxes",
   description: "Detroit resident and non-resident income tax, plus other Michigan cities. Educational only.",
-  alternates: { canonical: "/us/detroit-tax" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/detroit-tax',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/detroit-tax',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/detroit-tax'
+    }
+  },
 };
 
 const FAQS = [{"q": "Does Michigan have city income tax?", "a": "Yes, about two dozen cities. Detroit, Grand Rapids, Lansing, Flint, Saginaw, Pontiac and others. Each city has separate resident and non-resident rates."}, {"q": "I live in Detroit but work in Dearborn. Do I pay Detroit tax?", "a": "You owe Detroit resident tax on all wages. Dearborn does not levy a city income tax (verify), so no Dearborn tax. If your work city did levy a non-resident tax, Detroit would typically credit it."}, {"q": "Are Michigan city taxes pre-tax or post-tax?", "a": "Withheld from wages, similar to state tax. They reduce net pay but do not reduce federal income tax wages."}];
