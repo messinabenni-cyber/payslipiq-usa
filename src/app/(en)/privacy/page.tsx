@@ -5,7 +5,7 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: "Privacy Policy, PayslipIQ (US)",
   description: "PayslipIQ US privacy policy: what we collect, what we don't, your CCPA/state-law rights, sub-processors, AI processing.",
-  alternates: { canonical: '/privacy' },
+  alternates: { canonical: 'https://payslipiq.com/privacy', languages: { 'en-US': 'https://payslipiq.com/privacy', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/privacy' } },
 };
 
 export default function Page() {
