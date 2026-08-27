@@ -130,11 +130,6 @@ function SoftwareApplicationLd() {
     operatingSystem: 'Web',
     applicationCategory: 'FinanceApplication',
     url: PAGE_URL,
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD'
-    },
     description: 'A free, plain-English explainer for US pay stubs. Educational only.',
     isAccessibleForFree: true
   };

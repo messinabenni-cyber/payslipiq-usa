@@ -72,7 +72,6 @@ function SoftwareApplicationLd() {
     operatingSystem: 'Web',
     applicationCategory: 'FinanceApplication',
     url: PAGE_URL,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     description: 'A free US paycheck calculator that estimates federal, FICA, and state withholding for all 50 states plus DC. Educational only.',
     isAccessibleForFree: true
   };

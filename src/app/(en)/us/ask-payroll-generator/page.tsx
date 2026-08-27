@@ -79,7 +79,6 @@ function SoftwareApplicationLd() {
     operatingSystem: 'Web',
     applicationCategory: 'BusinessApplication',
     url: PAGE_URL,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     description: 'A free client-side message generator that drafts polite, factual paycheck questions for HR or payroll. Educational only.',
     isAccessibleForFree: true
   };

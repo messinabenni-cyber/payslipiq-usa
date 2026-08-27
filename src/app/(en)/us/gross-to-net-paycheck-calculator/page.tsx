@@ -268,7 +268,7 @@ export default function Page() {
             url: PAGE_URL,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any (web)',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            isAccessibleForFree: true,
             creator: { '@type': 'Organization', name: 'PayslipIQ' }
           })
         }}
