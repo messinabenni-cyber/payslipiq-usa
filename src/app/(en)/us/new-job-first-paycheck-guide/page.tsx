@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "New Job? Your First Paycheck Explained",
   description: "What to expect on the first paycheck at a new US job. W-4, benefits, partial pay periods, sign-on bonuses. Educational only.",
-  alternates: { canonical: "/us/new-job-first-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/new-job-first-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/new-job-first-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/new-job-first-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Why is my first paycheck smaller than expected?", "a": "Most likely a partial pay period, benefits not yet active, or default W-4 settings. Compare to the offer letter and pay frequency."}, {"q": "When do my benefits kick in?", "a": "Depends on the employer. Common waiting periods are 30, 60 or 90 days. Some employers offer first-day benefits. Check your offer letter or HR portal."}, {"q": "Is my sign-on bonus taxed at a higher rate?", "a": "Withheld at the federal supplemental rate (22 percent up to $1M annually, 37 percent above). FICA still applies. Final tax owed is settled at filing time."}, {"q": "Should I change my W-4 right away?", "a": "Submit it once with sensible defaults. After one or two paychecks, review using the IRS Tax Withholding Estimator and adjust if needed."}];
