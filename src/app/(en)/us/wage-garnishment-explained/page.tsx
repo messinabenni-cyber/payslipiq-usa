@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Wage Garnishment Explained (US)",
   description: "How wage garnishment works on a US paycheck. Federal limits, types, what to do if you receive notice. Educational only.",
-  alternates: { canonical: "/us/wage-garnishment-explained" },
+  alternates: { canonical: 'https://payslipiq.com/us/wage-garnishment-explained', languages: { 'en-US': 'https://payslipiq.com/us/wage-garnishment-explained', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/wage-garnishment-explained' } },
 };
 
 const FAQS = [{"q": "Can my employer fire me for a garnishment?", "a": "Federal law (Title III CCPA) prohibits firing for a single garnishment. Multiple garnishments may not have the same protection. Some states have stronger protections."}, {"q": "What is the maximum garnishment from my paycheck?", "a": "For most consumer debts, 25 percent of disposable earnings. Higher for child support (up to 65 percent) and IRS levy (no fixed cap, IRS uses an exempt-amount table)."}, {"q": "Can I stop a garnishment?", "a": "Sometimes. Pay the debt in full, set up a payment plan, file for bankruptcy, or challenge the garnishment in court if there is a basis. Talk to an attorney."}];
