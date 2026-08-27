@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Methodology — How PayslipIQ Calculates US Paychecks",
   description: "Open methodology with specific IRS, SSA and state DOR sources. IRS Notice 2025-67, Pub 15-T 2026, SS wage base $184,500, 11 contribution jurisdictions.",
-  alternates: { canonical: "/methodology" },
+  alternates: { canonical: 'https://payslipiq.com/methodology', languages: { 'en-US': 'https://payslipiq.com/methodology', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/methodology' } },
 };
 
 const FAQS = [
