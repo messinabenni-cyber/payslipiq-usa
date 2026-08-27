@@ -5,7 +5,15 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Health Insurance Deductions on Your Paycheck",
   description: "Pre-tax health, dental, vision premiums under Section 125. HSA, FSA. How they show on a US pay stub. Educational only.",
-  alternates: { canonical: "/us/health-insurance-deductions" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/health-insurance-deductions',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/health-insurance-deductions',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/health-insurance-deductions'
+    }
+  },
 };
 
 const FAQS = [{"q": "Is my health insurance pre-tax?", "a": "Almost always, when you elect it through the employer's cafeteria plan. After-tax COBRA premiums are post-tax."}, {"q": "Does Section 125 reduce my FICA?", "a": "Yes. Section 125 deductions reduce both federal income tax wages and FICA wages. This is rare, most pre-tax deductions only reduce income tax wages."}, {"q": "Can I have HSA and FSA?", "a": "Limited Purpose FSA (dental and vision only) can co-exist with HSA. General-purpose FSA disqualifies HSA contributions."}, {"q": "What happens to FSA at the end of the year?", "a": "Use-it-or-lose-it, except many plans offer a small carryover (up to ~$640 in recent years) or a grace period."}];
