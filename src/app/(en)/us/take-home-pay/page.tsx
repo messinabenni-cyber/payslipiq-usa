@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Take-Home Pay by Salary and State (USA, 2026) | PayslipIQ',
   description:
     'See estimated take-home pay for any salary in any US state for 2026. Pick your state, pick a salary, and get the full breakdown of federal tax, FICA, state tax and per-paycheck pay. Educational only.',
-  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'x-default': PAGE_URL } },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL,
+    },
+  },
   openGraph: {
     title: 'Take-Home Pay by Salary and State (USA, 2026)',
     description: 'Pick your state and salary to see estimated 2026 take-home pay and every deduction.',
