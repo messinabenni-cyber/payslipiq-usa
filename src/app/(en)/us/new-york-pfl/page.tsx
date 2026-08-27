@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "New York Paid Family Leave (PFL)",
   description: "NY PFL is a separate employee-paid premium funding paid family leave benefits. Capped annually. Educational only.",
-  alternates: { canonical: "/us/new-york-pfl" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/new-york-pfl',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/new-york-pfl',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/new-york-pfl'
+    }
+  },
 };
 
 const FAQS = [{"q": "Is NY PFL the same as NY State Disability?", "a": "No. They are two separate programs with separate premiums. NY State Disability covers your own illness or injury. NY PFL covers leave to care for someone else or bond with a new child."}, {"q": "How much is the NY PFL premium?", "a": "A small percentage of wages, capped at an annual maximum. Set annually by NY State. Verify with the NY Workers' Compensation Board."}, {"q": "How many weeks of NY PFL can I take?", "a": "Up to 12 weeks per year, paid at roughly 67 percent of your average weekly wage capped at the statewide average."}];
