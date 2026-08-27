@@ -9,7 +9,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: 'Pay Stub Glossary (100+ terms)',
   description: 'Every code, abbreviation, and acronym you might see on a US pay stub. 100+ terms, A to Z, plain English.',
-  alternates: { canonical: 'https://payslipiq.com/us/glossary' }
+  alternates: { canonical: 'https://payslipiq.com/us/glossary', languages: { 'en-US': 'https://payslipiq.com/us/glossary', 'es-US': 'https://payslipiq.com/es/glosario', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/glossary' } }
 };
 
 interface Term {
