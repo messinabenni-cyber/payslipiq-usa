@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Pre-Tax vs Post-Tax Deductions",
   description: "Pre-tax and post-tax deductions on a US paycheck. What reduces taxable wages, what reduces FICA, what does neither. Educational only.",
-  alternates: { canonical: "/us/pre-tax-vs-post-tax-deductions" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/pre-tax-vs-post-tax-deductions',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/pre-tax-vs-post-tax-deductions',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/pre-tax-vs-post-tax-deductions'
+    }
+  },
 };
 
 const FAQS = [{"q": "Does a Roth 401(k) reduce taxable wages?", "a": "No. Roth contributions are post-tax, so they don't reduce current taxable wages. Qualified withdrawals are tax-free in retirement."}, {"q": "Why doesn't my 401(k) reduce my FICA?", "a": "Pre-tax 401(k) is exempt from federal income tax but NOT from FICA. Section 125 cafeteria plan deductions (most health insurance, FSA) reduce FICA wages. 401(k) does not."}, {"q": "Are HSA contributions pre-tax or post-tax?", "a": "Pre-tax when made through payroll under a Section 125 cafeteria plan. After-tax HSA contributions you make outside payroll do not reduce FICA."}, {"q": "Are union dues pre-tax?", "a": "Almost always post-tax."}];
