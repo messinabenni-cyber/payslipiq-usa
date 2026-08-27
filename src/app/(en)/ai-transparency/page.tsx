@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "AI Transparency",
   description: "Where AI is used at PayslipIQ, where it is not, what its limits are, how it is bounded.",
-  alternates: { canonical: "/ai-transparency" },
+  alternates: { canonical: 'https://payslipiq.com/ai-transparency', languages: { 'en-US': 'https://payslipiq.com/ai-transparency', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/ai-transparency' } },
 };
 
 const FAQS = [{"q": "Does PayslipIQ use AI for tax rate lookups?", "a": "No. Tax rates and brackets come from public IRS and state authority sources, refreshed on a published schedule. AI is used only to generate the human-language explanation alongside numbers."}, {"q": "Will AI ever give me tax advice?", "a": "No. AI outputs are bounded by prompts and post-processed for compliance. The model is forbidden from giving tax, legal, financial, or payroll advice. Every output ends with the verification reminder."}, {"q": "Does PayslipIQ train AI on my pay stub?", "a": "No. We do not train any AI on user pay stubs. Our LLM provider contractually does not retain user data for training."}, {"q": "What data is sent to the AI provider?", "a": "Pay stub data with SSN and bank account numbers redacted. Sent over encrypted transport. Used only to return the explanation. Provider does not retain or train on it."}, {"q": "What happens if AI gets something wrong?", "a": "Click 'Report this explanation' beside the output, or email feedback@payslipiq.com. We review reports weekly and update prompts and parsers."}];
