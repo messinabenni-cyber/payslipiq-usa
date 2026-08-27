@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "How PayslipIQ Works",
   description: "Three steps, no account required for the basics, paycheck reading made simple.",
-  alternates: { canonical: "/how-it-works" },
+  alternates: { canonical: 'https://payslipiq.com/how-it-works', languages: { 'en-US': 'https://payslipiq.com/how-it-works', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/how-it-works' } },
 };
 
 const FAQS = [{"q": "Do I need an account to use PayslipIQ?", "a": "No. The free explainer and all calculators work without an account. The Premium Pay Stub Report and Paycheck Monitor are waitlists. There is no live premium login."}, {"q": "Does PayslipIQ contact my employer?", "a": "No. We help you understand and frame questions. You contact your employer."}, {"q": "What if I disagree with PayslipIQ's explanation?", "a": "Use the 'Report this explanation' link or email feedback@payslipiq.com. Verify with your payroll team or a CPA. PayslipIQ is educational only, not authoritative."}];
