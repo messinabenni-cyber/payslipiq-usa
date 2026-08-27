@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Accessibility Statement — PayslipIQ',
   description:
     'PayslipIQ targets WCAG 2.1 Level AA. Keyboard navigation, ARIA labels, color contrast, alt text. Report accessibility issues to our contact address.',
-  alternates: { canonical: PAGE_URL },
+  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': PAGE_URL } },
 };
 
 const BREADCRUMBS = [
