@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Editorial Standards & Review Process',
   description:
     'How PayslipIQ researches, sources, reviews, and corrects every paycheck explainer. Our editorial process, sourcing standard, corrections policy, and independence. Educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/about-the-team' },
+  alternates: { canonical: 'https://payslipiq.com/us/about-the-team', languages: { 'en-US': 'https://payslipiq.com/us/about-the-team', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/about-the-team' } },
 };
 
 const PROCESS = [
