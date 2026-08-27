@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Gig Worker Paycheck Guide (Rideshare, Delivery, Freelance)",
   description: "1099-K, 1099-NEC, self-employment tax, deductions, quarterly estimates for gig workers. Educational only.",
-  alternates: { canonical: "/us/gig-worker-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/gig-worker-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/gig-worker-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/gig-worker-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Do I owe tax on every dollar from gig work?", "a": "On net earnings (gross minus deductible business expenses). Mileage, phone portion, supplies, platform fees are common deductions. Keep records."}, {"q": "Should I form an LLC?", "a": "An LLC alone does not change federal tax. A single-member LLC is taxed as a sole proprietor by default. An S-Corp election can reduce SE tax in some cases. Talk to a CPA."}, {"q": "What is the standard mileage rate?", "a": "The IRS publishes it annually. Multiply business miles times the rate, or alternatively track actual vehicle expenses. Verify the current rate at irs.gov."}, {"q": "Do I file taxes quarterly?", "a": "If you expect to owe $1,000 or more at year-end, yes. Form 1040-ES. Failure to pay can trigger underpayment penalties."}];
