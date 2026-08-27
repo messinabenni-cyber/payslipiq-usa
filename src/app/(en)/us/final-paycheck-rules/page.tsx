@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Final Paycheck Rules by State",
   description: "When your final paycheck must be paid after termination or resignation. Federal floor and state-specific timing. Educational only.",
-  alternates: { canonical: "/us/final-paycheck-rules" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/final-paycheck-rules',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/final-paycheck-rules',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/final-paycheck-rules'
+    }
+  },
 };
 
 const FAQS = [{"q": "When does my final paycheck have to come?", "a": "Depends on your state and whether you were fired or resigned. California requires same-day for terminations. New York allows next regular payday. Check your state's labor department."}, {"q": "Do I get my unused vacation paid out?", "a": "Depends on state law and employer policy. California, Colorado, Massachusetts, Montana, Nebraska, North Dakota, Wyoming generally require payout. Many states leave it to employer policy."}, {"q": "What if my final paycheck is late?", "a": "File a wage claim with your state Department of Labor. Some states (CA notably) impose waiting-time penalties on the employer."}];
