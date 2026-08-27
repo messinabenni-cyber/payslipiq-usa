@@ -13,7 +13,7 @@ const TERMS = [
 export const metadata: Metadata = {
   title: "W-4 Guide (How to Fill Out a W-4)",
   description: "Step-by-step W-4 guide. Filing status, multiple jobs, dependents, deductions, extra withholding. Educational only.",
-  alternates: { canonical: "/us/w4-guide" },
+  alternates: { canonical: "https://payslipiq.com/us/w4-guide", languages: { "en-US": "https://payslipiq.com/us/w4-guide", "es-US": "https://payslipiq.com/es", "en-GB": "https://payslipiq.co.uk", "en-IE": "https://payslipiq.co.uk/ie", "x-default": "https://payslipiq.com/us/w4-guide" } },
 };
 
 const FAQS = [{"q": "How often can I change my W-4?", "a": "Any time. Submit a new one to your employer whenever your situation changes (marriage, child, second job, side income, big change in deductions)."}, {"q": "Does my W-4 affect my state tax?", "a": "No. Most states have their own W-4 equivalent (NY IT-2104, CA DE-4, etc.). Your federal W-4 only affects federal withholding."}, {"q": "What happens if I don't submit a W-4?", "a": "Your employer applies default withholding (single, no adjustments), which usually over-withholds. You can file a tax return to claim the refund."}, {"q": "Can I claim 'exempt'?", "a": "Only if you owed no federal income tax last year AND expect to owe none this year. Submit a fresh W-4 by February 15 each year to maintain exempt status. Most people do not qualify."}];
