@@ -9,7 +9,7 @@ import { EmailCapture } from '@/components/EmailCapture';
 export const metadata: Metadata = {
   title: 'Premium Pay Stub Report | PayslipIQ',
   description: 'Detailed pay stub analysis with deduction breakdown, withholding optimization checklist, and a personalized payroll question pack. Educational only, not advice.',
-  alternates: { canonical: 'https://payslipiq.com/us/premium-pay-stub-report' }
+  alternates: { canonical: 'https://payslipiq.com/us/premium-pay-stub-report', languages: { 'en-US': 'https://payslipiq.com/us/premium-pay-stub-report', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/premium-pay-stub-report' } }
 };
 
 const FAQS = [
