@@ -5,7 +5,7 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Why Is My Paycheck Lower Than Expected?",
   description: "Common reasons US workers see less take-home: W-4 changes, mid-year benefits, FICA cap, supplemental withholding, garnishments. Educational only.",
-  alternates: { canonical: "/us/why-is-my-paycheck-lower" },
+  alternates: { canonical: "https://payslipiq.com/us/why-is-my-paycheck-lower", languages: { "en-US": "https://payslipiq.com/us/why-is-my-paycheck-lower", "es-US": "https://payslipiq.com/es/preguntas-frecuentes", "en-GB": "https://payslipiq.co.uk", "en-IE": "https://payslipiq.co.uk/ie", "x-default": "https://payslipiq.com/us/why-is-my-paycheck-lower" } },
 };
 
 const FAQS = [{"q": "Why did my January paycheck shrink versus December?", "a": "Most likely a combination of: new benefits enrollment, new 401(k) percentage, Social Security wage base reset to zero (so SS tax restarted), and the annual federal/state tax-table refresh."}, {"q": "My paycheck dropped after a bonus check. What changed?", "a": "If the bonus was paid in a prior period, the over-withholding stays on the books. The current paycheck is back to normal. You will see the over-withheld amount come back at filing time."}, {"q": "What if my paycheck dropped for no obvious reason?", "a": "Check the W-4 status with payroll. Confirm benefits enrollment did not change. Verify YTD totals add up. Use the comparison page for a line-by-line diff."}];
