@@ -80,6 +80,8 @@ const nextConfig = {
       { source: '/global',       destination: '/', permanent: true },
       { source: '/global/:path*', destination: '/', permanent: true }, { source: '/us/after-tax/:amount', destination: '/us/paycheck-calculator', permanent: true }, { source: '/us/utah/after-tax/:amount', destination: '/us/utah', permanent: true }, { source: '/us/delaware/after-tax/:amount', destination: '/us/delaware', permanent: true }, { source: '/us/methodology', destination: '/methodology', permanent: true }, { source: '/us/florida/cities/:path*', destination: '/us/local-paycheck-taxes', permanent: true }, { source: '/us/problems/why-is-my-bonus-taxed-so-much', destination: '/us/bonus-tax-paycheck', permanent: true }, { source: '/us/new-jersey/after-tax/:amount', destination: '/us/new-jersey', permanent: true }, { source: '/us/:state/after-tax/:amount', destination: '/us/:state', permanent: true },
       // audit-v14: retire legacy / pre-restructure URL patterns that 404 (GSC "Not found")
+      { source: '/about-us', destination: '/about', permanent: true },
+      { source: '/us/about-us', destination: '/about', permanent: true },
       { source: '/us/about', destination: '/about', permanent: true },
       { source: '/us/terms', destination: '/terms', permanent: true },
       { source: '/us/privacy', destination: '/privacy', permanent: true },
