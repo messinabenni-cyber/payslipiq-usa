@@ -12,7 +12,15 @@ export const metadata: Metadata = {
   title: 'PayslipIQ vs ADP Paycheck Calculator (2026)',
   description:
     'How PayslipIQ compares to ADP’s free paycheck calculator: a plain-English line-by-line pay stub explainer vs a payroll provider’s estimator. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'PayslipIQ vs ADP Paycheck Calculator',
     description: 'A plain-English pay stub explainer compared with ADP’s free calculator.',
