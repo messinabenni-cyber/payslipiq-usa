@@ -5,7 +5,15 @@ export const metadata: Metadata = {
   title: 'System Status',
   description:
     'Live status of PayslipIQ tools and pages — homepage, pay stub checker, paycheck calculator, and APIs. Service status only, educational use.',
-  alternates: { canonical: 'https://payslipiq.com/us/status' },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/status',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/status',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/status'
+    }
+  },
   robots: { index: false, follow: true },
 };
 
