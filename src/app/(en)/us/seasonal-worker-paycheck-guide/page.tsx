@@ -4,7 +4,7 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Seasonal Worker Paycheck Guide",
   description: "How seasonal work taxes work. Withholding, exemption, end-of-season W-2, refunds. Educational only.",
-  alternates: { canonical: "/us/seasonal-worker-paycheck-guide" },
+  alternates: { canonical: 'https://payslipiq.com/us/seasonal-worker-paycheck-guide', languages: { 'en-US': 'https://payslipiq.com/us/seasonal-worker-paycheck-guide', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us/seasonal-worker-paycheck-guide' } },
 };
 
 const FAQS = [{"q": "Will I get a refund if I only worked summer?", "a": "Often yes. If annual income is below the standard deduction, federal income tax owed is zero. Any withholding from your summer paychecks comes back when you file."}, {"q": "Do I have to file taxes if I only earned $4,000 over a summer?", "a": "Maybe not required (below filing threshold). But if any federal income tax was withheld, file to claim the refund."}, {"q": "Can I claim \"exempt\" on a summer W-4?", "a": "Only if you owed no federal income tax last year and expect none this year. \"Exempt\" stops federal withholding. FICA still applies."}];
