@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Paycheck Health Score — 8 Things to Check on Your Next US Pay Stub (Free PDF)',
   description:
     'A free PDF that walks you through the 8 things to check on your next US pay stub: W-4 status, FICA caps, state worker contributions, local tax, pre-tax order, bonus-month variance, YTD pace, and benefits drift. Drop your email, get it.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Paycheck Health Score — Free PDF',
     description: '8 checks every US worker should run on their next pay stub. Free, no spam.',
