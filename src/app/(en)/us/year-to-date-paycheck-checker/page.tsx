@@ -13,7 +13,15 @@ const PAGE_URL = 'https://payslipiq.com/us/year-to-date-paycheck-checker';
 export const metadata: Metadata = {
   title: 'Year-to-Date Paycheck Checker (USA, 2026) | PayslipIQ',
   description: 'Project year-end gross, take-home, and W-2 box 1 from your YTD pay stub. Flags Social Security wage base, Additional Medicare 0.9%, 401(k), and HSA limits.',
-  alternates: { canonical: PAGE_URL, languages: { 'en-US': PAGE_URL, 'x-default': PAGE_URL } },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Year-to-Date Paycheck Checker (USA, 2026)',
     description: 'Project year-end pay + flag SS, Medicare, 401(k), HSA thresholds.',
