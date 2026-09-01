@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Paycheck Comparison (Why Two Paychecks Differ)",
   description: "Compare two US paychecks line by line. What changed and why. Educational only.",
-  alternates: { canonical: "/us/paycheck-comparison" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/paycheck-comparison',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/paycheck-comparison',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/paycheck-comparison'
+    }
+  },
 };
 
 const FAQS = [{"q": "My net pay dropped by exactly the amount of a 401(k) increase. Why?", "a": "Pre-tax 401(k) reduces gross before tax, but federal tax savings recoup only the marginal-rate portion of the contribution. The rest comes out of net. The math: $100 401(k) increase reduces net by ~$78 (at 22 percent bracket)."}, {"q": "How big a difference between paychecks should I worry about?", "a": "Small variations (under 5 percent) are usually rounding, partial periods, or differential changes. Larger swings deserve investigation."}, {"q": "How do I diff two pay stubs quickly?", "a": "Side by side on screen or paper. Compare the lines in the order they appear: gross, pre-tax, federal tax, FICA, state tax, post-tax, net."}];
