@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Ohio Local Income Tax (RITA, CCA)",
   description: "How Ohio municipal income tax works. RITA, CCA, and city-administered taxes. Educational only.",
-  alternates: { canonical: "/us/ohio-rita-cca" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/ohio-rita-cca',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/ohio-rita-cca',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/ohio-rita-cca'
+    }
+  },
 };
 
 const FAQS = [{"q": "What is RITA?", "a": "Regional Income Tax Agency. A non-profit that administers municipal income tax for over 300 Ohio cities. Withholding appears on stubs labeled RITA plus the city name."}, {"q": "What is CCA?", "a": "Central Collection Agency. Administers municipal income tax for cities primarily in northeast Ohio, including Cleveland. Withholding appears as CCA plus the city name."}, {"q": "I work in Columbus but live in Dublin. Do I pay both?", "a": "Likely yes, with crediting. Columbus taxes you on Columbus-source wages. Dublin levies its residence rate but typically credits Columbus tax paid. Net result varies, but you do not usually pay full rates to both."}, {"q": "What is SDIT?", "a": "School District Income Tax. Some Ohio school districts levy this on residents to fund schools. Residence-based, not work-based."}];
