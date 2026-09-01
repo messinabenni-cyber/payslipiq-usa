@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+const PAGE_URL = 'https://payslipiq.com/us/why-am-i-paying-state-tax-i-don-t-live-there';
+
 export const metadata: Metadata = {
   title: "Why Am I Paying State Tax for a State I Don't Live In?",
   description: "When work-location state tax applies. Convenience-of-employer rule. Reciprocity. Educational only.",
-  alternates: { canonical: "/us/why-am-i-paying-state-tax-i-don-t-live-there" },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
 };
 
 const FAQS = [{"q": "I moved from CA to TX. Why is CA still taxed on my paycheck?", "a": "Payroll has not updated your residence. Tell HR your new address. CA continues to tax until then, and you may need a part-year resident return for the year you moved."}, {"q": "I work remotely from NJ for a NY employer. Why is NY tax taken?", "a": "New York applies the convenience-of-employer rule. If your remote work from NJ is for the employer's convenience rather than your own necessity, NY taxes the wages. NJ allows a credit on its return for tax paid to NY."}, {"q": "How do I claim a state tax credit for tax paid elsewhere?", "a": "On your residence state return, claim the credit for tax paid to another state. The form name varies by state but is usually called \"credit for taxes paid to another state.\""}];
