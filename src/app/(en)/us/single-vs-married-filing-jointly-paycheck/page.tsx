@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Single vs Married Filing Jointly on Your Paycheck",
   description: "How filing status changes federal withholding. Single vs MFJ brackets, standard deduction, MFJ withholding tables. Educational only.",
-  alternates: { canonical: "/us/single-vs-married-filing-jointly-paycheck" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/single-vs-married-filing-jointly-paycheck',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/single-vs-married-filing-jointly-paycheck',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/single-vs-married-filing-jointly-paycheck'
+    }
+  },
 };
 
 const FAQS = [{"q": "Should I use Step 2 of the W-4 after I get married?", "a": "If both spouses work, yes. Step 2 prevents under-withholding when two incomes combine into one MFJ tax return. The IRS Tax Withholding Estimator at irs.gov is the easiest way to dial it in."}, {"q": "What is the marriage penalty?", "a": "When two roughly equal high earners pay more federal tax filing MFJ than they would have as two singles. The penalty kicks in at upper brackets where MFJ thresholds are less than 2x single."}, {"q": "Should I file MFS?", "a": "Usually no. MFS disqualifies several credits and deductions. Specific reasons (e.g., separating liability, income-based student loan repayment) can justify it. Talk to a CPA."}];
