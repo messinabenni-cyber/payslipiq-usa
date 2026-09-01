@@ -34,7 +34,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${s.name} Pay Stub Checker (Free, 2026)`,
     description: `Read a ${s.name} pay stub line by line: gross pay, federal tax, FICA, ${s.category === 'no-income-tax' ? 'no state income tax' : `${s.name} state tax`}${s.hasLocalTax ? ', local tax' : ''}, deductions, and net pay. Educational only.`,
-    alternates: { canonical: `/us/${s.slug}/pay-stub-checker` },
+    alternates: {
+      canonical: `https://payslipiq.com/us/${s.slug}/pay-stub-checker`,
+      languages: {
+        'en-US': `https://payslipiq.com/us/${s.slug}/pay-stub-checker`,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': `https://payslipiq.com/us/${s.slug}/pay-stub-checker`
+      }
+    },
     openGraph: {
       title: `${s.name} Pay Stub Checker (2026)`,
       description: `Plain-English, line-by-line walkthrough of a ${s.name} pay stub. Educational only.`,
