@@ -17,7 +17,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${s.name} State Income Tax (2026)`,
     description: `${s.name} state income tax explained: rates, brackets, structure. Sourced from ${s.taxAuthority}. Educational only.`,
-    alternates: { canonical: `/us/${s.slug}/state-tax` },
+    alternates: {
+      canonical: `https://payslipiq.com/us/${s.slug}/state-tax`,
+      languages: {
+        'en-US': `https://payslipiq.com/us/${s.slug}/state-tax`,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': `https://payslipiq.com/us/${s.slug}/state-tax`
+      }
+    },
   };
 }
 
