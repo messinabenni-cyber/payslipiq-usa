@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Supplemental Wage Withholding (22 percent / 37 percent)",
   description: "Federal supplemental withholding rate for bonuses, commissions, severance. Percentage method versus aggregate method. Educational only.",
-  alternates: { canonical: "/us/supplemental-wage-withholding" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/supplemental-wage-withholding',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/supplemental-wage-withholding',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/supplemental-wage-withholding'
+    }
+  },
 };
 
 const FAQS = [{"q": "Why is my bonus taxed at 22 percent?", "a": "It is not taxed at 22 percent, it is withheld at 22 percent. Federal law allows employers to withhold supplemental wages at this flat rate. Your actual tax owed is determined when you file your return."}, {"q": "What if my bonus is over $1 million?", "a": "Amounts above $1 million in a calendar year are withheld at 37 percent under the percentage method."}, {"q": "Can I ask payroll to use the aggregate method instead?", "a": "It is the employer's choice within IRS rules. Some payroll systems let you adjust, others do not. Either method nets out the same at filing time, only the per-paycheck withholding differs."}];
