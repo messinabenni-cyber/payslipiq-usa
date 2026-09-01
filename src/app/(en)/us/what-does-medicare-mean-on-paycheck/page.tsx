@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+const PAGE_URL = 'https://payslipiq.com/us/what-does-medicare-mean-on-paycheck';
+
 export const metadata: Metadata = {
   title: "What Does Medicare Mean on My Paycheck?",
   description: "Medicare tax explained. 1.45 percent on all wages plus 0.9 percent Additional Medicare above thresholds. Educational only.",
-  alternates: { canonical: "/us/what-does-medicare-mean-on-paycheck" },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
 };
 
 const FAQS = [{"q": "What is the Medicare tax rate?", "a": "1.45 percent on all wages, no cap. The 0.9 percent Additional Medicare Tax applies to wages above $200,000 single or $250,000 MFJ."}, {"q": "Does my employer pay Medicare on me?", "a": "Yes, 1.45 percent employer match on the base. The 0.9 percent Additional Medicare is employee-only, no employer match."}, {"q": "Does 401(k) reduce my Medicare?", "a": "No. Pre-tax 401(k) reduces federal income tax wages, not Medicare wages."}];
