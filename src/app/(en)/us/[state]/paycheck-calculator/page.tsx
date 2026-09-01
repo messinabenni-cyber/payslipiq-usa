@@ -19,7 +19,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${s.name} Paycheck Calculator (2026)`,
     description: `Estimate ${s.name} take-home pay. Federal tax, FICA, ${s.name} state tax explained. Educational only.`,
-    alternates: { canonical: `/us/${s.slug}/paycheck-calculator` },
+    alternates: {
+      canonical: `https://payslipiq.com/us/${s.slug}/paycheck-calculator`,
+      languages: {
+        'en-US': `https://payslipiq.com/us/${s.slug}/paycheck-calculator`,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': `https://payslipiq.com/us/${s.slug}/paycheck-calculator`
+      }
+    },
   };
 }
 
