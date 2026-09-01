@@ -12,7 +12,15 @@ export const metadata: Metadata = {
   title: 'PayslipIQ vs PaycheckCity — Which Paycheck Calculator to Use',
   description:
     'Compare PayslipIQ and PaycheckCity. Open methodology, plain-English line-by-line breakdown, AI pay-stub explainer, 22 US cities + 13 jurisdictions of worker contributions. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'PayslipIQ vs PaycheckCity',
     description: 'Open methodology paycheck explainer vs traditional calculator.',
