@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Salaried Paycheck Calculator (US)",
   description: "Take-home from an annual salary. Federal, FICA, state. Educational only.",
-  alternates: { canonical: "/us/salaried-worker-paycheck-calculator" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/salaried-worker-paycheck-calculator',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/salaried-worker-paycheck-calculator',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/salaried-worker-paycheck-calculator'
+    }
+  },
 };
 
 const FAQS = [{"q": "Do salaried workers pay more tax than hourly?", "a": "No. Federal and FICA depend on annual gross, not pay structure."}, {"q": "My January paycheck looks different from December. Why?", "a": "Tax tables refresh annually. Social Security wage base resets to zero on January 1, so high earners who had stopped paying SS in November pay it again in January. Open-enrollment changes also kick in."}, {"q": "How is a sign-on bonus taxed?", "a": "Withheld at the federal supplemental rate (22 percent up to $1M annually, 37 percent above). FICA still applies. Final tax owed gets settled on your return."}];
