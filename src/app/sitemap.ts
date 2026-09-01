@@ -60,7 +60,8 @@ const STATIC_PATHS: string[] = ['/', '/about', '/ai-transparency', '/contact', '
   '/es/calculadora-de-cheque',
   '/es/glosario',
   '/es/preguntas-frecuentes',
-  '/es/encontrar-un-cpa'];
+  '/es/encontrar-un-cpa',
+  '/us/gross-up-calculator'];
 
 // Wave 1: salary ladder for programmatic take-home-pay pages (keep in sync with
 // src/app/us/take-home-pay/[state]/[salary]/page.tsx SALARY_LADDER).
