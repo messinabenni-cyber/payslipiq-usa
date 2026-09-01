@@ -7,7 +7,15 @@ export const metadata: Metadata = {
   title: 'Search · PayslipIQ',
   description:
     'Search PayslipIQ for paycheck calculators, tax explainers, deduction guides, and pay-stub terms.',
-  alternates: { canonical: 'https://payslipiq.com/us/search' },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/search',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/search',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/search',
+    },
+  },
   // Search results pages add no unique indexable value; keep them out of the index.
   robots: { index: false, follow: true },
 };
