@@ -101,12 +101,20 @@ export function generateMetadata({ params }: { params: { state: string; salary: 
     return { title: 'Page not found', robots: { index: false, follow: false } };
   }
   const salary = Number(params.salary);
-  const url = `https://payslipiq.com/us/take-home-pay/${cfg.slug}/${salary}/`;
+  const url = `https://payslipiq.com/us/take-home-pay/${cfg.slug}/${salary}`;
   const pic = buildPicture(salary, cfg.slug);
   return {
     title: `${fmt0(salary)} After Tax in ${cfg.name} (2026): Take-Home Pay | PayslipIQ`,
     description: `A ${fmt0(salary)} salary in ${cfg.name} takes home about ${fmt0(pic.net)} a year (${fmt0(pic.net / 26)} per biweekly paycheck) after federal tax, FICA${cfg.noIncomeTax ? '' : ', and ' + cfg.name + ' state tax'}. 2026 estimate. Educational only.`,
-    alternates: { canonical: url, languages: { 'en-US': url, 'x-default': url } },
+    alternates: {
+      canonical: url,
+      languages: {
+        'en-US': url,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': url,
+      },
+    },
     openGraph: {
       title: `${fmt0(salary)} after tax in ${cfg.name} (2026)`,
       description: `Take-home pay, every deduction, and per-paycheck breakdown for a ${fmt0(salary)} salary in ${cfg.name}.`,

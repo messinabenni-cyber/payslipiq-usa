@@ -20,18 +20,26 @@ function fmt0(n: number): string {
 export function generateMetadata({ params }: { params: { state: string } }): Metadata {
   const cfg = getStateConfig(params.state);
   if (!cfg) return { title: 'Page not found', robots: { index: false, follow: false } };
-  const url = `https://payslipiq.com/us/take-home-pay/${cfg.slug}/`;
+  const url = `https://payslipiq.com/us/take-home-pay/${cfg.slug}`;
   return {
     title: `${cfg.name} Take-Home Pay by Salary (2026) | PayslipIQ`,
     description: `See estimated take-home pay for common salaries in ${cfg.name} for 2026, from ${fmt0(SALARY_LADDER[0])} to ${fmt0(SALARY_LADDER[SALARY_LADDER.length - 1])} after federal tax, FICA${cfg.noIncomeTax ? '' : ' and state tax'}. Educational only.`,
-    alternates: { canonical: url, languages: { 'en-US': url, 'x-default': url } },
+    alternates: {
+      canonical: url,
+      languages: {
+        'en-US': url,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': url,
+      },
+    },
   };
 }
 
 export default function Page({ params }: { params: { state: string } }) {
   const cfg = getStateConfig(params.state);
   if (!cfg) notFound();
-  const url = `https://payslipiq.com/us/take-home-pay/${cfg!.slug}/`;
+  const url = `https://payslipiq.com/us/take-home-pay/${cfg!.slug}`;
 
   return (
     <main className="piq-container py-10 max-w-3xl">
