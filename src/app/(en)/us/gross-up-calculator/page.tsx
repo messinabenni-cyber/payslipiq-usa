@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Gross-Up Calculator (Net-to-Gross, 2026)',
   description:
     'Free 2026 gross-up calculator. Enter a desired take-home and solve for the gross pay needed after federal tax, FICA, and state withholding. Educational estimate.',
-  alternates: { canonical: PAGE_PATH },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL,
+    },
+  },
 };
 
 const FAQS = [
