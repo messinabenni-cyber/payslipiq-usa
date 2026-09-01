@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Teacher Paycheck Guide (10-Month vs 12-Month, TRS, 403b)",
   description: "10-month vs 12-month pay, summer pay, TRS retirement, 403(b) and 457(b), Social Security non-covered employment. Educational only.",
-  alternates: { canonical: "/us/teacher-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/teacher-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/teacher-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/teacher-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Do teachers pay Social Security?", "a": "Depends on the state. In about 13 states, public-school teachers are in non-Social-Security-covered employment and contribute to TRS instead. Affects later SS benefits via WEP and GPO."}, {"q": "Why does my September paycheck look different?", "a": "Districts often start the new contract year mid-month. Combined with annual W-4 and benefits resets at the start of the school year, the first one or two checks of a school year usually look unusual."}, {"q": "Should I pick 10-month or 12-month pay?", "a": "Personal preference. Total annual gross is identical. Test against your monthly budget."}, {"q": "What is a 403(b)?", "a": "A retirement plan for public-school employees and certain non-profits. Similar mechanics to 401(k). Pre-tax or Roth options. IRS-set annual limit."}];
