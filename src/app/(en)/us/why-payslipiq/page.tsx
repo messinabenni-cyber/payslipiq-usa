@@ -8,7 +8,15 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: 'Why PayslipIQ?',
   description: 'How PayslipIQ compares to SmartAsset, NerdWallet, ADP, and a CPA. Worker-first, plain-English, educational only.',
-  alternates: { canonical: 'https://payslipiq.com/us/why-payslipiq' }
+  alternates: {
+    canonical: 'https://payslipiq.com/us/why-payslipiq',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/why-payslipiq',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/why-payslipiq'
+    }
+  }
 };
 
 const COMPARISON = [
