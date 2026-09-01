@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Pre-Tax 401(k) vs Roth 401(k)",
   description: "Pre-tax versus Roth 401(k). Tax now or tax later. Match still works. Limits are combined. Educational only.",
-  alternates: { canonical: "/us/pre-tax-vs-roth-401k" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/pre-tax-vs-roth-401k',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/pre-tax-vs-roth-401k',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/pre-tax-vs-roth-401k'
+    }
+  },
 };
 
 const FAQS = [{"q": "Can I split contributions between pre-tax and Roth?", "a": "Yes. Most plans allow you to allocate any percentage to each. The total stays under the IRS annual limit."}, {"q": "Does Roth 401(k) avoid FICA?", "a": "No. FICA applies to your gross before the Roth contribution. Roth only changes federal and state income tax timing."}, {"q": "What is the income limit for Roth 401(k)?", "a": "There is none. Roth 401(k) is open at any income, unlike Roth IRA which has income phase-outs."}];
