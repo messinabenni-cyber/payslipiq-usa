@@ -5,6 +5,15 @@ import { MasterDisclaimer } from '@/components/MasterDisclaimer';
 export const metadata: Metadata = {
   title: 'Thanks | PayslipIQ',
   description: 'If you completed a payment, look for an email. Paid checkout is not generally live on PayslipIQ.',
+  alternates: {
+    canonical: 'https://payslipiq.com/us/thanks',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/thanks',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/thanks',
+    },
+  },
   robots: { index: false, follow: false }
 };
 
