@@ -23,6 +23,8 @@ export const rootMetadata: Metadata = {
     languages: {
       'en-US': '/',
       'es-US': '/es',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
       'x-default': '/',
     },
   },
