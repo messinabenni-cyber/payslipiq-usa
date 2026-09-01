@@ -12,7 +12,15 @@ export const metadata: Metadata = {
   title: 'State Worker Contributions 2026 — SDI, PFL, PFML, FAMLI, TDI (13 jurisdictions)',
   description:
     'Verified 2026 employee-paid state worker contribution rates: CA SDI, NY SDI+PFL, NJ SDI+FLI, MA PFML, OR Paid Leave, WA PFML+Cares, RI TDI, CO FAMLI, HI TDI, CT PFML, DC PFL, MN Paid Leave, DE Paid Leave, ME PFML. Maryland FAMLI withholding starts 2027.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'State Worker Contributions 2026 — 13 jurisdictions',
     description: 'Verified 2026 SDI / PFL / PFML / FAMLI / TDI rates across every US state with an employee-paid program.',
