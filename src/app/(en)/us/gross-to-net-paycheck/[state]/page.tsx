@@ -18,7 +18,7 @@ export const dynamicParams = false;
 export function generateMetadata({ params }: { params: { state: string } }): Metadata {
   const cfg = getStateConfig(params.state);
   if (!cfg) return { title: 'State page not found', robots: { index: false, follow: false } };
-  const url = `https://payslipiq.com/us/gross-to-net-paycheck/${cfg.slug}/`;
+  const url = `https://payslipiq.com/us/gross-to-net-paycheck/${cfg.slug}`;
   return {
     title: `${cfg.name} Gross to Net Paycheck Calculator (2026) | PayslipIQ`,
     description: `Convert any gross paycheck into estimated take-home pay in ${cfg.name}. Federal income tax, FICA, and ${cfg.name} state tax for 2026. Educational only, not advice.`,
