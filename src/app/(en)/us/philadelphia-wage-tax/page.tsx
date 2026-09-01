@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Philadelphia City Wage Tax",
   description: "Philadelphia City Wage Tax for residents and non-residents working in the city. Educational only.",
-  alternates: { canonical: "/us/philadelphia-wage-tax" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/philadelphia-wage-tax',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/philadelphia-wage-tax',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/philadelphia-wage-tax'
+    }
+  },
 };
 
 const FAQS = [{"q": "What is the Philadelphia wage tax rate?", "a": "Resident rate around 3.75 percent, non-resident around 3.44 percent. Verify current rates at the Philadelphia Department of Revenue."}, {"q": "I live in NJ and work in Philadelphia. Do I pay Philly tax?", "a": "Yes, the non-resident rate. NJ allows a credit on its return for tax paid to PA and Philadelphia."}, {"q": "I work in Philly but live in PA suburbs. Do I pay city tax and LEIT?", "a": "You pay the non-resident Philly wage tax on Philly-source wages. Your suburb's LEIT typically credits the Philly tax (in whole or part)."}];
