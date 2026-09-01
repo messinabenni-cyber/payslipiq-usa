@@ -17,7 +17,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${s.name} Pay Stub Laws, What Employers Must Provide`,
     description: `${s.name} pay stub access laws and employer requirements. Educational only.`,
-    alternates: { canonical: `/us/${s.slug}/pay-stub-laws` },
+    alternates: {
+      canonical: `https://payslipiq.com/us/${s.slug}/pay-stub-laws`,
+      languages: {
+        'en-US': `https://payslipiq.com/us/${s.slug}/pay-stub-laws`,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': `https://payslipiq.com/us/${s.slug}/pay-stub-laws`
+      }
+    },
   };
 }
 
