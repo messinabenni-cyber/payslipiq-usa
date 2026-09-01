@@ -8,7 +8,15 @@ import { FAQSchema } from '@/components/FAQSchema';
 export const metadata: Metadata = {
   title: "Paycheck Problems, Common Issues Explained (US)",
   description: "Common US paycheck problems: lower than expected, overtime not paid, missing 401(k) match, wrong state tax. Educational only.",
-  alternates: { canonical: '/us/problems' },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/problems',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/problems',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/problems'
+    }
+  },
 };
 
 const BREADCRUMBS = [
