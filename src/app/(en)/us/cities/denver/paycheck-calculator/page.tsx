@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Denver Paycheck Calculator (2026) — CO + Denver OPT',
   description:
     'Denver paycheck calculator. Federal, FICA, Colorado flat 4.40%, plus Denver Occupational Privilege Tax $5.75/mo + CO FAMLI 0.44% employee share. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Denver Paycheck Calculator (2026)',
     description: 'Federal + FICA + CO + Denver OPT + CO FAMLI.',

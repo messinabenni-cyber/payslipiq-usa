@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Pittsburgh Paycheck Calculator (2026) — PA + EIT 3%',
   description:
     'Pittsburgh paycheck calculator. Federal, FICA, PA flat 3.07%, plus Pittsburgh Earned Income Tax 3% (resident) and $52 Local Services Tax. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Pittsburgh Paycheck Calculator (2026)',
     description: 'Federal + FICA + PA flat 3.07% + Pittsburgh EIT 3% + LST $52.',

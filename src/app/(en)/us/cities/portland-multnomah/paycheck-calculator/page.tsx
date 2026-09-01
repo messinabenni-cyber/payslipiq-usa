@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Portland / Multnomah Paycheck Calculator (2026) — OR',
   description:
     'Portland & Multnomah County paycheck calculator. Federal, FICA, OR progressive, OR Paid Leave 0.6%, plus Multnomah PFA and Portland Metro SHS. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Portland / Multnomah Paycheck Calculator (2026)',
     description: 'Federal + FICA + OR + OR Paid Leave + Multnomah PFA + Portland Metro SHS.',

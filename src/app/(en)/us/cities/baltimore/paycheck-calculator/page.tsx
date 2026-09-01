@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Baltimore Paycheck Calculator (2026) — MD + City 3.2%',
   description:
     'Baltimore paycheck calculator. Federal, FICA, Maryland progressive, plus Baltimore City local income tax 3.2% piggyback on top of state tax. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Baltimore Paycheck Calculator (2026)',
     description: 'Federal + FICA + MD progressive + Baltimore City 3.2% piggyback.',

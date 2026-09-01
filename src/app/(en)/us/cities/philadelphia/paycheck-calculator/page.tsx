@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Philadelphia Paycheck Calculator (2026) — PA + City EIT',
   description:
     'Philadelphia paycheck calculator. Federal, FICA, PA state flat 3.07%, plus Philadelphia Earned Income Tax (resident 3.74%, non-resident 3.43%). 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Philadelphia Paycheck Calculator (2026)',
     description: 'Federal + FICA + PA flat 3.07% + Philadelphia EIT (resident 3.74% / non-resident 3.43%). Verified 2026.',

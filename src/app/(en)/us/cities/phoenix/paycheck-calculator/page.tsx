@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Phoenix Paycheck Calculator (2026) — AZ Flat 2.5% Tax',
   description:
     'Phoenix paycheck calculator. Federal, FICA, Arizona flat 2.5% — one of the lowest state rates in the US. No Phoenix city income tax, no AZ SDI/PFL. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Phoenix Paycheck Calculator (2026)',
     description: 'Federal + FICA + AZ flat 2.5%. No Phoenix city tax.',

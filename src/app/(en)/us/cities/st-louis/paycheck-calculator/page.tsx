@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'St. Louis Paycheck Calculator (2026) — STL 1% Tax',
   description:
     'St. Louis Missouri paycheck calculator. Federal, FICA, MO progressive, plus St. Louis 1% Earnings Tax on residents and on wages earned in STL. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'St. Louis Paycheck Calculator (2026)',
     description: 'Federal + FICA + MO + STL 1% earnings tax. Renewed by voters through 2031.',

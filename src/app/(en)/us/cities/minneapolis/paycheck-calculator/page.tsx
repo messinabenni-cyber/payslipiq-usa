@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Minneapolis Paycheck Calculator (2026) — MN, No City Tax',
   description:
     'Minneapolis paycheck calculator. Federal, FICA, Minnesota progressive (top 9.85%). No Minneapolis city income tax. 2026 rates. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Minneapolis Paycheck Calculator (2026)',
     description: 'Federal + FICA + Minnesota progressive. No Minneapolis city tax.',

@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'San Diego Paycheck Calculator (2026) — CA Tax + SDI',
   description:
     'San Diego paycheck calculator. Federal, FICA, California progressive brackets (1% to 13.3%), CA SDI 1.3% with no wage cap. No San Diego city tax.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'San Diego Paycheck Calculator (2026)',
     description: 'Federal + FICA + CA progressive + CA SDI 1.3%.',

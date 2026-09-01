@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Wilmington DE Paycheck Calculator (2026) — City Wage Tax',
   description:
     'Wilmington Delaware paycheck calculator. Federal, FICA, DE progressive, plus Wilmington City Wage Tax 1.25% on wages earned in Wilmington. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Wilmington DE Paycheck Calculator (2026)',
     description: 'Federal + FICA + DE + Wilmington 1.25% wage tax (work-location based).',

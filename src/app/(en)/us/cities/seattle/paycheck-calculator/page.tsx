@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Seattle Paycheck Calculator (2026) — WA PFML + WA Cares',
   description:
     'Seattle paycheck calculator. Federal, FICA, no Washington state income tax, plus WA PFML ~0.81% + WA Cares 0.58%. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Seattle Paycheck Calculator (2026)',
     description: 'Federal + FICA + WA PFML + WA Cares. No WA income tax. No Seattle city employee tax.',

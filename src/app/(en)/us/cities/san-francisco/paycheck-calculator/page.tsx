@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'San Francisco Paycheck Calculator (2026) — CA Tax + SDI',
   description:
     'San Francisco paycheck calculator. Federal, FICA, California progressive + CA SDI 1.3%. SF Payroll Expense Tax is employer-paid only. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'San Francisco Paycheck Calculator (2026)',
     description: 'Federal + FICA + CA + CA SDI. No SF employee withholding (employer-paid only).',

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Cincinnati Paycheck Calculator (2026) — OH + 1.8% Tax',
   description:
     'Cincinnati paycheck calculator. Federal, FICA, Ohio state, plus Cincinnati 1.8% Earnings Tax on residents and on Cincinnati wages. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Cincinnati Paycheck Calculator (2026)',
     description: 'Federal + FICA + Ohio + Cincinnati 1.8% earnings tax.',

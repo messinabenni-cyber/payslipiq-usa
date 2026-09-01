@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Louisville Paycheck Calculator (2026) — KY + Metro 2.2%',
   description:
     'Louisville paycheck calculator. Federal, FICA, Kentucky flat 4.0%, plus Louisville Metro Occupational License Tax 2.2% on Jefferson County wages. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Louisville Paycheck Calculator (2026)',
     description: 'Federal + FICA + KY flat 4.0% + Louisville Metro 2.2% occupational tax.',

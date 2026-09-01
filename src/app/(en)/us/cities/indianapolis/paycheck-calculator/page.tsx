@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Indianapolis Paycheck Calculator (2026) — IN + Marion Co.',
   description:
     'Indianapolis paycheck calculator. Federal, FICA, Indiana flat 3.05%, plus Marion County local income tax 2.02%. Residence-based. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Indianapolis Paycheck Calculator (2026)',
     description: 'Federal + FICA + IN flat 3.05% + Marion County LIT 2.02%.',

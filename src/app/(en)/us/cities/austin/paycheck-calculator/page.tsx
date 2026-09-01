@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Austin Paycheck Calculator (2026) — No State Income Tax (TX)',
   description:
     'Austin paycheck calculator. Federal + FICA only — Texas has no state income tax and no Austin city tax. Tech-worker RSU and bonus context. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Austin Paycheck Calculator (2026)',
     description: 'Federal + FICA only. No TX state tax, no Austin city tax.',

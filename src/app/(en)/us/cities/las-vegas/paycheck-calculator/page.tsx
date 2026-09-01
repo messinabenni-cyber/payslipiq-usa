@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Las Vegas Paycheck Calculator (2026) — No NV State Tax',
   description:
     'Las Vegas paycheck calculator. Federal + FICA only — Nevada has no state income tax and no Las Vegas city tax. Tip credit context for hospitality workers.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Las Vegas Paycheck Calculator (2026)',
     description: 'Federal + FICA only. No NV state tax, no Las Vegas city tax.',

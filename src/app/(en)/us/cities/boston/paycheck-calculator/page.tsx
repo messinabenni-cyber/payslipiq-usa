@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Boston Paycheck Calculator (2026) — MA + PFML 0.46%',
   description:
     'Boston paycheck calculator. Federal, FICA, Massachusetts flat 5% (9% on income > $1M) + MA PFML 0.46% employee share. No Boston city income tax. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Boston Paycheck Calculator (2026)',
     description: 'Federal + FICA + MA + MA PFML. No Boston city tax.',

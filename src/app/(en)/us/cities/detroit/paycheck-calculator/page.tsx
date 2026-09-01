@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Detroit Paycheck Calculator (2026) — MI + City Tax',
   description:
     'Detroit paycheck calculator. Federal, FICA, Michigan flat 4.25%, plus Detroit city income tax (2.4% resident, 1.2% non-resident). 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Detroit Paycheck Calculator (2026)',
     description: 'Federal + FICA + MI flat 4.25% + Detroit 2.4%/1.2%. Verified 2026.',

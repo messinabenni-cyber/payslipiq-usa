@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Cleveland Paycheck Calculator (2026) — OH + RITA 2.5%',
   description:
     'Cleveland paycheck calculator. Federal, FICA, Ohio state, plus Cleveland 2.5% municipal income tax administered by RITA. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Cleveland Paycheck Calculator (2026)',
     description: 'Federal + FICA + Ohio + Cleveland 2.5% RITA municipal income tax.',

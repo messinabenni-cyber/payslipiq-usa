@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Kansas City MO Paycheck Calculator (2026) — KC 1% Tax',
   description:
     'Kansas City Missouri paycheck calculator. Federal, FICA, MO progressive, plus KCMO 1% Earnings Tax on residents and on wages earned in KC. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Kansas City Paycheck Calculator (2026)',
     description: 'Federal + FICA + MO + KCMO 1% earnings tax. Renewed by voters through 2031.',

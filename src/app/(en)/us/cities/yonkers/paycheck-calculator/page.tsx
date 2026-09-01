@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'Yonkers Paycheck Calculator (2026) — 16.75% Surcharge',
   description:
     'Yonkers resident paycheck calculator. Federal, FICA, NY state tax, NY SDI + PFL, plus the Yonkers 16.75% resident surcharge of NYS tax. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Yonkers Paycheck Calculator (2026)',
     description: 'Federal + FICA + NY state + Yonkers 16.75% resident surcharge of NYS tax. Verified 2026 rates.',

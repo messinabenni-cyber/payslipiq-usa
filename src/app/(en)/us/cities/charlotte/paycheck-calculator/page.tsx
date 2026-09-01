@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Charlotte Paycheck Calculator (2026) — NC Flat 3.99%',
   description:
     'Charlotte paycheck calculator. Federal, FICA, North Carolina flat 3.99% (2026 step-down rate). No Charlotte city tax. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Charlotte Paycheck Calculator (2026)',
     description: 'Federal + FICA + NC flat 3.99%. No Charlotte city tax.',

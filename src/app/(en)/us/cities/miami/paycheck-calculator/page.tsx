@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Miami Paycheck Calculator (2026) — No State Income Tax (FL)',
   description:
     'Miami paycheck calculator. Federal + FICA only — Florida has no state income tax and no Miami city tax. Hospitality + tip income context. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Miami Paycheck Calculator (2026)',
     description: 'Federal + FICA only. No FL state tax, no Miami city tax.',

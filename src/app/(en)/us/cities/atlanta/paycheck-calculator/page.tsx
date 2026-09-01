@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Atlanta Paycheck Calculator (2026) — GA Flat 5.39% Tax',
   description:
     'Atlanta paycheck calculator. Federal, FICA, Georgia flat 5.39%. No Atlanta city income tax, no GA SDI/PFL. 2026 rates. Educational only.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Atlanta Paycheck Calculator (2026)',
     description: 'Federal + FICA + GA flat 5.39%. No Atlanta city tax.',

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   title: 'NYC Paycheck Calculator (2026) — NY State + NYC Tax',
   description:
     'NYC resident paycheck calculator. Federal, FICA, NY state tax, NY SDI + PFL, plus NYC resident income tax (3.078% to 3.876%). 2026 tables.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'NYC Paycheck Calculator (2026) — NY State + NYC Tax',
     description: 'Federal + FICA + NY state + NY SDI + NY PFL + NYC resident income tax stacked, with verified 2026 rates.',

@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   title: 'Newark NJ Paycheck Calculator (2026) — NJ Tax + SDI',
   description:
     'Newark NJ paycheck calculator. Federal, FICA, NJ progressive + NJ SDI 0.19% + NJ FLI 0.23%. Newark Payroll Tax is employer-paid only. 2026 rates.',
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
   openGraph: {
     title: 'Newark NJ Paycheck Calculator (2026)',
     description: 'Federal + FICA + NJ + NJ SDI + NJ FLI. Newark Payroll Tax employer-paid only.',
