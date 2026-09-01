@@ -22,7 +22,15 @@ export function generateMetadata({ params }: { params: { state: string } }): Met
   return {
     title: `${cfg.name} Gross to Net Paycheck Calculator (2026) | PayslipIQ`,
     description: `Convert any gross paycheck into estimated take-home pay in ${cfg.name}. Federal income tax, FICA, and ${cfg.name} state tax for 2026. Educational only, not advice.`,
-    alternates: { canonical: url, languages: { 'en-US': url, 'x-default': url } },
+    alternates: {
+      canonical: url,
+      languages: {
+        'en-US': url,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': url
+      }
+    },
     openGraph: {
       title: `${cfg.name} Gross to Net Paycheck Calculator (2026)`,
       description: `Type a gross amount, see what it becomes in ${cfg.name} after federal, FICA, and state tax.`,
