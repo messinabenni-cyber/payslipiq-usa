@@ -7,7 +7,15 @@ export const metadata: Metadata = {
   title: 'Paycheck Guides by Worker Type (US)',
   description:
     'Paycheck guides for hourly, salaried, tipped, gig, contractor, remote, multi-state, federal, military, teacher, nurse, seasonal, and student workers. Educational only.',
-  alternates: { canonical: '/us/roles' },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/roles',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/roles',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/roles'
+    }
+  },
 };
 
 const GROUPS: { heading: string; items: { href: string; label: string; blurb: string }[] }[] = [
