@@ -4,6 +4,15 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Checkout cancelled | PayslipIQ',
   description: 'No charge was made. Paid checkout is not generally live. Join a waitlist if you want to be notified.',
+  alternates: {
+    canonical: 'https://payslipiq.com/us/checkout-cancelled',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/checkout-cancelled',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/checkout-cancelled',
+    },
+  },
   robots: { index: false, follow: false }
 };
 
