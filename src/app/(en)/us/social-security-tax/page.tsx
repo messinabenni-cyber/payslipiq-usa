@@ -6,7 +6,15 @@ import { ReviewedBy } from '@/components/ReviewedBy';
 export const metadata: Metadata = {
   title: "Social Security Tax (OASDI) Explained",
   description: "Social Security tax: 6.2 percent of wages up to the annual wage base. Funds OASDI. Stops once you cross the cap. Educational only.",
-  alternates: { canonical: "/us/social-security-tax" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/social-security-tax',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/social-security-tax',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/social-security-tax'
+    }
+  },
 };
 
 const FAQS = [{"q": "Why did my Social Security tax stop in November?", "a": "You hit the annual wage base. Tax stops for the rest of the calendar year and resets January 1."}, {"q": "Will I get my Social Security contributions back?", "a": "Not as a refund. They fund your future Social Security benefits. The amount you eventually receive depends on your highest 35 years of earnings, indexed."}, {"q": "What if my multi-employer wages exceed the cap?", "a": "You may overpay Social Security. Claim the excess as a refundable credit on your federal return."}, {"q": "How does the Social Security wage base change each year?", "a": "SSA indexes it to national average wages. The new base is published each fall for the next calendar year."}];
