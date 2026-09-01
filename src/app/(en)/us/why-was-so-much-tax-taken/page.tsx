@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Why Was So Much Tax Taken From My Paycheck?",
   description: "Reasons your paycheck has more tax than you expected. Federal withholding, FICA, state tax, supplemental rate. Educational only.",
-  alternates: { canonical: "/us/why-was-so-much-tax-taken" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/why-was-so-much-tax-taken',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/why-was-so-much-tax-taken',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/why-was-so-much-tax-taken'
+    }
+  },
 };
 
 const FAQS = [{"q": "Is 22 percent the tax rate on bonuses?", "a": "No, that is the withholding rate. Your actual tax depends on your total annual income. If your effective rate is below 22 percent, the over-withholding comes back as a refund."}, {"q": "How do I lower my withholding?", "a": "Update your W-4 with your employer. Reduce dependents claimed in Step 3 to lower withholding (or increase to raise it). Adjust Step 4(c) extra withholding. Use the IRS Tax Withholding Estimator at irs.gov."}, {"q": "Does 401(k) reduce my FICA?", "a": "No. Pre-tax 401(k) reduces federal income tax wages and most state income tax wages, but not FICA wages."}];
