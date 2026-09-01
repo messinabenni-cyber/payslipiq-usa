@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "NYC Income Tax (Resident and Yonkers)",
   description: "New York City resident income tax brackets, plus the Yonkers resident tax. Educational only.",
-  alternates: { canonical: "/us/nyc-tax" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/nyc-tax',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/nyc-tax',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/nyc-tax'
+    }
+  },
 };
 
 const FAQS = [{"q": "Do I pay NYC tax if I work in NYC but live in NJ?", "a": "No. NYC tax is residence-based. Non-resident commuters do not pay NYC personal income tax. You owe NJ tax as a resident, plus NY State tax on NY-source wages, with a credit on your NJ return for tax paid to NY."}, {"q": "Do I pay NYC tax if I live in NYC but work remote for an out-of-state employer?", "a": "Yes. As a NYC resident you owe NYC tax on all your income regardless of where it was earned."}, {"q": "Is the Yonkers surcharge separate from NY State tax?", "a": "Yes. Yonkers residents pay NY State tax plus a Yonkers surcharge. They are separate calculations on the state return."}];
