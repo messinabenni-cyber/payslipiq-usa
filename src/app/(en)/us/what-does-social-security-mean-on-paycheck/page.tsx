@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
 import { RichArticle } from '@/components/RichArticle';
 
+const PAGE_URL = 'https://payslipiq.com/us/what-does-social-security-mean-on-paycheck';
+
 export const metadata: Metadata = {
   title: "What Does Social Security Mean on My Paycheck?",
   description: "Social Security tax (OASDI) on a US paycheck. 6.2 percent up to the annual wage base. Educational only.",
-  alternates: { canonical: "/us/what-does-social-security-mean-on-paycheck" },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'en-US': PAGE_URL,
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': PAGE_URL
+    }
+  },
 };
 
 const FAQS = [{"q": "Why did my Social Security tax stop in November?", "a": "You hit the annual wage base. Social Security tax stops for the rest of the calendar year. It starts again January 1 when YTD resets."}, {"q": "Will I get those Social Security contributions back?", "a": "Not as a refund. They fund your future Social Security benefits. The amount of benefits you eventually receive depends on your highest 35 years of earnings (indexed)."}, {"q": "What if I have multiple employers and total wages exceed the wage base?", "a": "Each employer caps at the base separately. So you may overpay across multiple employers. You can claim the excess Social Security tax as a credit on your federal tax return."}];
