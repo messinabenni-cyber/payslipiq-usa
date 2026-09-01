@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Student First Job Paycheck Guide",
   description: "First paycheck for a student. W-4, FICA, exempt status, refunds. Educational only.",
-  alternates: { canonical: "/us/student-job-paycheck-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/student-job-paycheck-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/student-job-paycheck-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/student-job-paycheck-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "Why is so much taken out of my first paycheck?", "a": "Federal income tax (per your W-4), FICA (7.65 percent combined), state tax where applicable, and any voluntary deductions you elected."}, {"q": "Should I claim \"exempt\" on my W-4?", "a": "Only if you owed zero federal income tax last year and expect zero this year. Read the W-4 instructions carefully."}, {"q": "Can I get FICA refunded?", "a": "Usually no. Narrow exceptions exist for student workers at the school they attend, and for non-resident alien students on F-1, M-1 or J-1 visas."}, {"q": "When do I file my first return?", "a": "If your income exceeds the IRS filing threshold or if you had federal tax withheld and want a refund. Filing season opens in late January."}];
