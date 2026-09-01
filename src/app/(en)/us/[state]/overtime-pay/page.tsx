@@ -17,7 +17,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${s.name} Overtime Pay Rules (2026)`,
     description: `${s.name} overtime: ${s.dailyOvertime ? 'has stricter daily-overtime rules than federal FLSA' : 'follows federal FLSA (1.5× over 40/week)'}. Educational only.`,
-    alternates: { canonical: `/us/${s.slug}/overtime-pay` },
+    alternates: {
+      canonical: `https://payslipiq.com/us/${s.slug}/overtime-pay`,
+      languages: {
+        'en-US': `https://payslipiq.com/us/${s.slug}/overtime-pay`,
+        'en-GB': 'https://payslipiq.co.uk',
+        'en-IE': 'https://payslipiq.co.uk/ie',
+        'x-default': `https://payslipiq.com/us/${s.slug}/overtime-pay`
+      }
+    },
   };
 }
 
