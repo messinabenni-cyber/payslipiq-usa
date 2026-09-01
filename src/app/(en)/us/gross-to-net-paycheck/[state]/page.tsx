@@ -44,7 +44,7 @@ export default function Page({ params }: { params: { state: string } }) {
   const cfg = getStateConfig(params.state);
   if (!cfg) notFound();
 
-  const url = `https://payslipiq.com/us/gross-to-net-paycheck/${cfg!.slug}/`;
+  const url = `https://payslipiq.com/us/gross-to-net-paycheck/${cfg!.slug}`;
   const stateRatePct = (cfg!.rate * 100).toFixed(2);
 
   const FAQS = [
