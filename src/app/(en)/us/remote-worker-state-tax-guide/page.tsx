@@ -4,7 +4,15 @@ import { RichArticle } from '@/components/RichArticle';
 export const metadata: Metadata = {
   title: "Remote Worker State Tax Guide (US)",
   description: "Multi-state remote work tax: residence vs work location, reciprocity, convenience-of-employer. Educational only.",
-  alternates: { canonical: "/us/remote-worker-state-tax-guide" },
+  alternates: {
+    canonical: 'https://payslipiq.com/us/remote-worker-state-tax-guide',
+    languages: {
+      'en-US': 'https://payslipiq.com/us/remote-worker-state-tax-guide',
+      'en-GB': 'https://payslipiq.co.uk',
+      'en-IE': 'https://payslipiq.co.uk/ie',
+      'x-default': 'https://payslipiq.com/us/remote-worker-state-tax-guide'
+    }
+  },
 };
 
 const FAQS = [{"q": "I live in NY and work remotely for a CA employer. What do I owe?", "a": "NY taxes you as a resident on all income. NY does not have reciprocity with CA. You may also owe CA tax depending on whether you ever physically work in CA. A CPA can confirm."}, {"q": "I work remotely from FL for a NY employer. Do I owe NY tax?", "a": "Possibly yes. NY applies the convenience-of-employer rule. If you work remotely from FL for the employer's convenience, NY may tax your wages. Florida has no state income tax, so that NY bill is real."}, {"q": "I moved from CA to TX mid-year. How do taxes work?", "a": "Part-year resident return in CA on income earned while you lived in CA. Zero TX tax (no state income tax). File CA part-year return."}];
