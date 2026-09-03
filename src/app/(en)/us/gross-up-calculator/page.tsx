@@ -23,6 +23,9 @@ export const metadata: Metadata = {
       'x-default': PAGE_URL,
     },
   },
+  openGraph: {
+    url: PAGE_URL,
+  },
 };
 
 const FAQS = [

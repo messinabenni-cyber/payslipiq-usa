@@ -7,7 +7,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://payslipiq.com/es',
     languages: { 'en-US': 'https://payslipiq.com/us', 'es-US': 'https://payslipiq.com/es', 'en-GB': 'https://payslipiq.co.uk', 'en-IE': 'https://payslipiq.co.uk/ie', 'x-default': 'https://payslipiq.com/us' }
-  }
+  },
+  openGraph: {
+    url: 'https://payslipiq.com/es',
+  },
 };
 
 export default function Page() {

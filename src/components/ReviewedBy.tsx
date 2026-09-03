@@ -25,7 +25,7 @@ export function ReviewedBy({ reviewerSlug = 'lead-reviewer', reviewedOn = LAST_R
       <div className="leading-tight">
         <div>
           Reviewed by{' '}
-          <Link href={`/us/about-the-team/#${reviewer.slug}`} className="font-semibold text-slate-900 hover:underline">
+          <Link href={`/us/about-the-team#${reviewer.slug}`} className="font-semibold text-slate-900 hover:underline">
             {reviewer.name}, {reviewer.credential}
           </Link>
         </div>

@@ -16,6 +16,9 @@ export const metadata: Metadata = {
       'x-default': 'https://payslipiq.com/',
     },
   },
+  openGraph: {
+    url: 'https://payslipiq.com',
+  },
 };
 
 export default function Page() {

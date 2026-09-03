@@ -33,7 +33,6 @@ export const rootMetadata: Metadata = {
     title: 'PayslipIQ, Understand Your Paycheck With Confidence',
     description:
       'Plain-English help for American workers: pay stubs, federal & state withholding, FICA, deductions, overtime, 401(k), take-home pay. Educational only.',
-    url: SITE_URL,
     siteName: 'PayslipIQ',
     locale: 'en_US',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'PayslipIQ' }],

@@ -35,6 +35,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         'x-default': `https://payslipiq.com/us/${s.slug}`
       }
     },
+    openGraph: {
+      url: `https://payslipiq.com/us/${s.slug}`,
+    },
   };
 }
 
