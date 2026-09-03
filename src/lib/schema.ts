@@ -26,7 +26,7 @@ export const SITE = 'https://payslipiq.com';
 export const ORG_ID = `${SITE}/#organization`;
 export const WEBSITE_ID = `${SITE}/#website`;
 export const LOGO_ID = `${SITE}/#logo`;
-export const EDITORIAL_TEAM_ID = `${SITE}/us/about-the-team/#editorial-team`;
+export const EDITORIAL_TEAM_ID = `${SITE}/us/about-the-team#editorial-team`;
 
 /**
  * Verified Wikidata + Wikipedia entity IDs for core US-payroll concepts.
