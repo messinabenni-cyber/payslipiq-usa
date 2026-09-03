@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     languages: {
       'en-US': 'https://payslipiq.com/',
       'es-US': 'https://payslipiq.com/es',
-      'en-GB': 'https://payslipiq.co.uk/',
+      'en-GB': 'https://payslipiq.co.uk',
       'en-IE': 'https://payslipiq.co.uk/ie',
       'x-default': 'https://payslipiq.com/',
     },
