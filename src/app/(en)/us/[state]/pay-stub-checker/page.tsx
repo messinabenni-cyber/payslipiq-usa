@@ -88,7 +88,7 @@ export default function Page({ params }: PageProps) {
       />
       <BreadcrumbSchema
         items={[
-          { name: 'Home', url: 'https://payslipiq.com/' },
+          { name: 'Home', url: 'https://payslipiq.com' },
           { name: s.name, url: `https://payslipiq.com/us/${s.slug}` },
           { name: 'Pay Stub Checker', url },
         ]}

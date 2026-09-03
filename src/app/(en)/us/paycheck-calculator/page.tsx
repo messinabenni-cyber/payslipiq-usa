@@ -59,7 +59,7 @@ const HOW_TO_STEPS = [
 ];
 
 const BREADCRUMBS = [
-  { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+  { name: 'PayslipIQ', url: 'https://payslipiq.com' },
   { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Paycheck Calculator', url: PAGE_URL }
 ];

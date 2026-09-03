@@ -40,7 +40,7 @@ const FAQS = [
 ];
 
 const BREADCRUMBS = [
-  { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+  { name: 'PayslipIQ', url: 'https://payslipiq.com' },
   { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Cities', url: 'https://payslipiq.com/us/cities' },
   { name: 'Las Vegas', url: PAGE_URL },

@@ -102,7 +102,7 @@ const PRIORITY_STATES = [
 ];
 
 const BREADCRUMBS = [
-  { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+  { name: 'PayslipIQ', url: 'https://payslipiq.com' },
   { name: 'USA', url: PAGE_URL }
 ];
 

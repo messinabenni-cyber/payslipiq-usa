@@ -40,7 +40,7 @@ const FAQS = [
 ];
 
 const BREADCRUMBS = [
-  { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+  { name: 'PayslipIQ', url: 'https://payslipiq.com' },
   { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Paycheck Health Score', url: PAGE_URL },
 ];

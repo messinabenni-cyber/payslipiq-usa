@@ -68,7 +68,7 @@ const FAQS = [
 ];
 
 const BREADCRUMBS = [
-  { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+  { name: 'PayslipIQ', url: 'https://payslipiq.com' },
   { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'Maryland', url: 'https://payslipiq.com/us/maryland' },
   { name: 'County rates', url: PAGE_URL },

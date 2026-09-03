@@ -60,7 +60,7 @@ export default function Page() {
     <main className="mx-auto max-w-3xl px-6 py-12">
       <BreadcrumbSchema
         items={[
-          { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+          { name: 'PayslipIQ', url: 'https://payslipiq.com' },
           { name: 'USA', url: 'https://payslipiq.com/us' },
           { name: 'Paycheck Guides by Worker Type', url: 'https://payslipiq.com/us/roles' },
         ]}
