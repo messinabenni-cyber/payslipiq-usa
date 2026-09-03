@@ -31,7 +31,7 @@ export function PersonSchema({ fullName, url, credentials, licenceState, licence
     sameAs: linkedIn ? [linkedIn] : undefined,
     jobTitle: credentials.join(', '),
     knowsAbout: expertise,
-    worksFor: { '@type': 'Organization', name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+    worksFor: { '@type': 'Organization', name: 'PayslipIQ', url: 'https://payslipiq.com' },
     hasCredential: credentials.map((c) => ({
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'license',

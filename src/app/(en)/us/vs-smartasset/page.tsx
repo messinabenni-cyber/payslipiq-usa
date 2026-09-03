@@ -39,7 +39,7 @@ const FAQS = [
 ];
 
 const BREADCRUMBS = [
-  { name: 'PayslipIQ', url: 'https://payslipiq.com/' },
+  { name: 'PayslipIQ', url: 'https://payslipiq.com' },
   { name: 'USA', url: 'https://payslipiq.com/us' },
   { name: 'PayslipIQ vs SmartAsset', url: PAGE_URL },
 ];
